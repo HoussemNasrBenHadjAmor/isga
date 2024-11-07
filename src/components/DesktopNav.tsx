@@ -1,0 +1,50 @@
+import Link from "next/link";
+
+import { navItems } from "@/constants/index";
+import { ListItem } from "@/components";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+function DesktopNav() {
+  return (
+    <NavigationMenu className="hidden lg:flex">
+      <NavigationMenuList className="gap-5">
+        {navItems.map((navItem) => (
+          <div key={navItem.name}>
+            {!navItem?.sub ? (
+              <NavigationMenuItem>
+                <Link href={navItem.link} legacyBehavior passHref>
+                  <NavigationMenuLink>{navItem.name}</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ) : (
+              <NavigationMenuItem key={navItem.name}>
+                <NavigationMenuTrigger>{navItem.name}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-4 md:w-[400px]">
+                    {navItem.sub.map((item) => (
+                      <ListItem
+                        key={item.name}
+                        title={item.name}
+                        href={item.link.toLocaleLowerCase()}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            )}
+          </div>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+
+export default DesktopNav;
