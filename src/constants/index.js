@@ -54,11 +54,20 @@ export const navItems = [
   },
 
   {
-    name: "Contact",
-    link: "/contact",
-  },
-  {
     name: "Carrers",
     link: "/carrers",
   },
+
+  {
+    name: "Contact",
+    link: "/contact",
+  },
 ];
+
+export const homeText = {
+  title: "ISGA Consult",
+  subtitle:
+    "we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients.",
+  description:
+    "We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives.",
+};

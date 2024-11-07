@@ -21,14 +21,18 @@ function DesktopNav() {
             {!navItem?.sub ? (
               <NavigationMenuItem>
                 <Link href={navItem.link} legacyBehavior passHref>
-                  <NavigationMenuLink>{navItem.name}</NavigationMenuLink>
+                  <NavigationMenuLink>
+                    {navItem.name.toUpperCase()}
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             ) : (
               <NavigationMenuItem key={navItem.name}>
-                <NavigationMenuTrigger>{navItem.name}</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  {navItem.name.toUpperCase()}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px]">
+                  <ul className="grid gap-3 p-4 md:w-[300px]">
                     {navItem.sub.map((item) => (
                       <ListItem
                         key={item.name}

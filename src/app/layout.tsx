@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar, Footer } from "@/components";
+import { BackgroundProvider } from "@/context/BackgroundContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,12 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="mx-5 md:mx-20">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <BackgroundProvider>
+      <html lang="en">
+        <body>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </BackgroundProvider>
   );
 }
