@@ -1,14 +1,9 @@
-"use client";
-
-import { useBackground } from "@/context/BackgroundContext";
-
-const BackgroundImage = () => {
-  const { imgSrc } = useBackground();
-  const isVideo = imgSrc.endsWith(".mp4") || imgSrc.endsWith(".webm");
+const BackgroundImage = ({ url }: { url: string }) => {
+  const isVideo = url.endsWith(".mp4") || url.endsWith(".webm");
 
   return isVideo ? (
     <video
-      src={imgSrc}
+      src={url}
       controls={false}
       muted
       loop
@@ -16,11 +11,7 @@ const BackgroundImage = () => {
       className="w-full h-full object-cover"
     />
   ) : (
-    <img
-      src={imgSrc}
-      className="w-full h-full object-cover opacity-10"
-      alt="Background"
-    />
+    <img src={url} className="w-full h-full object-cover" alt="background" />
   );
 };
 
