@@ -8,3 +8,4 @@ export { default as BackgroundImage } from "@/components/BackgroundImage";
 export { default as CommunComponent } from "@/components/CommunComponent";
 export { default as HomeLanding } from "@/components/HomeLanding";
 export { default as Card } from "@/components/Card";
+export { default as CardChoose } from "@/components/CardChoose";

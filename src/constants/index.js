@@ -1,9 +1,12 @@
 import {
   BadgeDollarSign,
+  BriefcaseBusiness,
   Check,
   CirclePlus,
   Layers,
   Users,
+  Flag,
+  ChevronLast,
 } from "lucide-react";
 
 export const navItems = [
@@ -126,5 +129,20 @@ export const homeCards = [
     title: "Much more",
     description:
       "Strategic advice, Architecture, Strategic planning, Program, project and many others...",
+  },
+];
+
+export const homeChoose = [
+  {
+    Icon: BriefcaseBusiness,
+    title: "Operationalize your business",
+  },
+  {
+    Icon: Flag,
+    title: "Minimize errors, disruption, and risk",
+  },
+  {
+    Icon: ChevronLast,
+    title: "Accelerate your transformation journey and keep it on track",
   },
 ];
