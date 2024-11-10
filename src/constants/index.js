@@ -81,18 +81,50 @@ export const homeText = {
   title: "ISGA Consult",
   subtitle:
     "we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients.",
-  description:
-    "We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives.",
+  description: [
+    {
+      id: 1,
+      content:
+        "We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives.",
+    },
+  ],
 };
 
 export const aboutText = {
   background_url:
-    "https://isgaconsult.com/wp-content/uploads/2024/02/video-2160p.mp4",
-  title: "ISGA Consult",
-  subtitle:
-    "we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients.",
-  description:
-    "We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives.",
+    "https://isgaconsult.com/wp-content/uploads/2024/02/businessman-big-office-scaled.jpg",
+  title: "About us",
+  subtitle: "Your strategic and collaborative IT partner",
+  description: [
+    {
+      id: 1,
+      content:
+        "“We focus on how the world will be in ten years, and we prepare that path for our customers. Because we’re working on their organization’s very heartbeat when it comes to critical IT infrastructure, we must be deep experts rather than generalists.”",
+    },
+  ],
+
+  owner: "Mohamed El Mghari – Co-fondateur et directeur général",
+};
+
+export const contactText = {
+  background_url:
+    "https://isgaconsult.com/wp-content/uploads/2024/02/customer-service-business-contact-concept-wooden-cube-block-which-print-screen-letter-telephone-email-address-message-min-scaled.jpg",
+  title: "Do you have a question?",
+  subtitle: "Send Us Your Feedback, We Love Hearing It!",
+};
+
+export const careersText = {
+  background_url:
+    "https://isgaconsult.com/wp-content/uploads/2024/02/photo-1459180129673-eefb56f79b45.png",
+  title: "Carrers",
+  subtitle: "Together, as owners, let’s turn meaningful insights into action",
+  description: [
+    {
+      id: 1,
+      content:
+        "Join a company rooted in ownership, teamwork, respect and belonging. Be part of our company of owners, where you’ll benefit from the rewards of our collective success, while working side-by-side with colleagues and clients to solve complex issues.",
+    },
+  ],
 };
 
 export const homeCards = [
@@ -144,5 +176,73 @@ export const homeChoose = [
   {
     Icon: ChevronLast,
     title: "Accelerate your transformation journey and keep it on track",
+  },
+];
+
+export const aboutCardImg = [
+  {
+    id: 1,
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/beautiful-shot-forest-with-green-trees-yellow-leaves-ground-sunny-day-min-scaled.jpg",
+    title: "Environmental Priorities",
+    description: "We focus on concrete actions in several priority assets:",
+    subtitle: [
+      {
+        text: "Climate change",
+      },
+      {
+        text: "Use of natural resources",
+      },
+      {
+        text: "Fight against pollution",
+      },
+      {
+        text: "Energy efficiency",
+      },
+      {
+        text: "Product sustainability and reuse",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/closeup-diverse-people-joining-their-hands-min-scaled.jpg",
+    title: "Social Pillars",
+    description: "Our social actions are focused on four key pillars:",
+    subtitle: [
+      {
+        text: "Diversity, equity and inclusion",
+      },
+      {
+        text: "Community",
+      },
+      {
+        text: "Physical and mental health",
+      },
+      {
+        text: "Quality education, professional development and wellness",
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/standard-quality-control-collage-concept-min-1.jpg",
+    title: "Main Focus on Governance",
+    description: "Four main areas guide our work on governance:",
+    subtitle: [
+      {
+        text: "Data privacy",
+      },
+      {
+        text: "Data security",
+      },
+      {
+        text: "Intellectual property protection and competitive behaviour",
+      },
+      {
+        text: "Management of systemic risks arising from technological disruption",
+      },
+    ],
   },
 ];

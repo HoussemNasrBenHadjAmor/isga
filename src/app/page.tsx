@@ -6,7 +6,7 @@ import {
   Card,
   CardChoose,
   CommunComponent,
-  HomeLanding,
+  Landing,
 } from "@/components";
 import { Button } from "@/components/ui/button";
 
@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}
-        <HomeLanding data={homeText} />
+        <Landing data={homeText} />
       </div>
 
       <CommunComponent>
@@ -37,7 +37,7 @@ export default function Home() {
 
         <div className="gap-10 my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {homeCards.map((card) => (
-            <Card key={card.title} data={card} />
+            <Card key={card.title} data={card} className="last:md:col-span-2" />
           ))}
         </div>
       </CommunComponent>

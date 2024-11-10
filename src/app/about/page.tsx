@@ -1,7 +1,10 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { BackgroundImage, CommunComponent } from "@/components";
-import { aboutText } from "@/constants";
+import {
+  BackgroundImage,
+  CommunComponent,
+  Landing,
+  CardImage,
+} from "@/components";
+import { aboutText, aboutCardImg } from "@/constants";
 
 const page = () => {
   return (
@@ -13,37 +16,34 @@ const page = () => {
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
 
-        {/* Main Content */}
-        <div className="flex flex-col items-center justify-center relative w-full">
-          <div className="z-30 w-full px-2 max-w-7xl mx-auto my-40 flex flex-col justify-center items-center text-center lg:text-left">
-            <div className="flex flex-col items-center justify-center lg:items-start gap-5 w-full text-white">
-              <div className="max-w-2xl flex flex-col gap-5">
-                <h1 className="font-semibold text-xl md:text-3xl">
-                  {aboutText.title}
-                </h1>
-                <h5 className="font-semibold text-md md:text-2xl">
-                  {aboutText.subtitle}
-                </h5>
-                <p className="text-xs sm:text-sm lg:text-base">
-                  {aboutText.description}
-                </p>
-              </div>
-              <div className="flex flex-col lg:flex-row gap-5">
-                <Button
-                  asChild
-                  className="bg-[#102136] border-2 border-transparent p-5 hover:bg-[#5e3fde]"
-                >
-                  <Link href="/about">About</Link>
-                </Button>
-                <Button className="border-2 p-5 hover:bg-[#5e3fde] bg-transparent">
-                  <Link href="/about">Our services</Link>
-                </Button>
-              </div>
-            </div>
+        <Landing data={aboutText} />
+      </div>
+      <CommunComponent>
+        <div className="gap-3 flex flex-col">
+          <h1 className="font-extrabold text-4xl">Our ESG Commitments</h1>
+          <div>
+            <p>
+              We believe in the power of collective action to create an
+              inclusive community and a healthy planet.
+            </p>
+            <p>
+              Above all, we believe in our share of responsibility in this great
+              universal collaboration and are willing to invest in creating
+              value for a better world.
+            </p>
           </div>
         </div>
-      </div>
-      <CommunComponent>hi</CommunComponent>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {aboutCardImg.map((card) => (
+            <CardImage
+              key={card.id}
+              data={card}
+              className="last:md:col-span-2"
+            />
+          ))}
+        </div>
+      </CommunComponent>
     </>
   );
 };

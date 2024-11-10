@@ -9,3 +9,4 @@ export { default as CommunComponent } from "@/components/CommunComponent";
 export { default as HomeLanding } from "@/components/HomeLanding";
 export { default as Card } from "@/components/Card";
 export { default as CardChoose } from "@/components/CardChoose";
+export { default as CardImage } from "@/components/CardImage";
