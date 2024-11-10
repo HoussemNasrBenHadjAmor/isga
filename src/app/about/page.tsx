@@ -34,7 +34,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
           {aboutCardImg.map((card) => (
             <CardImage
               key={card.id}
