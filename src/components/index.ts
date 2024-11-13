@@ -12,3 +12,5 @@ export { default as CardChoose } from "@/components/CardChoose";
 export { default as CardImage } from "@/components/CardImage";
 export { default as CommunTitle } from "@/components/CommunTitle";
 export { default as CardImageService } from "@/components/CardImageService";
+export { default as CardImageServiceManaged } from "@/components/CardImageServiceManaged";
+export { default as CardImageIndustries } from "@/components/CardImageIndustries";

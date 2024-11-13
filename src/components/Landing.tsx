@@ -10,7 +10,7 @@ function Landing({ data }: any) {
   const isHomePath = router === "/";
 
   return (
-    <div className="flex flex-col items-center justify-center relative w-full">
+    <div className="px-5 flex flex-col items-center justify-center relative w-full">
       <div className="z-30 w-full px-2 max-w-7xl mx-auto my-40 flex flex-col justify-center items-center text-center lg:text-left">
         <div className="flex flex-col items-center justify-center lg:items-start gap-5 w-full text-white">
           <div className="max-w-xl flex flex-col gap-5">

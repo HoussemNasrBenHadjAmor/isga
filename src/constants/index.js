@@ -63,19 +63,19 @@ export const navItems = [
     sub: [
       {
         name: "Government and Public Sector",
-        link: "government-public-sector",
+        link: "/industries/government-public-sector",
       },
       {
         name: "Insurance",
-        link: "Insurance",
+        link: "/industries/Insurance",
       },
       {
         name: "Financial Services",
-        link: "financial-services",
+        link: "/industries/financial-services",
       },
       {
         name: "Telecommunications",
-        link: "telecommunications",
+        link: "/industries/telecommunications",
       },
     ],
   },
@@ -521,6 +521,7 @@ export const technologiesAndPlatformsCard = [
     url: "https://isgaconsult.com/wp-content/uploads/2024/02/channels4_profile.jpg",
     details:
       "Accelerate your digital transformation with an AI-based SaaS (software as a service) cloud platform that allows you to automate human resources, accounting and finance, IT, as well as customer support processes, activities, and workflows.",
+
     description: [
       {
         content: "Consulting services: roadmapping, support, and workshops",
@@ -543,6 +544,7 @@ export const technologiesAndPlatformsCard = [
     url: "https://isgaconsult.com/wp-content/uploads/2024/02/salesforce-logo-1920.jpg",
     details:
       "Consultation ISGA masters Salesforce deployment and customization. We’ve successfully executed several large-scale projects in a variety of business sectors and industries. Our range of services includes:",
+
     description: [
       {
         content: "Needs analysis",
@@ -579,6 +581,438 @@ export const technologiesAndPlatformsCard = [
       {
         content:
           "Microsoft Power Platform: A set of tools for accelerating innovation and lowering costs by analyzing data, automating processes, and developing conversational applications and agents (includes Power BI, Power Automate, Power Pages, Power App and Power Virtual Agents).",
+      },
+    ],
+  },
+];
+
+export const managedServicesText = {
+  title: "SERVICES",
+  subtitle: "Managed Services",
+  description: [
+    {
+      id: 1,
+      content:
+        "Your business transformation needs deep expertise, process and technology support to pivot quickly and respond rather than react",
+    },
+  ],
+};
+
+export const managedServicesMiddle = {
+  subtitle:
+    "Consultation ISGA delivers business managed services through an “as-a-service” subscription model. We eclipse traditional and tactical outsourcing models of labour arbitrage and transactional services to help:",
+  description: [
+    {
+      id: 2,
+      content: "Operationalize your business",
+    },
+    {
+      id: 3,
+      content: "Minimize errors, disruption, and risk",
+    },
+    {
+      id: 4,
+      content: "Accelerate your transformation journey and keep it on track",
+    },
+  ],
+};
+
+export const managedServicesCard = [
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/360_F_168292656_TwXLGyNKypFWiAxDSBnHMbr2YWjh8RqR.jpg",
+    title: "Customer Contact Center",
+
+    details: [
+      {
+        content:
+          "Our bilingual customer contact centre provides proactive incident management and assures minimum downtime and speedy service restoration for an outstanding customer experience available 24/7/365 across Canada. This service includes:",
+      },
+    ],
+    description: [
+      {
+        content: "User support",
+      },
+      {
+        content: "Front-line incident management",
+      },
+      {
+        content: "Service requests",
+      },
+      {
+        content: "User information requests",
+      },
+      {
+        content: "Patch management",
+      },
+      {
+        content:
+          "Point of contact and referral for tickets requiring greater expertise",
+      },
+      {
+        content: "L1, L2, and L3 technical support",
+      },
+      {
+        content: "Point of sales support",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/depositphotos_62068487-stock-photo-call-center.webp",
+    title: "Application Support",
+
+    details: [
+      {
+        content:
+          "ISGA Consult assists you in moving your enterprise applications ahead to satisfy your present and future operational needs while preserving your previous investments.",
+      },
+    ],
+    description: [
+      {
+        content: "Application management in managed mode",
+      },
+      {
+        content:
+          "Application development support including major, minor, corrective, and preventive maintenance",
+      },
+    ],
+  },
+];
+
+export const industriesInsuranceText = {
+  title: "Insurance",
+  description: [
+    {
+      id: 1,
+      content:
+        "The insurance industry — Life & Health Insurance, P&C Insurance, and Group Benefit Insurance — has undergone significant evolution in recent years due to advancements in technology, changing customer needs, and increased competition. Customer-facing innovation has become critical to attract and retain customers. However, the insurance industry faces several challenges that can make it difficult to operate profitably and efficiently.",
+    },
+    {
+      id: 2,
+      content:
+        "We get it. Insurance is a segment where being nimble and technologically current is beyond essential. We translate strategy into action and work diligently in this specialized environment to successfully complete large-scale projects and help stakeholders attain objectives.",
+    },
+  ],
+};
+
+export const industriesInsuranceCard = [
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/what-is-property-and-casualty-insurance.jpg",
+    title: "Property & Casualty Insurance",
+
+    details: [
+      {
+        content:
+          "Partnering with ISGA Consult means extending the next generation of technology options to the Property & Casualty industry to create system flexibility, decrease business risk, and deliver a brighter customer experience",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/life-and-health-insurers1-1024x683-1.webp",
+    title: "Life & Health Insurance",
+
+    details: [
+      {
+        content:
+          "Our experts have first-hand experience in transforming and modernizing life and health insurance systems and organizations of every size.",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/group-employee-benefits-insurance.jpg",
+    title: "Group Benefit Insurance",
+
+    details: [
+      {
+        content:
+          "Our experts have first-hand experience in transforming and modernizing life and health insurance systems and organizations of every size.",
+      },
+      {
+        content:
+          "Technology can help insurers create personalized plans by using data analytics to identify the health and lifestyle needs of employees. With predictive modelling, insurers can use historical data to predict future trends and make more informed decisions about pricing and risk assessment.",
+      },
+      {
+        content:
+          "Technology automates the implementation of cost-reducing plans. It helps insurers engage employees by providing access to digital platforms that allow them to learn more about their plans including policy details, claim information, and coverage options. It helps streamline the process by automating claims processing using artificial intelligence (AI) and machine learning algorithms.",
+      },
+      {
+        content:
+          "Technology also helps insurers prevent fraud by using data analytics and AI to identify patterns of fraudulent behaviour. Technology empowers insurers to manage data more efficiently by using cloud-based platforms and big data analytics to process and analyze large amounts of data quickly.",
+      },
+      {
+        content:
+          "This enables insurers to overcome many of the challenges they face in providing group benefit insurance by increasing efficiency, reducing costs, and improving the customer experience.",
+      },
+    ],
+  },
+];
+
+export const industriesFinancialText = {
+  title: "Financial Services",
+  description: [
+    {
+      id: 1,
+      content:
+        "The world runs and relies on it. This sector is a lynchpin of the economy, and the backbone upon which business depends.",
+    },
+    {
+      id: 2,
+      content:
+        "Our work with large financial clients has given us an insight on their culture, expectations, and especially the immense breadth of their technology needs.",
+    },
+    {
+      id: 2,
+      content:
+        "We work to accelerate their complex digital transformations in ways that emphasize security and complete compatibility with existing systems.",
+    },
+  ],
+};
+
+export const industriesFinancialCard = [
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/what-is-property-and-casualty-insurance.jpg",
+    title: "Banking",
+
+    details: [
+      {
+        content:
+          "Our banking consulting experts help you decide how to best optimize the experience you offer to your customers and employees, how to maintain your current IT infrastructure and how you should leverage technology to gain market share and improve the bottom line.",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/life-and-health-insurers1-1024x683-1.webp",
+    title: "Pension and Benefits",
+
+    details: [
+      {
+        content:
+          "The pension and benefits industry faces several challenges, and technology can significantly address many of them. These industries are responsible for managing large investment portfolios, and technology can help them make better investment decisions. Advanced analytics tools and machine learning algorithms can help analyze vast amounts of data and identify investment opportunities that may not be apparent through traditional analysis.",
+      },
+      {
+        content:
+          "The pension and benefits industry need to engage with their members to help them understand their options and plan for their future. Technology can help deliver personalized and interactive content through digital platforms, including mobile apps and social media. This can help reduce costs and improve accuracy and efficiency.",
+      },
+      {
+        content:
+          "The pension and benefits industry are highly regulated and need to comply with a range of regulations and reporting requirements. Technology helps automate many of these processes, reducing the risk of errors and ensuring compliance.",
+      },
+      {
+        content:
+          "The trend is towards the development of multi-service systems connected with diverse business functions (payroll, human resources, finance, management) to produce all the elements required for the effective administration of pension and benefits plans and to offer a more rewarding member experience.",
+      },
+      {
+        content:
+          "At ISGA Consult, our Strategy and Business Performance line is represented by a few seasoned experts with extensive experience in retirement and employee benefits, including solution implementation, service transition, modernization projects and support for retirement and employee benefits plan sponsors.",
+      },
+      {
+        content:
+          "Our experts support our customers in complex transformation projects, more specifically in the following areas:",
+      },
+    ],
+
+    description: [
+      {
+        content: "Program governance",
+      },
+      {
+        content: "Program/project management and control",
+      },
+      {
+        content: "Organizational effectiveness",
+      },
+      {
+        content: "Process optimization",
+      },
+      {
+        content: "Change management",
+      },
+      {
+        content: "Operational support",
+      },
+      {
+        content: "Integration & implementation",
+      },
+      {
+        content: "Data cleansing",
+      },
+      {
+        content: "Pension and actuarial expertise",
+      },
+      {
+        content: "Risk management support",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/faster-payments-rtp-gig-economy-ach-flexwage-wagestream-scaled.webp",
+    title: "Real-Time Payments",
+
+    details: [
+      {
+        content:
+          "With the Federal Reserve’s launch of FedNow, financial institutions in the United States are keen to explore the possibilities of real-time payments. ISGA Consult’s financial services expertise paired with our Real Time Payment Framework ensures a reliable, secure, and integrated instant payment service for you.",
+      },
+    ],
+  },
+];
+
+export const industriesTelecommunicationsText = {
+  title: "Telecommunications",
+  description: [
+    {
+      id: 1,
+      content:
+        "By staying at the cusp of technological trends, we’ve developed modern web applications for access to on-demand content and designed user-friendly solutions for mobile devices, and continue to creatively work on projects that advance the quality and accessibility of our clients’ products and services.",
+    },
+  ],
+};
+
+export const industriesTelecommunicationsCard = [
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/Advisory-board1.jpg",
+    title: "Advisory Services",
+
+    details: [
+      {
+        content:
+          "The telecommunications industry is at an inflection point. The CSP of the future will embrace new technologies and processes while keeping customer needs front and centre. ISGA Consult delivers deep industry expertise, strategic partnerships, frameworks and tools to help you:",
+      },
+    ],
+
+    description: [
+      {
+        content:
+          "Make the right core strategic decisions about the evolution of wireless/wireline services",
+      },
+      {
+        content:
+          "Create compelling employee and customer experiences to set you apart in the marketplace",
+      },
+      {
+        content:
+          "Design and connect ecosystems of industries, partners, service providers and customers to build bold new market offers",
+      },
+      {
+        content:
+          "Reimagine your operating model to be better prepared for consumer and competitor actions",
+      },
+      {
+        content:
+          "Simplify products, processes and business rules to make you more efficient while better serving your customers",
+      },
+      {
+        content:
+          "Embrace the future by integrating AI into your capabilities and processes",
+      },
+      {
+        content:
+          "Retain skills and talent so you can provide leading class products and services",
+      },
+      {
+        content: "Protect your data, brand and reputation",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/achievement-3658092-scaled.jpg",
+    title: "Functional Services",
+
+    details: [
+      {
+        content:
+          "ISGA Consult has a strong delivery track record. With disciplined program and project management professionals, change management experts and local and offshore delivery teams, we can tackle your transformation initiatives and deliver the expected business results. Levio always delivers on scope, on budget and on time!",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/71-jpg-1024x682-1.jpg",
+    title: "Technical Services",
+
+    details: [
+      {
+        content:
+          "ISGA Consult can partner with you to meet your technical needs. With leading edge expertise in:",
+      },
+    ],
+
+    description: [
+      {
+        content: "Cybersecurity and Enterprise Risk Management",
+      },
+      {
+        content: "Solutions Architecture",
+      },
+      {
+        content:
+          "BSS (Business Support Sytems) / OSS (Operation Support Systems) / ERP (Enterprise Resource Planning) Implementation",
+      },
+      {
+        content: "Evolution and Maintenance",
+      },
+      {
+        content: "Software Engineering",
+      },
+      {
+        content: "Cloud and Infrastructure",
+      },
+      {
+        content: "AI, Data and Analytics",
+      },
+    ],
+  },
+];
+
+export const industriesPublicText = {
+  title: "Government and Public Sector​",
+  description: [
+    {
+      id: 1,
+      content:
+        "As governments reinvent ways of working to improve citizen services and increase efficiency, Consultation ISGA helps clients accelerate outcomes with proven expertise and secure solutions.",
+    },
+  ],
+};
+
+export const industriesPublicCard = [
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/PrivateSectorvs.PublicSector-407070262c084b19a3ae5d0158925baa.jpg",
+    title: "Public sector",
+
+    details: [
+      {
+        content:
+          "Not only does ISGA Consult have deep sector expertise, but we also possess the deep technological capacities to enable government evolution. A cloud transformation is never just about cloud in government, it is about changing how the public sector designs its budgets, rolls out its services to citizens and operates.",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/pexels-andrea-piacquadio-845451-scaled.jpg",
+    title: "Public services",
+
+    details: [
+      {
+        content:
+          "We work in close collaboration with several large Quebec cities to further their digital shift and implement new technologies. By making them smart cities, they’re better able to adapt to new realities and changing issues, improve the performance and efficiency of services for citizens and businesses, and further their sustainable development.",
+      },
+    ],
+  },
+
+  {
+    url: "https://isgaconsult.com/wp-content/uploads/2024/02/side-view-latin-people-training-outdoors-min-scaled.jpg",
+    title: "Improving citizen services through secure, digital operations",
+
+    details: [
+      {
+        content:
+          "As governments reinvent ways of working to improve citizen services and increase efficiency, Consultation ISGA helps clients accelerate outcomes with proven expertise and secure solutions.",
       },
     ],
   },
