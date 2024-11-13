@@ -17,6 +17,9 @@ import {
   Cloud,
   DatabaseZap,
   SquareTerminal,
+  MapPinHouse,
+  Mail,
+  Smartphone,
 } from "lucide-react";
 
 export const navItems = [
@@ -679,6 +682,42 @@ export const managedServicesCard = [
   },
 ];
 
+export const projectProgramText = {
+  title: "SERVICES",
+  subtitle: "Project & Program Management",
+  description: [
+    {
+      id: 1,
+      content:
+        "Complex business initiatives such as digital transformation represent a significant challenge because they’re no longer limited to the scope of the IT team, rather transcend the organization and its ecosystem of business partners.",
+    },
+  ],
+};
+
+export const artificialText = {
+  title: "SERVICES",
+  subtitle: "Artificial Intelligence",
+  description: [
+    {
+      id: 1,
+      content:
+        "In collaboration with your team, we build and deploy AI solutions that optimize your business performance, improve customer experience, and create value. We offer a comprehensive AI service that covers business AI strategies, as well as development, deployment and maintenance of AI solutions.",
+    },
+  ],
+};
+
+export const cyberText = {
+  title: "SERVICES",
+  subtitle: "Cybersecurity & Entreprise Risk",
+  description: [
+    {
+      id: 1,
+      content:
+        "As your operations become more complex and digital and protection laws become more stringent, your vulnerability to cyber threats increases.",
+    },
+  ],
+};
+
 export const industriesInsuranceText = {
   title: "Insurance",
   description: [
@@ -1015,5 +1054,35 @@ export const industriesPublicCard = [
           "As governments reinvent ways of working to improve citizen services and increase efficiency, Consultation ISGA helps clients accelerate outcomes with proven expertise and secure solutions.",
       },
     ],
+  },
+];
+
+export const carrersText = {
+  title: "CAREERS",
+  subtitle: "Together, as owners, let’s turn meaningful insights into action",
+  description: [
+    {
+      id: 1,
+      content:
+        "Join a company rooted in ownership, teamwork, respect and belonging. Be part of our company of owners, where you’ll benefit from the rewards of our collective success, while working side-by-side with colleagues and clients to solve complex issues.",
+    },
+  ],
+};
+
+export const contactCard = [
+  {
+    Icon: MapPinHouse,
+    title: "Address",
+    description: "1933 Av Laplante Laval, Québec H7S 1E6",
+  },
+  {
+    Icon: Mail,
+    title: "Email Address",
+    description: "info@isgaconsult.com",
+  },
+  {
+    Icon: Smartphone,
+    title: "Phone Number",
+    description: "+1 514 831 0884",
   },
 ];

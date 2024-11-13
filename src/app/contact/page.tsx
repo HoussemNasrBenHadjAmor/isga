@@ -1,5 +1,5 @@
-import { BackgroundImage, CommunComponent, Landing } from "@/components";
-import { contactText } from "@/constants";
+import { BackgroundImage, Card, CommunComponent, Landing } from "@/components";
+import { contactCard, contactText } from "@/constants";
 
 const page = () => {
   return (
@@ -13,7 +13,13 @@ const page = () => {
 
         <Landing data={contactText} />
       </div>
-      <CommunComponent>hi</CommunComponent>
+      <CommunComponent>
+        <div className="gap-10 my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {contactCard.map((card) => (
+            <Card key={card.title} data={card} flex />
+          ))}
+        </div>
+      </CommunComponent>
     </>
   );
 };

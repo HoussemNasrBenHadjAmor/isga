@@ -1,21 +1,23 @@
 import { BackgroundImage, CommunComponent, Landing } from "@/components";
-import { careersText } from "@/constants";
+import { carrersText } from "@/constants";
 
-const carrers = () => {
+const page = () => {
+  const url =
+    "https://isgaconsult.com/wp-content/uploads/2024/02/photo-1459180129673-eefb56f79b45.png";
   return (
-    <>
-      {/* Background and Overlay */}
+    <div>
       <div className="relative flex min-h-screen w-full">
+        {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={careersText.background_url} />
+          <BackgroundImage url={url} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
-
-        <Landing data={careersText} />
+        {/* Main Content */}
+        <Landing data={carrersText} />
       </div>
-      <CommunComponent>hi</CommunComponent>
-    </>
+      <CommunComponent></CommunComponent>
+    </div>
   );
 };
 
-export default carrers;
+export default page;

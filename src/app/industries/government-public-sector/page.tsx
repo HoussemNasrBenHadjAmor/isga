@@ -1,6 +1,5 @@
 import {
   BackgroundImage,
-  CardImageServiceManaged,
   CommunComponent,
   CommunTitle,
   Landing,
