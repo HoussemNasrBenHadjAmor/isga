@@ -31,13 +31,14 @@ function DesktopNav() {
                 <NavigationMenuTrigger>
                   {navItem.name.toUpperCase()}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="bg-[#102136] text-white">
                   <ul className="grid gap-3 p-4 md:w-[300px]">
                     {navItem.sub.map((item) => (
                       <ListItem
                         key={item.name}
                         title={item.name}
                         href={item.link.toLocaleLowerCase()}
+                        className="hover:text-[#7456F1] hover:bg-transparent"
                       />
                     ))}
                   </ul>

@@ -20,17 +20,17 @@ function Navbar() {
     "https://isgaconsult.com/wp-content/uploads/2024/02/image-1.png";
 
   const changeNav = () => {
-    if (window.scrollY >= 90) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
+    setScrollNav(window.scrollY >= 90);
   };
 
   useEffect(() => {
+    // Check scroll position on initial load
+    changeNav();
+
+    // Set up scroll event listener
     window.addEventListener("scroll", changeNav);
     return () => window.removeEventListener("scroll", changeNav);
-  });
+  }, [scrollNav]);
 
   return (
     <div className="fixed bg-transparent w-full z-50 top-0">
