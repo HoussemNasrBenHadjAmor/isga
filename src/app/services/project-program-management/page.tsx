@@ -3,8 +3,9 @@ import {
   CommunComponent,
   CommunTitle,
   Landing,
+  Widget,
 } from "@/components";
-import { projectProgramText } from "@/constants";
+import { projectProgramText, projectProgramWidget } from "@/constants";
 
 const page = () => {
   const url =
@@ -22,6 +23,7 @@ const page = () => {
       </div>
       <CommunComponent>
         <CommunTitle title="Project & Program Management" />
+        <Widget data={projectProgramWidget} />
       </CommunComponent>
     </div>
   );

@@ -3,9 +3,10 @@ import {
   CommunComponent,
   CommunTitle,
   Landing,
+  Widget,
 } from "@/components";
-import { Button } from "@/components/ui/button";
-import { cyberText } from "@/constants";
+
+import { cyberText, cyberWidget } from "@/constants";
 
 const page = () => {
   const url =
@@ -23,6 +24,7 @@ const page = () => {
       </div>
       <CommunComponent>
         <CommunTitle title="Cybersecurity & Entreprise Risk" />
+        <Widget data={cyberWidget} />
       </CommunComponent>
     </div>
   );

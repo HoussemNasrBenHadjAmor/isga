@@ -14,3 +14,6 @@ export { default as CommunTitle } from "@/components/CommunTitle";
 export { default as CardImageService } from "@/components/CardImageService";
 export { default as CardImageServiceManaged } from "@/components/CardImageServiceManaged";
 export { default as CardImageIndustries } from "@/components/CardImageIndustries";
+export { default as Widget } from "@/components/Widget";
+export { default as Maps } from "@/components/Maps";
+export { default as ContactForm } from "@/components/ContactForm";

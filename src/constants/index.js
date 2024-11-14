@@ -694,6 +694,129 @@ export const projectProgramText = {
   ],
 };
 
+export const projectProgramWidget = [
+  {
+    title: "Project planning and control",
+    subtitle: [
+      {
+        content:
+          "ISGA Consult is committed to delivering projects that create value and meet the client’s needs.",
+      },
+      {
+        content: "Our capabilities:",
+      },
+    ],
+    description: [
+      {
+        content: "Completion of progress reports",
+      },
+      {
+        content: "Budget monitoring",
+      },
+      {
+        content: "Milestone monitoring",
+      },
+      {
+        content: "Project scope monitorings",
+      },
+      {
+        content: "Process and methodology monitoring",
+      },
+      {
+        content: "Coaching on tools, templates and practices in place",
+      },
+      {
+        content: "Assistance in project planning",
+      },
+      {
+        content: "Presentation of reports",
+      },
+      {
+        content: "Taking charge of follow-ups",
+      },
+      {
+        content: "Management of project risk control",
+      },
+    ],
+  },
+
+  {
+    title: "Audit and project recovery",
+    subtitle: [
+      {
+        content:
+          "Our commitment to delivering value is based on our ability to take a step back, analyze project situations, issues and risks, and identify solutions that make achieving objectives possible.",
+      },
+      {
+        content:
+          "Our consultants determine the pathways and help you turn your projects around by putting the focus back on delivery.",
+      },
+      {
+        content: "Our capabilities:",
+      },
+    ],
+    description: [
+      {
+        content: "Project audits",
+      },
+      {
+        content: "Diagnostics",
+      },
+      {
+        content: "Mastery of development and delivery methodologies",
+      },
+      {
+        content: "Delivery paths and approaches",
+      },
+      {
+        content: "Project and program management/administration",
+      },
+      {
+        content: "Risk management",
+      },
+      {
+        content: "Efficient project governance model",
+      },
+      {
+        content: "Delivery culture",
+      },
+    ],
+  },
+
+  {
+    title: "Excellence in delivery",
+    subtitle: [
+      {
+        content:
+          "The objective is to ensure that each delivery generates quality results within agreed deadlines and budgets, and that the projects in which ISGA Consult is involved deliver value.",
+      },
+      {
+        content: "Our capabilities:",
+      },
+    ],
+    description: [
+      {
+        content: "Control of the expected value for the client",
+      },
+      {
+        content: "Adequate risk management before and during projects",
+      },
+      {
+        content: "Rigorous project management",
+      },
+      {
+        content: "Support plan proposals",
+      },
+      {
+        content: "Identification of key players in each project",
+      },
+      {
+        content: "Regular organization of project reviews",
+      },
+    ],
+  },
+];
+
 export const artificialText = {
   title: "SERVICES",
   subtitle: "Artificial Intelligence",
@@ -706,6 +829,42 @@ export const artificialText = {
   ],
 };
 
+export const artificalWidget = [
+  {
+    title: "AI Business Strategies",
+    subtitle: [
+      {
+        content:
+          "Our team helps you develop a comprehensive strategy that unlocks the potential of AI to maximize business value by empowering technical teams and aligning the entire organization. We create a clear roadmap and identify opportunities for AI to optimize processes and generate new revenue streams.",
+      },
+      {
+        content:
+          "The strategy includes short-term and long-term implementations across various departments such as finance, marketing, customer service, and supply chain.",
+      },
+    ],
+  },
+
+  {
+    title: "Develop and Deploy AI Solutions",
+    subtitle: [
+      {
+        content:
+          "Our team includes AI strategists, scientists, architects, and developers who are experts in Azure AI, Amazon AI, Google AI platforms, and the corresponding cloud platforms. The team has mastered the art of AI fundamentals of these platforms and is also proficient with open-source platforms (Anaconda, Scikit-Learn, etc.). We perfectly understand the complexities and risks of AI-driven automation and use this expertise to help companies identify business processes where AI can have the most significant impact by predicting or automating decisions.",
+      },
+    ],
+  },
+
+  {
+    title: "Manage AI Innovation",
+    subtitle: [
+      {
+        content:
+          "Our approach to AI innovation involves promoting and prioritizing AI R&D ideas with measurable business impact and applying scientific AI R&D while helping organizations lead and shape responsible AI governance. It’s a multidisciplinary effort involving AI scientists, architects, and developers supported by subject matter experts (who understand business processes), users, and stakeholders. Our talent is committed to ongoing education to stay up to date with AI methodologies and related concerns.",
+      },
+    ],
+  },
+];
+
 export const cyberText = {
   title: "SERVICES",
   subtitle: "Cybersecurity & Entreprise Risk",
@@ -717,6 +876,348 @@ export const cyberText = {
     },
   ],
 };
+
+export const cyberWidget = [
+  {
+    title: "Governance and Security Strategy",
+    subtitle: [
+      {
+        content:
+          "ISGA specializes in assisting organizations in comprehending, managing, and mitigating security risks, all while ensuring strict adherence to IT compliance standards. Our team of governance experts is dedicated to helping you implement appropriate measures to minimize technology-related risks.",
+      },
+      {
+        content: "Our core services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Governance, Risk, and Compliance (GRC): Providing comprehensive solutions for effective governance, risk management, and compliance.",
+      },
+      {
+        content:
+          "IT Risk Analysis and Management: Evaluating and managing information technology risks to safeguard your organization’s assets and operations.",
+      },
+      {
+        content:
+          "Security Compliance: Ensuring compliance with industry-standard security protocols such as ISO, PCI, NIST, CSF, and more.",
+      },
+      {
+        content:
+          "CISO on Demand/Virtual CISO (vCISO): Offering flexible access to Chief Information Security Officer expertise as needed.",
+      },
+      {
+        content:
+          "IT Succession Management: Strategically planning for the seamless transition and continuity of IT leadership roles.",
+      },
+    ],
+  },
+
+  {
+    title: "Information Security Awareness",
+    subtitle: [
+      {
+        content:
+          "At Consultation ISGA, our team of cybersecurity experts is dedicated to supporting companies in cultivating an organizational culture focused on effective IT risk management. We emphasize encouraging users to actively contribute to the protection of their information assets, fostering awareness of the consequences of security breaches, and elucidating their roles and obligations in this crucial domain.",
+      },
+      {
+        content: "Our comprehensive services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Cybersecurity Strategy and Awareness Programs: Implementing continuous education initiatives, including social engineering and phishing simulations.",
+      },
+      {
+        content:
+          "Communication Plans and Signage Campaigns: Developing strategies for effective communication, accompanied by signage campaigns to reinforce cybersecurity awareness.",
+      },
+      {
+        content:
+          "Interactive Learning Materials: Producing engaging capsules and seamlessly integrating them with Learning Management Systems (LMS) for an interactive and educational experience.",
+      },
+      {
+        content:
+          "Promotional Item Design: Crafting promotional items to reinforce cybersecurity awareness and promote a security-conscious culture.",
+      },
+      {
+        content:
+          "Tailored Training Materials: Developing personalized and interactive training materials to cater to specific organizational needs.",
+      },
+      {
+        content:
+          "Newsletters and Customized Communications: Producing newsletters and tailored communications to keep stakeholders informed and engaged.",
+      },
+      {
+        content:
+          "Corporate Workshops: Organizing workshops designed to reinforce the development of desired cybersecurity behaviors within the corporate environment.",
+      },
+      {
+        content:
+          "Impact Measurement and Campaign Participation: Utilizing dashboards and reporting to management for measuring the impact and gauging participation in cybersecurity campaigns.",
+      },
+      {
+        content:
+          "Cultivating a Culture of Prevention: Emphasizing the reinforcement of a culture of prevention and cybersecurity throughout the organization.",
+      },
+    ],
+  },
+
+  {
+    title: "Offensive Security and Penetration Testing",
+    subtitle: [
+      {
+        content:
+          "In today’s digital landscape, online security has become more critical than ever. Threats such as ransomware, identity theft, phishing, and cyber attacks pose significant risks that can compromise consumer confidence in your business, while also jeopardizing the availability, integrity, and confidentiality of your services and data. Recognizing these challenges, Consultation ISGA is dedicated to safeguarding your business through tailored offensive security and penetration testing services.",
+      },
+      {
+        content: "Our comprehensive services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Application Penetration Testing: Assessing and fortifying the security of your applications to identify and remediate vulnerabilities.",
+      },
+      {
+        content:
+          "Infrastructure Penetration Tests: Evaluating the resilience of your infrastructure to potential cyber threats, ensuring robust defense mechanisms.",
+      },
+      {
+        content:
+          "Non-Intrusive Testing on Operational Technology Equipment: Conducting tests on operational technology equipment without disrupting ongoing operations.",
+      },
+      {
+        content:
+          "Vulnerability Scanning: Systematically identifying and addressing vulnerabilities within your digital infrastructure.",
+      },
+      {
+        content:
+          "Source Code Review: In-depth analysis of your source code to identify and rectify security weaknesses.",
+      },
+      {
+        content:
+          "Security Configuration Audit: Ensuring that security configurations align with industry best practices and compliance standards.",
+      },
+      {
+        content:
+          "Social Engineering and Phishing Tests: Assessing and enhancing human resilience to social engineering and phishing attacks through simulations.",
+      },
+      {
+        content:
+          "Red and Purple Teams: Executing red team exercises to simulate real-world attacks and purple team engagements to foster collaboration between offense and defense.",
+      },
+    ],
+  },
+
+  {
+    title: "Information Security Architecture (ISA)",
+    subtitle: [
+      {
+        content:
+          "At Consultation ISGA, our team of Information Security Architecture (ISA) experts is committed to aligning your information security needs seamlessly with your vision, objectives, and overall business requirements. Our range of expertise covers various domains to ensure comprehensive security solutions tailored to your specific needs.",
+      },
+      {
+        content: "Our ISA services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Application ISA: Crafting information security architectures specifically tailored for your applications.",
+      },
+      {
+        content:
+          "Security Architect in Projects: Integrating security architecture seamlessly into project development for enhanced protection.",
+      },
+      {
+        content:
+          "Telecommunications ISA: Designing and implementing robust information security architectures for telecommunications systems.",
+      },
+      {
+        content:
+          "Cloud ISA: Tailoring information security architectures to address the unique challenges presented by cloud environments.",
+      },
+      {
+        content:
+          "“Zero-Trust” ISA: Implementing security architectures based on the “Zero-Trust” model for enhanced trustworthiness.",
+      },
+      {
+        content:
+          "“Security by Design” ISA: Incorporating security considerations from the initial design phase to fortify the overall architecture.",
+      },
+      {
+        content:
+          "“Privacy by Design” ISA: Integrating privacy considerations into the information security architecture from the outset.",
+      },
+    ],
+  },
+
+  {
+    title: "Identity and Access Management (IAM)",
+    subtitle: [
+      {
+        content:
+          "In our ever-connected world, the significance of information security cannot be overstated when it comes to safeguarding your company’s sensitive data. At Consultation ISGA, we recognize the critical role that identity and IT access management play in mitigating the risks of hacking, data theft, and unauthorized access.",
+      },
+      {
+        content: "Our specialized services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "IAM and Digital Identity Architecture: Crafting robust Identity and Access Management (IAM) solutions and digital identity architectures to fortify your security framework.",
+      },
+      {
+        content:
+          "Role-Based Access Modeling (RBAC): Implementing role-based access control models to ensure granular control over user permissions.",
+      },
+      {
+        content:
+          "IAM Solution Integration (e.g., Sailpoint): Seamlessly integrating IAM solutions, such as Sailpoint, to streamline access management processes.",
+      },
+      {
+        content:
+          "High-Privilege Access Management: Implementing measures to control and monitor high-privilege access, minimizing the risk of unauthorized actions.",
+      },
+      {
+        content:
+          "IAM Exploitation: Leveraging IAM capabilities to enhance security measures and exploit the full potential of identity and access management.",
+      },
+    ],
+  },
+
+  {
+    title: "Operational Security (defensive security)",
+    subtitle: [
+      {
+        content:
+          "In a world where cyber threats are ever-present, Consultation ISGA stands by your side to fortify your IT security, uphold operational resiliency, and safeguard your infrastructure. Our array of operational security and cyber defense services is designed to meet the dynamic challenges of the digital landscape.",
+      },
+      {
+        content: "Our comprehensive services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Security Services Operations: Providing strategic security services to optimize and enhance your overall security posture.",
+      },
+      {
+        content:
+          "Security Event Monitoring: Vigilantly monitoring security events to detect and respond to potential threats in real-time.",
+      },
+      {
+        content:
+          "Incident Management and Response to Major Incidents: Developing and executing robust incident response plans to swiftly and effectively address major incidents.",
+      },
+      {
+        content:
+          "Threat Intelligence: Utilizing cutting-edge threat intelligence to proactively identify and mitigate emerging cyber threats.",
+      },
+      {
+        content:
+          "SecDevOps and Security Development: Integrating security practices seamlessly into development processes to ensure secure software and operations.",
+      },
+      {
+        content:
+          "Security Incident Investigation (Digital Investigations): Conducting thorough investigations into security incidents through digital forensic techniques.",
+      },
+      {
+        content:
+          "Managed Services (SOC): Offering comprehensive Security Operations Center (SOC) services to monitor, analyze, and respond to security incidents round the clock.",
+      },
+    ],
+  },
+
+  {
+    title: "Enterprise Risk",
+    subtitle: [
+      {
+        content:
+          "Today’s dynamic business landscape, operational and reputation risk management poses a significant challenge across all industries. Levio steps in to assist organizations in comprehending, prioritizing, and controlling risks, empowering them to proactively prevent occurrences and minimize the impact of failures in processes, systems, and operations.",
+      },
+      {
+        content: "Our specialized services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Basel Accord Compliance: Ensuring compliance with the Basel Accord, a framework designed to enhance the stability and soundness of the international banking system.",
+      },
+      {
+        content:
+          "Solvency – Anti-money Laundering: Addressing solvency concerns and implementing robust measures against money laundering to safeguard financial integrity.",
+      },
+      {
+        content:
+          "Operational Risk: Identifying, assessing, and mitigating risks associated with operational processes to enhance overall organizational resilience.",
+      },
+      {
+        content:
+          "Environmental Risk: Managing risks related to environmental factors, ensuring sustainable practices and compliance with environmental regulations.",
+      },
+      {
+        content:
+          "Health and Safety at Work: Implementing measures to prioritize the health and safety of employees, creating a secure working environment.",
+      },
+      {
+        content:
+          "Business Continuity: Developing comprehensive business continuity plans to ensure seamless operations and resilience in the face of unforeseen disruptions.",
+      },
+    ],
+  },
+  
+  {
+    title: "Program and Project Planning and Management",
+    subtitle: [
+      {
+        content:
+          "Navigating the intricacies of cybersecurity projects and programs requires a specialized touch. At Consultation ISGA, our team of project management experts is dedicated to assisting you in the successful completion of cybersecurity initiatives, regardless of their complexity or scope. We bring a wealth of experience to ensure that your projects are executed with precision and efficiency.",
+      },
+      {
+        content: "Our tailored project management services include:",
+      },
+    ],
+    description: [
+      {
+        content:
+          "Cybersecurity Program and Project Management and Oversight: Providing comprehensive management and oversight for cybersecurity programs and projects.",
+      },
+      {
+        content:
+          "Development and Implementation of Cybersecurity Project Governance: Establishing robust governance frameworks for the effective development and implementation of cybersecurity projects.",
+      },
+      {
+        content:
+          "Project Planning, Maintenance, and Control: Crafting meticulous project plans and implementing rigorous controls to ensure projects stay on course.",
+      },
+      {
+        content:
+          "Management of Multi-disciplinary IT and Business Teams, Both Internal and External: Coordinating diverse teams to achieve project goals, fostering collaboration between internal and external stakeholders.",
+      },
+      {
+        content:
+          "Coordination of Technical Delivery Activities: Ensuring seamless coordination of technical delivery activities to meet project objectives.",
+      },
+      {
+        content:
+          "Production of Project Management Records: Maintaining detailed project management records to track progress and facilitate effective communication.",
+      },
+      {
+        content:
+          "Identification and Management of Risks, Issues, and Outstanding Items: Proactively identifying and managing risks, issues, and outstanding items to mitigate potential challenges.",
+      },
+      {
+        content:
+          "Development of Performance Indicators and Production of Dashboards: Creating performance indicators and dashboards to provide insights into project performance and facilitate informed decision-making.",
+      },
+    ],
+  },
+];
 
 export const industriesInsuranceText = {
   title: "Insurance",

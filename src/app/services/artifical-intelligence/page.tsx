@@ -4,8 +4,13 @@ import {
   CommunComponent,
   CommunTitle,
   Landing,
+  Widget,
 } from "@/components";
-import { artificialText, technologiesAndPlatformsCard } from "@/constants";
+import {
+  artificalWidget,
+  artificialText,
+  technologiesAndPlatformsCard,
+} from "@/constants";
 
 const page = () => {
   const url =
@@ -36,9 +41,7 @@ const page = () => {
           </p>
         </div>
 
-        {technologiesAndPlatformsCard.map((item, index) => (
-          <CardImageService data={item} index={index + 1} />
-        ))}
+        <Widget data={artificalWidget} />
       </CommunComponent>
     </div>
   );

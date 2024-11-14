@@ -1,4 +1,12 @@
-import { BackgroundImage, Card, CommunComponent, Landing } from "@/components";
+import {
+  BackgroundImage,
+  Card,
+  CommunComponent,
+  CommunTitle,
+  ContactForm,
+  Landing,
+  Maps,
+} from "@/components";
 import { contactCard, contactText } from "@/constants";
 
 const page = () => {
@@ -14,10 +22,21 @@ const page = () => {
         <Landing data={contactText} />
       </div>
       <CommunComponent>
-        <div className="gap-10 my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {contactCard.map((card) => (
             <Card key={card.title} data={card} flex />
           ))}
+        </div>
+
+        <div className="my-20 pb-20">
+          <CommunTitle title="Contact Us" />
+          <p className="text-center -mt-16 mb-16">
+            Feel free to contact us anytime.
+          </p>
+          <div className="flex flex-col md:flex-row gap-5">
+            <Maps />
+            <ContactForm />
+          </div>
         </div>
       </CommunComponent>
     </>
