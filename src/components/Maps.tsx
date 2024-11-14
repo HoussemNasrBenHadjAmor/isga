@@ -14,7 +14,6 @@ const Maps = () => {
         <Map
           defaultCenter={center}
           defaultZoom={12}
-          //   style={containerStyle}
           className="h-[300px] md:h-full"
         />
       </APIProvider>
