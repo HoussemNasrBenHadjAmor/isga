@@ -94,6 +94,96 @@ export const navItems = [
   },
 ];
 
+export const footerItems = [
+  {
+    title: "Quick Links",
+    sub: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "Carrers",
+        link: "/carrers",
+      },
+      {
+        name: "Contact",
+        link: "/contact",
+      },
+    ],
+  },
+  {
+    title: "Services",
+    sub: [
+      { name: "Consulting Service", link: "/services/consulting-service" },
+      {
+        name: "Application Services and Solutions",
+        link: "/services/application-services-and-solutions",
+      },
+      {
+        name: "Technologies & Platforms",
+        link: "/services/technologies-platforms",
+      },
+      { name: "Managed Services", link: "/services/managed-services" },
+      {
+        name: "Project & Program Management",
+        link: "/services/project-program-management",
+      },
+      {
+        name: "Artifical Intelligence",
+        link: "/services/artifical-intelligence",
+      },
+      {
+        name: "Cybersecurity & Entreprise Risk",
+        link: "/services/cybersecurity-entreprise-risk",
+      },
+    ],
+  },
+  {
+    title: "Industries",
+    sub: [
+      {
+        name: "Government and Public Sector",
+        link: "/industries/government-public-sector",
+      },
+      {
+        name: "Insurance",
+        link: "/industries/Insurance",
+      },
+      {
+        name: "Financial Services",
+        link: "/industries/financial-services",
+      },
+      {
+        name: "Telecommunications",
+        link: "/industries/telecommunications",
+      },
+    ],
+  },
+];
+
+export const footerConctactInfo = [
+  {
+    Icon: MapPinHouse,
+    title: "Address",
+    description: "1933 Av Laplante Laval, Québec H7S 1E6",
+  },
+  {
+    Icon: Mail,
+    title: "Email",
+    description: "info@isgaconsult.com",
+  },
+  {
+    Icon: Smartphone,
+    title: "Phone",
+    description: "+1 514 831 0884",
+  },
+];
+
 export const homeText = {
   background_url:
     "https://isgaconsult.com/wp-content/uploads/2024/02/video-2160p.mp4",
@@ -1170,7 +1260,7 @@ export const cyberWidget = [
       },
     ],
   },
-  
+
   {
     title: "Program and Project Planning and Management",
     subtitle: [
