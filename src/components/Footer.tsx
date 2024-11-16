@@ -60,7 +60,7 @@ const CopyRight = () => {
           target="_blank"
           href="https://www.linkedin.com/company/consultation-isga-inc/?originalSubdomain=fr"
           rel="noopener noreferrer"
-          className="hover:text-white"
+          className="hover:text-white transition-all duration-300"
         >
           <Linkedin />
         </a>
