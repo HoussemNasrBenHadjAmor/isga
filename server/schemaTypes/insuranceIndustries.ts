@@ -8,7 +8,20 @@ export default defineType({
     defineField({
       name: 'landingIndustries',
       title: 'Industries Landing',
-      type: 'landing',
+      type: 'reference',
+      to: {type: 'landing'},
+    }),
+    defineField({
+      name: 'titleSection',
+      title: 'Title Section',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'simple'}}],
+    }),
+    defineField({
+      name: 'cardInsuranceIndustries',
+      title: 'Insurance Industries card',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'card'}}],
     }),
   ],
 })

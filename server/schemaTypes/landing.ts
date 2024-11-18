@@ -6,14 +6,6 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingImage',
-      title: 'Landing Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'landingTitle',
       title: 'Landing Title',
       type: 'array',
@@ -36,6 +28,14 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'landingCategories'}}],
+    }),
+    defineField({
+      name: 'landingImage',
+      title: 'Landing Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 })

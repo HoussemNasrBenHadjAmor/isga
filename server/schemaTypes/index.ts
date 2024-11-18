@@ -5,6 +5,9 @@ import author from './author'
 import landingCategory from './landingCategory'
 import landing from './landing'
 import card from './card'
+import homeISGA from './homeISGA'
+import homeAskQuestion from './homeAskQuestion'
+import simple from './simple'
 import home from './home'
 import about from './about'
 import consultingServices from './consultingServices'
@@ -44,4 +47,7 @@ export const schemaTypes = [
   telecommunicationsIndustries,
   carrers,
   contact,
+  homeISGA,
+  homeAskQuestion,
+  simple,
 ]

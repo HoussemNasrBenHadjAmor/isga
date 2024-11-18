@@ -1,14 +1,15 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'card',
-  title: 'Card',
+  name: 'simple',
+  title: 'Simple',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
     defineField({
       name: 'subtitle',
@@ -21,14 +22,6 @@ export default defineType({
       title: 'Description',
       type: 'array',
       of: [{type: 'string'}],
-    }),
-    defineField({
-      name: 'landingImage',
-      title: 'Landing Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
     }),
   ],
 })

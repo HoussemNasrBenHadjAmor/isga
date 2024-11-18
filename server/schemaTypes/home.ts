@@ -8,11 +8,30 @@ export default defineType({
     defineField({
       name: 'landingHome',
       title: 'Home Landing',
-      type: 'landing',
+      type: 'reference',
+      to: [{type: 'landing'}],
     }),
     defineField({
-      name: 'cardHome',
-      title: 'Home Card',
+      name: 'titleSection',
+      title: 'Title Section',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'simple'}}],
+    }),
+    defineField({
+      name: 'cardHomePrimary',
+      title: 'Home Card Primary',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'card'}}],
+    }),
+    defineField({
+      name: 'homeISGA',
+      title: 'Why choose ISGA',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'chooseISGA'}}],
+    }),
+    defineField({
+      name: 'cardHomeSecondary',
+      title: 'Home Card Secondary',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
     }),

@@ -8,7 +8,8 @@ export default defineType({
     defineField({
       name: 'landingCarrers',
       title: 'Carrers Landing',
-      type: 'landing',
+      type: 'reference',
+      to: {type: 'landing'},
     }),
   ],
 })
