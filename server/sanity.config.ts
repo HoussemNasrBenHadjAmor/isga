@@ -15,4 +15,9 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  typescript: {
+    generateTypeDefinitions: true,
+    schemaTypeDefinitions: '../client/src/types/sanity-types.d.ts', // Path to shared folder
+  },
 })

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar, Footer } from "@/components";
 import { BackgroundProvider } from "@/context/BackgroundContext";
+import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <SanityLive />
         </body>
       </html>
     </BackgroundProvider>
