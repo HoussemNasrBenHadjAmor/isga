@@ -12,9 +12,6 @@ import { Button } from "@/components/ui/button";
 import { getHomePage } from "@/sanity/lib/pages/home";
 
 export default async function Home() {
-  const data = await getHomePage();
-  console.log("data", data);
-
   return (
     <>
       <div className="relative flex min-h-screen w-full">
@@ -28,8 +25,6 @@ export default async function Home() {
       </div>
 
       <CommunComponent>
-        {/* <p>{data[0].landingHome.landingTitle}</p> */}
-
         <div className="px-5">
           <div className="flex flex-col justify-center items-center gap-4 max-w-xl text-center mx-auto">
             <h1 className="font-extrabold text-4xl">What we do ? </h1>

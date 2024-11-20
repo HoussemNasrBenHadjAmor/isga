@@ -6,8 +6,43 @@ import { Home } from "@sanity-types";
 export const getHomePage = async (): Promise<Home[]> => {
   const query = defineQuery(
     `
-       *[_type == 'home'][0]
-        `
+      *[_type == 'home'][0] {
+          landingHome -> {
+            _id,
+            landingTitle,
+            landingSubtitle,
+            landingDescription,
+            landingImage {
+              asset -> { url }
+            }
+          },
+          
+          titleSection[]->{
+            _id,
+            title,
+            subtitle,
+            description
+          },
+
+          homeISGA[] -> {
+            _id,
+            Image {
+              asset -> { url } 
+            },
+            title,
+            description,
+            cardChoose[]-> {
+              _id,
+              title,
+              subtitle,
+              description,
+              landingImage {
+                asset -> { url } 
+              },
+            } 
+          }
+        }   
+     `
   );
 
   try {
