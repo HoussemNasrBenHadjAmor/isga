@@ -9,15 +9,23 @@ import {
   Landing,
 } from "@/components";
 import { Button } from "@/components/ui/button";
-import { getHomePage } from "@/sanity/lib/pages/home";
+import { getHomePage } from "@/sanity/lib/pages/index";
 
 export default async function Home() {
+  const data = await getHomePage();
+  console.log(data);
+
+  // console.log(data);
+
   return (
     <>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={homeText.background_url} />
+          <BackgroundImage
+            // url={homeText.background_url}
+            url={data[0].landingHome.landingImage.asset.url}
+          />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}

@@ -1656,7 +1656,7 @@
     }
   },
   {
-    "name": "articialServices",
+    "name": "artificialServices",
     "type": "document",
     "attributes": {
       "_id": {
@@ -1669,7 +1669,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "articialServices"
+          "value": "artificialServices"
         }
       },
       "_createdAt": {

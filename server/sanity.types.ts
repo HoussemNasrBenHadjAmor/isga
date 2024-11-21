@@ -309,9 +309,9 @@ export type CyberServices = {
   }>
 }
 
-export type ArticialServices = {
+export type ArtificialServices = {
   _id: string
-  _type: 'articialServices'
+  _type: 'artificialServices'
   _createdAt: string
   _updatedAt: string
   _rev: string
@@ -832,7 +832,7 @@ export type AllSanitySchemaTypes =
   | InsuranceIndustries
   | GovernmentIndustries
   | CyberServices
-  | ArticialServices
+  | ArtificialServices
   | ProjectServices
   | ManagedServices
   | TechnologiesServices
