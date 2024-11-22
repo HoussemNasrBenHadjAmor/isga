@@ -3,18 +3,22 @@ import {
   CommunComponent,
   Landing,
   CardImage,
+  Content,
 } from "@/components";
 import { aboutText, aboutCardImg, aboutCardText } from "@/constants";
+import { getAboutPage } from "@/sanity/lib/pages";
 
 import { cn } from "@/lib/utils";
+import { Card as CardType } from "@/sanity/types";
 
-const page = () => {
+const page = async () => {
+  const data = await getAboutPage();
   return (
     <>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={aboutText.background_url} />
+          <BackgroundImage data={data[0].landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
 
@@ -22,11 +26,11 @@ const page = () => {
       </div>
       <CommunComponent>
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {aboutCardText.map((item, index) => {
+          {data[0].card_primary?.map((item, index) => {
             return (
               <Card
-                key={item?.title || item?.description[0].content}
-                item={item}
+                key={item?._id}
+                data={item}
                 index={index + 1}
                 className="first:md:row-span-2 first:lg:row-span-4 last:md:col-span-2"
               />
@@ -34,7 +38,19 @@ const page = () => {
           })}
         </div>
 
-        <OurESG />
+        {/* {data[0]?.content <Content data={item} noCenter />)} */}
+
+        <Content data={data[0]?.content} noCenter />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
+          {data[0]?.card_secondary?.map((card) => (
+            <CardImage
+              key={card._id}
+              data={card}
+              className="last:md:col-span-2"
+            />
+          ))}
+        </div>
       </CommunComponent>
     </>
   );
@@ -42,52 +58,31 @@ const page = () => {
 
 export default page;
 
-export const Card = ({ item, className }: any) => {
+interface cardProp {
+  data: CardType;
+  index?: number;
+  className?: string;
+}
+
+export const Card = ({ data, className }: cardProp) => {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      {!item.title && <div className="md:mt-4" />}
-      <h3 className="font-bold text-lg">{item.title}</h3>
-      {item?.subtitle &&
-        item?.subtitle.map((sub: any, index: any) => {
+      {!data.title && <div className="md:mt-4" />}
+      <h3 className="font-bold text-lg">{data?.title}</h3>
+      {data?.subtitle &&
+        data?.subtitle.map((sub, index) => {
           return (
             <div className="gap-1 flex flex-col">
-              <h5 className="text-gray-600 font-semibold"> {sub.content} </h5>
+              <h5 className="text-gray-600 font-semibold"> {sub} </h5>
 
-              {item.description[index].content}
+              {data?.description && data?.description[index]}
             </div>
           );
         })}
 
-      {!item?.subtitle &&
-        item?.description &&
-        item?.description.map((des: any) => <p>{des.content}</p>)}
+      {!data?.subtitle &&
+        data?.description &&
+        data?.description.map((des: any) => <p>{des}</p>)}
     </div>
-  );
-};
-
-export const OurESG = () => {
-  return (
-    <>
-      <div className="gap-3 flex flex-col">
-        <h1 className="font-extrabold text-4xl">Our ESG Commitments</h1>
-        <div>
-          <p>
-            We believe in the power of collective action to create an inclusive
-            community and a healthy planet.
-          </p>
-          <p>
-            Above all, we believe in our share of responsibility in this great
-            universal collaboration and are willing to invest in creating value
-            for a better world.
-          </p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
-        {aboutCardImg.map((card) => (
-          <CardImage key={card.id} data={card} className="last:md:col-span-2" />
-        ))}
-      </div>
-    </>
   );
 };

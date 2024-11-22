@@ -12,16 +12,16 @@ export default defineType({
       to: [{type: 'landing'}],
     }),
     defineField({
+      name: 'content',
+      title: 'Title Section and its content',
+      type: 'reference',
+      to: {type: 'simple'},
+    }),
+    defineField({
       name: 'card_primary',
       title: 'About Text Card',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
-    }),
-    defineField({
-      name: 'content',
-      title: 'Title Section and its content',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'simple'}}],
     }),
     defineField({
       name: 'card_secondary',

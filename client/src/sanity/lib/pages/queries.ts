@@ -67,49 +67,45 @@ export const homeQuery = defineQuery(
 
 export const aboutQuery = defineQuery(
   `
-        *[_type == 'about'][0] {
-            landingAbout -> {
-              _id,
-              landingTitle,
-              landingSubtitle,
-              landingDescription,
-              landingImage {
-                asset -> { url }
-              }
+        *[_type == 'about'] {
+           landing -> {
+            _id,
+            title[],
+            subtitle[],
+            description[],
+            image {
+              asset -> { url }
             },
+            author,
+          },
             
-            titleSection[]->{
-              _id,
-              title,
-              subtitle,
-              description
-            },
-
-            content[]-> {
+            content -> {
               _id,
               title[],
               subtitle[],
-              description[],
+              description[]
             },
   
-            cardAboutText[]-> {
+            card_primary []-> {
               _id,
               title,
               subtitle,
               description,
-              landingImage {
+              image {
                 asset -> { url } 
               },
+              svg_path,
             },
   
-            cardAbout[]-> {
+            card_secondary []-> {
               _id,
               title,
               subtitle,
               description,
-              landingImage {
+              image {
                 asset -> { url } 
               },
+              svg_path,
             }
           }   
        `
@@ -117,7 +113,7 @@ export const aboutQuery = defineQuery(
 
 export const consultingQuery = defineQuery(
   `
-    *[_type == 'consultingServices'][0] {
+    *[_type == 'consultingServices'] {
               landingServices -> {
                 _id,
                 landingTitle,
@@ -167,15 +163,16 @@ export const consultingQuery = defineQuery(
 
 export const technologiesQuery = defineQuery(
   `
-      *[_type == 'technologiesServices'][0] {
-                landingServices -> {
-                  _id,
-                  landingTitle,
-                  landingSubtitle,
-                  landingDescription,
-                  landingImage {
-                    asset -> { url }
-                  }
+      *[_type == 'technologiesServices'] {
+                landing -> {
+                _id,
+                title[],
+                subtitle[],
+                description[],
+                image {
+                  asset -> { url }
+                },
+                author,
                 },
                 
                 titleSection[]-> {
@@ -200,16 +197,17 @@ export const technologiesQuery = defineQuery(
 
 export const applicationQuery = defineQuery(
   `
-      *[_type == 'applicationServices'][0] {
-                landingServices -> {
-                  _id,
-                  landingTitle,
-                  landingSubtitle,
-                  landingDescription,
-                  landingImage {
-                    asset -> { url }
-                  }
+      *[_type == 'applicationServices'] {
+                landing -> {
+                _id,
+                title[],
+                subtitle[],
+                description[],
+                image {
+                  asset -> { url }
                 },
+                author,
+              },
                 
                 titleSection[]-> {
                   _id,
