@@ -20,16 +20,30 @@ function Landing({ data }: Props) {
         <div className="flex flex-col items-center justify-center lg:items-start gap-5 w-full text-white">
           <div className="max-w-xl flex flex-col gap-5">
             {data?.title && (
-              <h1 className="font-semibold text-xl">{data.title}</h1>
+              <div className="flex flex-col gap-3">
+                {data.title?.map((title) => (
+                  <h1 key={title} className="font-semibold text-xl">
+                    {title}
+                  </h1>
+                ))}
+              </div>
             )}
+
             {data?.subtitle && (
-              <h5 className="font-black text-2xl">{data.subtitle}</h5>
+              <div className="flex flex-col gap-3">
+                {data.subtitle?.map((sub) => (
+                  <h5 key={sub} className="font-black text-2xl">
+                    {sub}
+                  </h5>
+                ))}
+              </div>
             )}
+
             {data?.description && (
               <div className="flex flex-col gap-3">
-                {data.description.map((desc: any) => (
-                  <p key={desc.id} className="leading-relaxed">
-                    {desc.content}
+                {data.description?.map((desc) => (
+                  <p key={desc} className="leading-relaxed">
+                    {desc}
                   </p>
                 ))}
               </div>

@@ -22,11 +22,11 @@ const page = async () => {
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
 
-        <Landing data={aboutText} />
+        <Landing data={data[0].landing} />
       </div>
       <CommunComponent>
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {data[0].card_primary?.map((item, index) => {
+          {data[0]?.card_primary?.map((item, index) => {
             return (
               <Card
                 key={item?._id}
