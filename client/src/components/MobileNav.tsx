@@ -30,7 +30,7 @@ const MobileNav = () => {
           <AlignJustify />
         </DrawerTrigger>
         <DrawerContent
-          className="bg-[#121519] text-white border-none"
+          className="bg-[#121519] text-white border-none z-[999]"
           onClose={() => setIsOpen(false)}
         >
           <div className="p-2 px-4">

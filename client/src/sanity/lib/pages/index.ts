@@ -1,21 +1,4 @@
 import { sanityFetch } from "../live";
-import {
-  About,
-  ApplicationServices,
-  ArtificialServices,
-  Carrers,
-  ConsultingServices,
-  Contact,
-  CyberServices,
-  FinancialIndustries,
-  GovernmentIndustries,
-  Home,
-  InsuranceIndustries,
-  ManagedServices,
-  ProjectServices,
-  TechnologiesServices,
-  TelecommunicationsIndustries,
-} from "@sanity-types";
 
 import {
   homeQuery,
@@ -35,7 +18,7 @@ import {
   carrersQuery,
 } from "./queries";
 
-export const getHomePage = async (): Promise<Home[]> => {
+export const getHomePage = async () => {
   const query = homeQuery;
 
   try {
@@ -48,7 +31,7 @@ export const getHomePage = async (): Promise<Home[]> => {
   }
 };
 
-export const getAboutPage = async (): Promise<About[]> => {
+export const getAboutPage = async () => {
   const query = aboutQuery;
 
   try {
@@ -60,7 +43,7 @@ export const getAboutPage = async (): Promise<About[]> => {
   }
 };
 
-export const getConsultingPage = async (): Promise<ConsultingServices[]> => {
+export const getConsultingPage = async () => {
   const query = consultingQuery;
 
   try {
@@ -72,7 +55,7 @@ export const getConsultingPage = async (): Promise<ConsultingServices[]> => {
   }
 };
 
-export const getApplicationPage = async (): Promise<ApplicationServices[]> => {
+export const getApplicationPage = async () => {
   const query = applicationQuery;
 
   try {
@@ -84,9 +67,7 @@ export const getApplicationPage = async (): Promise<ApplicationServices[]> => {
   }
 };
 
-export const getTechnologiesPage = async (): Promise<
-  TechnologiesServices[]
-> => {
+export const getTechnologiesPage = async () => {
   const query = technologiesQuery;
 
   try {
@@ -98,7 +79,7 @@ export const getTechnologiesPage = async (): Promise<
   }
 };
 
-export const getManagedPage = async (): Promise<ManagedServices[]> => {
+export const getManagedPage = async () => {
   const query = managedQuery;
 
   try {
@@ -110,7 +91,7 @@ export const getManagedPage = async (): Promise<ManagedServices[]> => {
   }
 };
 
-export const getProjectPage = async (): Promise<ProjectServices[]> => {
+export const getProjectPage = async () => {
   const query = projectQuery;
 
   try {
@@ -122,7 +103,7 @@ export const getProjectPage = async (): Promise<ProjectServices[]> => {
   }
 };
 
-export const getArtificialPage = async (): Promise<ArtificialServices[]> => {
+export const getArtificialPage = async () => {
   const query = artificialQuery;
 
   try {
@@ -134,7 +115,7 @@ export const getArtificialPage = async (): Promise<ArtificialServices[]> => {
   }
 };
 
-export const getCyberPage = async (): Promise<CyberServices[]> => {
+export const getCyberPage = async () => {
   const query = cyberQuery;
 
   try {
@@ -146,7 +127,7 @@ export const getCyberPage = async (): Promise<CyberServices[]> => {
   }
 };
 
-export const getGovernmentPage = async (): Promise<GovernmentIndustries[]> => {
+export const getGovernmentPage = async () => {
   const query = governmentQuery;
 
   try {
@@ -158,7 +139,7 @@ export const getGovernmentPage = async (): Promise<GovernmentIndustries[]> => {
   }
 };
 
-export const getInsurancePage = async (): Promise<InsuranceIndustries[]> => {
+export const getInsurancePage = async () => {
   const query = insuranceQuery;
 
   try {
@@ -170,7 +151,7 @@ export const getInsurancePage = async (): Promise<InsuranceIndustries[]> => {
   }
 };
 
-export const getFinancialPage = async (): Promise<FinancialIndustries[]> => {
+export const getFinancialPage = async () => {
   const query = financialQuery;
 
   try {
@@ -182,9 +163,7 @@ export const getFinancialPage = async (): Promise<FinancialIndustries[]> => {
   }
 };
 
-export const getTelecommunicationsPage = async (): Promise<
-  TelecommunicationsIndustries[]
-> => {
+export const getTelecommunicationsPage = async () => {
   const query = telecommunicationQuery;
 
   try {
@@ -199,7 +178,7 @@ export const getTelecommunicationsPage = async (): Promise<
   }
 };
 
-export const getCarrersPage = async (): Promise<Carrers[]> => {
+export const getCarrersPage = async () => {
   const query = carrersQuery;
 
   try {
@@ -211,7 +190,7 @@ export const getCarrersPage = async (): Promise<Carrers[]> => {
   }
 };
 
-export const getContactPage = async (): Promise<Contact[]> => {
+export const getContactPage = async () => {
   const query = contactQuery;
 
   try {

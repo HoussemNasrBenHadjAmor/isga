@@ -1,10 +1,15 @@
+import React from "react";
 import { cn } from "@/lib/utils";
+import { Card as CardType } from "@/sanity/types";
+import SvgFromDataUrl from "./SvgFromDataUrl";
 
-const Card = ({
-  data: { Icon, title, subtitle, description },
-  className,
-  flex,
-}: any) => {
+interface CardProps {
+  data: CardType;
+  className?: string;
+  flex: boolean;
+}
+
+const Card = ({ data, className, flex }: CardProps) => {
   return (
     <div
       className={cn(
@@ -17,11 +22,11 @@ const Card = ({
       )}
     >
       <div className={`${flex && "flex flex-col items-center justify-center"}`}>
-        <Icon />
+        {data?.svg_path && <SvgFromDataUrl dataUrl={data?.svg_path} />}
       </div>
-      <h4 className="font-bold text-lg">{title}</h4>
-      {subtitle && <p className="text-xs"> {subtitle} </p>}
-      {description && <p>{description}</p>}
+      <h4 className="font-bold text-lg">{data?.title}</h4>
+      <p className="text-xs">{data.subtitle}</p>
+      <p>{data.description}</p>
     </div>
   );
 };

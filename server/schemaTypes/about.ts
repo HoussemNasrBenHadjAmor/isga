@@ -6,25 +6,25 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingAbout',
+      name: 'landing',
       title: 'About Landing',
       type: 'reference',
       to: [{type: 'landing'}],
     }),
     defineField({
-      name: 'cardAboutText',
+      name: 'card_primary',
       title: 'About Text Card',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
     }),
     defineField({
       name: 'content',
-      title: 'Content',
+      title: 'Title Section and its content',
       type: 'array',
       of: [{type: 'reference', to: {type: 'simple'}}],
     }),
     defineField({
-      name: 'cardAbout',
+      name: 'card_secondary',
       title: 'About Card',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],

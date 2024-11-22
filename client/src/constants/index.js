@@ -1677,3 +1677,6 @@ export const contactCard = [
     description: "+1 514 831 0884",
   },
 ];
+
+export const default_landing_url =
+  "https://isgaconsult.com/wp-content/uploads/2024/02/businessman-big-office-scaled.jpg";

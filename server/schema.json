@@ -326,73 +326,6 @@
     }
   },
   {
-    "name": "simple",
-    "type": "document",
-    "attributes": {
-      "_id": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_type": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string",
-          "value": "simple"
-        }
-      },
-      "_createdAt": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_updatedAt": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_rev": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "title": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "subtitle": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "description": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      }
-    }
-  },
-  {
     "name": "askQuestion",
     "type": "document",
     "attributes": {
@@ -427,7 +360,7 @@
           "type": "string"
         }
       },
-      "Image": {
+      "image": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -493,166 +426,6 @@
         "type": "objectAttribute",
         "value": {
           "type": "string"
-        },
-        "optional": true
-      }
-    }
-  },
-  {
-    "name": "chooseISGA",
-    "type": "document",
-    "attributes": {
-      "_id": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_type": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string",
-          "value": "chooseISGA"
-        }
-      },
-      "_createdAt": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_updatedAt": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "_rev": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        }
-      },
-      "Image": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "object",
-          "attributes": {
-            "asset": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "object",
-                "attributes": {
-                  "_ref": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string"
-                    }
-                  },
-                  "_type": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "string",
-                      "value": "reference"
-                    }
-                  },
-                  "_weak": {
-                    "type": "objectAttribute",
-                    "value": {
-                      "type": "boolean"
-                    },
-                    "optional": true
-                  }
-                },
-                "dereferencesTo": "sanity.imageAsset"
-              },
-              "optional": true
-            },
-            "hotspot": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "inline",
-                "name": "sanity.imageHotspot"
-              },
-              "optional": true
-            },
-            "crop": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "inline",
-                "name": "sanity.imageCrop"
-              },
-              "optional": true
-            },
-            "_type": {
-              "type": "objectAttribute",
-              "value": {
-                "type": "string",
-                "value": "image"
-              }
-            }
-          }
-        },
-        "optional": true
-      },
-      "title": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": true
-      },
-      "description": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "cardChoose": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
-              }
-            },
-            "dereferencesTo": "card",
-            "rest": {
-              "type": "object",
-              "attributes": {
-                "_key": {
-                  "type": "objectAttribute",
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
         },
         "optional": true
       }
@@ -693,7 +466,7 @@
           "type": "string"
         }
       },
-      "landingContact": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -723,7 +496,7 @@
         },
         "optional": true
       },
-      "cardContact": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -767,7 +540,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -848,7 +621,7 @@
           "type": "string"
         }
       },
-      "landingCarrers": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -915,7 +688,7 @@
           "type": "string"
         }
       },
-      "landingIndustries": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -945,7 +718,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -989,7 +762,7 @@
         },
         "optional": true
       },
-      "cardTelecommunicationsIndustries": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1070,7 +843,7 @@
           "type": "string"
         }
       },
-      "landingIndustries": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1100,7 +873,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1144,7 +917,7 @@
         },
         "optional": true
       },
-      "cardFinancialIndustries": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1225,7 +998,7 @@
           "type": "string"
         }
       },
-      "landingIndustries": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1255,7 +1028,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1299,7 +1072,7 @@
         },
         "optional": true
       },
-      "cardInsuranceIndustries": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1380,7 +1153,7 @@
           "type": "string"
         }
       },
-      "landingIndustries": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1410,7 +1183,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1454,7 +1227,7 @@
         },
         "optional": true
       },
-      "cardGovernmentIndustries": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1535,7 +1308,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1565,7 +1338,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1609,7 +1382,7 @@
         },
         "optional": true
       },
-      "cardCyberServices": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1690,7 +1463,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1720,7 +1493,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1764,7 +1537,7 @@
         },
         "optional": true
       },
-      "cardArtificalServices": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1845,7 +1618,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -1875,7 +1648,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -1919,7 +1692,7 @@
         },
         "optional": true
       },
-      "cardProjectServices": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2000,7 +1773,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2030,7 +1803,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2074,7 +1847,7 @@
         },
         "optional": true
       },
-      "cardManagedServices": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2155,7 +1928,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2185,7 +1958,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2229,7 +2002,7 @@
         },
         "optional": true
       },
-      "cardTechnologiesServices": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2310,7 +2083,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2340,7 +2113,7 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "title_section": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2384,7 +2157,7 @@
         },
         "optional": true
       },
-      "cardApplicationServicesPrimary": {
+      "card_primary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2428,7 +2201,7 @@
         },
         "optional": true
       },
-      "cardApplicationServicesSecondary": {
+      "card_secondary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2509,7 +2282,7 @@
           "type": "string"
         }
       },
-      "landingServices": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2539,7 +2312,7 @@
         },
         "optional": true
       },
-      "titleSectionPrimary": {
+      "title_section_primary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2583,7 +2356,7 @@
         },
         "optional": true
       },
-      "cardConsultingServicesPrimary": {
+      "card_primary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2627,7 +2400,7 @@
         },
         "optional": true
       },
-      "titleSectionSecondary": {
+      "title_section_secondary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2671,7 +2444,7 @@
         },
         "optional": true
       },
-      "cardConsultingServicesSecondary": {
+      "card": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2752,7 +2525,7 @@
           "type": "string"
         }
       },
-      "landingAbout": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2782,7 +2555,7 @@
         },
         "optional": true
       },
-      "cardAboutText": {
+      "card_primary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2870,7 +2643,7 @@
         },
         "optional": true
       },
-      "cardAbout": {
+      "card_secondary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -2951,7 +2724,7 @@
           "type": "string"
         }
       },
-      "landingHome": {
+      "landing": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -2981,51 +2754,37 @@
         },
         "optional": true
       },
-      "titleSection": {
+      "content": {
         "type": "objectAttribute",
         "value": {
-          "type": "array",
-          "of": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
+          "type": "object",
+          "attributes": {
+            "_ref": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
               }
             },
-            "dereferencesTo": "simple",
-            "rest": {
-              "type": "object",
-              "attributes": {
-                "_key": {
-                  "type": "objectAttribute",
-                  "value": {
-                    "type": "string"
-                  }
-                }
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "reference"
               }
+            },
+            "_weak": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "boolean"
+              },
+              "optional": true
             }
-          }
+          },
+          "dereferencesTo": "simple"
         },
         "optional": true
       },
-      "cardHomePrimary": {
+      "card_primary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -3069,51 +2828,37 @@
         },
         "optional": true
       },
-      "homeISGA": {
+      "home_isga": {
         "type": "objectAttribute",
         "value": {
-          "type": "array",
-          "of": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
+          "type": "object",
+          "attributes": {
+            "_ref": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
               }
             },
-            "dereferencesTo": "chooseISGA",
-            "rest": {
-              "type": "object",
-              "attributes": {
-                "_key": {
-                  "type": "objectAttribute",
-                  "value": {
-                    "type": "string"
-                  }
-                }
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "reference"
               }
+            },
+            "_weak": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "boolean"
+              },
+              "optional": true
             }
-          }
+          },
+          "dereferencesTo": "chooseISGA"
         },
         "optional": true
       },
-      "cardHomeSecondary": {
+      "card_secondary": {
         "type": "objectAttribute",
         "value": {
           "type": "array",
@@ -3153,6 +2898,233 @@
                 }
               }
             }
+          }
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "chooseISGA",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "chooseISGA"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "image": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "object",
+          "attributes": {
+            "asset": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "object",
+                "attributes": {
+                  "_ref": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "_type": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string",
+                      "value": "reference"
+                    }
+                  },
+                  "_weak": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "boolean"
+                    },
+                    "optional": true
+                  }
+                },
+                "dereferencesTo": "sanity.imageAsset"
+              },
+              "optional": true
+            },
+            "hotspot": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "inline",
+                "name": "sanity.imageHotspot"
+              },
+              "optional": true
+            },
+            "crop": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "inline",
+                "name": "sanity.imageCrop"
+              },
+              "optional": true
+            },
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "image"
+              }
+            }
+          }
+        },
+        "optional": true
+      },
+      "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "description": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "cards": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "_ref": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "reference"
+                }
+              },
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              }
+            },
+            "dereferencesTo": "card",
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "simple",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "simple"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "subtitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "description": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
           }
         },
         "optional": true
@@ -3201,6 +3173,13 @@
         },
         "optional": true
       },
+      "svg_path": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "subtitle": {
         "type": "objectAttribute",
         "value": {
@@ -3221,7 +3200,7 @@
         },
         "optional": true
       },
-      "landingImage": {
+      "image": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -3320,81 +3299,7 @@
           "type": "string"
         }
       },
-      "landingTitle": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "landingSubtitle": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "landingDescription": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "string"
-          }
-        },
-        "optional": true
-      },
-      "categories": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "array",
-          "of": {
-            "type": "object",
-            "attributes": {
-              "_ref": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                }
-              },
-              "_type": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string",
-                  "value": "reference"
-                }
-              },
-              "_weak": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "boolean"
-                },
-                "optional": true
-              }
-            },
-            "dereferencesTo": "landingCategories",
-            "rest": {
-              "type": "object",
-              "attributes": {
-                "_key": {
-                  "type": "objectAttribute",
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "optional": true
-      },
-      "landingImage": {
+      "image": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -3453,6 +3358,87 @@
               }
             }
           }
+        },
+        "optional": true
+      },
+      "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "subtitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "description": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
+      "categories": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "object",
+            "attributes": {
+              "_ref": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              },
+              "_type": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string",
+                  "value": "reference"
+                }
+              },
+              "_weak": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "boolean"
+                },
+                "optional": true
+              }
+            },
+            "dereferencesTo": "landingCategories",
+            "rest": {
+              "type": "object",
+              "attributes": {
+                "_key": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "optional": true
+      },
+      "author": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       }

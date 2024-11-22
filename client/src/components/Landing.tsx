@@ -3,8 +3,13 @@
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { Landing as Lan } from "@/sanity/types";
 
-function Landing({ data }: any) {
+interface Props {
+  data: Lan;
+}
+
+function Landing({ data }: Props) {
   const router = usePathname();
 
   const isHomePath = router === "/";
@@ -48,10 +53,10 @@ function Landing({ data }: any) {
             </div>
           )}
 
-          {data.owner && (
+          {data?.author && (
             <p>
-              <span className="font-bold">{data.owner.slice(0, 17)}</span>
-              {data.owner.slice(17)}
+              <span className="font-bold">{data.author.slice(0, 17)}</span>
+              {data.author.slice(17)}
             </p>
           )}
         </div>

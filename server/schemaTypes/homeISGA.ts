@@ -6,7 +6,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'Image',
+      name: 'image',
       title: 'Image',
       type: 'image',
       options: {
@@ -25,8 +25,8 @@ export default defineType({
       of: [{type: 'string'}],
     }),
     defineField({
-      name: 'cardChoose',
-      title: 'Card',
+      name: 'cards',
+      title: 'Cards',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
     }),

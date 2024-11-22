@@ -6,19 +6,19 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingContact',
+      name: 'landing',
       title: 'Contact Landing',
       type: 'reference',
       to: {type: 'landing'},
     }),
     defineField({
-      name: 'cardContact',
+      name: 'card',
       title: 'Contact card',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
     }),
     defineField({
-      name: 'titleSection',
+      name: 'title_section',
       title: 'Title Section',
       type: 'array',
       of: [{type: 'reference', to: {type: 'simple'}}],

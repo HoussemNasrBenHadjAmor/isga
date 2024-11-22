@@ -33,7 +33,7 @@ function Navbar() {
   }, [scrollNav]);
 
   return (
-    <div className="fixed bg-transparent w-full z-50 top-0">
+    <div className="fixed bg-transparent w-full z-[80] top-0">
       <div
         className={`${scrollNav ? navBiggerThanEighty : navUnderEighty} px-5`}
       >

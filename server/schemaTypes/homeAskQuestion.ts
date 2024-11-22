@@ -6,7 +6,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'Image',
+      name: 'image',
       title: 'Image',
       type: 'image',
       options: {

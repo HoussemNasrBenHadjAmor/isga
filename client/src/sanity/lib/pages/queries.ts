@@ -2,39 +2,63 @@ import { defineQuery } from "next-sanity";
 
 export const homeQuery = defineQuery(
   `
-    *[_type == 'home'][0] {
-          landingHome -> {
+  *[_type == 'home'] {
+          landing -> {
             _id,
-            landingTitle[],
-            landingSubtitle[],
-            landingDescription[],
-            landingImage {
+            title[],
+            subtitle[],
+            description[],
+            image {
               asset -> { url }
-            }
+            },
+            author,
           },
           
-          titleSection[] -> {
+          content -> {
             _id,
             title[],
             subtitle[],
             description[]
           },
 
-          homeISGA[] -> {
-            _id,
-            Image {
-              asset -> { url } 
-            },
-            title,
-            description,
-            cardChoose[]-> {
+          card_primary [] -> {
               _id,
               title,
               subtitle,
               description,
-              landingImage {
+              image {
                 asset -> { url } 
               },
+              svg_path,
+          },
+
+          card_secondary [] -> {
+              _id,
+              title,
+              subtitle,
+              description,
+              image {
+                asset -> { url } 
+              },
+              svg_path,
+          },
+
+          home_isga -> {
+            _id,
+            image {
+              asset -> { url } 
+            },
+            title,
+            description,
+            cards []-> {
+              _id,
+              title,
+              subtitle,
+              description,
+              image {
+                asset -> { url } 
+              },
+              svg_path,
             } 
           }
         }   

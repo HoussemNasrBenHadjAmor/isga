@@ -6,25 +6,25 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingServices',
+      name: 'landing',
       title: 'Services Landing',
       type: 'reference',
       to: {type: 'landing'},
     }),
     defineField({
-      name: 'titleSection',
+      name: 'title_section',
       title: 'Title Section',
       type: 'array',
       of: [{type: 'reference', to: {type: 'simple'}}],
     }),
     defineField({
-      name: 'cardApplicationServicesPrimary',
+      name: 'card_primary',
       title: 'Application Services Card Primary',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
     }),
     defineField({
-      name: 'cardApplicationServicesSecondary',
+      name: 'card_secondary',
       title: 'Application Services Card Secondary',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],

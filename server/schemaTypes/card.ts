@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'svg_path',
+      title: 'SVG path for ICON',
+      type: 'string',
+    }),
+    defineField({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'array',
@@ -23,7 +28,7 @@ export default defineType({
       of: [{type: 'string'}],
     }),
     defineField({
-      name: 'landingImage',
+      name: 'image',
       title: 'Landing Image',
       type: 'image',
       options: {

@@ -6,7 +6,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingCarrers',
+      name: 'landing',
       title: 'Carrers Landing',
       type: 'reference',
       to: {type: 'landing'},

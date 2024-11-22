@@ -10,7 +10,9 @@
     "build": "sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
-    "typegen": "npx sanity@latest schema extract && npx sanity@latest typegen generate"
+    "typegen:client": "npx sanity typegen generate",
+    "typegen:server": "npx sanity typegen generate --path '/server/schemaTypes/*.{ts,tsx,js,jsx}' --generates '/server/sanity.types.ts'",
+    "typegen": "npx sanity@latest schema extract && npm run typegen:client && npm run typegen:server"
   },
   "keywords": [
     "sanity"

@@ -6,19 +6,27 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'landingTitle',
+      name: 'image',
+      title: 'Landing Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'title',
       title: 'Landing Title',
       type: 'array',
       of: [{type: 'string'}],
     }),
     defineField({
-      name: 'landingSubtitle',
+      name: 'subtitle',
       title: 'Landing Subtitle',
       type: 'array',
       of: [{type: 'string'}],
     }),
     defineField({
-      name: 'landingDescription',
+      name: 'description',
       title: 'Landing Description',
       type: 'array',
       of: [{type: 'string'}],
@@ -29,13 +37,11 @@ export default defineType({
       type: 'array',
       of: [{type: 'reference', to: {type: 'landingCategories'}}],
     }),
+
     defineField({
-      name: 'landingImage',
-      title: 'Landing Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'author',
+      title: 'Owner fullName',
+      type: 'string',
     }),
   ],
 })
