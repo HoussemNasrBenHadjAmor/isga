@@ -11,30 +11,37 @@ import {
   ApplicationServicesandSolutionsCard,
   ApplicationServicesandSolutionsCardText,
 } from "@/constants";
+import { getApplicationPage } from "@/sanity/lib/pages";
 
-const page = () => {
-  const url =
-    "https://isgaconsult.com/wp-content/uploads/2024/02/app-woman-white-solution-closeup-two-min-scaled.jpg";
+const page = async () => {
+  const data = await getApplicationPage();
+  const response = data ? data[0] : null;
+
   return (
     <div>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={url} />
+          <BackgroundImage data={response?.landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}
-        <Landing data={ApplicationServicesandSolutionsText} />
+        <Landing data={response?.landing} />
       </div>
       <CommunComponent>
-        <CommunTitle title="Application Services and Solutions" />
-        <CardImageService maxWidth data={ApplicationServicesandSolutionsCard} />
+        <CommunTitle data={response?.title_section} />
 
-        <div className="gap-10 my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {ApplicationServicesandSolutionsCardText.map((card) => (
+        <div className="flex flex-col gap-4">
+          {response?.card_primary?.map((item) => (
+            <CardImageService maxWidth data={item} key={item._id} />
+          ))}
+        </div>
+
+        <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {response?.card_secondary?.map((item) => (
             <Card
-              key={card.title}
-              data={card}
+              key={item._id}
+              data={item}
               flex
               className="last:md:col-span-2"
             />

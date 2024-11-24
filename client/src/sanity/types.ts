@@ -107,13 +107,12 @@ export type Contact = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "card";
   }>;
-  title_section?: Array<{
+  content?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
 };
 
 export type Carrers = {
@@ -142,13 +141,18 @@ export type TelecommunicationsIndustries = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -170,13 +174,18 @@ export type FinancialIndustries = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -198,13 +207,18 @@ export type InsuranceIndustries = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -226,13 +240,18 @@ export type GovernmentIndustries = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -254,13 +273,12 @@ export type CyberServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -282,13 +300,18 @@ export type ArtificialServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -310,13 +333,18 @@ export type ProjectServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -338,13 +366,18 @@ export type ManagedServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -366,13 +399,18 @@ export type TechnologiesServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -394,13 +432,18 @@ export type ApplicationServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section?: Array<{
+  title_section?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card_primary?: Array<{
     _ref: string;
     _type: "reference";
@@ -429,13 +472,18 @@ export type ConsultingServices = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "landing";
   };
-  title_section_primary?: Array<{
+  title_section_primary?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
+  content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
   card_primary?: Array<{
     _ref: string;
     _type: "reference";
@@ -443,13 +491,12 @@ export type ConsultingServices = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "card";
   }>;
-  title_section_secondary?: Array<{
+  title_section_secondary?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "simple";
-  }>;
+  };
   card?: Array<{
     _ref: string;
     _type: "reference";
@@ -853,7 +900,7 @@ export type QueryResult = {
 
 // Source: ../client/src/sanity/lib/pages/queries.ts
 // Variable: homeQuery
-// Query: *[_type == 'home'] {          landing -> {            _id,            title[],            subtitle[],            description[],            image {              asset -> { url }            },            author,          },                    content -> {            _id,            title[],            subtitle[],            description[]          },          card_primary [] -> {              _id,              title,              subtitle,              description,              image {                asset -> { url }               },              svg_path,          },          card_secondary [] -> {              _id,              title,              subtitle,              description,              image {                asset -> { url }               },              svg_path,          },          home_isga -> {            _id,            image {              asset -> { url }             },            title,            description,            cards []-> {              _id,              title,              subtitle,              description,              image {                asset -> { url }               },              svg_path,            }           }        }
+// Query: *[_type == 'home'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },       content -> {          _id,          title[],          subtitle[],          description[]        },        home_isga -> {          _id,          image {            asset -> { url }           },          title,          description,          cards []-> {            _id,            title,            subtitle,            description,            image {              asset -> { url }             },            svg_path,          }         },           card_primary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },                 card_secondary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },     }
 export type HomeQueryResult = Array<{
   landing: {
     _id: string;
@@ -872,6 +919,28 @@ export type HomeQueryResult = Array<{
     title: Array<string> | null;
     subtitle: Array<string> | null;
     description: Array<string> | null;
+  } | null;
+  home_isga: {
+    _id: string;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    title: string | null;
+    description: Array<string> | null;
+    cards: Array<{
+      _id: string;
+      title: string | null;
+      subtitle: Array<string> | null;
+      description: Array<string> | null;
+      image: {
+        asset: {
+          url: string | null;
+        } | null;
+      } | null;
+      svg_path: string | null;
+    }> | null;
   } | null;
   card_primary: Array<{
     _id: string;
@@ -897,31 +966,9 @@ export type HomeQueryResult = Array<{
     } | null;
     svg_path: string | null;
   }> | null;
-  home_isga: {
-    _id: string;
-    image: {
-      asset: {
-        url: string | null;
-      } | null;
-    } | null;
-    title: string | null;
-    description: Array<string> | null;
-    cards: Array<{
-      _id: string;
-      title: string | null;
-      subtitle: Array<string> | null;
-      description: Array<string> | null;
-      image: {
-        asset: {
-          url: string | null;
-        } | null;
-      } | null;
-      svg_path: string | null;
-    }> | null;
-  } | null;
 }>;
 // Variable: aboutQuery
-// Query: *[_type == 'about'] {           landing -> {            _id,            title[],            subtitle[],            description[],            image {              asset -> { url }            },            author,          },                        content -> {              _id,              title[],              subtitle[],              description[]            },              card_primary []-> {              _id,              title,              subtitle,              description,              image {                asset -> { url }               },              svg_path,            },              card_secondary []-> {              _id,              title,              subtitle,              description,              image {                asset -> { url }               },              svg_path,            }          }
+// Query: *[_type == 'about'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },       content -> {          _id,          title[],          subtitle[],          description[]        },           card_primary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },                 card_secondary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },     }
 export type AboutQueryResult = Array<{
   landing: {
     _id: string;
@@ -967,16 +1014,8 @@ export type AboutQueryResult = Array<{
   }> | null;
 }>;
 // Variable: consultingQuery
-// Query: *[_type == 'consultingServices'] {              landingServices -> {                _id,                landingTitle,                landingSubtitle,                landingDescription,                landingImage {                  asset -> { url }                }              },                            titleSectionSecondary[]-> {                _id,                title[],                subtitle[],                description[],              },                titleSectionSecondary[]-> {                _id,                title[],                subtitle[],                description[],              },                  cardConsultingServicesPrimary[]-> {                _id,                title,                subtitle,                description,                landingImage {                  asset -> { url }                 },              },              cardConsultingServicesSecondary[]-> {                _id,                title,                subtitle,                description,                landingImage {                  asset -> { url }                 },              },            }
+// Query: *[_type == 'consultingServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section_primary -> {          _id,          title[],          subtitle[],          description[],        },        content -> {          _id,          title[],          subtitle[],          description[],        },        content -> {          _id,          title[],          subtitle[],          description[],        },                title_section_secondary -> {          _id,          title[],          subtitle[],          description[],        },           card_primary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },                 card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },     }
 export type ConsultingQueryResult = Array<{
-  landingServices: null;
-  titleSectionSecondary: null;
-  cardConsultingServicesPrimary: null;
-  cardConsultingServicesSecondary: null;
-}>;
-// Variable: technologiesQuery
-// Query: *[_type == 'technologiesServices'] {                landing -> {                _id,                title[],                subtitle[],                description[],                image {                  asset -> { url }                },                author,                },                                titleSection[]-> {                  _id,                  title[],                  subtitle[],                  description[],                },                      cardTechnologiesServices[]-> {                  _id,                  title,                  subtitle,                  description,                  landingImage {                    asset -> { url }                   },                },              }
-export type TechnologiesQueryResult = Array<{
   landing: {
     _id: string;
     title: Array<string> | null;
@@ -989,11 +1028,51 @@ export type TechnologiesQueryResult = Array<{
     } | null;
     author: string | null;
   } | null;
-  titleSection: null;
-  cardTechnologiesServices: null;
+  title_section_primary: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  title_section_secondary: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card_primary: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
 }>;
 // Variable: applicationQuery
-// Query: *[_type == 'applicationServices'] {                landing -> {                _id,                title[],                subtitle[],                description[],                image {                  asset -> { url }                },                author,              },                                titleSection[]-> {                  _id,                  title[],                  subtitle[],                  description[],                },                      cardApplicationServicesPrimary[]-> {                  _id,                  title,                  subtitle,                  description,                  landingImage {                    asset -> { url }                   },                },                  cardApplicationServicesSecondary[]-> {                  _id,                  title,                  subtitle,                  description,                  landingImage {                    asset -> { url }                   },                },              }
+// Query: *[_type == 'applicationServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },              content -> {         _id,         title[],         subtitle[],         description[],        },       title_section -> {          _id,          title[],          subtitle[],          description[],        },                  card_primary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },                    card_secondary []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },    }
 export type ApplicationQueryResult = Array<{
   landing: {
     _id: string;
@@ -1007,98 +1086,468 @@ export type ApplicationQueryResult = Array<{
     } | null;
     author: string | null;
   } | null;
-  titleSection: null;
-  cardApplicationServicesPrimary: null;
-  cardApplicationServicesSecondary: null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card_primary: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+  card_secondary: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
+// Variable: technologiesQuery
+// Query: *[_type == 'technologiesServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },           card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },        }
+export type TechnologiesQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
 }>;
 // Variable: managedQuery
-// Query: *[_type == 'managedServices'][0] {                  landingServices -> {                    _id,                    landingTitle,                    landingSubtitle,                    landingDescription,                    landingImage {                      asset -> { url }                    }                  },                                    titleSection[]-> {                    _id,                    title[],                    subtitle[],                    description[],                  },                          cardManagedServices[]-> {                    _id,                    title,                    subtitle,                    description,                    landingImage {                      asset -> { url }                     },                  },                }
-export type ManagedQueryResult = {
-  landingServices: null;
-  titleSection: null;
-  cardManagedServices: null;
-} | null;
+// Query: *[_type == 'managedServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },            card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type ManagedQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: projectQuery
-// Query: *[_type == 'projectServices'][0] {                    landingServices -> {                      _id,                      landingTitle,                      landingSubtitle,                      landingDescription,                      landingImage {                        asset -> { url }                      }                    },                                        titleSection[]-> {                      _id,                      title[],                      subtitle[],                      description[],                    },                              cardProjectServices[]-> {                      _id,                      title,                      subtitle,                      description,                      landingImage {                        asset -> { url }                       },                    },                  }
-export type ProjectQueryResult = {
-  landingServices: null;
-  titleSection: null;
-  cardProjectServices: null;
-} | null;
+// Query: *[_type == 'projectServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },            card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type ProjectQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: artificialQuery
-// Query: *[_type == 'artificialServices'][0] {                      landingServices -> {                        _id,                        landingTitle,                        landingSubtitle,                        landingDescription,                        landingImage {                          asset -> { url }                        }                      },                                            titleSection[]-> {                        _id,                        title[],                        subtitle[],                        description[],                      },                                  cardArtificalServices[]-> {                        _id,                        title,                        subtitle,                        description,                        landingImage {                          asset -> { url }                         },                      },                    }
-export type ArtificialQueryResult = {
-  landingServices: null;
-  titleSection: null;
-  cardArtificalServices: null;
-} | null;
+// Query: *[_type == 'artificialServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },            card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type ArtificialQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: cyberQuery
-// Query: *[_type == 'cyberServices'][0] {        landingServices -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardCyberServices[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type CyberQueryResult = {
-  landingServices: null;
-  titleSection: null;
-  cardCyberServices: null;
-} | null;
+// Query: *[_type == 'cyberServices'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },            card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type CyberQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: governmentQuery
-// Query: *[_type == 'governmentIndustries'][0] {        landingIndustries -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardGovernmentIndustries[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type GovernmentQueryResult = {
-  landingIndustries: null;
-  titleSection: null;
-  cardGovernmentIndustries: null;
-} | null;
+// Query: *[_type == 'governmentIndustries'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },            card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type GovernmentQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: insuranceQuery
-// Query: *[_type == 'insuranceIndustries'][0] {        landingIndustries -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardInsuranceIndustries[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type InsuranceQueryResult = {
-  landingIndustries: null;
-  titleSection: null;
-  cardInsuranceIndustries: null;
-} | null;
+// Query: *[_type == 'insuranceIndustries'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },             card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type InsuranceQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: financialQuery
-// Query: *[_type == 'financialIndustries'][0] {        landingIndustries -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardFinancialIndustries[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type FinancialQueryResult = {
-  landingIndustries: null;
-  titleSection: null;
-  cardFinancialIndustries: null;
-} | null;
+// Query: *[_type == 'financialIndustries'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },             card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type FinancialQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: telecommunicationQuery
-// Query: *[_type == 'telecommunicationsIndustries'][0] {        landingIndustries -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardTelecommunicationsIndustries[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type TelecommunicationQueryResult = {
-  landingIndustries: null;
-  titleSection: null;
-  cardTelecommunicationsIndustries: null;
-} | null;
+// Query: *[_type == 'telecommunicationsIndustries'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                     title_section -> {          _id,          title[],          subtitle[],          description[],        },                 content -> {          _id,          title[],          subtitle[],          description[],        },             card []-> {          _id,          title,          subtitle,          description,          image {            asset -> { url }           },          svg_path,               },            }
+export type TelecommunicationQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  title_section: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 // Variable: carrersQuery
-// Query: *[_type == 'carrers'][0] {        landingCarrers -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },    }
-export type CarrersQueryResult = {
-  landingCarrers: null;
-} | null;
+// Query: *[_type == 'carrers'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },               }
+export type CarrersQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+}>;
 // Variable: contactQuery
-// Query: *[_type == 'contact'][0] {        landingContact -> {            _id,            landingTitle,            landingSubtitle,            landingDescription,            landingImage {                asset -> { url }            }        },                                titleSection[]-> {            _id,            title[],            subtitle[],            description[],        },                      cardContact[]-> {            _id,            title,            subtitle,            description,            landingImage {                asset -> { url }             },        },    }
-export type ContactQueryResult = {
-  landingContact: null;
-  titleSection: null;
-  cardContact: null;
-} | null;
+// Query: *[_type == 'contact'] {      landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },      content -> {        _id,        title[],        subtitle[],        description[],      },      card []-> {        _id,        title,        subtitle,        description,        image {          asset -> { url }         },        svg_path,             },                }
+export type ContactQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  content: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  card: Array<{
+    _id: string;
+    title: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    svg_path: string | null;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "\n       *[_type == 'about'][0]\n        ": QueryResult;
-    "\n  *[_type == 'home'] {\n          landing -> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n            image {\n              asset -> { url }\n            },\n            author,\n          },\n          \n          content -> {\n            _id,\n            title[],\n            subtitle[],\n            description[]\n          },\n\n          card_primary [] -> {\n              _id,\n              title,\n              subtitle,\n              description,\n              image {\n                asset -> { url } \n              },\n              svg_path,\n          },\n\n          card_secondary [] -> {\n              _id,\n              title,\n              subtitle,\n              description,\n              image {\n                asset -> { url } \n              },\n              svg_path,\n          },\n\n          home_isga -> {\n            _id,\n            image {\n              asset -> { url } \n            },\n            title,\n            description,\n            cards []-> {\n              _id,\n              title,\n              subtitle,\n              description,\n              image {\n                asset -> { url } \n              },\n              svg_path,\n            } \n          }\n        }   \n     ": HomeQueryResult;
-    "\n        *[_type == 'about'] {\n           landing -> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n            image {\n              asset -> { url }\n            },\n            author,\n          },\n            \n            content -> {\n              _id,\n              title[],\n              subtitle[],\n              description[]\n            },\n  \n            card_primary []-> {\n              _id,\n              title,\n              subtitle,\n              description,\n              image {\n                asset -> { url } \n              },\n              svg_path,\n            },\n  \n            card_secondary []-> {\n              _id,\n              title,\n              subtitle,\n              description,\n              image {\n                asset -> { url } \n              },\n              svg_path,\n            }\n          }   \n       ": AboutQueryResult;
-    "\n    *[_type == 'consultingServices'] {\n              landingServices -> {\n                _id,\n                landingTitle,\n                landingSubtitle,\n                landingDescription,\n                landingImage {\n                  asset -> { url }\n                }\n              },\n              \n              titleSectionSecondary[]-> {\n                _id,\n                title[],\n                subtitle[],\n                description[],\n              },\n  \n              titleSectionSecondary[]-> {\n                _id,\n                title[],\n                subtitle[],\n                description[],\n              },\n    \n              cardConsultingServicesPrimary[]-> {\n                _id,\n                title,\n                subtitle,\n                description,\n                landingImage {\n                  asset -> { url } \n                },\n              },\n\n              cardConsultingServicesSecondary[]-> {\n                _id,\n                title,\n                subtitle,\n                description,\n                landingImage {\n                  asset -> { url } \n                },\n              },\n            }   \n         ": ConsultingQueryResult;
-    "\n      *[_type == 'technologiesServices'] {\n                landing -> {\n                _id,\n                title[],\n                subtitle[],\n                description[],\n                image {\n                  asset -> { url }\n                },\n                author,\n                },\n                \n                titleSection[]-> {\n                  _id,\n                  title[],\n                  subtitle[],\n                  description[],\n                },\n      \n                cardTechnologiesServices[]-> {\n                  _id,\n                  title,\n                  subtitle,\n                  description,\n                  landingImage {\n                    asset -> { url } \n                  },\n                },\n              }   \n           ": TechnologiesQueryResult;
-    "\n      *[_type == 'applicationServices'] {\n                landing -> {\n                _id,\n                title[],\n                subtitle[],\n                description[],\n                image {\n                  asset -> { url }\n                },\n                author,\n              },\n                \n                titleSection[]-> {\n                  _id,\n                  title[],\n                  subtitle[],\n                  description[],\n                },\n      \n                cardApplicationServicesPrimary[]-> {\n                  _id,\n                  title,\n                  subtitle,\n                  description,\n                  landingImage {\n                    asset -> { url } \n                  },\n                },\n  \n                cardApplicationServicesSecondary[]-> {\n                  _id,\n                  title,\n                  subtitle,\n                  description,\n                  landingImage {\n                    asset -> { url } \n                  },\n                },\n              }   \n           ": ApplicationQueryResult;
-    "\n        *[_type == 'managedServices'][0] {\n                  landingServices -> {\n                    _id,\n                    landingTitle,\n                    landingSubtitle,\n                    landingDescription,\n                    landingImage {\n                      asset -> { url }\n                    }\n                  },\n                  \n                  titleSection[]-> {\n                    _id,\n                    title[],\n                    subtitle[],\n                    description[],\n                  },\n        \n                  cardManagedServices[]-> {\n                    _id,\n                    title,\n                    subtitle,\n                    description,\n                    landingImage {\n                      asset -> { url } \n                    },\n                  },\n                }   \n             ": ManagedQueryResult;
-    "\n          *[_type == 'projectServices'][0] {\n                    landingServices -> {\n                      _id,\n                      landingTitle,\n                      landingSubtitle,\n                      landingDescription,\n                      landingImage {\n                        asset -> { url }\n                      }\n                    },\n                    \n                    titleSection[]-> {\n                      _id,\n                      title[],\n                      subtitle[],\n                      description[],\n                    },\n          \n                    cardProjectServices[]-> {\n                      _id,\n                      title,\n                      subtitle,\n                      description,\n                      landingImage {\n                        asset -> { url } \n                      },\n                    },\n                  }   \n               ": ProjectQueryResult;
-    "\n            *[_type == 'artificialServices'][0] {\n                      landingServices -> {\n                        _id,\n                        landingTitle,\n                        landingSubtitle,\n                        landingDescription,\n                        landingImage {\n                          asset -> { url }\n                        }\n                      },\n                      \n                      titleSection[]-> {\n                        _id,\n                        title[],\n                        subtitle[],\n                        description[],\n                      },\n            \n                      cardArtificalServices[]-> {\n                        _id,\n                        title,\n                        subtitle,\n                        description,\n                        landingImage {\n                          asset -> { url } \n                        },\n                      },\n                    }   \n                 ": ArtificialQueryResult;
-    "\n    *[_type == 'cyberServices'][0] {\n        landingServices -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardCyberServices[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": CyberQueryResult;
-    "\n    *[_type == 'governmentIndustries'][0] {\n        landingIndustries -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardGovernmentIndustries[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": GovernmentQueryResult;
-    "\n    *[_type == 'insuranceIndustries'][0] {\n        landingIndustries -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardInsuranceIndustries[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": InsuranceQueryResult;
-    "\n    *[_type == 'financialIndustries'][0] {\n        landingIndustries -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardFinancialIndustries[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": FinancialQueryResult;
-    "\n    *[_type == 'telecommunicationsIndustries'][0] {\n        landingIndustries -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardTelecommunicationsIndustries[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": TelecommunicationQueryResult;
-    "\n    *[_type == 'carrers'][0] {\n        landingCarrers -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n    }   \n    ": CarrersQueryResult;
-    "\n    *[_type == 'contact'][0] {\n        landingContact -> {\n            _id,\n            landingTitle,\n            landingSubtitle,\n            landingDescription,\n            landingImage {\n                asset -> { url }\n            }\n        },\n                        \n        titleSection[]-> {\n            _id,\n            title[],\n            subtitle[],\n            description[],\n        },\n              \n        cardContact[]-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            landingImage {\n                asset -> { url } \n            },\n        },\n    }   \n    ": ContactQueryResult;
+    "\n    *[_type == 'home'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n\n       content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[]\n        },\n\n        home_isga -> {\n          _id,\n          image {\n            asset -> { url } \n          },\n          title,\n          description,\n          cards []-> {\n            _id,\n            title,\n            subtitle,\n            description,\n            image {\n              asset -> { url } \n            },\n            svg_path,\n          } \n        },\n    \n       card_primary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },\n        \n         card_secondary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        }, \n\n    }   \n  ": HomeQueryResult;
+    "\n    *[_type == 'about'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n\n       content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[]\n        },\n    \n       card_primary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },\n        \n         card_secondary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        }, \n\n    }   \n  ": AboutQueryResult;
+    "\n    *[_type == 'consultingServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section_primary -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n\n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n\n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n        \n        title_section_secondary -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n       card_primary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },\n        \n         card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        }, \n\n    }   \n  ": ConsultingQueryResult;
+    "\n    *[_type == 'applicationServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n       \n       content -> {\n         _id,\n         title[],\n         subtitle[],\n         description[],\n        },\n\n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },       \n    \n       card_primary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },    \n        \n        card_secondary []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },\n    }   \n  ": ApplicationQueryResult;
+    "\n    *[_type == 'technologiesServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n       card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },    \n\n    }   \n  ": TechnologiesQueryResult;
+    "\n    *[_type == 'managedServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": ManagedQueryResult;
+    "\n    *[_type == 'projectServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": ProjectQueryResult;
+    "\n    *[_type == 'artificialServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": ArtificialQueryResult;
+    "\n    *[_type == 'cyberServices'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": CyberQueryResult;
+    "\n    *[_type == 'governmentIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        },\n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": GovernmentQueryResult;
+    "\n    *[_type == 'insuranceIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": InsuranceQueryResult;
+    "\n    *[_type == 'financialIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": FinancialQueryResult;
+    "\n    *[_type == 'telecommunicationsIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": TelecommunicationQueryResult;
+    "\n    *[_type == 'carrers'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n           \n    }   \n  ": CarrersQueryResult;
+    "\n    *[_type == 'contact'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n\n      content -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n      },\n\n      card []-> {\n        _id,\n        title,\n        subtitle,\n        description,\n        image {\n          asset -> { url } \n        },\n        svg_path,       \n      }, \n           \n    }   \n  ": ContactQueryResult;
   }
 }

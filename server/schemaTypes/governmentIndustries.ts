@@ -14,8 +14,14 @@ export default defineType({
     defineField({
       name: 'title_section',
       title: 'Title Section',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'simple'}}],
+      type: 'reference',
+      to: {type: 'simple'},
+    }),
+    defineField({
+      name: 'content',
+      title: 'Title Section and its content',
+      type: 'reference',
+      to: {type: 'simple'},
     }),
     defineField({
       name: 'card',

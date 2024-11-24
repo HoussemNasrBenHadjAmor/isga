@@ -20,7 +20,9 @@ export default function RootLayout({
         <body>
           <Navbar />
           {children}
-          <Footer />
+          <div className="pt-20">
+            <Footer />
+          </div>
           <SanityLive />
         </body>
       </html>

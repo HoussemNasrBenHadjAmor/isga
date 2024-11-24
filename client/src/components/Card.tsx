@@ -6,7 +6,7 @@ import SvgFromDataUrl from "./SvgFromDataUrl";
 interface CardProps {
   data: CardType;
   className?: string;
-  flex: boolean;
+  flex?: boolean;
 }
 
 const Card = ({ data, className, flex }: CardProps) => {

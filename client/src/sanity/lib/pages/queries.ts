@@ -2,552 +2,667 @@ import { defineQuery } from "next-sanity";
 
 export const homeQuery = defineQuery(
   `
-  *[_type == 'home'] {
-          landing -> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-            image {
-              asset -> { url }
-            },
-            author,
-          },
-          
-          content -> {
-            _id,
-            title[],
-            subtitle[],
-            description[]
-          },
+    *[_type == 'home'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
 
-          card_primary [] -> {
-              _id,
-              title,
-              subtitle,
-              description,
-              image {
-                asset -> { url } 
-              },
-              svg_path,
-          },
+       content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[]
+        },
 
-          card_secondary [] -> {
-              _id,
-              title,
-              subtitle,
-              description,
-              image {
-                asset -> { url } 
-              },
-              svg_path,
+        home_isga -> {
+          _id,
+          image {
+            asset -> { url } 
           },
-
-          home_isga -> {
+          title,
+          description,
+          cards []-> {
             _id,
+            title,
+            subtitle,
+            description,
             image {
               asset -> { url } 
             },
-            title,
-            description,
-            cards []-> {
-              _id,
-              title,
-              subtitle,
-              description,
-              image {
-                asset -> { url } 
-              },
-              svg_path,
-            } 
-          }
-        }   
-     `
+            svg_path,
+          } 
+        },
+    
+       card_primary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },
+        
+         card_secondary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        }, 
+
+    }   
+  `
 );
 
 export const aboutQuery = defineQuery(
   `
-        *[_type == 'about'] {
-           landing -> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-            image {
-              asset -> { url }
-            },
-            author,
+    *[_type == 'about'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+
+       content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[]
+        },
+    
+       card_primary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
           },
-            
-            content -> {
-              _id,
-              title[],
-              subtitle[],
-              description[]
-            },
-  
-            card_primary []-> {
-              _id,
-              title,
-              subtitle,
-              description,
-              image {
-                asset -> { url } 
-              },
-              svg_path,
-            },
-  
-            card_secondary []-> {
-              _id,
-              title,
-              subtitle,
-              description,
-              image {
-                asset -> { url } 
-              },
-              svg_path,
-            }
-          }   
-       `
+          svg_path,       
+        },
+        
+         card_secondary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        }, 
+
+    }   
+  `
 );
 
 export const consultingQuery = defineQuery(
   `
     *[_type == 'consultingServices'] {
-              landingServices -> {
-                _id,
-                landingTitle,
-                landingSubtitle,
-                landingDescription,
-                landingImage {
-                  asset -> { url }
-                }
-              },
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
               
-              titleSectionSecondary[]-> {
-                _id,
-                title[],
-                subtitle[],
-                description[],
-              },
-  
-              titleSectionSecondary[]-> {
-                _id,
-                title[],
-                subtitle[],
-                description[],
-              },
+       title_section_primary -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+        
+        title_section_secondary -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
     
-              cardConsultingServicesPrimary[]-> {
-                _id,
-                title,
-                subtitle,
-                description,
-                landingImage {
-                  asset -> { url } 
-                },
-              },
+       card_primary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },
+        
+         card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        }, 
 
-              cardConsultingServicesSecondary[]-> {
-                _id,
-                title,
-                subtitle,
-                description,
-                landingImage {
-                  asset -> { url } 
-                },
-              },
-            }   
-         `
-);
-
-export const technologiesQuery = defineQuery(
+    }   
   `
-      *[_type == 'technologiesServices'] {
-                landing -> {
-                _id,
-                title[],
-                subtitle[],
-                description[],
-                image {
-                  asset -> { url }
-                },
-                author,
-                },
-                
-                titleSection[]-> {
-                  _id,
-                  title[],
-                  subtitle[],
-                  description[],
-                },
-      
-                cardTechnologiesServices[]-> {
-                  _id,
-                  title,
-                  subtitle,
-                  description,
-                  landingImage {
-                    asset -> { url } 
-                  },
-                },
-              }   
-           `
 );
 
 export const applicationQuery = defineQuery(
   `
-      *[_type == 'applicationServices'] {
-                landing -> {
-                _id,
-                title[],
-                subtitle[],
-                description[],
-                image {
-                  asset -> { url }
-                },
-                author,
-              },
-                
-                titleSection[]-> {
-                  _id,
-                  title[],
-                  subtitle[],
-                  description[],
-                },
-      
-                cardApplicationServicesPrimary[]-> {
-                  _id,
-                  title,
-                  subtitle,
-                  description,
-                  landingImage {
-                    asset -> { url } 
-                  },
-                },
-  
-                cardApplicationServicesSecondary[]-> {
-                  _id,
-                  title,
-                  subtitle,
-                  description,
-                  landingImage {
-                    asset -> { url } 
-                  },
-                },
-              }   
-           `
+    *[_type == 'applicationServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+       
+       content -> {
+         _id,
+         title[],
+         subtitle[],
+         description[],
+        },
+
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },       
+    
+       card_primary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },    
+        
+        card_secondary []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },
+    }   
+  `
+);
+
+export const technologiesQuery = defineQuery(
+  `
+    *[_type == 'technologiesServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+              
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+    
+       card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },    
+
+    }   
+  `
 );
 
 export const managedQuery = defineQuery(
   `
-        *[_type == 'managedServices'][0] {
-                  landingServices -> {
-                    _id,
-                    landingTitle,
-                    landingSubtitle,
-                    landingDescription,
-                    landingImage {
-                      asset -> { url }
-                    }
-                  },
-                  
-                  titleSection[]-> {
-                    _id,
-                    title[],
-                    subtitle[],
-                    description[],
-                  },
+    *[_type == 'managedServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+              
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
         
-                  cardManagedServices[]-> {
-                    _id,
-                    title,
-                    subtitle,
-                    description,
-                    landingImage {
-                      asset -> { url } 
-                    },
-                  },
-                }   
-             `
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
+    }   
+  `
 );
 
 export const projectQuery = defineQuery(
   `
-          *[_type == 'projectServices'][0] {
-                    landingServices -> {
-                      _id,
-                      landingTitle,
-                      landingSubtitle,
-                      landingDescription,
-                      landingImage {
-                        asset -> { url }
-                      }
-                    },
-                    
-                    titleSection[]-> {
-                      _id,
-                      title[],
-                      subtitle[],
-                      description[],
-                    },
-          
-                    cardProjectServices[]-> {
-                      _id,
-                      title,
-                      subtitle,
-                      description,
-                      landingImage {
-                        asset -> { url } 
-                      },
-                    },
-                  }   
-               `
+    *[_type == 'projectServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+              
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
+    }   
+  `
 );
 
 export const artificialQuery = defineQuery(
   `
-            *[_type == 'artificialServices'][0] {
-                      landingServices -> {
-                        _id,
-                        landingTitle,
-                        landingSubtitle,
-                        landingDescription,
-                        landingImage {
-                          asset -> { url }
-                        }
-                      },
-                      
-                      titleSection[]-> {
-                        _id,
-                        title[],
-                        subtitle[],
-                        description[],
-                      },
-            
-                      cardArtificalServices[]-> {
-                        _id,
-                        title,
-                        subtitle,
-                        description,
-                        landingImage {
-                          asset -> { url } 
-                        },
-                      },
-                    }   
-                 `
+    *[_type == 'artificialServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
+        },
+        author,
+      },
+              
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        },
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
+    }   
+  `
 );
 
 export const cyberQuery = defineQuery(
   `
-    *[_type == 'cyberServices'][0] {
-        landingServices -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'cyberServices'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-        },
+        author,
+      },
               
-        cardCyberServices[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
         },
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
     }   
-    `
+  `
 );
 
 export const governmentQuery = defineQuery(
   `
-    *[_type == 'governmentIndustries'][0] {
-        landingIndustries -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'governmentIndustries'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-        },
+        author,
+      },
               
-        cardGovernmentIndustries[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
         },
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
     }   
-    `
+  `
 );
 
 export const insuranceQuery = defineQuery(
   `
-    *[_type == 'insuranceIndustries'][0] {
-        landingIndustries -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'insuranceIndustries'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-        },
+        author,
+      },
               
-        cardInsuranceIndustries[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
-        },
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
     }   
-    `
+  `
 );
 
 export const financialQuery = defineQuery(
   `
-    *[_type == 'financialIndustries'][0] {
-        landingIndustries -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'financialIndustries'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-        },
+        author,
+      },
               
-        cardFinancialIndustries[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
-        },
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
     }   
-    `
+  `
 );
 
 export const telecommunicationQuery = defineQuery(
   `
-    *[_type == 'telecommunicationsIndustries'][0] {
-        landingIndustries -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'telecommunicationsIndustries'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
-        },
+        author,
+      },
               
-        cardTelecommunicationsIndustries[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
-        },
+       title_section -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+        
+        content -> {
+          _id,
+          title[],
+          subtitle[],
+          description[],
+        }, 
+    
+        card []-> {
+          _id,
+          title,
+          subtitle,
+          description,
+          image {
+            asset -> { url } 
+          },
+          svg_path,       
+        },        
     }   
-    `
+  `
 );
 
 export const carrersQuery = defineQuery(
   `
-    *[_type == 'carrers'][0] {
-        landingCarrers -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'carrers'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
+        author,
+      },
+           
     }   
-    `
+  `
 );
 
 export const contactQuery = defineQuery(
   `
-    *[_type == 'contact'][0] {
-        landingContact -> {
-            _id,
-            landingTitle,
-            landingSubtitle,
-            landingDescription,
-            landingImage {
-                asset -> { url }
-            }
+    *[_type == 'contact'] {
+      landing -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+        image {
+          asset -> { url }
         },
-                        
-        titleSection[]-> {
-            _id,
-            title[],
-            subtitle[],
-            description[],
+        author,
+      },
+
+      content -> {
+        _id,
+        title[],
+        subtitle[],
+        description[],
+      },
+
+      card []-> {
+        _id,
+        title,
+        subtitle,
+        description,
+        image {
+          asset -> { url } 
         },
-              
-        cardContact[]-> {
-            _id,
-            title,
-            subtitle,
-            description,
-            landingImage {
-                asset -> { url } 
-            },
-        },
+        svg_path,       
+      }, 
+           
     }   
-    `
+  `
 );

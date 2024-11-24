@@ -5,28 +5,29 @@ import {
   CardImage,
   Content,
 } from "@/components";
-import { aboutText, aboutCardImg, aboutCardText } from "@/constants";
+
 import { getAboutPage } from "@/sanity/lib/pages";
+import { Card as CardType } from "@/sanity/types";
 
 import { cn } from "@/lib/utils";
-import { Card as CardType } from "@/sanity/types";
 
 const page = async () => {
   const data = await getAboutPage();
+  const response = data[0];
   return (
     <>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage data={data[0].landing} />
+          <BackgroundImage data={response?.landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
 
-        <Landing data={data[0].landing} />
+        <Landing data={response?.landing} />
       </div>
       <CommunComponent>
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {data[0]?.card_primary?.map((item, index) => {
+          {response?.card_primary?.map((item, index) => {
             return (
               <Card
                 key={item?._id}
@@ -38,12 +39,12 @@ const page = async () => {
           })}
         </div>
 
-        {/* {data[0]?.content <Content data={item} noCenter />)} */}
+        {/* {response?.content <Content data={item} noCenter />)} */}
 
-        <Content data={data[0]?.content} noCenter />
+        <Content data={response?.content} noCenter />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
-          {data[0]?.card_secondary?.map((card) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {response?.card_secondary?.map((card) => (
             <CardImage
               key={card._id}
               data={card}

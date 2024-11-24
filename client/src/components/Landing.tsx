@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Landing as Lan } from "@/sanity/types";
 
 interface Props {
-  data: Lan;
+  data: Lan | null;
 }
 
 function Landing({ data }: Props) {

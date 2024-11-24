@@ -5,29 +5,27 @@ import {
   CommunTitle,
   Landing,
 } from "@/components";
-import {
-  industriesTelecommunicationsText,
-  industriesTelecommunicationsCard,
-} from "@/constants";
 
-const page = () => {
-  const url =
-    "https://isgaconsult.com/wp-content/uploads/2024/02/pollution-industry-exterior-daylight-min.jpg";
+import { getTelecommunicationsPage } from "@/sanity/lib/pages";
+
+const page = async () => {
+  const data = await getTelecommunicationsPage();
+  const response = data ? data[0] : null;
   return (
     <div>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={url} />
+          <BackgroundImage data={response?.landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}
-        <Landing data={industriesTelecommunicationsText} />
+        <Landing data={response?.landing} />
       </div>
       <CommunComponent>
-        <CommunTitle title="Telecommunications" />
+        <CommunTitle data={response?.title_section} />
 
-        {industriesTelecommunicationsCard.map((item, index) => (
+        {response?.card?.map((item, index) => (
           <CardImageServiceManaged data={item} index={index + 1} />
         ))}
       </CommunComponent>

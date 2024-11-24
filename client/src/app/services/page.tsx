@@ -9,7 +9,7 @@ const page = () => {
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={url} />
+          <BackgroundImage data={response?.landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}

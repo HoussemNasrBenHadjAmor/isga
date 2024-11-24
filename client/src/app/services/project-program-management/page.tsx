@@ -5,25 +5,27 @@ import {
   Landing,
   Widget,
 } from "@/components";
-import { projectProgramText, projectProgramWidget } from "@/constants";
 
-const page = () => {
-  const url =
-    "https://isgaconsult.com/wp-content/uploads/2024/02/app-woman-white-solution-closeup-two-min-scaled.jpg";
+import { getProjectPage } from "@/sanity/lib/pages";
+
+const page = async () => {
+  const data = await getProjectPage();
+  const response = data[0];
+
   return (
     <div>
       <div className="relative flex min-h-screen w-full">
         {/* Background and Overlay */}
         <div className="absolute inset-0 w-full h-full">
-          <BackgroundImage url={url} />
+          <BackgroundImage data={response?.landing} />
           <div className="absolute inset-0 bg-[#424267] opacity-90" />
         </div>
         {/* Main Content */}
-        <Landing data={projectProgramText} />
+        <Landing data={response?.landing} />
       </div>
       <CommunComponent>
-        <CommunTitle title="Project & Program Management" />
-        <Widget data={projectProgramWidget} />
+        <CommunTitle data={response?.title_section} />
+        <Widget data={response?.card} />
       </CommunComponent>
     </div>
   );

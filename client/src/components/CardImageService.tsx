@@ -1,12 +1,20 @@
 import Image from "next/image";
-import React from "react";
+import { Card } from "@/sanity/types";
+import { urlFor } from "@/sanity/lib/image";
+import { default_landing_url } from "@/constants";
 
-const CardImageService = ({ data, maxWidth, index }: any) => {
-  const isEven = index % 2 === 0;
+interface CardImageProps {
+  data: Card | null;
+  maxWidth?: boolean;
+  index?: number;
+}
+
+const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
+  const isEven = index ? index % 2 === 0 : false;
 
   return (
     <div
-      className={`flex flex-col lg:flex-row justify-center items-center mb-20 gap-3 lg:gap-0 rounded-lg bg-[#424267] shadow-2xl ${
+      className={`flex flex-col lg:flex-row justify-center items-center mt-20 gap-3 lg:gap-0 rounded-lg bg-[#424267] shadow-2xl ${
         isEven && "lg:flex-row-reverse flex-col-reverse"
       }`}
     >
@@ -18,7 +26,7 @@ const CardImageService = ({ data, maxWidth, index }: any) => {
         <Image
           height="1080"
           width="1920"
-          src={data.url}
+          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
           alt="background"
           className={`h-full w-full object-cover max-h-[400px] rounded-tr-lg ${
             isEven &&
@@ -31,10 +39,11 @@ const CardImageService = ({ data, maxWidth, index }: any) => {
         ${!maxWidth && "lg:w-[50%]"}
         `}
       >
-        {data?.details && <p>{data.details}</p>}
-        {data?.description.map((des: any) => (
-          <p className={`${data?.details && "ml-3"}`} key={des.content}>
-            • {des.content}
+        {data?.title && <p>{data.title}</p>}
+        {data?.subtitle?.map((des) => <p key={des}>{des}</p>)}
+        {data?.description?.map((des) => (
+          <p className="ml-3" key={des}>
+            • {des}
           </p>
         ))}
       </div>

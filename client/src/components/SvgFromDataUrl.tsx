@@ -1,23 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const SvgFromDataUrl = ({ dataUrl }: { dataUrl: string }) => {
-  // Step 1: Decode the Base64 string
-  const base64Content = dataUrl.split(",")[1]; // Extract after "data:image/svg+xml;base64,"
-  const decodedSvg = atob(base64Content);
+  const [svgElement, setSvgElement] = useState<SVGElement | null>(null);
 
-  // Step 2: Parse the XML into a DOM object
-  const parser = new DOMParser();
-  const svgDoc = parser.parseFromString(decodedSvg, "image/svg+xml");
-  const svgElement = svgDoc.documentElement;
+  useEffect(() => {
+    // Ensure DOMParser is only used in the browser
+    if (typeof window !== "undefined" && dataUrl) {
+      try {
+        // Step 1: Decode the Base64 string
+        const base64Content = dataUrl.split(",")[1]; // Extract after "data:image/svg+xml;base64,"
+        const decodedSvg = atob(base64Content);
 
-  if (!svgElement || svgElement.nodeName !== "svg") {
-    console.error("Invalid SVG data");
-    return null;
-  }
+        // Step 2: Parse the XML into a DOM object
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(decodedSvg, "image/svg+xml");
+        const svgRoot = svgDoc.documentElement;
 
-  // Step 3: Convert the XML SVG into JSX
+        if (svgRoot && svgRoot.nodeName === "svg") {
+          setSvgElement(svgRoot as SVGElement);
+        } else {
+          console.error("Invalid SVG data");
+        }
+      } catch (error) {
+        console.error("Error parsing SVG data:", error);
+      }
+    }
+  }, [dataUrl]);
+
   const getAttributes = (element: Element): Record<string, string> => {
     const attributes: Record<string, string> = {};
     Array.from(element.attributes).forEach((attr) => {
@@ -30,23 +41,24 @@ const SvgFromDataUrl = ({ dataUrl }: { dataUrl: string }) => {
     return attributes;
   };
 
-  const renderElement = (element: Element): React.ReactNode => {
+  const renderElement = (element: Element, index: number): React.ReactNode => {
     const attributes = getAttributes(element);
     const tagName = element.tagName;
 
     return React.createElement(
       tagName,
-      attributes,
+      { ...attributes, key: index }, // Add a unique key
       Array.from(element.childNodes).map(
-        (child) =>
+        (child, childIndex) =>
           child.nodeType === 1
-            ? renderElement(child as Element) // Element node
+            ? renderElement(child as Element, childIndex) // Pass childIndex for keys
             : child.nodeValue // Text node
       )
     );
   };
 
-  return <>{renderElement(svgElement)}</>;
+  // Render the SVG JSX or return null if SVG is not ready
+  return svgElement ? <>{renderElement(svgElement, 0)}</> : null;
 };
 
 export default SvgFromDataUrl;

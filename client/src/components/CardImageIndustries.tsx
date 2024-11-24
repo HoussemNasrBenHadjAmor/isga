@@ -1,14 +1,23 @@
 import Image from "next/image";
-import React from "react";
+import { urlFor } from "@/sanity/lib/image";
+import { Card } from "@/sanity/types";
+import { default_landing_url } from "@/constants";
 
-const CardImageIndustries = ({ data, className }: any) => {
+interface CardImageProps {
+  data: Card | null;
+  className?: string;
+}
+
+const CardImageIndustries = ({ data, className }: CardImageProps) => {
   return (
-    <div className="flex flex-col mb-20 gap-3 lg:gap-0 rounded-lg">
+    <div className="flex flex-col mt-20 gap-3 lg:gap-0 rounded-lg">
       <div className="w-full">
         <Image
           height="1080"
           width="1920"
-          src={data.url}
+          src={
+            data?.image ? urlFor(data.image as any).url() : default_landing_url
+          }
           alt="background"
           className="object-cover rounded-tr-lg rounded-tl-lg lg:rounded-lg w-full h-full"
         />
@@ -16,11 +25,10 @@ const CardImageIndustries = ({ data, className }: any) => {
 
       <div className="flex flex-col justify-center items-center text-center p-3 lg:px-10 gap-3 w-full">
         {data?.title && <h1 className="font-bold text-xl"> {data.title} </h1>}
-        {data?.details &&
-          data?.details?.map((det: any) => <p>{det.content}</p>)}
-        {data?.description?.map((des: any) => (
-          <p className={`${data?.details && "ml-3"}`} key={des.content}>
-            • {des.content}
+        {data?.subtitle && data?.subtitle?.map((det) => <p>{det}</p>)}
+        {data?.description?.map((des) => (
+          <p className={`${data?.details && "ml-3"}`} key={des}>
+            • {des}
           </p>
         ))}
       </div>
