@@ -44,4 +44,16 @@ export default defineType({
       type: 'string',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title[0]', // First element of the landing title array
+      media: 'image', // Landing image for preview
+    },
+    prepare({title, media}) {
+      return {
+        title: title || 'Landing',
+        media, // Display the landing image in the preview
+      }
+    },
+  },
 })

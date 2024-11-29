@@ -2,6 +2,8 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {presentationTool} from 'sanity/presentation'
+import {resolve} from './resolve'
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +12,23 @@ export default defineConfig({
   projectId: 'rz2wuirp',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    visionTool(),
+
+    presentationTool({
+      resolve,
+      previewUrl: {
+        // preview: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
+        origin: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
+        previewMode: {
+          // enable: '',
+          enable: '/api/draft-mode/enable',
+          disable: '/api/draft-mode/disable',
+        },
+      },
+    }),
+  ],
 
   schema: {
     types: schemaTypes,

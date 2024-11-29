@@ -19,4 +19,16 @@ export default defineType({
       type: 'string',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title', // First element of the landing title array
+      media: 'image', // Landing image for preview
+    },
+    prepare({title, media}) {
+      return {
+        title: title || 'Home Ask Question Component',
+        media, // Display the landing image in the preview
+      }
+    },
+  },
 })

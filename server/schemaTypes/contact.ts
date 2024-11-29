@@ -24,4 +24,18 @@ export default defineType({
       to: {type: 'simple'},
     }),
   ],
+  preview: {
+    select: {
+      title: 'landing.title[0]', // First element of the landing title array
+      subtitle: 'landing.subtitle[0]', // First element of the landing subtitle array
+      media: 'landing.image', // Landing image for preview
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title: title || 'Contact Page',
+        subtitle: subtitle || 'Contact Page Details',
+        media, // Display the landing image in the preview
+      }
+    },
+  },
 })

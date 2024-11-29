@@ -6,7 +6,7 @@ interface CommunTitlePropos {
 
 const CommunTitle = ({ data }: CommunTitlePropos) => {
   return (
-    <div className="flex flex-col items-center justify-center text-center mb-20">
+    <div className="flex flex-col items-center justify-center text-center my-20">
       {data?.title?.map((title) => (
         <h1 className="font-bold text-4xl pb-5" key={title}>
           {title}

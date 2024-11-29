@@ -24,4 +24,14 @@ export default defineType({
       of: [{type: 'string'}],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title[0]', // First element of the landing title array
+    },
+    prepare({title}) {
+      return {
+        title: title || 'Details Component',
+      }
+    },
+  },
 })

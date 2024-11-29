@@ -22,7 +22,7 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
           height="1080"
           width="1920"
           src={
-            data?.image ? urlFor(data.image as any).url() : default_landing_url
+            data?.image ? urlFor(data?.image as any).url() : default_landing_url
           }
           alt="background"
           className="object-cover rounded-tr-lg rounded-tl-lg lg:rounded-lg w-full max-h-[400px] h-full"
@@ -33,7 +33,7 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
         <h1 className="font-bold text-2xl"> {data?.title} </h1>
         {data?.subtitle && data?.subtitle?.map((det: any) => <p>{det}</p>)}
         {data?.description?.map((des: any) => (
-          <p className={`${data?.details && "ml-3"}`} key={des}>
+          <p className="ml-3" key={des}>
             • {des}
           </p>
         ))}

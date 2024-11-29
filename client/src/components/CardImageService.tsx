@@ -14,7 +14,7 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row justify-center items-center mt-20 gap-3 lg:gap-0 rounded-lg bg-[#424267] shadow-2xl ${
+      className={`flex flex-col lg:flex-row justify-center items-center my-20 gap-3 lg:gap-0 rounded-lg bg-[#424267] shadow-2xl ${
         isEven && "lg:flex-row-reverse flex-col-reverse"
       }`}
     >
@@ -26,7 +26,9 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
         <Image
           height="1080"
           width="1920"
-          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
+          src={
+            data?.image ? urlFor(data?.image as any).url() : default_landing_url
+          }
           alt="background"
           className={`h-full w-full object-cover max-h-[400px] rounded-tr-lg ${
             isEven &&

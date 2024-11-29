@@ -12,7 +12,7 @@ const CardImage = ({ data, className }: CardImageProps) => {
   return (
     <div
       className={cn(
-        "relative my-20 w-full p-10 h-full max-h-[600px] flex flex-col items-center rounded-lg",
+        "relative mb-20 w-full p-10 h-full max-h-[600px] flex flex-col items-center rounded-lg",
         className
       )}
     >
