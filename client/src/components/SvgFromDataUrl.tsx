@@ -16,10 +16,10 @@ const SvgFromDataUrl = ({ dataUrl }: { dataUrl: string }) => {
         // Step 2: Parse the XML into a DOM object
         const parser = new DOMParser();
         const svgDoc = parser.parseFromString(decodedSvg, "image/svg+xml");
-        const svgRoot = svgDoc.documentElement;
+        const svgRoot = svgDoc.documentElement as unknown as SVGElement; // Cast to SVGElement
 
         if (svgRoot && svgRoot.nodeName === "svg") {
-          setSvgElement(svgRoot as SVGElement);
+          setSvgElement(svgRoot);
         } else {
           console.error("Invalid SVG data");
         }

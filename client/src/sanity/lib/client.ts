@@ -1,4 +1,5 @@
 import { createClient } from "next-sanity";
+
 // import { draftMode } from "next/headers";
 
 export const client = createClient({
@@ -12,6 +13,7 @@ export const client = createClient({
   stega: {
     // enabled: (await draftMode()).isEnabled,
     // enabled: true,
+
     studioUrl: process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/studio`
       : `${process.env.NEXT_PUBLIC_BASE_URL}/studio`,

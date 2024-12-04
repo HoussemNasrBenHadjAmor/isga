@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar, Footer } from "@/components";
-import { BackgroundProvider } from "@/context/BackgroundContext";
+import { Navbar, Footer, DisableDraftMode, ScrollTop } from "@/components";
 import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
@@ -16,21 +15,35 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled } = await draftMode();
+
+  // Check if the current request is a Sanity Studio preview
+  const isSanityStudioRequest =
+    typeof window !== "undefined" &&
+    window.location.pathname.includes("/studio");
+
+  console.log("Draft Mode Enabled:", isEnabled);
+  // console.log("Sanity Studio Request:", isSanityStudioRequest);
+
   return (
-    // <BackgroundProvider>
     <html lang="en">
       <body>
-        {(await draftMode()).isEnabled && <VisualEditing />}
-        {/* <VisualEditing /> */}
-        {/* <VisualEditing zIndex={1000} /> */}
+        {/* Conditionally render VisualEditing */}
+
+        {isEnabled && (
+          <>
+            <DisableDraftMode />
+            <VisualEditing />
+          </>
+        )}
         <SanityLive />
         <Navbar />
         {children}
         <div className="pt-20">
           <Footer />
+          <ScrollTop />
         </div>
       </body>
     </html>
-    // </BackgroundProvider>
   );
 }

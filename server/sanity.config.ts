@@ -19,10 +19,8 @@ export default defineConfig({
     presentationTool({
       resolve,
       previewUrl: {
-        // preview: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
         origin: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
         previewMode: {
-          // enable: '',
           enable: '/api/draft-mode/enable',
           disable: '/api/draft-mode/disable',
         },

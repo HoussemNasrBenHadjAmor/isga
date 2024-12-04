@@ -19,3 +19,5 @@ export { default as Maps } from "@/components/Maps";
 export { default as ContactForm } from "@/components/ContactForm";
 export { default as Content } from "@/components/Content";
 export { default as SvgFromDataUrl } from "@/components/SvgFromDataUrl";
+export { default as DisableDraftMode } from "@/components/DisableDraftMode";
+export { default as ScrollTop } from "@/components/ScrollTop";

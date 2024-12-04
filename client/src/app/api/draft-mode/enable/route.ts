@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
   }
 
   // Enable draft mode
-  (await draftMode()).enable;
+  (await draftMode()).enable();
 
   return NextResponse.redirect(new URL(redirectTo, request.url));
 }
