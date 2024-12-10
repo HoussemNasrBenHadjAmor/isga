@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CommunComponent,
@@ -10,6 +11,10 @@ import { getAboutPage } from "@/sanity/lib/pages";
 import { Card as CardType } from "@/sanity/types";
 
 import { cn } from "@/lib/utils";
+
+import { aboutMetadata } from "@/constants";
+
+export const metadata: Metadata = aboutMetadata;
 
 const page = async () => {
   const data = await getAboutPage();

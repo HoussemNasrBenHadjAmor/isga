@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CommunComponent,
@@ -7,6 +8,9 @@ import {
 } from "@/components";
 
 import { getProjectPage } from "@/sanity/lib/pages";
+import { projectServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = projectServiceMetadata;
 
 const page = async () => {
   const data = await getProjectPage();

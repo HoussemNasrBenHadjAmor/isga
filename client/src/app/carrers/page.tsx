@@ -1,13 +1,9 @@
-import {
-  BackgroundImage,
-  CardImageServiceManaged,
-  CommunComponent,
-  CommunTitle,
-  Content,
-  Landing,
-} from "@/components";
-
+import { Metadata } from "next";
+import { BackgroundImage, CommunComponent, Landing } from "@/components";
 import { getCarrersPage } from "@/sanity/lib/pages";
+import { carrersMetadata } from "@/constants";
+
+export const metadata: Metadata = carrersMetadata;
 
 const page = async () => {
   const data = await getCarrersPage();

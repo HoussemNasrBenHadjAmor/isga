@@ -22,6 +22,318 @@ import {
   Smartphone,
 } from "lucide-react";
 
+export const homeImage = "/home.jpg";
+export const aboutImage = "/about.jpg";
+export const servicesImage = "/services.jpg";
+export const industriesImage = "/industries.jpg";
+export const careersImage = "/carrers.png";
+export const contactImage = "/contact.jpg";
+
+export const homeMetadata = {
+  title: "Home - Consultation ISGA Inc.",
+  description:
+    "ISGA Consult we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients. We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. About See our services What we do We focus on a co-creative […]",
+  openGraph: {
+    type: "website",
+    title: "Home - Consultation ISGA Inc.",
+    description:
+      "ISGA Consult we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients. We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. About See our services What we do We focus on a co-creative […]",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    images: [
+      {
+        url: homeImage,
+        width: 1230,
+        height: 630,
+        alt: "home_preview_image",
+      },
+    ],
+  },
+};
+
+export const aboutMetadata = {
+  title: "About - Consultation ISGA Inc.",
+  description:
+    "ABOUT US Your strategic and collaborative IT partner “We focus on how the world will be in ten years, and weprepare that path for our customers. Because we’re working on their organization’s very heartbeat when it comes to critical IT infrastructure, we must be deep experts rather than generalists.” Mohamed El Mghari – Co-fondateur et […]",
+  openGraph: {
+    type: "website",
+    title: "About - Consultation ISGA Inc.",
+    description:
+      "ABOUT US Your strategic and collaborative IT partner “We focus on how the world will be in ten years, and weprepare that path for our customers. Because we’re working on their organization’s very heartbeat when it comes to critical IT infrastructure, we must be deep experts rather than generalists.” Mohamed El Mghari – Co-fondateur et […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/about`,
+    images: [
+      {
+        url: aboutImage,
+        width: 1230,
+        height: 630,
+        alt: "about_preview_image",
+      },
+    ],
+  },
+};
+
+export const consultingServiceMetadata = {
+  title: "Consulting Service - Consultation ISGA Inc.",
+  description:
+    "SERVICES Consulting Service We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. Consulting Service Proven experience in business, information technology (IT), talent strategy, andtalent management In-depth knowledge of key sectors, including health, finance, insurance,transportation, and public and broader public services Unrivalled know-how and understanding in […]",
+  openGraph: {
+    type: "website",
+    title: "Consulting Service - Consultation ISGA Inc.",
+    description:
+      "SERVICES Consulting Service We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. Consulting Service Proven experience in business, information technology (IT), talent strategy, andtalent management In-depth knowledge of key sectors, including health, finance, insurance,transportation, and public and broader public services Unrivalled know-how and understanding in […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/consulting-service`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "consulting_preview_image",
+      },
+    ],
+  },
+};
+
+export const applicationServiceMetadata = {
+  title: "Application Services and Solutions - Consultation ISGA Inc.",
+  description:
+    "SERVICES Application Services and Solutions Empowering Digital Transformation: Elevate Operations, Enhance Experiences, and Drive Competitiveness through Comprehensive Application Services Application Services and Solutions Application services play a pivotal role in any digital transformation projects by enabling organizations to modernize their operations and enhance customer experiences. Our services encompass a suite of software tools and functionalities […]",
+  openGraph: {
+    type: "website",
+    title: "Application Services and Solutions - Consultation ISGA Inc.",
+    description:
+      "SERVICES Application Services and Solutions Empowering Digital Transformation: Elevate Operations, Enhance Experiences, and Drive Competitiveness through Comprehensive Application Services Application Services and Solutions Application services play a pivotal role in any digital transformation projects by enabling organizations to modernize their operations and enhance customer experiences. Our services encompass a suite of software tools and functionalities […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/application-services-and-solutions`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "application_preview_image",
+      },
+    ],
+  },
+};
+
+export const technologiesServiceMetadata = {
+  title: "Technologies & Platforms - Consultation ISGA Inc.",
+  description:
+    "SERVICES Technologies & Platforms Empower your business with our end-to-end technology solutions. From ERP services for seamless operations to leveraging ServiceNow, Salesforce, and Microsoft platforms, we offer consultation, implementation, customization, and ongoing support. Streamline processes, enhance workflows, and embrace digital transformation for lasting success in today’s dynamic business landscape. Technologies & Platforms Elevate your organization’s […]",
+  openGraph: {
+    type: "website",
+    title: "Technologies & Platforms - Consultation ISGA Inc.",
+    description:
+      "SERVICES Technologies & Platforms Empower your business with our end-to-end technology solutions. From ERP services for seamless operations to leveraging ServiceNow, Salesforce, and Microsoft platforms, we offer consultation, implementation, customization, and ongoing support. Streamline processes, enhance workflows, and embrace digital transformation for lasting success in today’s dynamic business landscape. Technologies & Platforms Elevate your organization’s […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/technologies-platforms`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "technologies_preview_image",
+      },
+    ],
+  },
+};
+
+export const managedServiceMetadata = {
+  title: "Managed Services - Consultation ISGA Inc.",
+  description:
+    "SERVICES Managed Services Your business transformation needs deep expertise, process and technology support to pivot quickly and respond rather than react Why choose ISGA Consult? Consultation ISGA delivers business managed services through an “as-a-service” subscription model. We eclipse traditional and tactical outsourcing models of labour arbitrage and transactional services to help: Operationalize your business Minimize errors, […]",
+  openGraph: {
+    title: "Managed Services - Consultation ISGA Inc.",
+    description:
+      "SERVICES Managed Services Your business transformation needs deep expertise, process and technology support to pivot quickly and respond rather than react Why choose ISGA Consult? Consultation ISGA delivers business managed services through an “as-a-service” subscription model. We eclipse traditional and tactical outsourcing models of labour arbitrage and transactional services to help: Operationalize your business Minimize errors, […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/managed-services`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "managed_preview_image",
+      },
+    ],
+  },
+};
+
+export const projectServiceMetadata = {
+  title: "Project & Program Management - Consultation ISGA Inc.",
+  description:
+    "SERVICES Project & Program Management Complex business initiatives such as digital transformation represent a significant challenge because they’re no longer limited to the scope of the IT team, rather transcend the organization and its ecosystem of business partners. Project & Program Management Project and program management ISGA Consult’s commitment to creating value for its clients […]",
+  openGraph: {
+    title: "Project & Program Management - Consultation ISGA Inc.",
+    description:
+      "SERVICES Project & Program Management Complex business initiatives such as digital transformation represent a significant challenge because they’re no longer limited to the scope of the IT team, rather transcend the organization and its ecosystem of business partners. Project & Program Management Project and program management ISGA Consult’s commitment to creating value for its clients […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/project-program-management`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "project_preview_image",
+      },
+    ],
+  },
+};
+
+export const artificialServiceMetadata = {
+  title: "Artificial Intelligence - Consultation ISGA Inc.",
+  description:
+    "SERVICES Artificial Intelligence In collaboration with your team, we build and deploy AI solutions that optimize your business performance, improve customer experience, and create value. We offer a comprehensive AI service that covers business AI strategies, as well as development, deployment and maintenance of AI solutions. Artificial Intelligence Our commitment to innovation allows us to […]",
+  openGraph: {
+    title: "Artificial Intelligence - Consultation ISGA Inc.",
+    description:
+      "SERVICES Artificial Intelligence In collaboration with your team, we build and deploy AI solutions that optimize your business performance, improve customer experience, and create value. We offer a comprehensive AI service that covers business AI strategies, as well as development, deployment and maintenance of AI solutions. Artificial Intelligence Our commitment to innovation allows us to […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/artifical-intelligence`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "artificial_preview_image",
+      },
+    ],
+  },
+};
+
+export const cyberServiceMetadata = {
+  title: "Cybersecurity & Entreprise Risk - Consultation ISGA Inc.",
+  description:
+    "SERVICES Cybersecurity & Entreprise Risk As your operations become more complex and digital and protection laws become more stringent, your vulnerability to cyber threats increases. Cybersecurity & Entreprise Risk Governance and Security Strategy Information Security Awareness Offensive Security and Penetration Testing Information Security Architecture (ISA) Identity and Access Management (IAM) Operational Security (defensive security) Enterprise […]",
+  openGraph: {
+    title: "Cybersecurity & Entreprise Risk - Consultation ISGA Inc.",
+    description:
+      "SERVICES Cybersecurity & Entreprise Risk As your operations become more complex and digital and protection laws become more stringent, your vulnerability to cyber threats increases. Cybersecurity & Entreprise Risk Governance and Security Strategy Information Security Awareness Offensive Security and Penetration Testing Information Security Architecture (ISA) Identity and Access Management (IAM) Operational Security (defensive security) Enterprise […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/cybersecurity-entreprise-risk`,
+    images: [
+      {
+        url: servicesImage,
+        width: 1230,
+        height: 630,
+        alt: "cyber_preview_image",
+      },
+    ],
+  },
+};
+
+export const governmentIndustriesMetadata = {
+  title: "Government and Public Sector - Consultation ISGA Inc.",
+  description:
+    "Government and Public Sector As governments reinvent ways of working to improve citizen services and increase efficiency, Consultation ISGA helps clients accelerate outcomes with proven expertise and secure solutions. Government and Public Sector Public sector Not only does ISGA Consult have deep sector expertise, but we also possess the deep technological capacities to enable government […]",
+  openGraph: {
+    title: "Government and Public Sector - Consultation ISGA Inc.",
+    description:
+      "Government and Public Sector As governments reinvent ways of working to improve citizen services and increase efficiency, Consultation ISGA helps clients accelerate outcomes with proven expertise and secure solutions. Government and Public Sector Public sector Not only does ISGA Consult have deep sector expertise, but we also possess the deep technological capacities to enable government […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/government-public-sector`,
+    images: [
+      {
+        url: industriesImage,
+        width: 1230,
+        height: 630,
+        alt: "government_preview_image",
+      },
+    ],
+  },
+};
+
+export const insuranceIndustriesMetadata = {
+  title: "Insurance - Consultation ISGA Inc.",
+  description:
+    "Insurance The insurance industry — Life & Health Insurance, P&C Insurance, and Group Benefit Insurance — has undergone significant evolution in recent years due to advancements in technology, changing customer needs, and increased competition. Customer-facing innovation has become critical to attract and retain customers. However, the insurance industry faces several challenges that can make it […]",
+  openGraph: {
+    title: "Insurance - Consultation ISGA Inc.",
+    description:
+      "Insurance The insurance industry — Life & Health Insurance, P&C Insurance, and Group Benefit Insurance — has undergone significant evolution in recent years due to advancements in technology, changing customer needs, and increased competition. Customer-facing innovation has become critical to attract and retain customers. However, the insurance industry faces several challenges that can make it […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/insurance`,
+    images: [
+      {
+        url: industriesImage,
+        width: 1230,
+        height: 630,
+        alt: "insurance_preview_image",
+      },
+    ],
+  },
+};
+
+export const financialIndustriesMetadata = {
+  title: "Financial Services - Consultation ISGA Inc.",
+  description:
+    "Financial Services The world runs and relies on it. This sector is a lynchpin of the economy, and the backbone upon which business depends. Our work with large financial clients has given us an insight on their culture, expectations, and especially the immense breadth of their technology needs. We work to accelerate their complex digital […]",
+  openGraph: {
+    title: "Financial Services - Consultation ISGA Inc.",
+    description:
+      "Financial Services The world runs and relies on it. This sector is a lynchpin of the economy, and the backbone upon which business depends. Our work with large financial clients has given us an insight on their culture, expectations, and especially the immense breadth of their technology needs. We work to accelerate their complex digital […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/financial-services`,
+    images: [
+      {
+        url: industriesImage,
+        width: 1230,
+        height: 630,
+        alt: "financial_preview_image",
+      },
+    ],
+  },
+};
+
+export const telecommunicationsIndustriesMetadata = {
+  title: "Telecommunications - Consultation ISGA Inc.",
+  description:
+    "Telecommunications By staying at the cusp of technological trends, we’ve developed modern web applications for access to on-demand content and designed user-friendly solutions for mobile devices, and continue to creatively work on projects that advance the quality and accessibility of our clients’ products and services. Telecommunications Advisory Services The telecommunications industry is at an inflection […]",
+  openGraph: {
+    title: "Telecommunications - Consultation ISGA Inc.",
+    description:
+      "Telecommunications By staying at the cusp of technological trends, we’ve developed modern web applications for access to on-demand content and designed user-friendly solutions for mobile devices, and continue to creatively work on projects that advance the quality and accessibility of our clients’ products and services. Telecommunications Advisory Services The telecommunications industry is at an inflection […]",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/telecommunications`,
+    images: [
+      {
+        url: industriesImage,
+        width: 1230,
+        height: 630,
+        alt: "telecommunications_preview_image",
+      },
+    ],
+  },
+};
+
+export const carrersMetadata = {
+  title: "Careers - Consultation ISGA Inc.",
+  description:
+    "CAREERS Together, as owners, let’s turn meaningful insights into action Join a company rooted in ownership, teamwork, respect and belonging. Be part of our company of owners, where you’ll benefit from the rewards of our collective success, while working side-by-side with colleagues and clients to solve complex issues.",
+  openGraph: {
+    title: "Careers - Consultation ISGA Inc.",
+    description:
+      "CAREERS Together, as owners, let’s turn meaningful insights into action Join a company rooted in ownership, teamwork, respect and belonging. Be part of our company of owners, where you’ll benefit from the rewards of our collective success, while working side-by-side with colleagues and clients to solve complex issues.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/carrers`,
+    images: [
+      {
+        url: careersImage,
+        width: 1230,
+        height: 630,
+        alt: "carrers_preview_image",
+      },
+    ],
+  },
+};
+
+export const contactMetadata = {
+  title: "Contact - Consultation ISGA Inc.",
+  description:
+    "Do you have question? Send Us Your Feedback, We Love Hearing It! Address 1933 Av Laplante Laval, Québec H7S 1E6 Email Address info@isgaconsult.com   Phone Number +1 514 831 0884   Contact Us Feel free to contact us anytime. Veuillez activer JavaScript dans votre navigateur pour remplir ce formulaire.",
+  openGraph: {
+    title: "Contact - Consultation ISGA Inc.",
+    description:
+      "Do you have question? Send Us Your Feedback, We Love Hearing It! Address 1933 Av Laplante Laval, Québec H7S 1E6 Email Address info@isgaconsult.com   Phone Number +1 514 831 0884   Contact Us Feel free to contact us anytime. Veuillez activer JavaScript dans votre navigateur pour remplir ce formulaire.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/contact`,
+    images: [
+      {
+        url: contactImage,
+        width: 1230,
+        height: 630,
+        alt: "contact_preview_image",
+      },
+    ],
+  },
+};
+
 export const navItems = [
   {
     id: 1,

@@ -12,7 +12,7 @@ function Footer() {
             <h5 className="font-bold text-white">{item.title}</h5>
             <div className="flex flex-col gap-1">
               {item.sub.map((sub) => (
-                <Link href={sub.link}>
+                <Link key={sub.name} href={sub.link}>
                   <p className="hover:text-[#7456F1] transition-all duration-300">
                     {sub.name}
                   </p>

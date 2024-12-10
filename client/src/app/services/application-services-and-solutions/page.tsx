@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   Card,
@@ -6,12 +7,10 @@ import {
   CommunTitle,
   Landing,
 } from "@/components";
-import {
-  ApplicationServicesandSolutionsText,
-  ApplicationServicesandSolutionsCard,
-  ApplicationServicesandSolutionsCardText,
-} from "@/constants";
 import { getApplicationPage } from "@/sanity/lib/pages";
+import { applicationServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = applicationServiceMetadata;
 
 const page = async () => {
   const data = await getApplicationPage();

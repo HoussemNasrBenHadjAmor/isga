@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CardImageServiceManaged,
@@ -6,12 +7,11 @@ import {
   Content,
   Landing,
 } from "@/components";
-import {
-  managedServicesText,
-  managedServicesCard,
-  managedServicesMiddle,
-} from "@/constants";
+
 import { getManagedPage } from "@/sanity/lib/pages";
+import { managedServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = managedServiceMetadata;
 
 const page = async () => {
   const data = await getManagedPage();

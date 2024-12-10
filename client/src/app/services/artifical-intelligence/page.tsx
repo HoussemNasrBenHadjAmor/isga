@@ -1,6 +1,6 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
-  CardImageService,
   CommunComponent,
   CommunTitle,
   Content,
@@ -9,6 +9,9 @@ import {
 } from "@/components";
 
 import { getArtificialPage } from "@/sanity/lib/pages";
+import { artificialServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = artificialServiceMetadata;
 
 const page = async () => {
   const data = await getArtificialPage();

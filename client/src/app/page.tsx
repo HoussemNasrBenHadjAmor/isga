@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import { getHomePage } from "@/sanity/lib/pages/index";
 import { Card as CardType, ChooseISGA } from "@/sanity/types";
 
 import { urlFor } from "@/sanity/lib/image";
 
+import { Button } from "@/components/ui/button";
 import {
   BackgroundImage,
   Card,
@@ -14,7 +16,10 @@ import {
   Content,
   Landing,
 } from "@/components";
-import { Button } from "@/components/ui/button";
+
+import { homeImage, homeMetadata } from "@/constants";
+
+export const metadata: Metadata = homeMetadata;
 
 export default async function Home() {
   // Fetch the HomePage data

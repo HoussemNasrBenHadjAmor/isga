@@ -48,6 +48,7 @@ function Navbar() {
               src={`${scrollNav ? imgUnder : imgBellow}`}
               width={180}
               height={180}
+              className="h-auto w-auto"
               alt="logo_web_site"
             />
           </Link>

@@ -1,14 +1,17 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   Card,
   CardImageService,
   CommunComponent,
   CommunTitle,
-  Content,
   Landing,
 } from "@/components";
 
 import { getConsultingPage } from "@/sanity/lib/pages";
+import { consultingServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = consultingServiceMetadata;
 
 const page = async () => {
   const data = await getConsultingPage();

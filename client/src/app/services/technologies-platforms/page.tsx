@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CardImageService,
@@ -6,11 +7,11 @@ import {
   Content,
   Landing,
 } from "@/components";
-import {
-  technologiesAndPlatformsText,
-  technologiesAndPlatformsCard,
-} from "@/constants";
+
 import { getTechnologiesPage } from "@/sanity/lib/pages";
+import { technologiesServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = technologiesServiceMetadata;
 
 const page = async () => {
   const data = await getTechnologiesPage();

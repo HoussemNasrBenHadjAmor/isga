@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   Card,
@@ -9,6 +10,9 @@ import {
 } from "@/components";
 
 import { getContactPage } from "@/sanity/lib/pages";
+import { contactMetadata } from "@/constants";
+
+export const metadata: Metadata = contactMetadata;
 
 const page = async () => {
   const data = await getContactPage();

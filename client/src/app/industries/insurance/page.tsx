@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CardImageServiceManaged,
@@ -7,6 +8,9 @@ import {
 } from "@/components";
 
 import { getInsurancePage } from "@/sanity/lib/pages";
+import { insuranceIndustriesMetadata } from "@/constants";
+
+export const metadata: Metadata = insuranceIndustriesMetadata;
 
 const page = async () => {
   const data = await getInsurancePage();

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import {
   BackgroundImage,
   CommunComponent,
@@ -7,6 +8,9 @@ import {
 } from "@/components";
 
 import { getCyberPage } from "@/sanity/lib/pages";
+import { cyberServiceMetadata } from "@/constants";
+
+export const metadata: Metadata = cyberServiceMetadata;
 
 const page = async () => {
   const data = await getCyberPage();
