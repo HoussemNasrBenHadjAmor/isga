@@ -23,12 +23,15 @@ import financialIndustries from './financialIndustries'
 import telecommunicationsIndustries from './telecommunicationsIndustries'
 import carrers from './carrers'
 import contact from './contact'
+import job from './job'
+import jobCategory from './jobCategory'
+import candidate from './candidate'
 
 export const schemaTypes = [
-  post,
-  author,
-  category,
-  blockContent,
+  // post,
+  // author,
+  // category,
+  // blockContent,
   landingCategory,
   landing,
   card,
@@ -50,4 +53,7 @@ export const schemaTypes = [
   homeISGA,
   homeAskQuestion,
   simple,
+  job,
+  jobCategory,
+  candidate,
 ]

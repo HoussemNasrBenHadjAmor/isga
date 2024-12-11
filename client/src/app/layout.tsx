@@ -4,6 +4,7 @@ import { Navbar, Footer, DisableDraftMode, ScrollTop } from "@/components";
 import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "Home - Consultation ISGA Inc.",
@@ -22,7 +23,7 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         {/* Conditionally render VisualEditing */}
-
+        <NextTopLoader showSpinner={false} />
         {isEnabled && (
           <>
             <DisableDraftMode />

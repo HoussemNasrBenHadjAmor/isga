@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {presentationTool} from 'sanity/presentation'
+import {colorInput} from '@sanity/color-input'
 import {resolve} from './resolve'
 
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
   plugins: [
     structureTool(),
     visionTool(),
+    colorInput(),
 
     presentationTool({
       resolve,

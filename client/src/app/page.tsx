@@ -126,7 +126,9 @@ const WhyIsga = ({ data }: WhyIsgaProps) => {
             <p className="text-[#4D5D6D]">{data?.description}</p>
           </div>
 
-          {data?.cards?.map((card) => <CardChoose data={card} />)}
+          {data?.cards?.map((card) => (
+            <CardChoose data={card} key={card._key} />
+          ))}
         </div>
       </div>
     </div>
