@@ -16,6 +16,7 @@ import {
   telecommunicationQuery,
   contactQuery,
   carrersQuery,
+  jobQuery,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -198,6 +199,18 @@ export const getContactPage = async () => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries contact page", error);
+    return [];
+  }
+};
+
+export const getJobs = async () => {
+  const query = jobQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the jobs", error);
     return [];
   }
 };

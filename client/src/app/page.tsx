@@ -17,7 +17,7 @@ import {
   Landing,
 } from "@/components";
 
-import { homeImage, homeMetadata } from "@/constants";
+import { homeMetadata } from "@/constants";
 
 export const metadata: Metadata = homeMetadata;
 
@@ -126,8 +126,8 @@ const WhyIsga = ({ data }: WhyIsgaProps) => {
             <p className="text-[#4D5D6D]">{data?.description}</p>
           </div>
 
-          {data?.cards?.map((card) => (
-            <CardChoose data={card} key={card._key} />
+          {data?.cards?.map((card: CardType) => (
+            <CardChoose data={card} key={card._id} />
           ))}
         </div>
       </div>

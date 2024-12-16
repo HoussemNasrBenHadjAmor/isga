@@ -666,3 +666,29 @@ export const contactQuery = defineQuery(
     }   
   `
 );
+
+export const jobQuery = defineQuery(
+  `
+    *[_type == 'job' && display == true] {
+      _updatedAt,
+      title,
+      category -> {
+        category,
+        type
+      },  
+      description,
+      qualifications,
+      display
+    
+    }  
+  `
+);
+
+export const jobCategories = defineQuery(
+  `
+    *[_type == 'jobCategory'] {
+      category,
+      type
+    }  
+  `
+);

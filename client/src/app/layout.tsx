@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 import { Navbar, Footer, DisableDraftMode, ScrollTop } from "@/components";
 import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity";
@@ -33,6 +34,7 @@ export default async function RootLayout({
         <SanityLive />
         <Navbar />
         {children}
+        <Toaster />
         <div className="pt-20">
           <Footer />
           <ScrollTop />
