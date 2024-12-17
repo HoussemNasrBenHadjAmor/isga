@@ -17,11 +17,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     // Populate the object with form data
     for (const [key, value] of data.entries()) {
-      if (key === "file" && value instanceof File) {
-        formData[key] = value; // Store the File object directly
-      } else {
-        formData[key] = value; // Store other fields
-      }
+      formData[key] = value;
     }
 
     // Create first the file in the database to use it as a reference when creating the candidate
