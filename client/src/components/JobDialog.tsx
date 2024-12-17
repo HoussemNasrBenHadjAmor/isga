@@ -100,6 +100,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
             <JobDetails />
           ) : displayForm && !displaySuccess ? (
             <JobForm
+              category_id={data.category?._id}
               setDisplayForm={setDisplayForm}
               setDisplaySuccess={setDisplaySuccess}
             />

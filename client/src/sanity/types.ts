@@ -1530,11 +1530,12 @@ export type ContactQueryResult = Array<{
   }> | null;
 }>;
 // Variable: jobQuery
-// Query: *[_type == 'job' && display == true] {      _updatedAt,      title,      category -> {        category,        type      },        description,      qualifications,      display        }
+// Query: *[_type == 'job' && display == true] {      _updatedAt,      title,      category -> {        _id,        category,        type      },        description,      qualifications,      display        }
 export type JobQueryResult = Array<{
   _updatedAt: string;
   title: string | null;
   category: {
+    _id: string;
     category: string | null;
     type: "Freelance" | "Full Time" | "Internship" | "Part Time" | "Temporary" | null;
   } | null;
@@ -1599,7 +1600,7 @@ declare module "@sanity/client" {
     "\n    *[_type == 'telecommunicationsIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": TelecommunicationQueryResult;
     "\n    *[_type == 'carrers'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n           \n    }   \n  ": CarrersQueryResult;
     "\n    *[_type == 'contact'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n\n      content -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n      },\n\n      card []-> {\n        _id,\n        title,\n        subtitle,\n        description,\n        image {\n          asset -> { url } \n        },\n        svg_path,       \n      }, \n           \n    }   \n  ": ContactQueryResult;
-    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      category -> {\n        category,\n        type\n      },  \n      description,\n      qualifications,\n      display\n    \n    }  \n  ": JobQueryResult;
+    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      category -> {\n        _id,\n        category,\n        type\n      },  \n      description,\n      qualifications,\n      display\n    \n    }  \n  ": JobQueryResult;
     "\n    *[_type == 'jobCategory'] {\n      category,\n      type\n    }  \n  ": JobCategoriesResult;
   }
 }

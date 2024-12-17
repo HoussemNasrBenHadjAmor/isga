@@ -673,6 +673,7 @@ export const jobQuery = defineQuery(
       _updatedAt,
       title,
       category -> {
+        _id,
         category,
         type
       },  

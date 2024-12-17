@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -8,6 +10,7 @@ import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
 import {
   Form,
   FormControl,
@@ -56,9 +59,15 @@ const FormSchema = z.object({
 interface JobFormProps {
   setDisplayForm: React.Dispatch<React.SetStateAction<boolean>>;
   setDisplaySuccess: React.Dispatch<React.SetStateAction<boolean>>;
+  category_id?: string;
 }
 
-const JobForm = ({ setDisplayForm, setDisplaySuccess }: JobFormProps) => {
+const JobForm = ({
+  setDisplayForm,
+  setDisplaySuccess,
+  category_id,
+}: JobFormProps) => {
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const transitionVariants = {
     hidden: { opacity: 0 },
@@ -75,16 +84,41 @@ const JobForm = ({ setDisplayForm, setDisplaySuccess }: JobFormProps) => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    setDisplaySuccess(true);
-    // toast({
-    //   className: "z-[999]",
-    //   duration: 1000 * 2,
-    //   variant: "success",
-    //   title: "Uh oh! Something went wrong.",
-    //   description: "There was a problem with your request.",
-    //   action: <ToastAction altText="Try again">Try again</ToastAction>,
-    // });
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      formData.append("username", data.username);
+      formData.append("email", data.email.toLowerCase());
+      formData.append("file", data.file[0]); // Append the file
+      if (category_id) {
+        formData.append("category_id", category_id);
+      }
+
+      const response = await fetch("/api/submitCandidate", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setLoading(false);
+        setDisplaySuccess(true);
+      } else {
+        throw new Error("Internal server error");
+      }
+    } catch (error) {
+      setLoading(false);
+      toast({
+        className: "z-[999]",
+        duration: 1000 * 3,
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again later">Try again</ToastAction>,
+      });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -149,9 +183,13 @@ const JobForm = ({ setDisplayForm, setDisplaySuccess }: JobFormProps) => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full md:w-auto">
+          <LoadingButton
+            loading={loading}
+            type="submit"
+            className="w-full md:w-auto"
+          >
             Submit
-          </Button>
+          </LoadingButton>
         </form>
       </Form>
     </motion.div>
