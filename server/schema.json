@@ -294,7 +294,7 @@
               "optional": true
             }
           },
-          "dereferencesTo": "jobCategory"
+          "dereferencesTo": "jobDomain"
         },
         "optional": true
       },
@@ -483,6 +483,109 @@
     }
   },
   {
+    "name": "jobCategory",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "jobCategory"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "category": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Business & Technology Integration"
+            },
+            {
+              "type": "string",
+              "value": "Information Technology Operations"
+            },
+            {
+              "type": "string",
+              "value": "Solution Architecture & Planning"
+            },
+            {
+              "type": "string",
+              "value": "Consulting"
+            },
+            {
+              "type": "string",
+              "value": "Software Engineering"
+            },
+            {
+              "type": "string",
+              "value": "Technology & Information Architectures"
+            },
+            {
+              "type": "string",
+              "value": "Data & AI"
+            }
+          ]
+        },
+        "optional": true
+      },
+      "type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "Freelance"
+            },
+            {
+              "type": "string",
+              "value": "Full Time"
+            },
+            {
+              "type": "string",
+              "value": "Internship"
+            },
+            {
+              "type": "string",
+              "value": "Part Time"
+            },
+            {
+              "type": "string",
+              "value": "Temporary"
+            }
+          ]
+        },
+        "optional": true
+      }
+    }
+  },
+  {
     "name": "job",
     "type": "document",
     "attributes": {
@@ -524,7 +627,7 @@
         },
         "optional": true
       },
-      "category": {
+      "job_domain": {
         "type": "objectAttribute",
         "value": {
           "type": "object",
@@ -550,7 +653,37 @@
               "optional": true
             }
           },
-          "dereferencesTo": "jobCategory"
+          "dereferencesTo": "jobDomain"
+        },
+        "optional": true
+      },
+      "job_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "object",
+          "attributes": {
+            "_ref": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string"
+              }
+            },
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "reference"
+              }
+            },
+            "_weak": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "boolean"
+              },
+              "optional": true
+            }
+          },
+          "dereferencesTo": "jobType"
         },
         "optional": true
       },
@@ -892,7 +1025,7 @@
     }
   },
   {
-    "name": "jobCategory",
+    "name": "jobType",
     "type": "document",
     "attributes": {
       "_id": {
@@ -905,7 +1038,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "jobCategory"
+          "value": "jobType"
         }
       },
       "_createdAt": {
@@ -926,39 +1059,54 @@
           "type": "string"
         }
       },
-      "category": {
+      "title": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
         "optional": true
-      },
-      "type": {
+      }
+    }
+  },
+  {
+    "name": "jobDomain",
+    "type": "document",
+    "attributes": {
+      "_id": {
         "type": "objectAttribute",
         "value": {
-          "type": "union",
-          "of": [
-            {
-              "type": "string",
-              "value": "Freelance"
-            },
-            {
-              "type": "string",
-              "value": "Full Time"
-            },
-            {
-              "type": "string",
-              "value": "Internship"
-            },
-            {
-              "type": "string",
-              "value": "Part Time"
-            },
-            {
-              "type": "string",
-              "value": "Temporary"
-            }
-          ]
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "jobDomain"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
         },
         "optional": true
       }

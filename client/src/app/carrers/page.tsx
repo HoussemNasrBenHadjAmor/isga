@@ -1,20 +1,49 @@
 import { Metadata } from "next";
-import {
-  BackgroundImage,
-  CommunComponent,
-  Landing,
-  JobDialog,
-} from "@/components";
-import { getCarrersPage, getJobs } from "@/sanity/lib/pages";
+
+import { BackgroundImage, CommunComponent, Landing, Jobs } from "@/components";
+import { getCarrersPage, getJobs, getJobsCategories } from "@/sanity/lib/pages";
 import { carrersMetadata } from "@/constants";
+import {
+  JobDomainsResult,
+  JobQueryResult,
+  JobTypesResult,
+} from "@/sanity/types";
 
 export const metadata: Metadata = carrersMetadata;
 
-const page = async () => {
+interface Job {
+  job_domain: JobDomainsResult;
+  job_type: JobTypesResult;
+}
+
+const page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) => {
+  // const router = useRouter();
+
+  const resolvedSearchParams = await searchParams;
   const data = await getCarrersPage();
-  const jobs_data = await getJobs();
+  const job_categories = (await getJobsCategories()) as Job;
   const response = data ? data[0] : null;
-  const jobs = jobs_data ? jobs_data : null;
+
+  // Extract and parse search parameters
+  const domains = resolvedSearchParams.domains
+    ? decodeURIComponent(resolvedSearchParams.domains as string).split(",")
+    : [];
+
+  const types = resolvedSearchParams.types
+    ? decodeURIComponent(resolvedSearchParams.types as string).split(",")
+    : [];
+  const keyword = (resolvedSearchParams.keyword as string) || "";
+
+  const jobs_data = await getJobs({
+    domains,
+    types,
+    keyword,
+  });
+  const jobs: JobQueryResult = jobs_data ? jobs_data : null;
   return (
     <div>
       <div className="relative flex min-h-screen w-full">
@@ -27,9 +56,11 @@ const page = async () => {
         <Landing data={response?.landing} />
       </div>
       <CommunComponent>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
-          {jobs?.map((job) => <JobDialog key={job.title} data={job} />)}
-        </div>
+        <Jobs
+          data={jobs}
+          domains={job_categories?.job_domain}
+          types={job_categories?.job_type}
+        />
       </CommunComponent>
     </div>
   );

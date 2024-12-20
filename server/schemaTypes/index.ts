@@ -24,6 +24,9 @@ import telecommunicationsIndustries from './telecommunicationsIndustries'
 import carrers from './carrers'
 import contact from './contact'
 import job from './job'
+import jobDomain from './jobDomain'
+import jobType from './jobType'
+import job from './job'
 import jobCategory from './jobCategory'
 import candidate from './candidate'
 
@@ -56,4 +59,6 @@ export const schemaTypes = [
   job,
   jobCategory,
   candidate,
+  jobDomain,
+  jobType,
 ]

@@ -11,6 +11,38 @@ export default defineType({
       title: 'Category',
       type: 'string',
       validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          {
+            title: 'Business & Technology Integration',
+            value: 'Business & Technology Integration',
+          },
+          {
+            title: 'Information Technology Operations',
+            value: 'Information Technology Operations',
+          },
+          {
+            title: 'Solution Architecture & Planning',
+            value: 'Solution Architecture & Planning',
+          },
+          {
+            title: 'Consulting',
+            value: 'Consulting',
+          },
+          {
+            title: 'Software Engineering',
+            value: 'Software Engineering',
+          },
+          {
+            title: 'Technology & Information Architectures',
+            value: 'Technology & Information Architectures',
+          },
+          {
+            title: 'Data & AI',
+            value: 'Data & AI',
+          },
+        ],
+      },
     }),
     defineField({
       name: 'type',

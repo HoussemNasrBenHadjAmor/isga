@@ -672,24 +672,44 @@ export const jobQuery = defineQuery(
     *[_type == 'job' && display == true] {
       _updatedAt,
       title,
-      category -> {
+      job_domain -> {
         _id,
-        category,
-        type
-      },  
+        title
+      },
+      job_type -> {
+        _id,
+        title
+      },
       description,
       qualifications,
       display
-    
+
+    }
+  `
+);
+
+export const jobDomains = defineQuery(
+  `
+    *[_type == 'jobDomain'] {
+      title,
+      _id,
+      _createdAt,
+      _rev,
+      _type,
+      _updatedAt
     }  
   `
 );
 
-export const jobCategories = defineQuery(
+export const jobTypes = defineQuery(
   `
-    *[_type == 'jobCategory'] {
-      category,
-      type
+    *[_type == 'jobType'] {
+      title,
+      _id,
+      _createdAt,
+      _rev,
+      _type,
+      _updatedAt
     }  
   `
 );

@@ -60,7 +60,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
       >
         <DialogHeader>
           <DialogTitle className="font-extrabold">{data.title}</DialogTitle>
-          <DialogDescription>{data?.category?.category}</DialogDescription>
+          <DialogDescription>{data?.job_domain?.title}</DialogDescription>
         </DialogHeader>
 
         <div className="prose max-w-none mt-8">
@@ -100,7 +100,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
             <JobDetails />
           ) : displayForm && !displaySuccess ? (
             <JobForm
-              category_id={data.category?._id}
+              category_id={data?.job_domain?._id}
               setDisplayForm={setDisplayForm}
               setDisplaySuccess={setDisplaySuccess}
             />

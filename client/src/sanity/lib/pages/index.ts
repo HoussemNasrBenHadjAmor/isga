@@ -1,3 +1,9 @@
+import {
+  JobDomain,
+  JobDomainsResult,
+  JobType,
+  JobTypesResult,
+} from "@/sanity/types";
 import { sanityFetch } from "../live";
 
 import {
@@ -17,6 +23,8 @@ import {
   contactQuery,
   carrersQuery,
   jobQuery,
+  jobDomains,
+  jobTypes,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -203,14 +211,86 @@ export const getContactPage = async () => {
   }
 };
 
-export const getJobs = async () => {
-  const query = jobQuery;
+// export const getJobs = async () => {
+//   const query = jobQuery;
 
+//   try {
+//     const data = await sanityFetch({ query });
+//     return data.data || [];
+//   } catch (error) {
+//     console.error("Error fetching the jobs", error);
+//     return [];
+//   }
+// };
+
+interface JobFilterParams {
+  domains?: string[];
+  types?: string[];
+  keyword?: string;
+}
+
+export const getJobs = async ({
+  domains = [],
+  types = [],
+  keyword = "",
+}: JobFilterParams) => {
+  const query = `
+  *[_type == 'job' && display == true ${
+    domains.length > 0
+      ? `&& job_domain->title in [${domains.map((title) => `"${title}"`).join(",")}]`
+      : ""
+  } ${
+    types.length > 0
+      ? `&& job_type->title in [${types.map((title) => `"${title}"`).join(",")}]`
+      : ""
+  } ${
+    keyword
+      ? `&& (title match "*${keyword}*" || description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
+      : ""
+  }] {
+    _updatedAt,
+    title,
+    job_domain -> {
+      _id,
+      title
+    },
+    job_type -> {
+      _id,
+      title
+    },
+    description,
+    qualifications,
+    display
+  }
+`;
   try {
     const data = await sanityFetch({ query });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the jobs", error);
+    return [];
+  }
+};
+
+export const getJobsCategories = async () => {
+  const query_categories_domains = jobDomains;
+  const query_categories_types = jobTypes;
+
+  interface Job {
+    job_domain: JobDomainsResult;
+    job_type: JobTypesResult;
+  }
+
+  try {
+    const job_domain = await sanityFetch({ query: query_categories_domains });
+    const job_type = await sanityFetch({ query: query_categories_types });
+    const data: Job = {
+      job_domain: job_domain?.data || [],
+      job_type: job_type?.data || [],
+    };
+    return data || [];
+  } catch (error) {
+    console.error("Error fetching the job categories", error);
     return [];
   }
 };

@@ -13,12 +13,28 @@ export default defineType({
       type: 'string',
     }),
 
+    // defineField({
+    //   name: 'category',
+    //   title: 'Job Category',
+    //   type: 'reference',
+    //   validation: (rule) => rule.required(),
+    //   to: {type: 'jobCategory'},
+    // }),
+
     defineField({
-      name: 'category',
-      title: 'Job Category',
+      name: 'job_domain',
+      title: 'Job Domain',
       type: 'reference',
       validation: (rule) => rule.required(),
-      to: {type: 'jobCategory'},
+      to: {type: 'jobDomain'},
+    }),
+
+    defineField({
+      name: 'job_type',
+      title: 'Job Type',
+      type: 'reference',
+      validation: (rule) => rule.required(),
+      to: {type: 'jobType'},
     }),
 
     defineField({

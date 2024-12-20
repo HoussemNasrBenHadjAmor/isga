@@ -22,7 +22,7 @@ export default defineType({
       name: 'job',
       title: 'Job Category',
       type: 'reference',
-      to: {type: 'jobCategory'},
+      to: {type: 'jobDomain'},
       validation: (Rule) => Rule.required(),
     }),
     defineField({

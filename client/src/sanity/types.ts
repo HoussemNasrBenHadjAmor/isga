@@ -64,7 +64,7 @@ export type Candidate = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "jobCategory";
+    [internalGroqTypeReferenceTo]?: "jobDomain";
   };
   resume?: {
     asset?: {
@@ -99,6 +99,16 @@ export type SanityFileAsset = {
   source?: SanityAssetSourceData;
 };
 
+export type JobCategory = {
+  _id: string;
+  _type: "jobCategory";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  category?: "Business & Technology Integration" | "Information Technology Operations" | "Solution Architecture & Planning" | "Consulting" | "Software Engineering" | "Technology & Information Architectures" | "Data & AI";
+  type?: "Freelance" | "Full Time" | "Internship" | "Part Time" | "Temporary";
+};
+
 export type Job = {
   _id: string;
   _type: "job";
@@ -106,11 +116,17 @@ export type Job = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  category?: {
+  job_domain?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "jobCategory";
+    [internalGroqTypeReferenceTo]?: "jobDomain";
+  };
+  job_type?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "jobType";
   };
   description?: Array<{
     children?: Array<{
@@ -147,14 +163,22 @@ export type Job = {
   display?: boolean;
 };
 
-export type JobCategory = {
+export type JobType = {
   _id: string;
-  _type: "jobCategory";
+  _type: "jobType";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  category?: string;
-  type?: "Freelance" | "Full Time" | "Internship" | "Part Time" | "Temporary";
+  title?: string;
+};
+
+export type JobDomain = {
+  _id: string;
+  _type: "jobDomain";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
 };
 
 export type AskQuestion = {
@@ -860,7 +884,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Slug | Candidate | SanityFileAsset | Job | JobCategory | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -1530,14 +1554,17 @@ export type ContactQueryResult = Array<{
   }> | null;
 }>;
 // Variable: jobQuery
-// Query: *[_type == 'job' && display == true] {      _updatedAt,      title,      category -> {        _id,        category,        type      },        description,      qualifications,      display        }
+// Query: *[_type == 'job' && display == true] {      _updatedAt,      title,      job_domain -> {        _id,        title      },      job_type -> {        _id,        title      },      description,      qualifications,      display    }
 export type JobQueryResult = Array<{
   _updatedAt: string;
   title: string | null;
-  category: {
+  job_domain: {
     _id: string;
-    category: string | null;
-    type: "Freelance" | "Full Time" | "Internship" | "Part Time" | "Temporary" | null;
+    title: string | null;
+  } | null;
+  job_type: {
+    _id: string;
+    title: string | null;
   } | null;
   description: Array<{
     children?: Array<{
@@ -1573,11 +1600,25 @@ export type JobQueryResult = Array<{
   }> | null;
   display: boolean | null;
 }>;
-// Variable: jobCategories
-// Query: *[_type == 'jobCategory'] {      category,      type    }
-export type JobCategoriesResult = Array<{
-  category: string | null;
-  type: "Freelance" | "Full Time" | "Internship" | "Part Time" | "Temporary" | null;
+// Variable: jobDomains
+// Query: *[_type == 'jobDomain'] {      title,      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
+export type JobDomainsResult = Array<{
+  title: string | null;
+  _id: string;
+  _createdAt: string;
+  _rev: string;
+  _type: "jobDomain";
+  _updatedAt: string;
+}>;
+// Variable: jobTypes
+// Query: *[_type == 'jobType'] {      title,      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
+export type JobTypesResult = Array<{
+  title: string | null;
+  _id: string;
+  _createdAt: string;
+  _rev: string;
+  _type: "jobType";
+  _updatedAt: string;
 }>;
 
 // Query TypeMap
@@ -1600,7 +1641,8 @@ declare module "@sanity/client" {
     "\n    *[_type == 'telecommunicationsIndustries'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n              \n       title_section -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n        \n        content -> {\n          _id,\n          title[],\n          subtitle[],\n          description[],\n        }, \n    \n        card []-> {\n          _id,\n          title,\n          subtitle,\n          description,\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": TelecommunicationQueryResult;
     "\n    *[_type == 'carrers'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n           \n    }   \n  ": CarrersQueryResult;
     "\n    *[_type == 'contact'] {\n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      },\n\n      content -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n      },\n\n      card []-> {\n        _id,\n        title,\n        subtitle,\n        description,\n        image {\n          asset -> { url } \n        },\n        svg_path,       \n      }, \n           \n    }   \n  ": ContactQueryResult;
-    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      category -> {\n        _id,\n        category,\n        type\n      },  \n      description,\n      qualifications,\n      display\n    \n    }  \n  ": JobQueryResult;
-    "\n    *[_type == 'jobCategory'] {\n      category,\n      type\n    }  \n  ": JobCategoriesResult;
+    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      job_domain -> {\n        _id,\n        title\n      },\n      job_type -> {\n        _id,\n        title\n      },\n      description,\n      qualifications,\n      display\n\n    }\n  ": JobQueryResult;
+    "\n    *[_type == 'jobDomain'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
+    "\n    *[_type == 'jobType'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
   }
 }

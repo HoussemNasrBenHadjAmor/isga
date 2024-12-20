@@ -4,8 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-// import { useToast } from "@/components/ui/use-toast";
-import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "./ui/textarea";
 import {
   Form,
@@ -16,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { LoadingButton } from "./ui/loading-button";
 
 const FormSchema = z.object({
   username: z.string().min(1, {
@@ -31,6 +31,7 @@ const FormSchema = z.object({
 });
 
 const ContactForm = () => {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -42,14 +43,26 @@ const ContactForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    // toast({
-    //   title: "You submitted the following values:",
-    //   description: (
-    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    try {
+      toast({
+        className: "z-[999]",
+        duration: 1000 * 5,
+        variant: "success",
+        title: "Good news!! 🚀",
+        description:
+          "Thank you for submitting your message to Consultation ISGA. We'll be in touch soon 😊",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        className: "z-[999]",
+        duration: 1000 * 5,
+        variant: "destructive",
+        title: "Uh oh! Something went wrong 😱🔥",
+        description:
+          "There was a problem with your request. Please try again later!",
+      });
+    }
   }
 
   return (
@@ -109,12 +122,13 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button
+        <LoadingButton
+          // loading={loading}
           type="submit"
-          className="w-full md:w-auto bg-[#7456F1] hover:bg-[#5E3FDE]"
+          className="w-full md:w-auto"
         >
           Send Message
-        </Button>
+        </LoadingButton>
       </form>
     </Form>
   );
