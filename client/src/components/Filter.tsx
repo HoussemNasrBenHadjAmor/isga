@@ -72,6 +72,25 @@ const Filter = ({ domains, types, setLoading, loading }: FilterProps) => {
     setLoading(false);
   }, [pathname, searchParams]);
 
+  // Populate the filter values when the component is mounted or when searchParams changes
+  useEffect(() => {
+    const domainsParam = searchParams.get("domains");
+    const typesParam = searchParams.get("types");
+    const keywordParam = searchParams.get("keyword");
+
+    if (domainsParam) {
+      setDomainsValues(domainsParam.split(","));
+    }
+
+    if (typesParam) {
+      setTypesValues(typesParam.split(","));
+    }
+
+    if (keywordParam) {
+      setKeyword(keywordParam);
+    }
+  }, []); // Run this effect whenever searchParams changes
+
   return (
     <div className="flex flex-col gap-5">
       <Input
