@@ -31,7 +31,7 @@ const page = async () => {
       <CommunComponent>
         <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {response?.card?.map((card) => (
-            <Card key={card.title} data={card} flex />
+            <Card key={card._id} data={card} flex />
           ))}
         </div>
 

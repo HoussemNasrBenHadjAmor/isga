@@ -2,11 +2,11 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
+
 import { MoveRight } from "lucide-react";
-const formatDate = (isoString: any) => {
+const formatDate = (isoString: string) => {
   const date = new Date(isoString);
-  return date.toLocaleDateString("en-GB", {
+  return date.toLocaleDateString("en-US", {
     day: "2-digit",
     month: "long",
     year: "numeric",
