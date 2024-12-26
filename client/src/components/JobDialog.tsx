@@ -95,7 +95,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
         <DialogTrigger className="w-full">
           <JobCard data={data} />
         </DialogTrigger>
-        <DialogContent className="sm:max-w-3xl z-[999] max-h-[70vh] overflow-y-auto">
+        <DialogContent className="max-w-full lg:max-w-3xl z-[999] h-full lg:max-h-[70vh] overflow-y-auto pb-16 lg:pb-5">
           {!displayForm ? (
             <JobDetails />
           ) : displayForm && !displaySuccess ? (

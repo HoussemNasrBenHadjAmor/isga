@@ -17,9 +17,9 @@ function DesktopNav() {
     <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList className="gap-5">
         {navItems.map((navItem) => (
-          <div key={navItem.name}>
+          <div key={navItem.id}>
             {!navItem?.sub ? (
-              <NavigationMenuItem>
+              <NavigationMenuItem key={navItem.id}>
                 <Link href={navItem.link} legacyBehavior passHref>
                   <NavigationMenuLink>
                     {navItem.name.toUpperCase()}

@@ -28,6 +28,7 @@ export const servicesImage = "/services.jpg";
 export const industriesImage = "/industries.jpg";
 export const careersImage = "/carrers.png";
 export const contactImage = "/contact.jpg";
+export const newletterImage = "/newsletter_cover.png";
 
 export const homeMetadata = {
   title: "Home - Consultation ISGA Inc.",
@@ -334,6 +335,26 @@ export const contactMetadata = {
   },
 };
 
+export const newsletterdata = {
+  title: "Newsletter - Consultation ISGA Inc.",
+  description:
+    "Do you have question? Send Us Your Feedback, We Love Hearing It! Address 1933 Av Laplante Laval, Québec H7S 1E6 Email Address info@isgaconsult.com   Phone Number +1 514 831 0884   Contact Us Feel free to contact us anytime. Veuillez activer JavaScript dans votre navigateur pour remplir ce formulaire.",
+  openGraph: {
+    title: "Newsletter - Consultation ISGA Inc.",
+    description:
+      "Do you have question? Send Us Your Feedback, We Love Hearing It! Address 1933 Av Laplante Laval, Québec H7S 1E6 Email Address info@isgaconsult.com   Phone Number +1 514 831 0884   Contact Us Feel free to contact us anytime. Veuillez activer JavaScript dans votre navigateur pour remplir ce formulaire.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/contact`,
+    images: [
+      {
+        url: newletterImage,
+        width: 1230,
+        height: 630,
+        alt: "contact_preview_image",
+      },
+    ],
+  },
+};
+
 export const navItems = [
   {
     id: 1,
@@ -342,9 +363,14 @@ export const navItems = [
   },
 
   { id: 2, name: "About", link: "/about" },
-
   {
     id: 3,
+    name: "Solutions",
+    link: "/solution",
+  },
+
+  {
+    id: 4,
     name: "Services",
     sub: [
       { name: "Consulting Service", link: "/services/consulting-service" },
@@ -373,7 +399,13 @@ export const navItems = [
   },
 
   {
-    id: 4,
+    id: 5,
+    name: "Arterial intelligence",
+    link: "/arterial-intelligence",
+  },
+
+  {
+    id: 6,
     name: "Industries",
     sub: [
       {
@@ -396,11 +428,19 @@ export const navItems = [
   },
 
   {
+    id: 7,
     name: "Carrers",
     link: "/carrers",
   },
 
   {
+    id: 8,
+    name: "Newsletter",
+    link: "/newsletter",
+  },
+
+  {
+    id: 9,
     name: "Contact",
     link: "/contact",
   },
@@ -482,7 +522,7 @@ export const footerConctactInfo = [
   {
     Icon: MapPinHouse,
     title: "Address",
-    description: "1933 Av Laplante Laval, Québec H7S 1E6",
+    description: "Laval, Québec",
   },
   {
     Icon: Mail,

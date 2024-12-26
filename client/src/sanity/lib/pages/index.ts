@@ -1,9 +1,5 @@
-import {
-  JobDomain,
-  JobDomainsResult,
-  JobType,
-  JobTypesResult,
-} from "@/sanity/types";
+import { JobDomainsResult, JobTypesResult } from "@/sanity/types";
+import { defineQuery } from "next-sanity";
 import { sanityFetch } from "../live";
 
 import {
@@ -22,9 +18,9 @@ import {
   telecommunicationQuery,
   contactQuery,
   carrersQuery,
-  jobQuery,
   jobDomains,
   jobTypes,
+  newsCategoriesQuery,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -291,6 +287,57 @@ export const getJobsCategories = async () => {
     return data || [];
   } catch (error) {
     console.error("Error fetching the job categories", error);
+    return [];
+  }
+};
+
+interface NewsFilterParams {
+  order?: string;
+  category?: string;
+}
+
+// TODO
+/// need to fix the loweCase of the category
+
+export const getNews = async ({
+  order = "desc",
+  category = "",
+}: NewsFilterParams) => {
+  const query = defineQuery(
+    `
+ *[_type == 'news' && display == true ${
+   category ? `&& "${category}" in category[] -> title` : ""
+ }] | order(_createdAt ${order}) {
+    _id, 
+    _updatedAt,
+    _createdAt,
+    title,
+    subtitle,
+    details,
+    image {
+      asset -> { url }
+    },
+    slug
+  }
+    `
+  );
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
+export const getNewsCategories = async () => {
+  const query = newsCategoriesQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news categories", error);
     return [];
   }
 };

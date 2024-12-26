@@ -52,6 +52,60 @@ export type Slug = {
   source?: string;
 };
 
+export type NewsCategory = {
+  _id: string;
+  _type: "newsCategory";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+};
+
+export type News = {
+  _id: string;
+  _type: "news";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  subtitle?: string;
+  details?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      _key: string;
+    } & Color>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  category?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "newsCategory";
+  }>;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  display?: boolean;
+};
+
 export type Candidate = {
   _id: string;
   _type: "candidate";
@@ -884,7 +938,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Slug | NewsCategory | News | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -1620,6 +1674,12 @@ export type JobTypesResult = Array<{
   _type: "jobType";
   _updatedAt: string;
 }>;
+// Variable: newsCategoriesQuery
+// Query: *[_type == 'newsCategory'] {        _id,      title,    }
+export type NewsCategoriesQueryResult = Array<{
+  _id: string;
+  title: string | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -1644,5 +1704,6 @@ declare module "@sanity/client" {
     "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      job_domain -> {\n        _id,\n        title\n      },\n      job_type -> {\n        _id,\n        title\n      },\n      description,\n      qualifications,\n      display\n\n    }\n  ": JobQueryResult;
     "\n    *[_type == 'jobDomain'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
     "\n    *[_type == 'jobType'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
+    "\n    *[_type == 'newsCategory'] {  \n      _id,\n      title,\n    }\n  ": NewsCategoriesQueryResult;
   }
 }

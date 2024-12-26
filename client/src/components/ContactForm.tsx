@@ -125,7 +125,7 @@ const ContactForm = () => {
         <LoadingButton
           // loading={loading}
           type="submit"
-          className="w-full md:w-auto"
+          className="w-full md:w-auto bg-[#7456F1] hover:bg-[#5E3FDE]"
         >
           Send Message
         </LoadingButton>

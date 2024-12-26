@@ -11,10 +11,9 @@ interface FilterProps {
   domains: JobDomainsResult;
   types: JobTypesResult;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  loading: boolean;
 }
 
-const Filter = ({ domains, types, setLoading, loading }: FilterProps) => {
+const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
   const router = useRouter();
   const pathname = usePathname(); // Reactively updates on route changes
   const searchParams = useSearchParams(); // Reactively updates on query changes
@@ -133,7 +132,7 @@ const Filter = ({ domains, types, setLoading, loading }: FilterProps) => {
   );
 };
 
-export default Filter;
+export default FilterJobs;
 
 interface SingleCheckBoxProps {
   data: JobDomainsResult[0] | JobTypesResult[0];

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Filter, JobDialog } from "@/components";
+import { FilterJobs, JobDialog } from "@/components";
 import {
   JobDomainsResult,
   JobQueryResult,
@@ -19,12 +19,7 @@ const Jobs = ({ data, domains, types }: JobsProps) => {
 
   return (
     <div className="flex flex-col gap-10">
-      <Filter
-        domains={domains}
-        types={types}
-        setLoading={setLoading}
-        loading={loading}
-      />
+      <FilterJobs domains={domains} types={types} setLoading={setLoading} />
 
       {/* If no data founded and loading is false -> show no items */}
       {!data.length && !loading && (
@@ -35,7 +30,7 @@ const Jobs = ({ data, domains, types }: JobsProps) => {
       {loading ? (
         <div className="flex flex-col text-center justify-center items-center gap-3">
           <div className="w-6 h-6 bg-[#7456F1] animate-spin rounded-lg" />
-          <p className="font-semibold text-sm">A sec please...</p>
+          <p className="font-semibold text-sm">One sec please...</p>
         </div>
       ) : (
         data && (

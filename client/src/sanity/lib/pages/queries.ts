@@ -713,3 +713,12 @@ export const jobTypes = defineQuery(
     }  
   `
 );
+
+export const newsCategoriesQuery = defineQuery(
+  `
+    *[_type == 'newsCategory'] {  
+      _id,
+      title,
+    }
+  `
+);
