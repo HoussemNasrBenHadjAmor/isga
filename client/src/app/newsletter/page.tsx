@@ -1,6 +1,6 @@
 import { NewsLanding, CommunComponent, NewsLetter } from "@/components";
 import { newsletterdata } from "@/constants";
-import { getNews, getNewsCategories } from "@/sanity/lib/pages";
+import { getNewsPage, getNewsCategories } from "@/sanity/lib/pages";
 import { Metadata } from "next";
 
 export const metadata: Metadata = newsletterdata;
@@ -20,18 +20,16 @@ const page = async ({
 
   const date = (resolvedSearchParams.date as string) || "desc";
 
-  const news_data = await getNews({
+  const news_data = await getNewsPage({
     category,
     order: date,
   });
 
   const news: any = news_data ? news_data : null;
 
-  console.log("news", news[0]);
-
   return (
     <div>
-      <NewsLanding />
+      <NewsLanding center />
       <CommunComponent>
         <NewsLetter categories={news_categories} date={date} data={news} />
       </CommunComponent>

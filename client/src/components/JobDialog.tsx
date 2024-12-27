@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PortableText } from "next-sanity";
 import { motion } from "framer-motion";
 import {
   Dialog,
@@ -12,10 +13,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
-import { PortableText } from "next-sanity";
-import { JobQueryResult } from "@/sanity/types";
+
 import { JobCard, JobForm } from "@/components";
+import { myPortableTextComponents } from "@/lib/PortableText";
 import { CircleCheck } from "lucide-react";
+import { JobQueryResult } from "@/sanity/types";
 
 interface JobDialogProps {
   data: JobQueryResult[0];
@@ -65,11 +67,17 @@ const JobDialog = ({ data }: JobDialogProps) => {
 
         <div className="prose max-w-none mt-8">
           {Array.isArray(data.description) && (
-            <PortableText value={data.description} />
+            <PortableText
+              value={data.description}
+              components={myPortableTextComponents}
+            />
           )}
 
           {Array.isArray(data.qualifications) && (
-            <PortableText value={data.qualifications} />
+            <PortableText
+              value={data.qualifications}
+              components={myPortableTextComponents}
+            />
           )}
         </div>
 

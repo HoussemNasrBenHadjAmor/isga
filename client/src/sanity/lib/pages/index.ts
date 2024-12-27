@@ -299,12 +299,11 @@ interface NewsFilterParams {
 // TODO
 /// need to fix the loweCase of the category
 
-export const getNews = async ({
-  order = "desc",
+export const getNewsPage = async ({
   category = "",
+  order = "desc",
 }: NewsFilterParams) => {
-  const query = defineQuery(
-    `
+  const query = defineQuery(`
  *[_type == 'news' && display == true ${
    category ? `&& "${category}" in category[] -> title` : ""
  }] | order(_createdAt ${order}) {
@@ -313,16 +312,21 @@ export const getNews = async ({
     _createdAt,
     title,
     subtitle,
-    details,
     image {
       asset -> { url }
     },
     slug
   }
-    `
-  );
+  `);
+
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({
+      query,
+      params: {
+        category,
+        order,
+      },
+    });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the news", error);
@@ -338,6 +342,36 @@ export const getNewsCategories = async () => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the news categories", error);
+    return [];
+  }
+};
+
+export const getNewLetterPage = async (slug: string) => {
+  const query = defineQuery(`
+ *[_type == 'news' && display == true && slug.current == "${slug}"] {
+    _id, 
+    _updatedAt,
+    _createdAt,
+    title,
+    subtitle,
+    details,
+    image {
+      asset -> { url }
+    },
+    slug
+  }
+  `);
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        slug,
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
     return [];
   }
 };

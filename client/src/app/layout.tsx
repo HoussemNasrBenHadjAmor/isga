@@ -35,7 +35,8 @@ export default async function RootLayout({
         <Navbar />
         {children}
         <Toaster />
-        <div className="pt-20">
+        <div className="pt-20"
+        >
           <Footer />
           <ScrollTop />
         </div>

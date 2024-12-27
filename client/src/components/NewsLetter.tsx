@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FilterNews, NewLetter } from "@/components";
-import { NewsCategoriesQueryResult } from "@/sanity/types";
+import { News, NewsCategoriesQueryResult } from "@/sanity/types";
 
 interface NewsLetterProps {
   data: any;

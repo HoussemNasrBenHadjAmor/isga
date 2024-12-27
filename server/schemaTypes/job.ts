@@ -49,8 +49,26 @@ export default defineType({
           title: 'Block',
           type: 'block',
           marks: {
-            annotations: [{name: 'color', title: 'Color', type: 'color'}],
+            annotations: [
+              {name: 'color', title: 'Color', type: 'color'},
+              {
+                name: 'link',
+                type: 'object',
+                title: 'External Link',
+                fields: [
+                  {
+                    name: 'href',
+                    title: 'Link',
+                    type: 'url',
+                    description: 'Please provide a valid url link',
+                  },
+                ],
+              },
+            ],
           },
+        },
+        {
+          type: 'image',
         },
       ],
     }),

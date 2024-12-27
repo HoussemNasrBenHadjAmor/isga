@@ -46,12 +46,6 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
-};
-
 export type NewsCategory = {
   _id: string;
   _type: "newsCategory";
@@ -85,6 +79,7 @@ export type News = {
     _type: "block";
     _key: string;
   }>;
+  slug?: Slug;
   category?: Array<{
     _ref: string;
     _type: "reference";
@@ -104,6 +99,12 @@ export type News = {
     _type: "image";
   };
   display?: boolean;
+};
+
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
 };
 
 export type Candidate = {
@@ -938,7 +939,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Slug | NewsCategory | News | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query

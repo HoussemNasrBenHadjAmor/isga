@@ -4,13 +4,13 @@ import Link from "next/link";
 import React from "react";
 
 import { MoveRight } from "lucide-react";
+import { News } from "@/sanity/types";
 const formatDate = (isoString: string) => {
   const date = new Date(isoString);
-  return date.toLocaleDateString("en-US", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
+  const day = date.getDate(); // Get the day (1-31)
+  const month = date.toLocaleString("en-US", { month: "long" }); // Get full month name
+  const year = date.getFullYear(); // Get the full year
+  return `${day} ${month} ${year}`;
 };
 
 const NewLetter = ({ data }: any) => {
