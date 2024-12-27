@@ -8,8 +8,8 @@ const urlBuilder = createImageUrlBuilder({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
 });
 
-// Barebones lazy-loaded image component
-const ImageComponent = ({ value, isInline }: any) => {
+// lazy-loaded image component
+const ImageComponent = ({ value }: any) => {
   if (!value?.asset?._ref && !value?.asset?._id) {
     console.error("Invalid image value:", value);
     return null;
@@ -40,12 +40,22 @@ const ImageComponent = ({ value, isInline }: any) => {
 
 // Custom rendering for text marks (e.g., color)
 const renderTextWithColor = (children: any, markDefs: any) => {
+  // if markDefs is not empty
   const colorMark: boolean = markDefs ? true : false;
 
   if (colorMark && markDefs.hex) {
     return <span style={{ color: markDefs.hex }}>{children}</span>;
   }
   return children; // Return children as is if no color mark is found
+};
+
+const renderExternalLink = ({ value, children }: any) => {
+  const { href } = value;
+  return (
+    <a href={href} target="_blank" rel="noopener">
+      {children}
+    </a>
+  );
 };
 
 export const myPortableTextComponents = {
@@ -57,13 +67,9 @@ export const myPortableTextComponents = {
     color: ({ children, value }: any) => {
       return renderTextWithColor(children, value);
     },
+    // Handle extrernal link
     link: ({ value, children }: any) => {
-      const { href } = value;
-      return (
-        <a href={href} target="_blank" rel="noopener">
-          {children}
-        </a>
-      );
+      return renderExternalLink({ value, children });
     },
   },
 };

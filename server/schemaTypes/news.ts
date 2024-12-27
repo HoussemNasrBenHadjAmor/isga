@@ -56,6 +56,14 @@ export default defineType({
     }),
 
     defineField({
+      name: 'file',
+      type: 'file',
+      options: {
+        accept: 'application/pdf',
+      },
+    }),
+
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

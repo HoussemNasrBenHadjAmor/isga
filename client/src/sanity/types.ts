@@ -74,11 +74,35 @@ export type News = {
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       _key: string;
-    } & Color>;
+    } & Color | {
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
     level?: number;
     _type: "block";
     _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
   }>;
+  file?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    _type: "file";
+  };
   slug?: Slug;
   category?: Array<{
     _ref: string;
@@ -194,9 +218,24 @@ export type Job = {
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       _key: string;
-    } & Color>;
+    } & Color | {
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
     level?: number;
     _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
     _key: string;
   }>;
   qualifications?: Array<{
@@ -1632,9 +1671,24 @@ export type JobQueryResult = Array<{
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       _key: string;
-    } & Color>;
+    } & Color | {
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
     level?: number;
     _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
     _key: string;
   }> | null;
   qualifications: Array<{

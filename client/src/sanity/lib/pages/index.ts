@@ -358,7 +358,8 @@ export const getNewLetterPage = async (slug: string) => {
     image {
       asset -> { url }
     },
-    slug
+    slug,
+    "file" : file.asset->url
   }
   `);
 
