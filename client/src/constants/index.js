@@ -29,6 +29,7 @@ export const industriesImage = "/industries.jpg";
 export const careersImage = "/carrers.png";
 export const contactImage = "/contact.jpg";
 export const newletterImage = "/newsletter_cover.png";
+export const locationsImage = "/locations.jpg";
 
 export const homeMetadata = {
   title: "Home - Consultation ISGA Inc.",
@@ -355,6 +356,27 @@ export const newsletterdata = {
   },
 };
 
+export const locationsMetadata = {
+  title: "Locations - Consultation ISGA Inc.",
+  description:
+    "ISGA Consult we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients. We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. About See our services What we do We focus on a co-creative […]",
+  openGraph: {
+    type: "website",
+    title: "Locations - Consultation ISGA Inc.",
+    description:
+      "ISGA Consult we have developed a range of services that are scalable, efficient and adapted to the needs, challenges and obligations of our clients. We focus on a co-creative approach, offering unparalleled skills to help you achieve your innovation, growth, and profitability objectives. About See our services What we do We focus on a co-creative […]",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    images: [
+      {
+        url: locationsImage,
+        width: 1230,
+        height: 630,
+        alt: "locations_preview_image",
+      },
+    ],
+  },
+};
+
 export const navItems = [
   {
     id: 1,
@@ -367,6 +389,12 @@ export const navItems = [
     id: 3,
     name: "Solutions",
     link: "/solution",
+    sub: [
+      {
+        name: "Link Talent",
+        link: "/solutions/link-talent",
+      },
+    ],
   },
 
   {
@@ -402,6 +430,24 @@ export const navItems = [
     id: 5,
     name: "Arterial intelligence",
     link: "/arterial-intelligence",
+    sub: [
+      {
+        name: "AI Software Development",
+        link: "/ai/software-development",
+      },
+      {
+        name: "Artificial Intelligence Training",
+        link: "/ai/training",
+      },
+      {
+        name: "Artificial Intelligence Consulting",
+        link: "/ai/consulting",
+      },
+      {
+        name: "R&D in artificial intelligence",
+        link: "/ai/rd",
+      },
+    ],
   },
 
   {
@@ -443,6 +489,11 @@ export const navItems = [
     id: 9,
     name: "Contact",
     link: "/contact",
+  },
+  {
+    id: 10,
+    name: "Locations",
+    link: "/locations",
   },
 ];
 

@@ -33,7 +33,7 @@ const MobileNav = () => {
           className="bg-[#121519] text-white border-none z-[999]"
           onClose={() => setIsOpen(false)}
         >
-          <div className="p-2 px-4">
+          <div className="p-2 px-4 overflow-auto min-h-screen pb-32">
             <div className="flex justify-end">
               <DrawerClose onClick={() => setIsOpen(false)}>
                 <XIcon />

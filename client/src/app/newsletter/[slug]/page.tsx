@@ -10,8 +10,6 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const data = await getNewLetterPage(slug);
   const product = data ? data[0] : [];
 
-  console.log("file", product?.file);
-
   return (
     <div>
       <NewsLanding data={product} />

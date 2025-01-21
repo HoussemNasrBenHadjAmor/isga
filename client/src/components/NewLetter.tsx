@@ -17,13 +17,15 @@ const NewLetter = ({ data }: any) => {
   return (
     <div className="flex flex-col gap-3">
       <Link href={`/newsletter/${data?.slug.current}`}>
-        <Image
-          alt="image"
-          src={urlFor(data?.image).url()}
-          width={1920}
-          height={1080}
-          className="h-[250px] w-full object-cover rounded-lg"
-        />
+        <div className="relative overflow-hidden h-64 w-full rounded-lg">
+          <Image
+            alt="image"
+            src={urlFor(data?.image).url()}
+            width={1920}
+            height={1080}
+            className="rounded-lg w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
       </Link>
 
       <div className="flex flex-col gap-3">

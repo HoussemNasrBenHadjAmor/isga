@@ -46,6 +46,88 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Location = {
+  _id: string;
+  _type: "location";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  title?: Array<string>;
+  subtitle?: Array<string>;
+  description?: Array<string>;
+  details?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      _key: string;
+    } & Color | {
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+  cards?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  slug?: string;
+};
+
+export type Locations = {
+  _id: string;
+  _type: "locations";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  landing?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "landing";
+  };
+  locations?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "location";
+  }>;
+};
+
 export type NewsCategory = {
   _id: string;
   _type: "newsCategory";
@@ -978,7 +1060,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -1735,6 +1817,76 @@ export type NewsCategoriesQueryResult = Array<{
   _id: string;
   title: string | null;
 }>;
+// Variable: locationsQuery
+// Query: *[_type == 'locations'] {        landing -> {              _id,              title[],              subtitle[],              description[],              image {                asset -> { url }              },              author,            },        locations [] -> {          _id,          title,          subtitle,          description,          details,          image {            asset -> {url}          },          slug,          cards [] -> {            title,            svg_path,            subtitle,            description,            image {              asset -> {url}            }          }          }}
+export type LocationsQueryResult = Array<{
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  locations: Array<{
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    details: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<{
+        _key: string;
+      } & Color | {
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    } | {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    slug: string | null;
+    cards: Array<{
+      title: string | null;
+      svg_path: string | null;
+      subtitle: Array<string> | null;
+      description: Array<string> | null;
+      image: {
+        asset: {
+          url: string | null;
+        } | null;
+      } | null;
+    }> | null;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -1760,5 +1912,6 @@ declare module "@sanity/client" {
     "\n    *[_type == 'jobDomain'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
     "\n    *[_type == 'jobType'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
     "\n    *[_type == 'newsCategory'] {  \n      _id,\n      title,\n    }\n  ": NewsCategoriesQueryResult;
+    "\n    *[_type == 'locations'] {\n        landing -> {\n              _id,\n              title[],\n              subtitle[],\n              description[],\n              image {\n                asset -> { url }\n              },\n              author,\n            },\n\n        locations [] -> {\n          _id,\n          title,\n          subtitle,\n          description,\n          details,\n          image {\n            asset -> {url}\n          },\n          slug,\n          cards [] -> {\n            title,\n            svg_path,\n            subtitle,\n            description,\n            image {\n              asset -> {url}\n            }\n          }  \n        }\n}\n  ": LocationsQueryResult;
   }
 }

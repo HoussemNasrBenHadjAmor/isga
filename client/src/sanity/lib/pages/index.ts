@@ -21,6 +21,7 @@ import {
   jobDomains,
   jobTypes,
   newsCategoriesQuery,
+  locationsQuery,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -373,6 +374,56 @@ export const getNewLetterPage = async (slug: string) => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
+export const getLocationsPage = async () => {
+  const query = locationsQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the locations page", error);
+    return [];
+  }
+};
+
+export const getLocationPage = async (slug: string) => {
+  const query = defineQuery(`
+ *[_type == 'location' && slug == "${slug}"] {
+    _id, 
+    title,
+    subtitle,
+    description,
+    details,
+    image {
+      asset -> { url }
+    },
+    slug,
+    cards [] -> {
+      title,
+      svg_path,
+      subtitle,
+      description,
+      image {
+        asset -> { url }
+      }
+    }
+  }
+  `);
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        slug,
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the location page", error);
     return [];
   }
 };

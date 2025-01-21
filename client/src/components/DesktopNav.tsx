@@ -14,7 +14,7 @@ import {
 
 function DesktopNav() {
   return (
-    <NavigationMenu className="hidden lg:flex">
+    <NavigationMenu className="hidden lg:flex relative">
       <NavigationMenuList className="gap-5">
         {navItems.map((navItem) => (
           <div key={navItem.id}>
@@ -27,7 +27,7 @@ function DesktopNav() {
                 </Link>
               </NavigationMenuItem>
             ) : (
-              <NavigationMenuItem key={navItem.name}>
+              <NavigationMenuItem key={navItem.name} className="">
                 <NavigationMenuTrigger>
                   {navItem.name.toUpperCase()}
                 </NavigationMenuTrigger>

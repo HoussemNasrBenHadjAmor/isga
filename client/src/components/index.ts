@@ -30,4 +30,6 @@ export { default as NewsLanding } from "@/components/NewsLanding";
 export { default as NewsLetter } from "@/components/NewsLetter";
 export { default as NewLetter } from "@/components/NewLetter";
 export { default as FilterNews } from "@/components/FilterNews";
+export { default as LocationLanding } from "@/components/LocationLanding";
+export { default as Location } from "@/components/Location";
 // export { default as CareersComponent } from "@/components/CareersComponent";

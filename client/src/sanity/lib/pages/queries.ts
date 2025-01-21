@@ -722,3 +722,41 @@ export const newsCategoriesQuery = defineQuery(
     }
   `
 );
+
+export const locationsQuery = defineQuery(
+  `
+    *[_type == 'locations'] {
+        landing -> {
+              _id,
+              title[],
+              subtitle[],
+              description[],
+              image {
+                asset -> { url }
+              },
+              author,
+            },
+
+        locations [] -> {
+          _id,
+          title,
+          subtitle,
+          description,
+          details,
+          image {
+            asset -> {url}
+          },
+          slug,
+          cards [] -> {
+            title,
+            svg_path,
+            subtitle,
+            description,
+            image {
+              asset -> {url}
+            }
+          }  
+        }
+}
+  `
+);

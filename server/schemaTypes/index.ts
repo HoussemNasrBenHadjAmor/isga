@@ -31,6 +31,8 @@ import jobCategory from './jobCategory'
 import candidate from './candidate'
 import news from './news'
 import newsCategory from './newsCategory'
+import locations from './locations'
+import location from './location'
 
 export const schemaTypes = [
   // post,
@@ -65,4 +67,6 @@ export const schemaTypes = [
   jobType,
   news,
   newsCategory,
+  locations,
+  location,
 ]
