@@ -33,6 +33,10 @@ import news from './news'
 import newsCategory from './newsCategory'
 import locations from './locations'
 import location from './location'
+import aiSoftware from './aiSoftware'
+import aiTraining from './aiTraining'
+import aiConsulting from './aiConsulting'
+import aiRd from './aiRd'
 
 export const schemaTypes = [
   // post,
@@ -69,4 +73,8 @@ export const schemaTypes = [
   newsCategory,
   locations,
   location,
+  aiSoftware,
+  aiTraining,
+  aiConsulting,
+  aiRd,
 ]

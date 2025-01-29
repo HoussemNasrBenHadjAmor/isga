@@ -32,4 +32,11 @@ export { default as NewLetter } from "@/components/NewLetter";
 export { default as FilterNews } from "@/components/FilterNews";
 export { default as LocationLanding } from "@/components/LocationLanding";
 export { default as Location } from "@/components/Location";
+export { default as CardAi } from "@/components/CardAi";
+export { default as CarouselAi } from "@/components/CarouselAi";
+export { default as AccordionAi } from "@/components/AccordionAi";
+export { default as BottomComponentAi } from "@/components/BottomComponentAi";
+export { default as CardWrapperAi } from "@/components/CardWrapperAi";
+export { default as NeedsAi } from "@/components/NeedsAi";
+
 // export { default as CareersComponent } from "@/components/CareersComponent";

@@ -22,6 +22,11 @@ import {
   jobTypes,
   newsCategoriesQuery,
   locationsQuery,
+  aiSoftwareQuery,
+  relatedNewsQuery,
+  aiTrainingQuery,
+  aiConsultingQuery,
+  aiRdQuery,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -335,6 +340,18 @@ export const getNewsPage = async ({
   }
 };
 
+export const getRelatedNews = async () => {
+  const query = relatedNewsQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the related news", error);
+    return [];
+  }
+};
+
 export const getNewsCategories = async () => {
   const query = newsCategoriesQuery;
 
@@ -424,6 +441,54 @@ export const getLocationPage = async (slug: string) => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the location page", error);
+    return [];
+  }
+};
+
+export const getAiSoftwarePage = async () => {
+  const query = aiSoftwareQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the aiSoftware page", error);
+    return [];
+  }
+};
+
+export const getAiTrainingPage = async () => {
+  const query = aiTrainingQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the ai Training page", error);
+    return [];
+  }
+};
+
+export const getAiConsultingPage = async () => {
+  const query = aiConsultingQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the ai consulting page", error);
+    return [];
+  }
+};
+
+export const getAiRdPage = async () => {
+  const query = aiRdQuery;
+
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the ai rd page", error);
     return [];
   }
 };

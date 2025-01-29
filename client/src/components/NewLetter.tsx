@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 import { MoveRight } from "lucide-react";
-import { News } from "@/sanity/types";
+
 const formatDate = (isoString: string) => {
   const date = new Date(isoString);
   const day = date.getDate(); // Get the day (1-31)

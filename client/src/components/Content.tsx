@@ -3,9 +3,10 @@ import { Simple } from "@/sanity/types";
 interface ContectProps {
   data: Simple | null;
   noCenter?: boolean;
+  withPoint?: boolean;
 }
 
-const Content = ({ data, noCenter }: ContectProps) => {
+const Content = ({ data, noCenter, withPoint = true }: ContectProps) => {
   return (
     <div className="px-5 w-full mb-20">
       <div
@@ -20,8 +21,8 @@ const Content = ({ data, noCenter }: ContectProps) => {
         ))}
         {data?.subtitle?.map((subtitle) => <p key={subtitle}>{subtitle}</p>)}
         {data?.description?.map((des) => (
-          <p key={des} className="ml-3">
-            • {des}
+          <p key={des} className={`${withPoint ? "ml-3" : "text-gray-600"}`}>
+            {withPoint ? `• ${des}` : des}
           </p>
         ))}
       </div>

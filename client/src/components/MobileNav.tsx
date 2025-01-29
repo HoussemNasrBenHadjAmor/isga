@@ -17,7 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { navItems } from "@/constants";
+import { navItemsMobile } from "@/constants";
 import { AlignJustify, XIcon } from "lucide-react";
 
 const MobileNav = () => {
@@ -40,7 +40,7 @@ const MobileNav = () => {
               </DrawerClose>
             </div>
             <div className="mt-5 gap-4 flex flex-col">
-              {navItems.map((navItem) => (
+              {navItemsMobile.map((navItem) => (
                 <div key={`${navItem.name}-${navItem.id}`}>
                   {!navItem.sub ? (
                     <DrawerClose onClick={() => setIsOpen(false)}>

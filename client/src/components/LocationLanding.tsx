@@ -16,20 +16,24 @@ const LocationLanding = ({ data, center }: LocationsLanidngProps) => {
       <div className="absolute inset-0 w-full h-full">
         <Image
           // src={data ? data?.url : cover}
-          src={urlFor(data?.image).url() ?? cover}
+          // src={urlFor(data?.image).url() ?? cover}
+          src={data?.image ? urlFor(data?.image).url() : cover}
           className="w-full h-full md:max-h-[720px] object-cover"
           alt="background"
           height={1080}
           width={1920}
         />
-        <div className="absolute inset-0 bg-black opacity-10 h-full md:max-h-[720px]" />
+        <div className="absolute inset-0 bg-black opacity-40 h-full md:max-h-[720px]" />
       </div>
       <div
         className={`px-5 flex flex-col items-start justify-center relative ${center && "text-center items-center"} w-full h-full lg:min-h-[720px] min-h-screen max-w-7xl mx-auto`}
       >
         {data ? (
-          <div className="flex flex-col gap-4 text-white text-2xl md:text-4xl justify-center">
+          <div className="flex flex-col gap-4 text-2xl md:text-4xl text-white">
             <h1 className="font-semibold">{data?.title}</h1>
+            {data?.subtitle?.map((subtitle) => (
+              <p className="text-xl md:text-3xl">{subtitle}</p>
+            ))}
           </div>
         ) : (
           <h1 className="text-white text-5xl">Global Offices</h1>

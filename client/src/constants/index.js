@@ -31,6 +31,11 @@ export const contactImage = "/contact.jpg";
 export const newletterImage = "/newsletter_cover.png";
 export const locationsImage = "/locations.jpg";
 
+const sd_img = "/ai-development.png";
+const training = "/ai_education.png";
+const consulting = "/ai_consulting.png";
+const rd = "/ai_rd.png";
+
 export const homeMetadata = {
   title: "Home - Consultation ISGA Inc.",
   description:
@@ -377,7 +382,34 @@ export const locationsMetadata = {
   },
 };
 
-export const navItems = [
+export const relatedLinks = [
+  {
+    name: "AI Software Development",
+    link: "/ai/software-development",
+    image: sd_img,
+    _id: "sd",
+  },
+  {
+    name: "Artificial Intelligence Training",
+    link: "/ai/training",
+    image: training,
+    _id: "training",
+  },
+  {
+    name: "Artificial Intelligence Consulting",
+    link: "/ai/consulting",
+    image: consulting,
+    _id: "conslting",
+  },
+  {
+    name: "R&D in artificial intelligence",
+    link: "/ai/rd",
+    image: rd,
+    _id: "rd",
+  },
+];
+
+export const navItemsMobile = [
   {
     id: 1,
     name: "Home",
@@ -385,17 +417,6 @@ export const navItems = [
   },
 
   { id: 2, name: "About", link: "/about" },
-  {
-    id: 3,
-    name: "Solutions",
-    link: "/solution",
-    sub: [
-      {
-        name: "Link Talent",
-        link: "/solutions/link-talent",
-      },
-    ],
-  },
 
   {
     id: 4,
@@ -472,11 +493,10 @@ export const navItems = [
       },
     ],
   },
-
   {
-    id: 7,
-    name: "Carrers",
-    link: "/carrers",
+    id: 10,
+    name: "Locations",
+    link: "/locations",
   },
 
   {
@@ -486,14 +506,141 @@ export const navItems = [
   },
 
   {
+    id: 7,
+    name: "Carrers",
+    link: "/carrers",
+  },
+
+  {
     id: 9,
     name: "Contact",
     link: "/contact",
   },
+];
+
+export const navItemsDesktop = [
+  {
+    id: 1,
+    name: "Home",
+    link: "/",
+  },
+
+  { id: 2, name: "About", link: "/about" },
+
+  {
+    id: 4,
+    name: "Services",
+    details: [
+      {
+        id: 41,
+        name: "Services",
+        sub: [
+          { name: "Consulting Service", link: "/services/consulting-service" },
+          {
+            name: "Application Services and Solutions",
+            link: "/services/application-services-and-solutions",
+          },
+          {
+            name: "Technologies & Platforms",
+            link: "/services/technologies-platforms",
+          },
+          { name: "Managed Services", link: "/services/managed-services" },
+          {
+            name: "Project & Program Management",
+            link: "/services/project-program-management",
+          },
+          {
+            name: "Artifical Intelligence",
+            link: "/services/artifical-intelligence",
+          },
+          {
+            name: "Cybersecurity & Entreprise Risk",
+            link: "/services/cybersecurity-entreprise-risk",
+          },
+        ],
+      },
+
+      {
+        id: 42,
+        name: "AI",
+        sub: [
+          {
+            name: "AI Software Development",
+            link: "/ai/software-development",
+          },
+          {
+            name: "Artificial Intelligence Training",
+            link: "/ai/training",
+          },
+          {
+            name: "Artificial Intelligence Consulting",
+            link: "/ai/consulting",
+          },
+          {
+            name: "R&D in artificial intelligence",
+            link: "/ai/rd",
+          },
+        ],
+      },
+
+      {
+        id: 43,
+        name: "Industries",
+        sub: [
+          {
+            name: "Government and Public Sector",
+            link: "/industries/government-public-sector",
+          },
+          {
+            name: "Insurance",
+            link: "/industries/Insurance",
+          },
+          {
+            name: "Financial Services",
+            link: "/industries/financial-services",
+          },
+          {
+            name: "Telecommunications",
+            link: "/industries/telecommunications",
+          },
+        ],
+      },
+
+      {
+        id: 44,
+        name: "Solutions",
+        sub: [
+          {
+            name: "Link Talent",
+            link: "/solutions/link-talent",
+          },
+        ],
+      },
+    ],
+  },
+
   {
     id: 10,
     name: "Locations",
     link: "/locations",
+  },
+
+  {
+    id: 8,
+    name: "Newsletter",
+    link: "/newsletter",
+  },
+
+  {
+    id: 7,
+    name: "Carrers",
+    link: "/carrers",
+  },
+
+  {
+    id: 9,
+    name: "Contact",
+    link: "/contact",
   },
 ];
 

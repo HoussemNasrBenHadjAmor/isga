@@ -46,6 +46,307 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type AiRd = {
+  _id: string;
+  _type: "aiRd";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  landing?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "landing";
+  };
+  first_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  second_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  second_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+};
+
+export type AiConsulting = {
+  _id: string;
+  _type: "aiConsulting";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  landing?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "landing";
+  };
+  first_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  first_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  second_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  second_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  card?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "card";
+  };
+  third_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  third_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  fourth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  fourth_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  fifth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  fifth_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  sixth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  faq?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "simple";
+  }>;
+};
+
+export type AiTarining = {
+  _id: string;
+  _type: "aiTarining";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  landing?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "landing";
+  };
+  first_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  first_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  second_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  second_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  card?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "card";
+  };
+  third_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  third_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  fourth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  fourth_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  fifth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  fifth_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  sixth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  faq?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "simple";
+  }>;
+};
+
+export type AiSoftware = {
+  _id: string;
+  _type: "aiSoftware";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  landing?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "landing";
+  };
+  first_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  first_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  second_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  second_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  card?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "card";
+  };
+  third_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  third_card?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "card";
+  }>;
+  fourth_content?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "simple";
+  };
+  faq?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "simple";
+  }>;
+};
+
 export type Location = {
   _id: string;
   _type: "location";
@@ -1060,7 +1361,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | AiRd | AiConsulting | AiTarining | AiSoftware | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -1817,6 +2118,21 @@ export type NewsCategoriesQueryResult = Array<{
   _id: string;
   title: string | null;
 }>;
+// Variable: relatedNewsQuery
+// Query: *[_type == 'news' && display == true ] [0..5] {          _id,       _updatedAt,      _createdAt,      title,      subtitle,      image {        asset -> { url }      },      slug    }
+export type RelatedNewsQueryResult = Array<{
+  _id: string;
+  _updatedAt: string;
+  _createdAt: string;
+  title: string | null;
+  subtitle: string | null;
+  image: {
+    asset: {
+      url: string | null;
+    } | null;
+  } | null;
+  slug: Slug | null;
+}>;
 // Variable: locationsQuery
 // Query: *[_type == 'locations'] {        landing -> {              _id,              title[],              subtitle[],              description[],              image {                asset -> { url }              },              author,            },        locations [] -> {          _id,          title,          subtitle,          description,          details,          image {            asset -> {url}          },          slug,          cards [] -> {            title,            svg_path,            subtitle,            description,            image {              asset -> {url}            }          }          }}
 export type LocationsQueryResult = Array<{
@@ -1887,6 +2203,383 @@ export type LocationsQueryResult = Array<{
     }> | null;
   }> | null;
 }>;
+// Variable: aiSoftwareQuery
+// Query: *[_type == 'aiSoftware'] {        _id,       landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                 first_content -> {        title[],        subtitle[],        description[]      },      first_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },        second_content -> {        title[],        subtitle[],        description[]      },                  second_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      card -> {        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      third_content -> {        title[],        subtitle[],        description[]      },      third_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      fourth_content -> {        title[],        subtitle[],        description[]      },      faq [] -> {        _id,        title[],        subtitle[],        description[]      },    }
+export type AiSoftwareQueryResult = Array<{
+  _id: string;
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  first_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  first_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  second_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  second_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  card: {
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  } | null;
+  third_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  third_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  fourth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  faq: Array<{
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  }> | null;
+}>;
+// Variable: aiTrainingQuery
+// Query: *[_type == 'aiTarining'] {        _id,       landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                 first_content -> {        title[],        subtitle[],        description[]      },      first_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },        second_content -> {        title[],        subtitle[],        description[]      },                  second_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      card -> {        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      third_content -> {        title[],        subtitle[],        description[]      },      third_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      fourth_content -> {        title[],        subtitle[],        description[]      },      fourth_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },       fifth_content -> {        title[],        subtitle[],        description[]      },      fifth_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },       sixth_content -> {        title[],        subtitle[],        description[]      },      faq [] -> {        _id,        title[],        subtitle[],        description[]      },    }
+export type AiTrainingQueryResult = Array<{
+  _id: string;
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  first_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  first_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  second_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  second_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  card: {
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  } | null;
+  third_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  third_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  fourth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  fourth_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  fifth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  fifth_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  sixth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  faq: Array<{
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  }> | null;
+}>;
+// Variable: aiConsultingQuery
+// Query: *[_type == 'aiConsulting'] {        _id,       landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                 first_content -> {        title[],        subtitle[],        description[]      },      first_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },        second_content -> {        title[],        subtitle[],        description[]      },                  second_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      card -> {        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      third_content -> {        title[],        subtitle[],        description[]      },      third_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },      fourth_content -> {        title[],        subtitle[],        description[]      },      fourth_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },       fifth_content -> {        title[],        subtitle[],        description[]      },      fifth_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },       sixth_content -> {        title[],        subtitle[],        description[]      },      faq [] -> {        _id,        title[],        subtitle[],        description[]      },    }
+export type AiConsultingQueryResult = Array<{
+  _id: string;
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  first_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  first_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  second_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  second_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  card: {
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  } | null;
+  third_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  third_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  fourth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  fourth_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  fifth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  fifth_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+  sixth_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  faq: Array<{
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  }> | null;
+}>;
+// Variable: aiRdQuery
+// Query: *[_type == 'aiRd'] {        _id,       landing -> {        _id,        title[],        subtitle[],        description[],        image {          asset -> { url }        },        author,      },                 first_content -> {        title[],        subtitle[],        description[]      },       second_content -> {        title[],        subtitle[],        description[]      },                  second_card [] -> {        _id,        title,        svg_path,        subtitle,        description,        image {          asset -> { url }        }      },  }
+export type AiRdQueryResult = Array<{
+  _id: string;
+  landing: {
+    _id: string;
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+    author: string | null;
+  } | null;
+  first_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  second_content: {
+    title: Array<string> | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+  } | null;
+  second_card: Array<{
+    _id: string;
+    title: string | null;
+    svg_path: string | null;
+    subtitle: Array<string> | null;
+    description: Array<string> | null;
+    image: {
+      asset: {
+        url: string | null;
+      } | null;
+    } | null;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -1912,6 +2605,11 @@ declare module "@sanity/client" {
     "\n    *[_type == 'jobDomain'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
     "\n    *[_type == 'jobType'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
     "\n    *[_type == 'newsCategory'] {  \n      _id,\n      title,\n    }\n  ": NewsCategoriesQueryResult;
+    "\n    *[_type == 'news' && display == true ] [0..5] {  \n        _id, \n      _updatedAt,\n      _createdAt,\n      title,\n      subtitle,\n      image {\n        asset -> { url }\n      },\n      slug\n    }\n  ": RelatedNewsQueryResult;
     "\n    *[_type == 'locations'] {\n        landing -> {\n              _id,\n              title[],\n              subtitle[],\n              description[],\n              image {\n                asset -> { url }\n              },\n              author,\n            },\n\n        locations [] -> {\n          _id,\n          title,\n          subtitle,\n          description,\n          details,\n          image {\n            asset -> {url}\n          },\n          slug,\n          cards [] -> {\n            title,\n            svg_path,\n            subtitle,\n            description,\n            image {\n              asset -> {url}\n            }\n          }  \n        }\n}\n  ": LocationsQueryResult;
+    "\n    *[_type == 'aiSoftware'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      first_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      third_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      faq [] -> {\n        _id,\n        title[],\n        subtitle[],\n        description[]\n      },  \n\n  }\n  ": AiSoftwareQueryResult;
+    "\n    *[_type == 'aiTarining'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      first_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      third_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fourth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fifth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      faq [] -> {\n        _id,\n        title[],\n        subtitle[],\n        description[]\n      },  \n\n  }\n  ": AiTrainingQueryResult;
+    "\n    *[_type == 'aiConsulting'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      first_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      third_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fourth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fifth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      faq [] -> {\n        _id,\n        title[],\n        subtitle[],\n        description[]\n      },  \n\n  }\n  ": AiConsultingQueryResult;
+    "\n    *[_type == 'aiRd'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      }, \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n  }\n  ": AiRdQueryResult;
   }
 }
