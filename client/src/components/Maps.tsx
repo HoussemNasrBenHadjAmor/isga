@@ -2,6 +2,11 @@
 
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
+// import { MapContainer, TileLayer, Marker } from "react-leaflet";
+
+// import { MapContainer, TileLayer, useMap, Marker } from 'react-leaflet'
+// import "leaflet/dist/leaflet.css";
+
 const Maps = () => {
   const center = {
     lat: 45.57356210681623,
@@ -17,6 +22,14 @@ const Maps = () => {
           className="h-[300px] md:h-full"
         />
       </APIProvider>
+
+      {/* <MapContainer center={[51.505, -0.09]} zoom={13}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // attribution="&copy; OpenStreetMap contributors"
+        />
+        <Marker position={[51.505, -0.09]} />
+      </MapContainer> */}
     </div>
   );
 };

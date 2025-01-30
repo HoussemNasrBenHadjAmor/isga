@@ -27,7 +27,7 @@ const page = async () => {
           ))}
         </div>
         <Content data={response?.second_content} noCenter withPoint={false} />
-        <CarouselAi data={response?.second_card} />
+        <CarouselAi data={response?.second_card} nbItem="1/3" />
         <Content data={response?.third_content} noCenter withPoint={false} />
         <CarouselAi data={response?.third_card} nbItem="1/2" />
         <Content data={response?.fourth_content} noCenter withPoint={false} />

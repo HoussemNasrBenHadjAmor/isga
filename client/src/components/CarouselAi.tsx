@@ -21,8 +21,8 @@ type Link = {
 
 interface CarouselAiProps {
   data: Card[] | RelatedNewsQueryResult | Link[];
-  nbItem: string;
-  displayArrow: boolean;
+  nbItem?: string;
+  displayArrow?: boolean;
   type?: string;
 }
 

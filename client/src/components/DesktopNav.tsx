@@ -44,7 +44,7 @@ function DesktopNav() {
                   </ul> */}
 
                   <ul
-                    className={`grid gap-3 p-4 md:w-[650px] grid-cols-${navItem.details.length} w-full`}
+                    className={`grid gap-3 p-4 md:w-[650px] grid-cols-${navItem?.details?.length} w-full`}
                   >
                     {navItem.details.map((item: any) => (
                       <div
