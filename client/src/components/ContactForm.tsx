@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -32,6 +33,7 @@ const FormSchema = z.object({
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -42,18 +44,36 @@ const ContactForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
-      toast({
-        className: "z-[999]",
-        duration: 1000 * 5,
-        variant: "success",
-        title: "Good news!! 🚀",
-        description:
-          "Thank you for submitting your message to Consultation ISGA. We'll be in touch soon 😊",
+      setLoading(true);
+      const formData = new FormData();
+      formData.append("username", data.username);
+      formData.append("subject", data.subject);
+      formData.append("email", data.email.toLowerCase());
+      formData.append("comment", data.comment);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
       });
-      form.reset();
+
+      if (response.ok) {
+        setLoading(false);
+        toast({
+          className: "z-[999]",
+          duration: 1000 * 5,
+          variant: "success",
+          title: "Good news!! 🚀",
+          description:
+            "Thank you for submitting your message to Consultation ISGA. We'll be in touch soon 😊",
+        });
+        form.reset();
+      } else {
+        throw new Error("Internal server error");
+      }
     } catch (error) {
+      setLoading(false);
       toast({
         className: "z-[999]",
         duration: 1000 * 5,
@@ -62,12 +82,21 @@ const ContactForm = () => {
         description:
           "There was a problem with your request. Please try again later!",
       });
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          form.handleSubmit(onSubmit)(e);
+        }}
+        className="space-y-6 w-full"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -123,7 +152,7 @@ const ContactForm = () => {
           )}
         />
         <LoadingButton
-          // loading={loading}
+          loading={loading}
           type="submit"
           className="w-full md:w-auto bg-[#7456F1] hover:bg-[#5E3FDE]"
         >
