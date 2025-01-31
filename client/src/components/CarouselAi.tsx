@@ -12,6 +12,18 @@ import { Card, RelatedNewsQueryResult } from "@/sanity/types";
 
 import { CardAi, NewLetter } from "@/components";
 
+// valid basis values
+type NbItemOption = '1/2' | '1/3' | '1/4' | '1/5' | '1/6';
+
+// class map
+const basisClasses: Record<NbItemOption, string> = {
+  '1/2': 'lg:basis-1/2',
+  '1/3': 'lg:basis-1/3', 
+  '1/4': 'lg:basis-1/4',
+  '1/5': 'lg:basis-1/5',
+  '1/6': 'lg:basis-1/6'
+};
+
 type Link = {
   _id: any;
   link: string;
@@ -38,7 +50,7 @@ const CarouselAi = ({
         {data?.map((card) => (
           <CarouselItem
             key={card._id}
-            className={`pl-1 md:basis-1/2 lg:basis-${nbItem}`}
+            className={`pl-1 md:basis-1/2 ${basisClasses[nbItem as NbItemOption]}`}
           >
             <div className="p-1 w-full h-full">
               {type === "card" ? (

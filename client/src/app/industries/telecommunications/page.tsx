@@ -30,7 +30,7 @@ const page = async () => {
         <CommunTitle data={response?.title_section} />
 
         {response?.card?.map((item, index) => (
-          <CardImageServiceManaged data={item} index={index + 1} />
+          <CardImageServiceManaged data={item} key={index + 1} />
         ))}
       </CommunComponent>
     </div>

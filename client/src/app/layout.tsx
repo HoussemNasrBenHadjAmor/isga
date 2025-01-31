@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Navbar, Footer, DisableDraftMode, ScrollTop } from "@/components";
@@ -6,6 +7,12 @@ import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 import NextTopLoader from "nextjs-toploader";
+
+const roboto = Poppins({
+  weight: "300",
+  // weight: ["300", "400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Home - Consultation ISGA Inc.",
@@ -22,7 +29,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         {/* Conditionally render VisualEditing */}
         <NextTopLoader showSpinner={false} />
         {isEnabled && (

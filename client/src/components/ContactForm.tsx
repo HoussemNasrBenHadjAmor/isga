@@ -90,11 +90,12 @@ const ContactForm = () => {
   return (
     <Form {...form}>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          form.handleSubmit(onSubmit)(e);
-        }}
+        onSubmit={form.handleSubmit(onSubmit)}
+        // onSubmit={(e) => {
+        //   e.preventDefault();
+        //   e.stopPropagation();
+        //   form.handleSubmit(onSubmit)(e);
+        // }}
         className="space-y-6 w-full"
       >
         <FormField

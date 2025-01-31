@@ -12,6 +12,20 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
+
+// valid grid values
+type NbItemGridOption = 1 | 2 | 3 | 4 | 5 | 6
+
+// class map
+const basisClasses: Record<NbItemGridOption, string> = {
+  1: 'grid-cols-1',
+  2: 'grid-cols-2', 
+  3: 'grid-cols-3',
+  4: 'grid-cols-4',
+  5: 'grid-cols-5',
+  6: 'grid-cols-6'
+};
+
 function DesktopNav() {
   return (
     <NavigationMenu className="hidden lg:flex relative">
@@ -44,7 +58,7 @@ function DesktopNav() {
                   </ul> */}
 
                   <ul
-                    className={`grid gap-3 p-4 md:w-[650px] grid-cols-${navItem?.details?.length} w-full`}
+                    className={`grid gap-3 p-4 md:w-[650px] w-full ${basisClasses[navItem?.details?.length as NbItemGridOption]}`}
                   >
                     {navItem.details.map((item: any) => (
                       <div
