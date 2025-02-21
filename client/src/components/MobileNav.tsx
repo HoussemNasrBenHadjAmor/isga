@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/UseLanguage";
 
 import {
   Drawer,
@@ -17,11 +18,34 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
+
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
+
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Button } from "@/components/ui/button";
+
 import { navItemsMobile } from "@/constants";
-import { AlignJustify, XIcon } from "lucide-react";
+import { AlignJustify, XIcon, Globe, ChevronDown, X } from "lucide-react";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
+  const { language, setLanguage } = useLanguage();
+
+  const changeLanguage = (value: string) => {
+    setLanguage(value);
+    setIsPopoverOpen(false);
+  };
 
   return (
     <div className="flex lg:hidden">
@@ -84,7 +108,50 @@ const MobileNav = () => {
                 </div>
               ))}
             </div>
+            <div className="flex lg:hidden z-[99999] justify-start items-start pt-2">
+              <Dialog open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+                <DialogTrigger className="z-[99999]" asChild>
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 z-[99999] bg-transparent focus:bg-transparent hover:bg-transparent"
+                  >
+                    <Globe className="h-5 w-5" />
+                    <span>Language ({language})</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DialogTrigger>
+
+                <DialogContent className="p-3 rounded-md w-max z-[999]">
+                  <div
+                    className="grid gap-1 z-[99999]"
+                    onClick={(e) => e.stopPropagation()} // Prevent clicks from closing the dialog
+                  >
+                    <Button
+                      variant={`${language === "En" ? "default" : "ghost"}`}
+                      onClick={() => changeLanguage("En")}
+                    >
+                      English
+                    </Button>
+                    <Button
+                      variant={language === "Fr" ? "default" : "ghost"}
+                      onClick={() => changeLanguage("Fr")}
+                    >
+                      Francais
+                    </Button>
+                    <Button
+                      variant={language === "Ar" ? "default" : "ghost"}
+                      onClick={() => changeLanguage("Ar")}
+                    >
+                      العربية
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
+          <Button onClick={() => console.log("Button outside clicked")}>
+            Click Me
+          </Button>
         </DrawerContent>
       </Drawer>
     </div>

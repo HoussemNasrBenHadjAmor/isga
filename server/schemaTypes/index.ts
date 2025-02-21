@@ -37,6 +37,7 @@ import aiSoftware from './aiSoftware'
 import aiTraining from './aiTraining'
 import aiConsulting from './aiConsulting'
 import aiRd from './aiRd'
+import test from './test'
 
 export const schemaTypes = [
   // post,
@@ -77,4 +78,5 @@ export const schemaTypes = [
   aiTraining,
   aiConsulting,
   aiRd,
+  test,
 ]

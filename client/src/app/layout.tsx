@@ -7,6 +7,8 @@ import { SanityLive } from "@/sanity/lib/live";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 import NextTopLoader from "nextjs-toploader";
+import { LanguageProvider } from "@/context/UseLanguage";
+import { ClientSideHtml } from "@/components/ClientSideHtml";
 
 const roboto = Poppins({
   weight: "300",
@@ -30,22 +32,26 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        {/* Conditionally render VisualEditing */}
-        <NextTopLoader showSpinner={false} />
-        {isEnabled && (
-          <>
-            <DisableDraftMode />
-            <VisualEditing />
-          </>
-        )}
-        <SanityLive />
-        <Navbar />
-        {children}
-        <Toaster />
-        <div className="pt-20">
-          <Footer />
-          <ScrollTop />
-        </div>
+        <LanguageProvider>
+          <ClientSideHtml>
+            {/* Conditionally render VisualEditing */}
+            <NextTopLoader showSpinner={false} />
+            {isEnabled && (
+              <>
+                <DisableDraftMode />
+                <VisualEditing />
+              </>
+            )}
+            <SanityLive />
+            <Navbar />
+            {children}
+            <Toaster />
+            <div className="pt-20">
+              <Footer />
+              <ScrollTop />
+            </div>
+          </ClientSideHtml>
+        </LanguageProvider>
       </body>
     </html>
   );
