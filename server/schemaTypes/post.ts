@@ -10,6 +10,7 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+
     defineField({
       name: 'slug',
       title: 'Slug',

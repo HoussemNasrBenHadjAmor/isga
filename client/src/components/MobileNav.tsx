@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/UseLanguage";
 
 import {
@@ -38,6 +39,7 @@ import { navItemsMobile } from "@/constants";
 import { AlignJustify, XIcon, Globe, ChevronDown, X } from "lucide-react";
 
 const MobileNav = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
   const { language, setLanguage } = useLanguage();
@@ -45,6 +47,7 @@ const MobileNav = () => {
   const changeLanguage = (value: string) => {
     setLanguage(value);
     setIsPopoverOpen(false);
+    router.refresh(); //refresh the route to get the new translated api
   };
 
   return (
@@ -108,7 +111,7 @@ const MobileNav = () => {
                 </div>
               ))}
             </div>
-            <div className="flex lg:hidden z-[99999] justify-start items-start pt-2">
+            <div className="flex lg:hidden z-[99999] justify-start items-start mt-4">
               <Dialog open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
                 <DialogTrigger className="z-[99999]" asChild>
                   <Button
@@ -149,9 +152,6 @@ const MobileNav = () => {
               </Dialog>
             </div>
           </div>
-          <Button onClick={() => console.log("Button outside clicked")}>
-            Click Me
-          </Button>
         </DrawerContent>
       </Drawer>
     </div>

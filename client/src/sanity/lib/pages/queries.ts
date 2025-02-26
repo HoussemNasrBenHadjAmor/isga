@@ -1165,3 +1165,12 @@ export const aiRdQuery = defineQuery(
   }
   `
 );
+
+export const testQuery = defineQuery(
+  `
+  *[_type == 'test'] {
+  'title': title[$id],
+  'content': content[$id]
+  }
+  `
+);

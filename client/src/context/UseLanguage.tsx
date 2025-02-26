@@ -7,6 +7,7 @@ import React, {
   ReactNode,
   useEffect,
 } from "react";
+import Cookies from "js-cookie";
 
 type LanguageContextType = {
   language: string;
@@ -19,14 +20,21 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState(
-    localStorage.getItem("language") || "En"
+    Cookies.get("language") || "En"
   ); // Default language
 
-  // Update localStorage whenever the language changes
+  // Update cookies whenever the language changes
   const setLanguage = (language: string) => {
     setLanguageState(language);
-    localStorage.setItem("language", language);
+    Cookies.set("language", language, { expires: 365 }); //with a 1-year expiry
   };
+
+  useEffect(() => {
+    // Ensure the language cookie is set when the app loads
+    if (!Cookies.get("language")) {
+      Cookies.set("language", "En", { expires: 365 });
+    }
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

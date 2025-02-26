@@ -10,6 +10,18 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+
+    defineField({
+      name: 'newTitle',
+      title: 'New Title',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
+    }),
+
     defineField({
       name: 'svg_path',
       title: 'SVG path for ICON',
@@ -21,12 +33,46 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
     }),
+
+    defineField({
+      name: 'newSubtitle',
+      title: 'New Subtitle',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
+    }),
+
     defineField({
       name: 'description',
       title: 'Description',
       type: 'array',
       of: [{type: 'string'}],
     }),
+
+    defineField({
+      name: 'newDescription',
+      title: 'New Description',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
+    }),
+
     defineField({
       name: 'image',
       title: 'Landing Image',

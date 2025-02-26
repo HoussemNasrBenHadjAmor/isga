@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { useLanguage } from "@/context/UseLanguage";
 import { navItemsDesktop } from "@/constants/index";
@@ -40,12 +41,14 @@ const basisClasses: Record<NbItemGridOption, string> = {
 };
 
 function DesktopNav() {
+  const router = useRouter();
   const { language, setLanguage } = useLanguage();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
 
   const changeLanguage = (value: string) => {
     setLanguage(value);
     setIsPopoverOpen(false); // Close the Popover after selecting a language
+    router.refresh(); //refresh the route to get the new translated api
   };
   return (
     <div className="flex">

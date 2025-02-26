@@ -1,4 +1,5 @@
 import { createClient } from "next-sanity";
+import { SanityClient } from "next-sanity";
 
 // import { draftMode } from "next/headers";
 

@@ -46,6 +46,24 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Test = {
+  _id: string;
+  _type: "test";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
+  content?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
+};
+
 export type AiRd = {
   _id: string;
   _type: "aiRd";
@@ -1361,7 +1379,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | AiRd | AiConsulting | AiTarining | AiSoftware | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Test | AiRd | AiConsulting | AiTarining | AiSoftware | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -2580,6 +2598,20 @@ export type AiRdQueryResult = Array<{
     } | null;
   }> | null;
 }>;
+// Variable: testQuery
+// Query: *[_type == 'test'] {  'title': title[$id],  'content': content[$id]  }
+export type TestQueryResult = Array<{
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  content: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -2611,5 +2643,6 @@ declare module "@sanity/client" {
     "\n    *[_type == 'aiTarining'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      first_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      third_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fourth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fifth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      faq [] -> {\n        _id,\n        title[],\n        subtitle[],\n        description[]\n      },  \n\n  }\n  ": AiTrainingQueryResult;
     "\n    *[_type == 'aiConsulting'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      first_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      third_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fourth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      fifth_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n\n      faq [] -> {\n        _id,\n        title[],\n        subtitle[],\n        description[]\n      },  \n\n  }\n  ": AiConsultingQueryResult;
     "\n    *[_type == 'aiRd'] {\n        _id, \n      landing -> {\n        _id,\n        title[],\n        subtitle[],\n        description[],\n        image {\n          asset -> { url }\n        },\n        author,\n      }, \n          \n      first_content -> {\n        title[],\n        subtitle[],\n        description[]\n      }, \n\n      second_content -> {\n        title[],\n        subtitle[],\n        description[]\n      },\n            \n      second_card [] -> {\n        _id,\n        title,\n        svg_path,\n        subtitle,\n        description,\n        image {\n          asset -> { url }\n        }\n      },\n\n  }\n  ": AiRdQueryResult;
+    "\n  *[_type == 'test'] {\n  'title': title[$id],\n  'content': content[$id]\n  }\n  ": TestQueryResult;
   }
 }

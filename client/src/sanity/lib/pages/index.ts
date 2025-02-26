@@ -27,6 +27,7 @@ import {
   aiTrainingQuery,
   aiConsultingQuery,
   aiRdQuery,
+  testQuery,
 } from "./queries";
 
 export const getHomePage = async () => {
@@ -239,11 +240,15 @@ export const getJobs = async ({
   const query = `
   *[_type == 'job' && display == true ${
     domains.length > 0
-      ? `&& job_domain->title in [${domains.map((title) => `"${title}"`).join(",")}]`
+      ? `&& job_domain->title in [${domains
+          .map((title) => `"${title}"`)
+          .join(",")}]`
       : ""
   } ${
     types.length > 0
-      ? `&& job_type->title in [${types.map((title) => `"${title}"`).join(",")}]`
+      ? `&& job_type->title in [${types
+          .map((title) => `"${title}"`)
+          .join(",")}]`
       : ""
   } ${
     keyword
@@ -489,6 +494,17 @@ export const getAiRdPage = async () => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the ai rd page", error);
+    return [];
+  }
+};
+
+export const getTestPage = async (params: { id: string }) => {
+  const query = testQuery;
+  try {
+    const data = await sanityFetch({ query, params });
+    return data.data || [];
+  } catch (error) {
+    console.log("Errror fetching the test page");
     return [];
   }
 };
