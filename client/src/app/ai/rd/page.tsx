@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { getAiRdPage } from "@/sanity/lib/pages";
 import {
   CardAi,
@@ -8,7 +9,9 @@ import {
 } from "@/components";
 
 const page = async () => {
-  const data = await getAiRdPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getAiRdPage({ id: language });
   const response = data[0];
 
   return (

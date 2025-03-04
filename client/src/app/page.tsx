@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 
 import { getHomePage } from "@/sanity/lib/pages/index";
-import { Card as CardType, ChooseISGA } from "@/sanity/types";
+import { Card as CardType, ChooseISGA, HomeQueryResult } from "@/sanity/types";
 
 import { urlFor } from "@/sanity/lib/image";
 
@@ -22,8 +23,10 @@ import { homeMetadata } from "@/constants";
 export const metadata: Metadata = homeMetadata;
 
 export default async function Home() {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
   // Fetch the HomePage data
-  const data = await getHomePage();
+  const data = await getHomePage({ id: language });
   const response = data[0];
 
   return (
@@ -42,8 +45,8 @@ export default async function Home() {
         <Content data={response?.content} />
 
         <div className="gap-10 my-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {response?.card_primary?.map((card: CardType) => (
-            <Card key={card.title} data={card} className="last:md:col-span-2" />
+          {response?.card_primary?.map((card) => (
+            <Card key={card._id} data={card} className="last:md:col-span-2" />
           ))}
         </div>
       </CommunComponent>
@@ -101,7 +104,7 @@ const AskQuestion = ({ data }: AskQuestionProps) => {
 };
 
 interface WhyIsgaProps {
-  data: ChooseISGA | null;
+  data: HomeQueryResult[number]["home_isga"] | null;
 }
 
 const WhyIsga = ({ data }: WhyIsgaProps) => {
@@ -126,8 +129,8 @@ const WhyIsga = ({ data }: WhyIsgaProps) => {
             <p className="text-[#4D5D6D]">{data?.description}</p>
           </div>
 
-          {data?.cards?.map((card: CardType) => (
-            <CardChoose data={card} key={card._id} />
+          {data?.cards?.map((card) => (
+            <CardChoose data={card} key={card?._id} />
           ))}
         </div>
       </div>

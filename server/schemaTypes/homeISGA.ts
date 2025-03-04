@@ -18,12 +18,41 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+
+    defineField({
+      name: 'newTitle',
+      title: 'Title',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
+    }),
+
     defineField({
       name: 'description',
       title: 'Description',
       type: 'array',
       of: [{type: 'string'}],
     }),
+
+    defineField({
+      name: 'newDescription',
+      title: 'New Description',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
+    }),
+
     defineField({
       name: 'cards',
       title: 'Cards',

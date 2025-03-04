@@ -4,60 +4,61 @@ export const homeQuery = defineQuery(
   `
     *[_type == 'home'] {
       landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
-          asset -> { url }
+          asset -> { url },
         },
-        author,
+        'author': author[$id],
       },
 
        content -> {
           _id,
-          title[],
-          subtitle[],
-          description[]
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
 
         home_isga -> {
           _id,
           image {
-            asset -> { url } 
+            asset -> { url },
           },
           title,
           description,
-          cards []-> {
+          cards [] -> {
             _id,
-            title,
-            subtitle,
-            description,
+            'title' : title[$id],
+            'subtitle' : subtitle[][$id],
+            'description' : description[][$id],
             image {
-              asset -> { url } 
+              asset -> { url },
             },
             svg_path,
           } 
         },
     
-       card_primary []-> {
+       card_primary [] -> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
-            asset -> { url } 
+            asset -> { url },
           },
           svg_path,       
         },
         
          card_secondary []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
-            asset -> { url } 
+            asset -> { url },
           },
           svg_path,       
         }, 
@@ -70,28 +71,29 @@ export const aboutQuery = defineQuery(
   `
     *[_type == 'about'] {
       landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
 
        content -> {
           _id,
-          title[],
-          subtitle[],
-          description[]
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
-       card_primary []-> {
+       card_primary [] -> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -100,9 +102,9 @@ export const aboutQuery = defineQuery(
         
          card_secondary []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -116,50 +118,50 @@ export const aboutQuery = defineQuery(
 export const consultingQuery = defineQuery(
   `
     *[_type == 'consultingServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section_primary -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
 
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
 
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
         
         title_section_secondary -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
        card_primary []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -168,9 +170,9 @@ export const consultingQuery = defineQuery(
         
          card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -184,36 +186,36 @@ export const consultingQuery = defineQuery(
 export const applicationQuery = defineQuery(
   `
     *[_type == 'applicationServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
        
        content -> {
          _id,
-         title[],
-         subtitle[],
-         description[],
+         'title': title[][$id],
+         'subtitle': subtitle[][$id],
+         'description': description[][$id],
         },
 
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },       
     
        card_primary []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -222,9 +224,9 @@ export const applicationQuery = defineQuery(
         
         card_secondary []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -237,36 +239,36 @@ export const applicationQuery = defineQuery(
 export const technologiesQuery = defineQuery(
   `
     *[_type == 'technologiesServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
        card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -280,36 +282,36 @@ export const technologiesQuery = defineQuery(
 export const managedQuery = defineQuery(
   `
     *[_type == 'managedServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -322,36 +324,36 @@ export const managedQuery = defineQuery(
 export const projectQuery = defineQuery(
   `
     *[_type == 'projectServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -364,36 +366,36 @@ export const projectQuery = defineQuery(
 export const artificialQuery = defineQuery(
   `
     *[_type == 'artificialServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -406,36 +408,36 @@ export const artificialQuery = defineQuery(
 export const cyberQuery = defineQuery(
   `
     *[_type == 'cyberServices'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -448,36 +450,36 @@ export const cyberQuery = defineQuery(
 export const governmentQuery = defineQuery(
   `
     *[_type == 'governmentIndustries'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         },
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -490,36 +492,36 @@ export const governmentQuery = defineQuery(
 export const insuranceQuery = defineQuery(
   `
     *[_type == 'insuranceIndustries'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -532,36 +534,36 @@ export const insuranceQuery = defineQuery(
 export const financialQuery = defineQuery(
   `
     *[_type == 'financialIndustries'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -574,36 +576,36 @@ export const financialQuery = defineQuery(
 export const telecommunicationQuery = defineQuery(
   `
     *[_type == 'telecommunicationsIndustries'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
               
        title_section -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
         
         content -> {
           _id,
-          title[],
-          subtitle[],
-          description[],
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
         }, 
     
         card []-> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title' : title[$id],
+          'subtitle' : subtitle[][$id],
+          'description' : description[][$id],
           image {
             asset -> { url } 
           },
@@ -616,15 +618,15 @@ export const telecommunicationQuery = defineQuery(
 export const carrersQuery = defineQuery(
   `
     *[_type == 'carrers'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
            
     }   
@@ -634,29 +636,29 @@ export const carrersQuery = defineQuery(
 export const contactQuery = defineQuery(
   `
     *[_type == 'contact'] {
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       },
 
       content -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       card []-> {
         _id,
-        title,
-        subtitle,
-        description,
+        'title' : newTitle[$id],
+        'subtitle' : newSubtitle[][$id],
+        'description' : newDescription[][$id],
         image {
           asset -> { url } 
         },
@@ -683,7 +685,6 @@ export const jobQuery = defineQuery(
       description,
       qualifications,
       display
-
     }
   `
 );
@@ -742,16 +743,18 @@ export const relatedNewsQuery = defineQuery(
 export const locationsQuery = defineQuery(
   `
     *[_type == 'locations'] {
-        landing -> {
-              _id,
-              title[],
-              subtitle[],
-              description[],
-              image {
-                asset -> { url }
-              },
-              author,
-            },
+         landing -> {
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
+        image {
+          asset -> { url }
+        },
+        'author': author[$id],
+      },
+
+        'title' : title[$id],
 
         locations [] -> {
           _id,
@@ -764,10 +767,10 @@ export const locationsQuery = defineQuery(
           },
           slug,
           cards [] -> {
-            title,
+            'title': title[$id],
             svg_path,
-            subtitle,
-            description,
+            'subtitle': subtitle[][$id],
+            'description': description[][$id] ,
             image {
               asset -> {url}
             }
@@ -781,89 +784,93 @@ export const aiSoftwareQuery = defineQuery(
   `
     *[_type == 'aiSoftware'] {
         _id, 
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       }, 
           
       first_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       first_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
         svg_path,
-        subtitle,
-        description,
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         image {
           asset -> { url }
         }
       },  
 
       second_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
             
       second_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
         svg_path,
-        subtitle,
-        description,
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         image {
           asset -> { url }
         }
       },
 
       card -> {
-        title,
+        'title': title[$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       third_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       third_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
         svg_path,
-        subtitle,
-        description,
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         image {
           asset -> { url }
         }
       },
 
       fourth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       faq [] -> {
         _id,
-        title[],
-        subtitle[],
-        description[]
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },  
 
   }
@@ -874,123 +881,129 @@ export const aiTrainingQuery = defineQuery(
   `
     *[_type == 'aiTarining'] {
         _id, 
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       }, 
           
       first_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       first_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },  
 
       second_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
             
       second_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       card -> {
-        title,
+        'title': title[$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       third_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       third_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       fourth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       fourth_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
        fifth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       fifth_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
        sixth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       faq [] -> {
         _id,
-        title[],
-        subtitle[],
-        description[]
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },  
 
   }
@@ -1001,123 +1014,129 @@ export const aiConsultingQuery = defineQuery(
   `
     *[_type == 'aiConsulting'] {
         _id, 
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       }, 
           
       first_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       first_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },  
 
       second_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
             
       second_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       card -> {
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id] ,
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       third_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       third_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
       fourth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       fourth_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
        fifth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       fifth_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }
       },
 
        sixth_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
 
       faq [] -> {
         _id,
-        title[],
-        subtitle[],
-        description[]
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },  
 
   }
@@ -1128,35 +1147,37 @@ export const aiRdQuery = defineQuery(
   `
     *[_type == 'aiRd'] {
         _id, 
-      landing -> {
+       landing -> {
         _id,
-        title[],
-        subtitle[],
-        description[],
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
         image {
           asset -> { url }
         },
-        author,
+        'author': author[$id],
       }, 
           
       first_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       }, 
 
       second_content -> {
-        title[],
-        subtitle[],
-        description[]
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id]
       },
             
       second_card [] -> {
         _id,
-        title,
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         svg_path,
-        subtitle,
-        description,
         image {
           asset -> { url }
         }

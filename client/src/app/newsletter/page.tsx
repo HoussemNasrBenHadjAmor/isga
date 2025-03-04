@@ -1,7 +1,8 @@
+import { Metadata } from "next";
+import { cookies } from "next/headers";
 import { NewsLanding, CommunComponent, NewsLetter } from "@/components";
 import { newsletterdata } from "@/constants";
 import { getNewsPage, getNewsCategories } from "@/sanity/lib/pages";
-import { Metadata } from "next";
 
 export const metadata: Metadata = newsletterdata;
 
@@ -10,8 +11,10 @@ const page = async ({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) => {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
   const resolvedSearchParams = await searchParams;
-  const news_categories = await getNewsCategories();
+  const news_categories = await getNewsCategories({ id: language });
 
   // Extract and parse search parameters
   const category = resolvedSearchParams.category

@@ -1,5 +1,4 @@
 "use client";
-import { migrateTitles } from "@/sanity/migrate";
 import React from "react";
 
 const ButtonCLick = () => {

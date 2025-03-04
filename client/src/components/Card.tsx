@@ -26,7 +26,7 @@ const Card = ({ data, className, flex }: CardProps) => {
       </div>
       <h4 className="font-bold text-lg">{data?.title}</h4>
       <p className="text-xs">{data.subtitle}</p>
-      <p>{data.description}</p>
+      <p>{data?.description}</p>
     </div>
   );
 };

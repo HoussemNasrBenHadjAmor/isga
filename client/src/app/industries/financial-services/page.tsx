@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   CardImageServiceManaged,
@@ -13,7 +14,9 @@ import { financialIndustriesMetadata } from "@/constants";
 export const metadata: Metadata = financialIndustriesMetadata;
 
 const page = async () => {
-  const data = await getFinancialPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getFinancialPage({ id: language });
   const response = data ? data[0] : null;
   return (
     <div>

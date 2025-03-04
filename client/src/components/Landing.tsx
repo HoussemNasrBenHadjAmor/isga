@@ -3,10 +3,10 @@
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Landing as Lan } from "@/sanity/types";
+import { Landing as Lan, HomeQueryResult } from "@/sanity/types";
 
 interface Props {
-  data: Lan | null;
+  data: HomeQueryResult[number]["landing"] | Lan | null;
 }
 
 function Landing({ data }: Props) {
@@ -21,8 +21,8 @@ function Landing({ data }: Props) {
           <div className="max-w-xl flex flex-col gap-5">
             {data?.title && (
               <div className="flex flex-col gap-3">
-                {data.title?.map((title) => (
-                  <h1 key={title} className="font-semibold text-xl">
+                {data.title?.map((title, index) => (
+                  <h1 key={index + 1} className="font-semibold text-xl">
                     {title}
                   </h1>
                 ))}
@@ -31,8 +31,8 @@ function Landing({ data }: Props) {
 
             {data?.subtitle && (
               <div className="flex flex-col gap-3">
-                {data.subtitle?.map((sub) => (
-                  <h5 key={sub} className="font-black text-2xl">
+                {data.subtitle?.map((sub, index) => (
+                  <h5 key={index + 1} className="font-black text-2xl">
                     {sub}
                   </h5>
                 ))}
@@ -41,8 +41,8 @@ function Landing({ data }: Props) {
 
             {data?.description && (
               <div className="flex flex-col gap-3">
-                {data.description?.map((desc) => (
-                  <p key={desc} className="leading-relaxed">
+                {data.description?.map((desc, index) => (
+                  <p key={index + 1} className="leading-relaxed">
                     {desc}
                   </p>
                 ))}

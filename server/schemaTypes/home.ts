@@ -9,7 +9,7 @@ export default defineType({
       name: 'landing',
       title: 'Home Landing',
       type: 'reference',
-      to: [{type: 'landing'}],
+      to: {type: 'landing'},
     }),
     defineField({
       name: 'content',

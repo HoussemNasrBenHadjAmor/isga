@@ -32,8 +32,8 @@ const CardImage = ({ data, className }: CardImageProps) => {
       <div className="relative z-50 w-full flex flex-col items-start justify-end text-white mt-auto">
         <h1 className="font-bold text-xl">{data?.title}</h1>
         <p>{data?.subtitle}</p>
-        {data?.description?.map((sub: string) => (
-          <p key={sub} className="ml-5">
+        {data?.description?.map((sub, index) => (
+          <p key={index + 1} className="ml-5">
             • {sub}
           </p>
         ))}

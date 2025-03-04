@@ -9,19 +9,48 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
+
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
+
     defineField({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
   ],
   preview: {

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   Card,
@@ -14,7 +15,9 @@ import { consultingServiceMetadata } from "@/constants";
 export const metadata: Metadata = consultingServiceMetadata;
 
 const page = async () => {
-  const data = await getConsultingPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getConsultingPage({ id: language });
   const response = data[0];
 
   return (
@@ -41,7 +44,7 @@ const page = async () => {
 
         <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {response?.card?.map((card) => (
-            <Card key={card.title} data={card} flex />
+            <Card key={card._id} data={card} flex />
           ))}
         </div>
       </CommunComponent>

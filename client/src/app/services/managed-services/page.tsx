@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   CardImageServiceManaged,
@@ -14,7 +15,9 @@ import { managedServiceMetadata } from "@/constants";
 export const metadata: Metadata = managedServiceMetadata;
 
 const page = async () => {
-  const data = await getManagedPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getManagedPage({ id: language });
   const response = data[0];
   return (
     <div>

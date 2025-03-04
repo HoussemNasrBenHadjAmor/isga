@@ -13,6 +13,17 @@ export default defineType({
     }),
 
     defineField({
+      name: 'title',
+      title: 'Locations Title',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
+    }),
+
+    defineField({
       name: 'locations',
       title: 'Locations',
       type: 'array',
@@ -21,14 +32,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'location.title[0]', // First element of the landing title array
-      subtitle: 'landing.subtitle[0]', // First element of the landing subtitle array
+      title: 'title', // First element of the landing title array
+
       media: 'landing.image', // Landing image for preview
     },
-    prepare({title, subtitle, media}) {
+    prepare({title, media}) {
       return {
         title: title || 'Locations Page',
-        subtitle: subtitle || 'Locations Page Details',
         media, // Display the landing image in the preview
       }
     },

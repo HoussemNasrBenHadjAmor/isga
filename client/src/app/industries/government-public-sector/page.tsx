@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   CommunComponent,
@@ -13,7 +14,9 @@ import { governmentIndustriesMetadata } from "@/constants";
 export const metadata: Metadata = governmentIndustriesMetadata;
 
 const page = async () => {
-  const data = await getGovernmentPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getGovernmentPage({ id: language });
   const response = data ? data[0] : null;
 
   return (
@@ -31,7 +34,9 @@ const page = async () => {
         <CommunTitle data={response?.title_section} />
 
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {response?.card?.map((item) => <CardImageIndustries data={item} />)}
+          {response?.card?.map((item) => (
+            <CardImageIndustries data={item} />
+          ))}
         </div>
       </CommunComponent>
     </div>

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   CommunComponent,
@@ -17,7 +18,9 @@ import { aboutMetadata } from "@/constants";
 export const metadata: Metadata = aboutMetadata;
 
 const page = async () => {
-  const data = await getAboutPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getAboutPage({ id: language });
   const response = data[0];
   return (
     <>
@@ -73,12 +76,12 @@ interface cardProp {
 export const Card = ({ data, className }: cardProp) => {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      {!data.title && <div className="md:mt-4" />}
+      {!data?.title && <div className="md:mt-4" />}
       <h3 className="font-bold text-lg">{data?.title}</h3>
       {data?.subtitle &&
-        data?.subtitle.map((sub, index) => {
+        data?.subtitle.map((sub, index: number) => {
           return (
-            <div className="gap-1 flex flex-col">
+            <div className="gap-1 flex flex-col" key={index + 1}>
               <h5 className="text-gray-600 font-semibold"> {sub} </h5>
 
               {data?.description && data?.description[index]}
@@ -86,9 +89,11 @@ export const Card = ({ data, className }: cardProp) => {
           );
         })}
 
-      {!data?.subtitle &&
+      {!data?.subtitle?.length &&
         data?.description &&
-        data?.description.map((des: any) => <p>{des}</p>)}
+        data?.description.map((des: any, index: number) => (
+          <p key={index + 1}>{des}</p>
+        ))}
     </div>
   );
 };

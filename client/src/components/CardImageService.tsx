@@ -42,9 +42,11 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
         `}
       >
         {data?.title && <p>{data.title}</p>}
-        {data?.subtitle?.map((des) => <p key={des}>{des}</p>)}
-        {data?.description?.map((des) => (
-          <p className="ml-3" key={des}>
+        {data?.subtitle?.map((des, index) => (
+          <p key={index + 1}>{des}</p>
+        ))}
+        {data?.description?.map((des, index) => (
+          <p className="ml-3" key={index + 1}>
             • {des}
           </p>
         ))}

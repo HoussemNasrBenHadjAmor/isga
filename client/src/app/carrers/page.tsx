@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 
 import { BackgroundImage, CommunComponent, Landing, Jobs } from "@/components";
 import { getCarrersPage, getJobs, getJobsCategories } from "@/sanity/lib/pages";
@@ -21,11 +22,13 @@ const page = async ({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) => {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
   // const router = useRouter();
 
   const resolvedSearchParams = await searchParams;
-  const data = await getCarrersPage();
-  const job_categories = (await getJobsCategories()) as Job;
+  const data = await getCarrersPage({ id: language });
+  const job_categories = (await getJobsCategories({ id: language })) as Job;
   const response = data ? data[0] : null;
 
   // Extract and parse search parameters

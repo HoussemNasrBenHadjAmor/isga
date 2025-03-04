@@ -30,11 +30,11 @@ import {
   testQuery,
 } from "./queries";
 
-export const getHomePage = async () => {
+export const getHomePage = async (params: { id: string }) => {
   const query = homeQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
 
     return data.data || [];
   } catch (error) {
@@ -43,11 +43,11 @@ export const getHomePage = async () => {
   }
 };
 
-export const getAboutPage = async () => {
+export const getAboutPage = async (params: { id: string }) => {
   const query = aboutQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the about page", error);
@@ -55,11 +55,11 @@ export const getAboutPage = async () => {
   }
 };
 
-export const getConsultingPage = async () => {
+export const getConsultingPage = async (params: { id: string }) => {
   const query = consultingQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service consulting page", error);
@@ -67,11 +67,11 @@ export const getConsultingPage = async () => {
   }
 };
 
-export const getApplicationPage = async () => {
+export const getApplicationPage = async (params: { id: string }) => {
   const query = applicationQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service application page", error);
@@ -79,11 +79,11 @@ export const getApplicationPage = async () => {
   }
 };
 
-export const getTechnologiesPage = async () => {
+export const getTechnologiesPage = async (params: { id: string }) => {
   const query = technologiesQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service technologies page", error);
@@ -91,11 +91,11 @@ export const getTechnologiesPage = async () => {
   }
 };
 
-export const getManagedPage = async () => {
+export const getManagedPage = async (params: { id: string }) => {
   const query = managedQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service managed page", error);
@@ -103,11 +103,11 @@ export const getManagedPage = async () => {
   }
 };
 
-export const getProjectPage = async () => {
+export const getProjectPage = async (params: { id: string }) => {
   const query = projectQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service project page", error);
@@ -115,11 +115,11 @@ export const getProjectPage = async () => {
   }
 };
 
-export const getArtificialPage = async () => {
+export const getArtificialPage = async (params: { id: string }) => {
   const query = artificialQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service artificial page", error);
@@ -127,11 +127,11 @@ export const getArtificialPage = async () => {
   }
 };
 
-export const getCyberPage = async () => {
+export const getCyberPage = async (params: { id: string }) => {
   const query = cyberQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the service cyber page", error);
@@ -139,11 +139,11 @@ export const getCyberPage = async () => {
   }
 };
 
-export const getGovernmentPage = async () => {
+export const getGovernmentPage = async (params: { id: string }) => {
   const query = governmentQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries government page", error);
@@ -151,11 +151,11 @@ export const getGovernmentPage = async () => {
   }
 };
 
-export const getInsurancePage = async () => {
+export const getInsurancePage = async (params: { id: string }) => {
   const query = insuranceQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries insurance page", error);
@@ -163,11 +163,11 @@ export const getInsurancePage = async () => {
   }
 };
 
-export const getFinancialPage = async () => {
+export const getFinancialPage = async (params: { id: string }) => {
   const query = financialQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries financial page", error);
@@ -175,11 +175,11 @@ export const getFinancialPage = async () => {
   }
 };
 
-export const getTelecommunicationsPage = async () => {
+export const getTelecommunicationsPage = async (params: { id: string }) => {
   const query = telecommunicationQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error(
@@ -190,11 +190,11 @@ export const getTelecommunicationsPage = async () => {
   }
 };
 
-export const getCarrersPage = async () => {
+export const getCarrersPage = async (params: { id: string }) => {
   const query = carrersQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries carrers page", error);
@@ -202,11 +202,11 @@ export const getCarrersPage = async () => {
   }
 };
 
-export const getContactPage = async () => {
+export const getContactPage = async (params: { id: string }) => {
   const query = contactQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the industries contact page", error);
@@ -214,11 +214,11 @@ export const getContactPage = async () => {
   }
 };
 
-// export const getJobs = async () => {
+// export const getJobs = async (params: { id: string }) => {
 //   const query = jobQuery;
 
 //   try {
-//     const data = await sanityFetch({ query });
+//     const data = await sanityFetch({ query, params });
 //     return data.data || [];
 //   } catch (error) {
 //     console.error("Error fetching the jobs", error);
@@ -279,7 +279,7 @@ export const getJobs = async ({
   }
 };
 
-export const getJobsCategories = async () => {
+export const getJobsCategories = async (params: { id: string }) => {
   const query_categories_domains = jobDomains;
   const query_categories_types = jobTypes;
 
@@ -345,11 +345,11 @@ export const getNewsPage = async ({
   }
 };
 
-export const getRelatedNews = async () => {
+export const getRelatedNews = async (params: { id: string }) => {
   const query = relatedNewsQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the related news", error);
@@ -357,11 +357,11 @@ export const getRelatedNews = async () => {
   }
 };
 
-export const getNewsCategories = async () => {
+export const getNewsCategories = async (params: { id: string }) => {
   const query = newsCategoriesQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the news categories", error);
@@ -400,11 +400,11 @@ export const getNewLetterPage = async (slug: string) => {
   }
 };
 
-export const getLocationsPage = async () => {
+export const getLocationsPage = async (params: { id: string }) => {
   const query = locationsQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the locations page", error);
@@ -450,11 +450,11 @@ export const getLocationPage = async (slug: string) => {
   }
 };
 
-export const getAiSoftwarePage = async () => {
+export const getAiSoftwarePage = async (params: { id: string }) => {
   const query = aiSoftwareQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the aiSoftware page", error);
@@ -462,11 +462,11 @@ export const getAiSoftwarePage = async () => {
   }
 };
 
-export const getAiTrainingPage = async () => {
+export const getAiTrainingPage = async (params: { id: string }) => {
   const query = aiTrainingQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the ai Training page", error);
@@ -474,11 +474,11 @@ export const getAiTrainingPage = async () => {
   }
 };
 
-export const getAiConsultingPage = async () => {
+export const getAiConsultingPage = async (params: { id: string }) => {
   const query = aiConsultingQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the ai consulting page", error);
@@ -486,11 +486,11 @@ export const getAiConsultingPage = async () => {
   }
 };
 
-export const getAiRdPage = async () => {
+export const getAiRdPage = async (params: { id: string }) => {
   const query = aiRdQuery;
 
   try {
-    const data = await sanityFetch({ query });
+    const data = await sanityFetch({ query, params });
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the ai rd page", error);

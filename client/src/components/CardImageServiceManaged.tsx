@@ -31,9 +31,12 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
 
       <div className="flex flex-col justify-center items-start p-3 lg:px-10 gap-3 w-full">
         <h1 className="font-bold text-2xl"> {data?.title} </h1>
-        {data?.subtitle && data?.subtitle?.map((det: any) => <p>{det}</p>)}
-        {data?.description?.map((des: any) => (
-          <p className="ml-3" key={des}>
+        {data?.subtitle &&
+          data?.subtitle?.map((det: any, index) => (
+            <p key={index + 1}>{det}</p>
+          ))}
+        {data?.description?.map((des: any, index) => (
+          <p className="ml-3" key={index + 1}>
             • {des}
           </p>
         ))}

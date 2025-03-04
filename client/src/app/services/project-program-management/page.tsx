@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   CommunComponent,
@@ -13,7 +14,9 @@ import { projectServiceMetadata } from "@/constants";
 export const metadata: Metadata = projectServiceMetadata;
 
 const page = async () => {
-  const data = await getProjectPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getProjectPage({ id: language });
   const response = data[0];
 
   return (

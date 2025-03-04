@@ -1,9 +1,13 @@
-import { Landing, SanityAssetSourceData } from "@/sanity/types";
+import {
+  Landing,
+  SanityAssetSourceData,
+  HomeQueryResult,
+} from "@/sanity/types";
 import { default_landing_url } from "@/constants";
 import { urlFor } from "@/sanity/lib/image";
 
 interface Props {
-  data: Landing | null;
+  data: HomeQueryResult[number]["landing"] | Landing | null;
 }
 
 const BackgroundImage = ({ data }: Props) => {

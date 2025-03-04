@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import {
   BackgroundImage,
   Card,
@@ -15,8 +16,11 @@ import { contactMetadata } from "@/constants";
 export const metadata: Metadata = contactMetadata;
 
 const page = async () => {
-  const data = await getContactPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getContactPage({ id: language });
   const response = data ? data[0] : null;
+
   return (
     <>
       <div className="relative flex min-h-screen w-full">

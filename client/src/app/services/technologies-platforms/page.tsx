@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { Metadata } from "next";
 import {
   BackgroundImage,
@@ -14,7 +15,9 @@ import { technologiesServiceMetadata } from "@/constants";
 export const metadata: Metadata = technologiesServiceMetadata;
 
 const page = async () => {
-  const data = await getTechnologiesPage();
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+  const data = await getTechnologiesPage({ id: language });
   const response = data ? data[0] : null;
 
   return (

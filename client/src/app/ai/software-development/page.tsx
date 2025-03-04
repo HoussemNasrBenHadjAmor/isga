@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { getAiSoftwarePage, getRelatedNews } from "@/sanity/lib/pages";
 import {
   CardAi,
@@ -10,9 +11,11 @@ import {
 } from "@/components";
 
 const page = async () => {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
   const [data, relatedData] = await Promise.all([
-    getAiSoftwarePage(),
-    getRelatedNews(),
+    getAiSoftwarePage({ id: language }),
+    getRelatedNews({ id: language }),
   ]);
   const response = data[0];
 

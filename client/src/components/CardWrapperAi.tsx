@@ -20,7 +20,7 @@ const CardWrapperAi = ({ data }: CardWrapperAiProps) => {
         />
       )}
       <div className="space-y-3">
-        {content?.subtitle ? (
+        {content?.subtitle?.length ? (
           <>
             {content?.subtitle?.map((title, index) => {
               return (
