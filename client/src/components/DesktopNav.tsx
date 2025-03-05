@@ -130,23 +130,23 @@ function DesktopNav() {
           <PopoverContent className="p-2 w-max z-[999]">
             <div className="grid gap-1 z-[999]">
               <Button
-                variant={`${language === "en" ? "default" : "ghost"}`}
+                variant={`${language === "En" ? "default" : "ghost"}`}
                 className="justify-start"
-                onClick={() => changeLanguage("en")}
+                onClick={() => changeLanguage("En")}
               >
                 <span>English</span>
               </Button>
               <Button
-                variant={`${language === "fr" ? "default" : "ghost"}`}
+                variant={`${language === "Fr" ? "default" : "ghost"}`}
                 className="justify-start"
-                onClick={() => changeLanguage("fr")}
+                onClick={() => changeLanguage("Fr")}
               >
                 <span>Francais</span>
               </Button>
               <Button
-                variant={`${language === "ar" ? "default" : "ghost"}`}
+                variant={`${language === "Ar" ? "default" : "ghost"}`}
                 className="justify-start"
-                onClick={() => changeLanguage("ar")}
+                onClick={() => changeLanguage("Ar")}
               >
                 <span>العربية</span>
               </Button>

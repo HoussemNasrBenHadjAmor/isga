@@ -48,7 +48,6 @@ const page = async ({
     keyword,
   });
   const jobs: JobQueryResult = jobs_data ? jobs_data : null;
-  console.log("jobs", jobs[0]?.description);
 
   return (
     <div>

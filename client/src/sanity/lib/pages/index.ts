@@ -255,7 +255,7 @@ export const getJobs = async ({
       : ""
   } ${
     keyword
-      ? `&& (title.${id} match "*${keyword}*" || description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
+      ? `&& (title.${id} match "*${keyword}*" || 'description': description.${id}->description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
       : ""
   }] {
     _updatedAt,

@@ -19,22 +19,28 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState(
-    Cookies.get("language")?.toLowerCase() || "en"
-  ); // Default language
+  const [language, setLanguageState] = useState<string | null>(null); // set language to null to render the null as loading until it gets synchronized with the cookies value
 
   // Update cookies whenever the language changes
   const setLanguage = (language: string) => {
     setLanguageState(language);
-    Cookies.set("language", language.toLowerCase(), { expires: 365 }); //with a 1-year expiry
+    Cookies.set("language", language, { expires: 365 }); //with a 1-year expiry
   };
 
   useEffect(() => {
-    // Ensure the language cookie is set when the app loads
-    if (!Cookies.get("language")) {
-      Cookies.set("language", "en", { expires: 365 });
+    const cookieLanguage = Cookies.get("language");
+
+    if (cookieLanguage) {
+      setLanguage(cookieLanguage);
+    } else {
+      setLanguage("en");
+      Cookies.set("language", "En", { expires: 365 });
     }
   }, []);
+
+  if (language === null) {
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
