@@ -48,6 +48,8 @@ const transitionVariants = {
 };
 
 const JobDialog = ({ data }: JobDialogProps) => {
+  console.log("data", data?.description);
+
   const [displayForm, setDisplayForm] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
 
@@ -61,7 +63,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
         transition={{ duration: 0.3 }}
       >
         <DialogHeader>
-          <DialogTitle className="font-extrabold">{data.title}</DialogTitle>
+          <DialogTitle className="font-extrabold">{data?.title}</DialogTitle>
           <DialogDescription>{data?.job_domain?.title}</DialogDescription>
         </DialogHeader>
 
@@ -69,13 +71,6 @@ const JobDialog = ({ data }: JobDialogProps) => {
           {Array.isArray(data.description) && (
             <PortableText
               value={data.description}
-              components={myPortableTextComponents}
-            />
-          )}
-
-          {Array.isArray(data.qualifications) && (
-            <PortableText
-              value={data.qualifications}
               components={myPortableTextComponents}
             />
           )}

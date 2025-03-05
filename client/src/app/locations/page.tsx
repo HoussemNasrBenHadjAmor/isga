@@ -12,6 +12,7 @@ const page = async () => {
   const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
   const data = await getLocationsPage({ id: language });
   const response = data[0] ?? null;
+
   return (
     <div>
       <LocationLanding center data={response?.landing} />

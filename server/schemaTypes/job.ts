@@ -9,86 +9,46 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
       validation: (rule) => rule.required(),
-      type: 'string',
     }),
-
-    // defineField({
-    //   name: 'category',
-    //   title: 'Job Category',
-    //   type: 'reference',
-    //   validation: (rule) => rule.required(),
-    //   to: {type: 'jobCategory'},
-    // }),
 
     defineField({
       name: 'job_domain',
       title: 'Job Domain',
       type: 'reference',
-      validation: (rule) => rule.required(),
       to: {type: 'jobDomain'},
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
       name: 'job_type',
       title: 'Job Type',
       type: 'reference',
-      validation: (rule) => rule.required(),
       to: {type: 'jobType'},
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
       name: 'description',
       title: 'Description',
-      validation: (rule) => rule.required(),
       description:
-        'A description of our company highlighting both requested and essential responsibilities.',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            annotations: [
-              {name: 'color', title: 'Color', type: 'color'},
-              {
-                name: 'link',
-                type: 'object',
-                title: 'External Link',
-                fields: [
-                  {
-                    name: 'href',
-                    title: 'Link',
-                    type: 'url',
-                    description: 'Please provide a valid url link',
-                  },
-                ],
-              },
-            ],
-          },
-        },
-        {
-          type: 'image',
-        },
+        'A description of our company highlighting both requested and essential responsibilities. Then some job Requirements like qualifications',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'reference', title: 'English', to: {type: 'jobBlock'}},
+        {name: 'fr', type: 'reference', title: 'French', to: {type: 'jobBlock'}},
+        {name: 'ar', type: 'reference', title: 'Arabic', to: {type: 'jobBlock'}},
       ],
+
+      validation: (rule) => rule.required(),
     }),
 
-    defineField({
-      name: 'qualifications',
-      title: 'Qualifications',
-      description: 'Job Requirements',
-      validation: (rule) => rule.required(),
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            annotations: [{name: 'color', title: 'Color', type: 'color'}],
-          },
-        },
-      ],
-    }),
     defineField({
       name: 'display',
       title: 'Published',

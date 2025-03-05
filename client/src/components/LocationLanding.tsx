@@ -26,13 +26,17 @@ const LocationLanding = ({ data, center }: LocationsLanidngProps) => {
         <div className="absolute inset-0 bg-black opacity-40 h-full md:max-h-[720px]" />
       </div>
       <div
-        className={`px-5 flex flex-col items-start justify-center relative ${center && "text-center items-center"} w-full h-full lg:min-h-[720px] min-h-screen max-w-7xl mx-auto`}
+        className={`px-5 flex flex-col items-start justify-center relative ${
+          center && "text-center items-center"
+        } w-full h-full lg:min-h-[720px] min-h-screen max-w-7xl mx-auto`}
       >
         {data ? (
           <div className="flex flex-col gap-4 text-2xl md:text-4xl text-white">
             <h1 className="font-semibold">{data?.title}</h1>
-            {data?.subtitle?.map((subtitle) => (
-              <p className="text-xl md:text-3xl">{subtitle}</p>
+            {data?.subtitle?.map((subtitle, index) => (
+              <p className="text-xl md:text-3xl" key={index + 1}>
+                {subtitle}
+              </p>
             ))}
           </div>
         ) : (

@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 
@@ -9,9 +10,12 @@ import { myPortableTextComponents } from "@/lib/PortableText";
 export const metadata: Metadata = locationsMetadata;
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value?.toLowerCase() || "en";
+
   const { slug } = await params;
 
-  const data = await getLocationPage(slug);
+  const data = await getLocationPage({ id: language, slug: slug });
   const response = data[0] ?? null;
 
   return (

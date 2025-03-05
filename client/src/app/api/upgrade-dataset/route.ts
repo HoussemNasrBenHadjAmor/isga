@@ -229,9 +229,32 @@ const integrateCardSchemaOne = async () => {
   await transaction.commit();
 };
 
+const integrateHomeISGASchemaOne = async () => {
+  const query = '*[_type == "chooseISGA"]';
+  const posts = await edit_client.fetch(query);
+  const transaction = edit_client.transaction();
+
+  posts.forEach((card: any) => {
+    // Copy newTitle to title, newSubtitle to subtitle and newDescription to description
+    const newTitleData = card.newTitle || [];
+    const newDescriptionData = card.newDescription || [];
+
+    // Add patches to the transaction
+    transaction.patch(card._id, {
+      set: {
+        title: newTitleData,
+        description: newDescriptionData,
+      }, // Update the title, subtitle and description field with newTitle, newSubtitle and newDescription data
+      unset: ["newTitle", "newDescription"],
+    });
+  });
+
+  await transaction.commit();
+};
+
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    integrateCardSchemaOne();
+    integrateHomeISGASchemaOne();
 
     return NextResponse.json({ status: 200 });
   } catch (error: any) {

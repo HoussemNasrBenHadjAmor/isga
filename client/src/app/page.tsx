@@ -126,7 +126,11 @@ const WhyIsga = ({ data }: WhyIsgaProps) => {
         <div className="flex flex-col items-center justify-center w-full lg:p-5">
           <div className="flex flex-col gap-4 text-center xl:text-start">
             <h3 className="text-4xl font-extrabold">{data?.title}</h3>
-            <p className="text-[#4D5D6D]">{data?.description}</p>
+            {data?.description?.map((des, index) => (
+              <p className="text-[#4D5D6D]" key={index + 1}>
+                {data?.description}
+              </p>
+            ))}
           </div>
 
           {data?.cards?.map((card) => (

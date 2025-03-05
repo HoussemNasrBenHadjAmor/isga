@@ -17,19 +17,48 @@ export default defineType({
       name: 'title',
       title: 'Landing Title',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
+
     defineField({
       name: 'subtitle',
       title: 'Landing Subtitle',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
+
     defineField({
       name: 'description',
       title: 'Landing Description',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'en', type: 'string', title: 'English'},
+            {name: 'fr', type: 'string', title: 'French'},
+            {name: 'ar', type: 'string', title: 'Arabic'},
+          ],
+        },
+      ],
     }),
 
     defineField({
@@ -77,7 +106,12 @@ export default defineType({
     defineField({
       name: 'slug',
       title: 'Location Slug',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
     }),
   ],
   preview: {

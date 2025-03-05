@@ -28,6 +28,7 @@ import {
   aiConsultingQuery,
   aiRdQuery,
   testQuery,
+  locationQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -227,12 +228,14 @@ export const getContactPage = async (params: { id: string }) => {
 // };
 
 interface JobFilterParams {
+  id: string;
   domains?: string[];
   types?: string[];
   keyword?: string;
 }
 
 export const getJobs = async ({
+  id,
   domains = [],
   types = [],
   keyword = "",
@@ -252,11 +255,11 @@ export const getJobs = async ({
       : ""
   } ${
     keyword
-      ? `&& (title match "*${keyword}*" || description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
+      ? `&& (title.${id} match "*${keyword}*" || description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
       : ""
   }] {
     _updatedAt,
-    title,
+    'title': title.${id},
     job_domain -> {
       _id,
       title
@@ -265,8 +268,7 @@ export const getJobs = async ({
       _id,
       title
     },
-    description,
-    qualifications,
+    'description' : description.${id} -> description,
     display
   }
 `;
@@ -412,36 +414,13 @@ export const getLocationsPage = async (params: { id: string }) => {
   }
 };
 
-export const getLocationPage = async (slug: string) => {
-  const query = defineQuery(`
- *[_type == 'location' && slug == "${slug}"] {
-    _id, 
-    title,
-    subtitle,
-    description,
-    details,
-    image {
-      asset -> { url }
-    },
-    slug,
-    cards [] -> {
-      title,
-      svg_path,
-      subtitle,
-      description,
-      image {
-        asset -> { url }
-      }
-    }
-  }
-  `);
+export const getLocationPage = async (params: { id: string; slug: string }) => {
+  const query = locationQuery;
 
   try {
     const data = await sanityFetch({
       query,
-      params: {
-        slug,
-      },
+      params,
     });
     return data.data || [];
   } catch (error) {

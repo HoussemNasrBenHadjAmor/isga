@@ -27,8 +27,8 @@ export const homeQuery = defineQuery(
           image {
             asset -> { url },
           },
-          title,
-          description,
+          'title': title[$id],
+          'description': description[][$id],
           cards [] -> {
             _id,
             'title' : title[$id],
@@ -656,9 +656,9 @@ export const contactQuery = defineQuery(
 
       card []-> {
         _id,
-        'title' : newTitle[$id],
-        'subtitle' : newSubtitle[][$id],
-        'description' : newDescription[][$id],
+        'title' : title[$id],
+        'subtitle' : subtitle[][$id],
+        'description' : description[][$id],
         image {
           asset -> { url } 
         },
@@ -673,7 +673,7 @@ export const jobQuery = defineQuery(
   `
     *[_type == 'job' && display == true] {
       _updatedAt,
-      title,
+      'title': title[$id],
       job_domain -> {
         _id,
         title
@@ -682,8 +682,7 @@ export const jobQuery = defineQuery(
         _id,
         title
       },
-      description,
-      qualifications,
+      'description': description[][$id],
       display
     }
   `
@@ -758,14 +757,14 @@ export const locationsQuery = defineQuery(
 
         locations [] -> {
           _id,
-          title,
-          subtitle,
-          description,
+          'title': title[$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id],
           details,
           image {
             asset -> {url}
           },
-          slug,
+          'slug': slug[$id],
           cards [] -> {
             'title': title[$id],
             svg_path,
@@ -777,6 +776,31 @@ export const locationsQuery = defineQuery(
           }  
         }
 }
+  `
+);
+
+export const locationQuery = defineQuery(
+  `
+    *[_type == 'location' && slug[$id] == $slug] {
+        _id, 
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
+        details,
+        image {
+          asset -> { url }
+        },
+        'slug': slug[$id],
+        cards [] -> {
+          'title': title[$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id],
+          svg_path,
+          image {
+            asset -> { url }
+          }
+        }
+  }
   `
 );
 

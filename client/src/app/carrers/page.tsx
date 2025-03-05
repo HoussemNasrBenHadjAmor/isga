@@ -42,11 +42,14 @@ const page = async ({
   const keyword = (resolvedSearchParams.keyword as string) || "";
 
   const jobs_data = await getJobs({
+    id: language,
     domains,
     types,
     keyword,
   });
   const jobs: JobQueryResult = jobs_data ? jobs_data : null;
+  console.log("jobs", jobs[0]?.description);
+
   return (
     <div>
       <div className="relative flex min-h-screen w-full">

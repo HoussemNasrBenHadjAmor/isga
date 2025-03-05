@@ -26,7 +26,6 @@ import contact from './contact'
 import job from './job'
 import jobDomain from './jobDomain'
 import jobType from './jobType'
-import job from './job'
 import jobCategory from './jobCategory'
 import candidate from './candidate'
 import news from './news'
@@ -37,6 +36,7 @@ import aiSoftware from './aiSoftware'
 import aiTraining from './aiTraining'
 import aiConsulting from './aiConsulting'
 import aiRd from './aiRd'
+import jobBlock from './jobBlock'
 import test from './test'
 
 export const schemaTypes = [
@@ -79,4 +79,5 @@ export const schemaTypes = [
   aiConsulting,
   aiRd,
   test,
+  jobBlock,
 ]
