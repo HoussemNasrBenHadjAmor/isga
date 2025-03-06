@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
+import { getPathname, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useLanguage } from "@/context/UseLanguage";
+// import { navItemsMobile } from "@/constants";
 
 import {
   Drawer,
@@ -11,43 +14,39 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from "@/components/ui/popover";
-
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogClose,
-} from "@/components/ui/dialog";
-
-import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-import { navItemsMobile } from "@/constants";
 import { AlignJustify, XIcon, Globe, ChevronDown, X } from "lucide-react";
 
 const MobileNav = () => {
+  const t = useTranslations("navItemsMobile");
+  const navItemsMobile = t.raw("items"); // convert the nav items into array
   const router = useRouter();
+  const currentPath = usePathname(); // Get current path without locale
+
   const [isOpen, setIsOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
   const { language, setLanguage } = useLanguage();
 
   const changeLanguage = (value: string) => {
     setLanguage(value);
-    setIsPopoverOpen(false);
-    router.refresh(); //refresh the route to get the new translated api
+    setIsPopoverOpen(false); // Close the popover after selecting a language
+
+    // Generate the new path with the selected locale
+    const newPath = getPathname({
+      locale: value,
+      href: { pathname: currentPath },
+    });
+
+    // Navigate to the updated path
+    router.push(newPath);
   };
 
   return (
@@ -119,33 +118,39 @@ const MobileNav = () => {
                     className="flex items-center gap-2 z-[99999] bg-transparent focus:bg-transparent hover:bg-transparent"
                   >
                     <Globe className="h-5 w-5" />
-                    <span>Language ({language})</span>
+                    <span>Language ({language.toUpperCase()})</span>
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DialogTrigger>
 
                 <DialogContent className="p-3 rounded-md w-max z-[999]">
-                  <div
-                    className="grid gap-1 z-[99999]"
-                    onClick={(e) => e.stopPropagation()} // Prevent clicks from closing the dialog
-                  >
+                  <div className="grid gap-1 z-[999]">
                     <Button
-                      variant={`${language === "En" ? "default" : "ghost"}`}
-                      onClick={() => changeLanguage("En")}
+                      variant={`${
+                        language.toLowerCase() === "en" ? "default" : "ghost"
+                      }`}
+                      className="justify-start"
+                      onClick={() => changeLanguage("en")}
                     >
-                      English
+                      <span>English</span>
                     </Button>
                     <Button
-                      variant={language === "Fr" ? "default" : "ghost"}
-                      onClick={() => changeLanguage("Fr")}
+                      variant={`${
+                        language.toLowerCase() === "fr" ? "default" : "ghost"
+                      }`}
+                      className="justify-start"
+                      onClick={() => changeLanguage("fr")}
                     >
-                      Francais
+                      <span>Francais</span>
                     </Button>
                     <Button
-                      variant={language === "Ar" ? "default" : "ghost"}
-                      onClick={() => changeLanguage("Ar")}
+                      variant={`${
+                        language.toLowerCase() === "ar" ? "default" : "ghost"
+                      }`}
+                      className="justify-start"
+                      onClick={() => changeLanguage("ar")}
                     >
-                      العربية
+                      <span>العربية</span>
                     </Button>
                   </div>
                 </DialogContent>

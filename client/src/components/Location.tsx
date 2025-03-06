@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
@@ -9,8 +9,6 @@ interface LocationPropos {
 }
 
 const Location = ({ data }: LocationPropos) => {
-  console.log("data", data?.slug);
-
   return (
     <Link href={`/locations/${data?.slug}`} className="relative">
       <div className="absolute top-3 left-3 z-30 text-black p-[3px] rounded-sm font-bold text-lg bg-gray-100 shadow-2xl shadow-green-600 bg-opacity-60">

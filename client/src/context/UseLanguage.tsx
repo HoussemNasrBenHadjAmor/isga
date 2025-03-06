@@ -24,17 +24,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Update cookies whenever the language changes
   const setLanguage = (language: string) => {
     setLanguageState(language);
-    Cookies.set("language", language, { expires: 365 }); //with a 1-year expiry
+    Cookies.set("NEXT_LOCALE", language.toLocaleLowerCase(), { expires: 365 }); //with a 1-year expiry
   };
 
   useEffect(() => {
-    const cookieLanguage = Cookies.get("language");
+    const cookieLanguage = Cookies.get("NEXT_LOCALE");
 
     if (cookieLanguage) {
       setLanguage(cookieLanguage);
     } else {
       setLanguage("en");
-      Cookies.set("language", "En", { expires: 365 });
+      Cookies.set("NEXT_LOCALE", "en", { expires: 365 });
     }
   }, []);
 

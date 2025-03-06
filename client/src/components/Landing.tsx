@@ -1,8 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
-import Link from "next/link";
 import { Landing as Lan, HomeQueryResult } from "@/sanity/types";
 
 interface Props {
@@ -11,9 +12,8 @@ interface Props {
 
 function Landing({ data }: Props) {
   const router = usePathname();
-
   const isHomePath = router === "/";
-
+  const t = useTranslations("HomePage");
   return (
     <div className="px-5 flex flex-col items-center justify-center relative w-full">
       <div className="z-30 w-full px-2 max-w-7xl mx-auto my-40 flex flex-col justify-center items-center text-center lg:text-left">
@@ -56,13 +56,13 @@ function Landing({ data }: Props) {
                 asChild
                 className="bg-[#102136] border-2 border-transparent p-5 hover:bg-[#5e3fde]"
               >
-                <Link href="/about">About</Link>
+                <Link href="/about">{t("landingFirstButton")}</Link>
               </Button>
               <Button
                 asChild
                 className="border-2 p-5 hover:bg-[#5e3fde] bg-transparent"
               >
-                <Link href="/about">Our services</Link>
+                <Link href="/about">{t("landingSecondButton")}</Link>
               </Button>
             </div>
           )}

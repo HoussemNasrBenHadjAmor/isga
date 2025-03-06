@@ -1,7 +1,8 @@
 import { RelatedNewsQueryResult, Simple } from "@/sanity/types";
-import { CarouselAi, ContactForm, Content, Maps } from "@/components";
 import { relatedLinks } from "@/constants";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { CarouselAi, ContactForm, Content, Maps } from "@/components";
 import { Button } from "./ui/button";
 
 interface BottomComponentAiPropos {
@@ -11,39 +12,40 @@ interface BottomComponentAiPropos {
   displayBlogs?: boolean;
 }
 
-const blogContent: Simple = {
-  _rev: "",
-  _type: "simple",
-  _createdAt: "",
-  _updatedAt: "",
-  _id: "x_a",
-  title: ["Our blogs and latest news"],
-};
-
-const relatedContent: Simple = {
-  _rev: "",
-  _type: "simple",
-  _createdAt: "",
-  _updatedAt: "",
-  _id: "x_b",
-  title: ["Explore related services we are experts in"],
-};
-
-const contactContent: Simple = {
-  _rev: "",
-  _type: "simple",
-  _createdAt: "",
-  _updatedAt: "",
-  _id: "x_c",
-  title: ["Let’s discuss your next AI project"],
-};
-
 const BottomComponentAi = ({
   related,
   displayRelated,
   displayForm,
   displayBlogs,
 }: BottomComponentAiPropos) => {
+  const t = useTranslations("AiPage");
+
+  const blogContent: Simple = {
+    _rev: "",
+    _type: "simple",
+    _createdAt: "",
+    _updatedAt: "",
+    _id: "x_a",
+    title: [t("blogs.title")],
+  };
+
+  const relatedContent: Simple = {
+    _rev: "",
+    _type: "simple",
+    _createdAt: "",
+    _updatedAt: "",
+    _id: "x_b",
+    title: [t("related.title")],
+  };
+
+  const contactContent: Simple = {
+    _rev: "",
+    _type: "simple",
+    _createdAt: "",
+    _updatedAt: "",
+    _id: "x_c",
+    title: [t("contact.title")],
+  };
   return (
     <div className="flex flex-col gap-3">
       {displayBlogs && (
@@ -57,7 +59,7 @@ const BottomComponentAi = ({
           />
           <div className="w-auto items-center justify-center flex mb-20">
             <Button className="hover:bg-[#424267] hover:text-white p-7" asChild>
-              <Link href="/newsletter">View More</Link>
+              <Link href="/newsletter">{t("blogs.button")}</Link>
             </Button>
           </div>
         </div>

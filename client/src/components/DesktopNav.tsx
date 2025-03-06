@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
+import { getPathname, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 import { useLanguage } from "@/context/UseLanguage";
-import { navItemsDesktop } from "@/constants/index";
 import { ListItem } from "@/components";
 
 import {
@@ -41,14 +42,26 @@ const basisClasses: Record<NbItemGridOption, string> = {
 };
 
 function DesktopNav() {
+  const t = useTranslations("navigationDesktop");
+  const navItemsDesktop = t.raw("items"); // convert the nav items into array
   const router = useRouter();
+  const currentPath = usePathname(); // Get current path without locale
+
   const { language, setLanguage } = useLanguage();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
 
   const changeLanguage = (value: string) => {
     setLanguage(value);
-    setIsPopoverOpen(false); // Close the Popover after selecting a language
-    router.refresh(); //refresh the route to get the new translated api
+    setIsPopoverOpen(false); // Close the popover after selecting a language
+
+    // Generate the new path with the selected locale
+    const newPath = getPathname({
+      locale: value,
+      href: { pathname: currentPath },
+    });
+
+    // Navigate to the updated path
+    router.push(newPath);
   };
   return (
     <div className="flex">
@@ -123,30 +136,36 @@ function DesktopNav() {
           >
             <Button variant="outline" className="flex items-center gap-2">
               <Globe className="h-5 w-5" />
-              <span>{language}</span>
+              <span>{language.toUpperCase()}</span>
               <ChevronDown className="h-4 w-4" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="p-2 w-max z-[999]">
             <div className="grid gap-1 z-[999]">
               <Button
-                variant={`${language === "En" ? "default" : "ghost"}`}
+                variant={`${
+                  language.toLowerCase() === "en" ? "default" : "ghost"
+                }`}
                 className="justify-start"
-                onClick={() => changeLanguage("En")}
+                onClick={() => changeLanguage("en")}
               >
                 <span>English</span>
               </Button>
               <Button
-                variant={`${language === "Fr" ? "default" : "ghost"}`}
+                variant={`${
+                  language.toLowerCase() === "fr" ? "default" : "ghost"
+                }`}
                 className="justify-start"
-                onClick={() => changeLanguage("Fr")}
+                onClick={() => changeLanguage("fr")}
               >
                 <span>Francais</span>
               </Button>
               <Button
-                variant={`${language === "Ar" ? "default" : "ghost"}`}
+                variant={`${
+                  language.toLowerCase() === "ar" ? "default" : "ghost"
+                }`}
                 className="justify-start"
-                onClick={() => changeLanguage("Ar")}
+                onClick={() => changeLanguage("ar")}
               >
                 <span>العربية</span>
               </Button>

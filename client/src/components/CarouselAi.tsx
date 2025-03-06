@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 import {
   Carousel,
@@ -13,15 +14,15 @@ import { Card, RelatedNewsQueryResult } from "@/sanity/types";
 import { CardAi, NewLetter } from "@/components";
 
 // valid basis values
-type NbItemOption = '1/2' | '1/3' | '1/4' | '1/5' | '1/6';
+type NbItemOption = "1/2" | "1/3" | "1/4" | "1/5" | "1/6";
 
 // class map
 const basisClasses: Record<NbItemOption, string> = {
-  '1/2': 'lg:basis-1/2',
-  '1/3': 'lg:basis-1/3', 
-  '1/4': 'lg:basis-1/4',
-  '1/5': 'lg:basis-1/5',
-  '1/6': 'lg:basis-1/6'
+  "1/2": "lg:basis-1/2",
+  "1/3": "lg:basis-1/3",
+  "1/4": "lg:basis-1/4",
+  "1/5": "lg:basis-1/5",
+  "1/6": "lg:basis-1/6",
 };
 
 type Link = {
@@ -44,13 +45,17 @@ const CarouselAi = ({
   displayArrow = true,
   type = "card",
 }: CarouselAiProps) => {
+  const t = useTranslations("AiPage");
+
   return (
     <Carousel className="w-full mb-20">
       <CarouselContent className="-ml-1">
-        {data?.map((card) => (
+        {data?.map((card, index) => (
           <CarouselItem
             key={card._id}
-            className={`pl-1 md:basis-1/2 ${basisClasses[nbItem as NbItemOption]}`}
+            className={`pl-1 md:basis-1/2 ${
+              basisClasses[nbItem as NbItemOption]
+            }`}
           >
             <div className="p-1 w-full h-full">
               {type === "card" ? (
@@ -69,8 +74,8 @@ const CarouselAi = ({
                         className="object-cover"
                       />
                     </div>
-
-                    {(card as Link).name}
+                    {/* {(card as Link).name} */} {t(`related.links.${index}`)}
+                    {}
                   </div>
                 </Link>
               )}

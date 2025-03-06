@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 
+import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -32,6 +33,7 @@ const FormSchema = z.object({
 });
 
 const ContactForm = () => {
+  const t = useTranslations("AiPage");
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -103,9 +105,12 @@ const ContactForm = () => {
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name*</FormLabel>
+              <FormLabel>{t("contact.fields.fullname")}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your fullname" {...field} />
+                <Input
+                  placeholder={t("contact.placeHolder.fullname")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,9 +121,12 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address*</FormLabel>
+              <FormLabel>{t("contact.fields.email")}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your address" {...field} />
+                <Input
+                  placeholder={t("contact.placeHolder.email")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -130,9 +138,12 @@ const ContactForm = () => {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject*</FormLabel>
+              <FormLabel>{t("contact.fields.subject")}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your subject" {...field} />
+                <Input
+                  placeholder={t("contact.placeHolder.subject")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -144,9 +155,12 @@ const ContactForm = () => {
           name="comment"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Comment or Message*</FormLabel>
+              <FormLabel>{t("contact.fields.message")}</FormLabel>
               <FormControl>
-                <Textarea placeholder="Enter your comment" {...field} />
+                <Textarea
+                  placeholder={t("contact.placeHolder.message")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -157,7 +171,7 @@ const ContactForm = () => {
           type="submit"
           className="w-full md:w-auto bg-[#7456F1] hover:bg-[#5E3FDE]"
         >
-          Send Message
+          {t("contact.button")}
         </LoadingButton>
       </form>
     </Form>

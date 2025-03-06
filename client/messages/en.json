@@ -1,0 +1,310 @@
+{
+  "HomePage": {
+    "landingFirstButton": "About",
+    "landingSecondButton": "Our Services",
+    "ContactButton": "Contact us now"
+  },
+
+  "AiPage": {
+    "blogs": {
+      "title": "Our blogs and latest news",
+      "button": "View More"
+    },
+    "contact": {
+      "title": "Let’s discuss your next AI project",
+      "fields": {
+        "fullname": "Full Name*",
+        "email": "Email Address*",
+        "subject": "Subject*",
+        "message": "Comment or Message*"
+      },
+      "placeHolder": {
+        "fullname": "Enter your fullname",
+        "email": "Enter your address",
+        "subject": "Enter your subject",
+        "message": "Enter your comment"
+      },
+      "button": "Send Message"
+    },
+    "related": {
+      "title": "Explore related services we are experts in",
+      "links": [
+        "Ai Software Development",
+        "Artificial Intelligence Training",
+        "Artificial Intelligence Consulting",
+        "R&D in artificial intelligence"
+      ]
+    }
+  },
+
+  "navigationDesktop": {
+    "items": [
+      {
+        "id": 1,
+        "name": "Home",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "name": "About",
+        "link": "/about"
+      },
+      {
+        "id": 4,
+        "name": "Services",
+        "details": [
+          {
+            "id": 41,
+            "name": "Services",
+            "sub": [
+              {
+                "id": 411,
+                "name": "Consulting Service",
+                "link": "/services/consulting-service"
+              },
+              {
+                "id": 412,
+                "name": "Application Services and Solutions",
+                "link": "/services/application-services-and-solutions"
+              },
+              {
+                "id": 413,
+                "name": "Technologies & Platforms",
+                "link": "/services/technologies-platforms"
+              },
+              {
+                "id": 414,
+                "name": "Managed Services",
+                "link": "/services/managed-services"
+              },
+              {
+                "id": 415,
+                "name": "Project & Program Management",
+                "link": "/services/project-program-management"
+              },
+              {
+                "id": 416,
+                "name": "Artificial Intelligence",
+                "link": "/services/artificial-intelligence"
+              },
+              {
+                "id": 417,
+                "name": "Cybersecurity & Enterprise Risk",
+                "link": "/services/cybersecurity-enterprise-risk"
+              }
+            ]
+          },
+          {
+            "id": 42,
+            "name": "AI",
+            "sub": [
+              {
+                "id": 421,
+                "name": "AI Software Development",
+                "link": "/ai/software-development"
+              },
+              {
+                "id": 422,
+                "name": "AI Training",
+                "link": "/ai/training"
+              },
+              {
+                "id": 423,
+                "name": "AI Consulting",
+                "link": "/ai/consulting"
+              },
+              {
+                "id": 424,
+                "name": "R&D in AI",
+                "link": "/ai/rd"
+              }
+            ]
+          },
+          {
+            "id": 43,
+            "name": "Industries",
+            "sub": [
+              {
+                "id": 431,
+                "name": "Government and Public Sector",
+                "link": "/industries/government-public-sector"
+              },
+              {
+                "id": 432,
+                "name": "Insurance",
+                "link": "/industries/insurance"
+              },
+              {
+                "id": 433,
+                "name": "Financial Services",
+                "link": "/industries/financial-services"
+              },
+              {
+                "id": 434,
+                "name": "Telecommunications",
+                "link": "/industries/telecommunications"
+              }
+            ]
+          },
+          {
+            "id": 44,
+            "name": "Solutions",
+            "sub": [
+              {
+                "id": 441,
+                "name": "Link Talent",
+                "link": "/solutions/link-talent"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Locations",
+        "link": "/locations"
+      },
+      {
+        "id": 8,
+        "name": "Newsletter",
+        "link": "/newsletter"
+      },
+      {
+        "id": 7,
+        "name": "Careers",
+        "link": "/careers"
+      },
+      {
+        "id": 9,
+        "name": "Contact",
+        "link": "/contact"
+      }
+    ]
+  },
+
+  "navItemsMobile": {
+    "items": [
+      {
+        "id": 1,
+        "name": "Home",
+        "link": "/"
+      },
+
+      { "id": 2, "name": "About", "link": "/about" },
+
+      {
+        "id": 4,
+        "name": "Services",
+        "sub": [
+          {
+            "name": "Consulting Service",
+            "link": "/services/consulting-service"
+          },
+          {
+            "name": "Application Services and Solutions",
+            "link": "/services/application-services-and-solutions"
+          },
+          {
+            "name": "Technologies & Platforms",
+            "link": "/services/technologies-platforms"
+          },
+          { "name": "Managed Services", "link": "/services/managed-services" },
+          {
+            "name": "Project & Program Management",
+            "link": "/services/project-program-management"
+          },
+          {
+            "name": "Artificial Intelligence",
+            "link": "/services/artificial-intelligence"
+          },
+          {
+            "name": "Cybersecurity & Enterprise Risk",
+            "link": "/services/cybersecurity-enterprise-risk"
+          }
+        ]
+      },
+
+      {
+        "id": 5,
+        "name": "Artificial intelligence",
+        "link": "/arterial-intelligence",
+        "sub": [
+          {
+            "name": "AI Software Development",
+            "link": "/ai/software-development"
+          },
+          {
+            "name": "Artificial Intelligence Training",
+            "link": "/ai/training"
+          },
+          {
+            "name": "Artificial Intelligence Consulting",
+            "link": "/ai/consulting"
+          },
+          {
+            "name": "R&D in artificial intelligence",
+            "link": "/ai/rd"
+          }
+        ]
+      },
+
+      {
+        "id": 6,
+        "name": "Industries",
+        "sub": [
+          {
+            "name": "Government and Public Sector",
+            "link": "/industries/government-public-sector"
+          },
+          {
+            "name": "Insurance",
+            "link": "/industries/Insurance"
+          },
+          {
+            "name": "Financial Services",
+            "link": "/industries/financial-services"
+          },
+          {
+            "name": "Telecommunications",
+            "link": "/industries/telecommunications"
+          }
+        ]
+      },
+
+      {
+        "id": 11,
+        "name": "Solutions",
+        "sub": [
+          {
+            "name": "Link Talent",
+            "link": "/solutions/link-talent"
+          }
+        ]
+      },
+
+      {
+        "id": 10,
+        "name": "Locations",
+        "link": "/locations"
+      },
+
+      {
+        "id": 8,
+        "name": "Newsletter",
+        "link": "/newsletter"
+      },
+
+      {
+        "id": 7,
+        "name": "Careers",
+        "link": "/careers"
+      },
+
+      {
+        "id": 9,
+        "name": "Contact",
+        "link": "/contact"
+      }
+    ]
+  }
+}

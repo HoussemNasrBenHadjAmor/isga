@@ -1,0 +1,313 @@
+{
+  "HomePage": {
+    "landingFirstButton": "معلومات عنا",
+    "landingSecondButton": "خدماتنا",
+    "ContactButton": "اتصل بنا الآن"
+  },
+
+  "AiPage": {
+    "blogs": {
+      "title": "مدوناتنا وأخبارنا الأخيرة",
+      "button": "شاهد المزيد"
+    },
+    "contact": {
+      "title": "دعونا نناقش مشروع الذكاء الاصطناعي القادم الخاص بك",
+      "fields": {
+        "fullname": "الاسم الكامل*",
+        "email": "عنوان البريد الإلكتروني*",
+        "subject": "موضوع*",
+        "message": "التعليق أو الرسالة*"
+      },
+      "placeHolder": {
+        "fullname": "أدخل اسمك الكامل",
+        "email": "أدخل بريدك الإلكتروني",
+        "subject": "أدخل موضوعك",
+        "message": "أدخل تعليقك"
+      },
+      "button": "إرسال"
+    },
+    "related": {
+      "title": "استكشف الخدمات ذات الصلة التي نحن خبراء فيها",
+      "links": [
+        "تطوير برمجيات الذكاء الاصطناعي",
+        "تدريب الذكاء الاصطناعي",
+        "استشارات الذكاء الاصطناعي",
+        "البحث والتطوير في مجال الذكاء الاصطناعي"
+      ]
+    }
+  },
+
+  "navigationDesktop": {
+    "items": [
+      {
+        "id": 1,
+        "name": "الرئيسية",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "name": "معلومات عنا",
+        "link": "/about"
+      },
+      {
+        "id": 4,
+        "name": "خدمات",
+        "details": [
+          {
+            "id": 41,
+            "name": "خدمات",
+            "sub": [
+              {
+                "id": 411,
+                "name": "خدمة الاستشارات",
+                "link": "/services/consulting-service"
+              },
+              {
+                "id": 412,
+                "name": "خدمات وحلول التطبيقات",
+                "link": "/services/application-services-and-solutions"
+              },
+              {
+                "id": 413,
+                "name": "التقنيات والمنصات",
+                "link": "/services/technologies-platforms"
+              },
+              {
+                "id": 414,
+                "name": "الخدمات المُدارة",
+                "link": "/services/managed-services"
+              },
+              {
+                "id": 415,
+                "name": "إدارة المشاريع والبرامج",
+                "link": "/services/project-program-management"
+              },
+              {
+                "id": 416,
+                "name": "الذكاء الاصطناعي",
+                "link": "/services/artificial-intelligence"
+              },
+              {
+                "id": 417,
+                "name": "الأمن السيبراني ومخاطر المؤسسة",
+                "link": "/services/cybersecurity-enterprise-risk"
+              }
+            ]
+          },
+
+          {
+            "id": 42,
+            "name": "الذكاء الاصطناعي",
+            "sub": [
+              {
+                "id": 421,
+                "name": "تطوير برمجيات الذكاء الاصطناعي",
+                "link": "/ai/software-development"
+              },
+              {
+                "id": 422,
+                "name": "تدريب الذكاء الاصطناعي",
+                "link": "/ai/training"
+              },
+              {
+                "id": 423,
+                "name": "استشارات الذكاء الاصطناعي",
+                "link": "/ai/consulting"
+              },
+              {
+                "id": 424,
+                "name": "البحث والتطوير في مجال الذكاء الاصطناعي",
+                "link": "/ai/rd"
+              }
+            ]
+          },
+
+          {
+            "id": 43,
+            "name": "الصناعات",
+            "sub": [
+              {
+                "id": 431,
+                "name": "الحكومة والقطاع العام",
+                "link": "/industries/government-public-sector"
+              },
+              {
+                "id": 432,
+                "name": "تأمين",
+                "link": "/industries/insurance"
+              },
+              {
+                "id": 433,
+                "name": "الخدمات المالية",
+                "link": "/industries/financial-services"
+              },
+              {
+                "id": 434,
+                "name": "الاتصالات السلكية واللاسلكية",
+                "link": "/industries/telecommunications"
+              }
+            ]
+          },
+
+          {
+            "id": 44,
+            "name": "الحلول",
+            "sub": [
+              {
+                "id": 441,
+                "name": "Link Talent",
+                "link": "/solutions/link-talent"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "المواقع",
+        "link": "/locations"
+      },
+      {
+        "id": 8,
+        "name": "النشرة الإخبارية",
+        "link": "/newsletter"
+      },
+      {
+        "id": 7,
+        "name": "المهن",
+        "link": "/careers"
+      },
+      {
+        "id": 9,
+        "name": "اتصال",
+        "link": "/contact"
+      }
+    ]
+  },
+
+  "navItemsMobile": {
+    "items": [
+      {
+        "id": 1,
+        "name": "الرئيسية",
+        "link": "/"
+      },
+
+      { "id": 2, "name": "معلومات عنا", "link": "/about" },
+
+      {
+        "id": 4,
+        "name": "خدمات",
+        "sub": [
+          {
+            "name": "خدمة الاستشارات",
+            "link": "/services/consulting-service"
+          },
+          {
+            "name": "خدمات وحلول التطبيقات",
+            "link": "/services/application-services-and-solutions"
+          },
+          {
+            "name": "التقنيات والمنصات",
+            "link": "/services/technologies-platforms"
+          },
+          { "name": "الخدمات المُدارة", "link": "/services/managed-services" },
+          {
+            "name": "إدارة المشاريع والبرامج",
+            "link": "/services/project-program-management"
+          },
+          {
+            "name": "الذكاء الاصطناعي",
+            "link": "/services/artificial-intelligence"
+          },
+          {
+            "name": "الأمن السيبراني ومخاطر المؤسسة",
+            "link": "/services/cybersecurity-enterprise-risk"
+          }
+        ]
+      },
+
+      {
+        "id": 5,
+        "name": "الذكاء الاصطناعي",
+        "link": "/arterial-intelligence",
+        "sub": [
+          {
+            "name": "تطوير برمجيات الذكاء الاصطناعي",
+            "link": "/ai/software-development"
+          },
+          {
+            "name": "تدريب الذكاء الاصطناعي",
+            "link": "/ai/training"
+          },
+          {
+            "name": "استشارات الذكاء الاصطناعي",
+            "link": "/ai/consulting"
+          },
+          {
+            "name": "البحث والتطوير في مجال الذكاء الاصطناعي",
+            "link": "/ai/rd"
+          }
+        ]
+      },
+
+      {
+        "id": 6,
+        "name": "الصناعات",
+        "sub": [
+          {
+            "name": "الحكومة والقطاع العام",
+            "link": "/industries/government-public-sector"
+          },
+          {
+            "name": "تأمين",
+            "link": "/industries/Insurance"
+          },
+          {
+            "name": "الخدمات المالية",
+            "link": "/industries/financial-services"
+          },
+          {
+            "name": "الاتصالات السلكية واللاسلكية",
+            "link": "/industries/telecommunications"
+          }
+        ]
+      },
+
+      {
+        "id": 11,
+        "name": "الحلول",
+        "sub": [
+          {
+            "name": "Link Talent",
+            "link": "/solutions/link-talent"
+          }
+        ]
+      },
+
+      {
+        "id": 10,
+        "name": "المواقع",
+        "link": "/locations"
+      },
+
+      {
+        "id": 8,
+        "name": "النشرة الإخبارية",
+        "link": "/newsletter"
+      },
+
+      {
+        "id": 7,
+        "name": "المهن",
+        "link": "/careers"
+      },
+
+      {
+        "id": 9,
+        "name": "اتصال",
+        "link": "/contact"
+      }
+    ]
+  }
+}
