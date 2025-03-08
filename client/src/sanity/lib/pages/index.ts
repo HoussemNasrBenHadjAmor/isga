@@ -30,6 +30,7 @@ import {
   testQuery,
   locationQuery,
   newsPageQuery,
+  jobsQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -235,6 +236,31 @@ interface JobFilterParams {
   keyword?: string;
 }
 
+export const getJobs_v2 = async ({
+  id,
+  domains = [],
+  types = [],
+  keyword = "",
+}: JobFilterParams) => {
+  const query = jobsQuery;
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        id, // Pass the language ID
+        domains, // Pass the domains filter
+        types, // Pass the types filter
+        keyword, // Pass the keyword filter
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
 export const getJobs = async ({
   id,
   domains = [],
@@ -256,7 +282,12 @@ export const getJobs = async ({
       : ""
   } ${
     keyword
-      ? `&& ('title': title.${id} match "*${keyword}*" || 'description': description.${id}->description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
+      ? `&& (
+      title.${id} match "*${keyword}*" || 
+      pt::text(description.${id}->description) match "*${keyword}*" || 
+      job_type->title.${id} match "*${keyword}*" || 
+      job_domain->title.${id} match "*${keyword}*"
+    )`
       : ""
   }] {
     _updatedAt,

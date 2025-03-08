@@ -672,29 +672,30 @@ export const contactQuery = defineQuery(
 export const jobsQuery = defineQuery(
   `
     *[_type == 'job' && display == true 
-      && job_domain->title.en in [$domains] 
-      && job_type->title.en in [$types] 
-      && 
-        title[id] match "*$keyword*" || 
-        description[id]->description match "*$keyword*" || 
-        job_type->title[$id] match "*$keyword*" || 
-        job_domain->title[$id] match "*$keyword*"
-    ] {
-      _updatedAt,
-      'title': title.$$id,
-      job_domain -> {
-        _id,
-        'title': title.$$id,
-        'title_en': title.en
-      },
-      job_type -> {
-        _id,
-        'title': title.$$id,
-        'title_en': title.en
-      },
-      'description': description.$$id -> description,
-      display
-    }
+  && job_domain->title.en in $domains 
+  && job_type->title.en in $types 
+  && (
+    title[$id] match "*$keyword*" || 
+    defined(description[$id]->description[][@ match "*$keyword*"]) || 
+    job_type->title[$id] match "*$keyword*" || 
+    job_domain->title[$id] match "*$keyword*"
+  )
+] {
+  _updatedAt,
+  'title': title[$id],
+  job_domain -> {
+    _id,
+    'title': title[$id],
+    'title_en': title.en
+  },
+  job_type -> {
+    _id,
+    'title': title[$id],
+    'title_en': title.en
+  },
+  'description': description[$id] -> description,
+  display
+}
   `
 );
 
