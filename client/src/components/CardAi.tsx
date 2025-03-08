@@ -12,7 +12,11 @@ interface CardAiProps {
 const CardAi = ({ data, flex, bg = true }: CardAiProps) => {
   return (
     <div
-      className={`flex ${flex ? "flex-col md:flex-row items-center text-center md:text-left" : "flex-col items-center justify-center text-center"} gap-5 ${bg && "bg-slate-100"} p-4 rounded-md w-full h-full`}
+      className={`flex ${
+        flex
+          ? "flex-col md:flex-row items-center text-center md:text-left"
+          : "flex-col items-center justify-center text-center"
+      } gap-5 ${bg && "bg-slate-100"} p-4 rounded-md w-full h-full`}
     >
       {data?.image && (
         <Image
@@ -31,8 +35,10 @@ const CardAi = ({ data, flex, bg = true }: CardAiProps) => {
 
       <div className="flex flex-col gap-3 flex-1">
         <h5 className="font-bold text-xl">{data?.title}</h5>
-        {data?.description?.map((desc) => (
-          <p className="text-gray-600">{desc}</p>
+        {data?.description?.map((desc, index) => (
+          <p className="text-gray-600" key={index + 1}>
+            {desc}
+          </p>
         ))}
       </div>
     </div>

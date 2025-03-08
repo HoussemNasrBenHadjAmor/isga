@@ -29,6 +29,7 @@ import {
   aiRdQuery,
   testQuery,
   locationQuery,
+  newsPageQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -243,30 +244,32 @@ export const getJobs = async ({
   const query = `
   *[_type == 'job' && display == true ${
     domains.length > 0
-      ? `&& job_domain->title in [${domains
+      ? `&& job_domain->title.en in [${domains
           .map((title) => `"${title}"`)
           .join(",")}]`
       : ""
   } ${
     types.length > 0
-      ? `&& job_type->title in [${types
+      ? `&& job_type->title.en in [${types
           .map((title) => `"${title}"`)
           .join(",")}]`
       : ""
   } ${
     keyword
-      ? `&& (title.${id} match "*${keyword}*" || 'description': description.${id}->description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
+      ? `&& ('title': title.${id} match "*${keyword}*" || 'description': description.${id}->description match "*${keyword}*" || job_type->title match "*${keyword}*" || job_domain->title match "*${keyword}*")`
       : ""
   }] {
     _updatedAt,
     'title': title.${id},
     job_domain -> {
       _id,
-      title
+      'title': title.${id},
+      'title_en': title.en
     },
     job_type -> {
       _id,
-      title
+      'title': title.${id},
+      'title_en': title.en
     },
     'description' : description.${id} -> description,
     display
@@ -291,8 +294,14 @@ export const getJobsCategories = async (params: { id: string }) => {
   }
 
   try {
-    const job_domain = await sanityFetch({ query: query_categories_domains });
-    const job_type = await sanityFetch({ query: query_categories_types });
+    const job_domain = await sanityFetch({
+      query: query_categories_domains,
+      params,
+    });
+    const job_type = await sanityFetch({
+      query: query_categories_types,
+      params,
+    });
     const data: Job = {
       job_domain: job_domain?.data || [],
       job_type: job_type?.data || [],
@@ -305,6 +314,7 @@ export const getJobsCategories = async (params: { id: string }) => {
 };
 
 interface NewsFilterParams {
+  id: string;
   order?: string;
   category?: string;
 }
@@ -313,23 +323,24 @@ interface NewsFilterParams {
 /// need to fix the loweCase of the category
 
 export const getNewsPage = async ({
+  id,
   category = "",
   order = "desc",
 }: NewsFilterParams) => {
   const query = defineQuery(`
- *[_type == 'news' && display == true ${
-   category ? `&& "${category}" in category[] -> title` : ""
- }] | order(_createdAt ${order}) {
-    _id, 
-    _updatedAt,
-    _createdAt,
-    title,
-    subtitle,
-    image {
-      asset -> { url }
-    },
-    slug
-  }
+    *[_type == 'news' && display == true ${
+      category ? `&& count(category[@->title.en == "${category}"]) > 0` : ""
+    }] | order(_createdAt ${order}) {
+      _id, 
+      _updatedAt,
+      _createdAt,
+      'title': title.${id},
+      'subtitle': subtitle.${id},
+      image {
+        asset -> { url }
+      },
+      slug
+    }
   `);
 
   try {
@@ -371,15 +382,15 @@ export const getNewsCategories = async (params: { id: string }) => {
   }
 };
 
-export const getNewLetterPage = async (slug: string) => {
+export const getNewLetterPage = async (slug: string, id: string) => {
   const query = defineQuery(`
  *[_type == 'news' && display == true && slug.current == "${slug}"] {
     _id, 
     _updatedAt,
     _createdAt,
-    title,
-    subtitle,
-    details,
+    'title' : title.${id},
+    'subtitle' : subtitle.${id},
+    'details' : details.${id} -> description,
     image {
       asset -> { url }
     },
@@ -393,6 +404,29 @@ export const getNewLetterPage = async (slug: string) => {
       query,
       params: {
         slug,
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
+export const getNewsPage_v2 = async ({
+  id,
+  category = "",
+  order = "desc",
+}: NewsFilterParams) => {
+  const query = newsPageQuery;
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        id, // Pass the language ID
+        category, // Pass the category filter
+        order, // Pass the sort order
       },
     });
     return data.data || [];

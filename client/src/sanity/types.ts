@@ -46,6 +46,45 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type NewsBlock = {
+  _id: string;
+  _type: "newsBlock";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  details?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      _key: string;
+    } & Color | {
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+};
+
 export type Test = {
   _id: string;
   _type: "test";
@@ -406,37 +445,26 @@ export type Location = {
     ar?: string;
     _key: string;
   }>;
-  details?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color | {
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
+  details?: {
+    en?: {
       _ref: string;
       _type: "reference";
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: "jobBlock";
     };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }>;
+    fr?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+    ar?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+  };
   cards?: Array<{
     _ref: string;
     _type: "reference";
@@ -483,7 +511,11 @@ export type NewsCategory = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
 };
 
 export type News = {
@@ -492,39 +524,36 @@ export type News = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  subtitle?: string;
-  details?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color | {
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
+  subtitle?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
+  details?: {
+    en?: {
       _ref: string;
       _type: "reference";
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: "jobBlock";
     };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }>;
+    fr?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+    ar?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+  };
   file?: {
     asset?: {
       _ref: string;
@@ -625,7 +654,11 @@ export type Job = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
   job_domain?: {
     _ref: string;
     _type: "reference";
@@ -638,6 +671,35 @@ export type Job = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "jobType";
   };
+  description?: {
+    en?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+    fr?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+    ar?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "jobBlock";
+    };
+  };
+  display?: boolean;
+};
+
+export type JobBlock = {
+  _id: string;
+  _type: "jobBlock";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -669,23 +731,6 @@ export type Job = {
     _type: "image";
     _key: string;
   }>;
-  qualifications?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  display?: boolean;
 };
 
 export type JobType = {
@@ -694,7 +739,11 @@ export type JobType = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
 };
 
 export type JobDomain = {
@@ -703,7 +752,11 @@ export type JobDomain = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
+  title?: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  };
 };
 
 export type AskQuestion = {
@@ -1466,7 +1519,7 @@ export type HslaColor = {
   a?: number;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | Test | AiRd | AiConsulting | AiTarining | AiSoftware | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | Geopoint | NewsBlock | Test | AiRd | AiConsulting | AiTarining | AiSoftware | Location | Locations | NewsCategory | News | Slug | Candidate | SanityFileAsset | JobCategory | Job | JobBlock | JobType | JobDomain | AskQuestion | Contact | Carrers | TelecommunicationsIndustries | FinancialIndustries | InsuranceIndustries | GovernmentIndustries | CyberServices | ArtificialServices | ProjectServices | ManagedServices | TechnologiesServices | ApplicationServices | ConsultingServices | About | Home | ChooseISGA | Simple | Card | Landing | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | LandingCategories | Color | RgbaColor | HsvaColor | HslaColor;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../client/src/sanity/lib/pages/about.ts
 // Variable: query
@@ -3079,71 +3132,42 @@ export type ContactQueryResult = Array<{
   }> | null;
 }>;
 // Variable: jobQuery
-// Query: *[_type == 'job' && display == true] {      _updatedAt,      title,      job_domain -> {        _id,        title      },      job_type -> {        _id,        title      },      description,      qualifications,      display    }
+// Query: *[_type == 'job' && display == true] {      _updatedAt,      'title': title[$id],      job_domain -> {        _id,        title      },      job_type -> {        _id,        title      },      'description': description[][$id],      display    }
 export type JobQueryResult = Array<{
   _updatedAt: string;
-  title: string | null;
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
   job_domain: {
     _id: string;
-    title: string | null;
+    title: {
+      en?: string;
+      fr?: string;
+      ar?: string;
+    } | null;
   } | null;
   job_type: {
     _id: string;
-    title: string | null;
+    title: {
+      en?: string;
+      fr?: string;
+      ar?: string;
+    } | null;
   } | null;
-  description: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color | {
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }> | null;
-  qualifications: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }> | null;
+  description: null;
   display: boolean | null;
 }>;
 // Variable: jobDomains
-// Query: *[_type == 'jobDomain'] {      title,      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
+// Query: *[_type == 'jobDomain'] {      'title': title[$id],      'title_en': title['en'],      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
 export type JobDomainsResult = Array<{
-  title: string | null;
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  title_en: string | null;
   _id: string;
   _createdAt: string;
   _rev: string;
@@ -3151,9 +3175,14 @@ export type JobDomainsResult = Array<{
   _updatedAt: string;
 }>;
 // Variable: jobTypes
-// Query: *[_type == 'jobType'] {      title,      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
+// Query: *[_type == 'jobType'] {      'title': title[$id],      'title_en': title['en'],      _id,      _createdAt,      _rev,      _type,      _updatedAt    }
 export type JobTypesResult = Array<{
-  title: string | null;
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  title_en: string | null;
   _id: string;
   _createdAt: string;
   _rev: string;
@@ -3161,10 +3190,38 @@ export type JobTypesResult = Array<{
   _updatedAt: string;
 }>;
 // Variable: newsCategoriesQuery
-// Query: *[_type == 'newsCategory'] {        _id,      title,    }
+// Query: *[_type == 'newsCategory'] {        _id,      'title': title[$id],      'title_en': title['en']    }
 export type NewsCategoriesQueryResult = Array<{
   _id: string;
-  title: string | null;
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  title_en: string | null;
+}>;
+// Variable: newsPageQuery
+// Query: *[_type == 'news' && display == true && count(category[@->title.en == $category]) > 0] | order(_createdAt {order} ) {      _id,       _updatedAt,      _createdAt,      'title': title[$id],      'subtitle': subtitle[$id],      image {        asset -> { url }      },      slug    }
+export type NewsPageQueryResult = Array<{
+  _id: string;
+  _updatedAt: string;
+  _createdAt: string;
+  title: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  subtitle: Array<{
+    en?: string;
+    fr?: string;
+    ar?: string;
+  }> | null;
+  image: {
+    asset: {
+      url: string | null;
+    } | null;
+  } | null;
+  slug: Slug | null;
 }>;
 // Variable: relatedNewsQuery
 // Query: *[_type == 'news' && display == true ] [0..5] {          _id,       _updatedAt,      _createdAt,      title,      subtitle,      image {        asset -> { url }      },      slug    }
@@ -3172,8 +3229,16 @@ export type RelatedNewsQueryResult = Array<{
   _id: string;
   _updatedAt: string;
   _createdAt: string;
-  title: string | null;
-  subtitle: string | null;
+  title: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  } | null;
+  subtitle: {
+    en?: string;
+    fr?: string;
+    ar?: string;
+  } | null;
   image: {
     asset: {
       url: string | null;
@@ -3182,7 +3247,7 @@ export type RelatedNewsQueryResult = Array<{
   slug: Slug | null;
 }>;
 // Variable: locationsQuery
-// Query: *[_type == 'locations'] {         landing -> {        _id,        'title': title[][$id],        'subtitle': subtitle[][$id],        'description': description[][$id],        image {          asset -> { url }        },        'author': author[$id],      },        'title' : title[$id],        locations [] -> {          _id,          'title': title[$id],          'subtitle': subtitle[][$id],          'description': description[][$id],          details,          image {            asset -> {url}          },          'slug': slug[$id],          cards [] -> {            'title': title[$id],            svg_path,            'subtitle': subtitle[][$id],            'description': description[][$id] ,            image {              asset -> {url}            }          }          }}
+// Query: *[_type == 'locations'] {         landing -> {        _id,        'title': title[][$id],        'subtitle': subtitle[][$id],        'description': description[][$id],        image {          asset -> { url }        },        'author': author[$id],      },        'title' : title[$id],        locations [] -> {          _id,          'title': title[$id],          'subtitle': subtitle[][$id],          'description': description[][$id],          'details': details[$id],          image {            asset -> {url}            },            'slug': slug[$id],            'slug_en': slug['en'],          cards [] -> {            'title': title[$id],            svg_path,            'subtitle': subtitle[][$id],            'description': description[][$id] ,            image {              asset -> {url}            }          }          }}
 export type LocationsQueryResult = Array<{
   landing: {
     _id: string;
@@ -3241,35 +3306,24 @@ export type LocationsQueryResult = Array<{
       _key: string;
     }> | null;
     details: Array<{
-      children?: Array<{
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }>;
-      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-      listItem?: "bullet" | "number";
-      markDefs?: Array<{
-        _key: string;
-      } & Color | {
-        href?: string;
-        _type: "link";
-        _key: string;
-      }>;
-      level?: number;
-      _type: "block";
-      _key: string;
-    } | {
-      asset?: {
+      en?: {
         _ref: string;
         _type: "reference";
         _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        [internalGroqTypeReferenceTo]?: "jobBlock";
       };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
-      _key: string;
+      fr?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "jobBlock";
+      };
+      ar?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "jobBlock";
+      };
     }> | null;
     image: {
       asset: {
@@ -3281,6 +3335,7 @@ export type LocationsQueryResult = Array<{
       fr?: string;
       ar?: string;
     }> | null;
+    slug_en: string | null;
     cards: Array<{
       title: Array<{
         en?: string;
@@ -3309,7 +3364,7 @@ export type LocationsQueryResult = Array<{
   }> | null;
 }>;
 // Variable: locationQuery
-// Query: *[_type == 'location' && slug[$id] == $slug] {        _id,         'title': title[][$id],        'subtitle': subtitle[][$id],        'description': description[][$id],        details,        image {          asset -> { url }        },        'slug': slug[$id],        cards [] -> {          'title': title[$id],          'subtitle': subtitle[][$id],          'description': description[][$id],          svg_path,          image {            asset -> { url }          }        }  }
+// Query: *[_type == 'location' && slug['en'] == $slug] {        _id,         'title': title[][$id],        'subtitle': subtitle[][$id],        'description': description[][$id],        'details': details[$id] -> description,        image {          asset -> { url }        },        'slug': slug[$id],        cards [] -> {          'title': title[$id],          'subtitle': subtitle[][$id],          'description': description[][$id],          svg_path,          image {            asset -> { url }          }        }  }
 export type LocationQueryResult = Array<{
   _id: string;
   title: Array<{
@@ -3330,37 +3385,7 @@ export type LocationQueryResult = Array<{
     ar?: string;
     _key: string;
   }> | null;
-  details: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      _key: string;
-    } & Color | {
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-    _key: string;
-  }> | null;
+  details: Array<null> | null;
   image: {
     asset: {
       url: string | null;
@@ -4456,13 +4481,14 @@ declare module "@sanity/client" {
     "\n    *[_type == 'telecommunicationsIndustries'] {\n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      },\n              \n       title_section -> {\n          _id,\n          'title': title[][$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id]\n        }, \n        \n        content -> {\n          _id,\n          'title': title[][$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id]\n        }, \n    \n        card []-> {\n          _id,\n          'title' : title[$id],\n          'subtitle' : subtitle[][$id],\n          'description' : description[][$id],\n          image {\n            asset -> { url } \n          },\n          svg_path,       \n        },        \n    }   \n  ": TelecommunicationQueryResult;
     "\n    *[_type == 'carrers'] {\n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      },\n           \n    }   \n  ": CarrersQueryResult;
     "\n    *[_type == 'contact'] {\n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      },\n\n      content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      card []-> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        image {\n          asset -> { url } \n        },\n        svg_path,       \n      }, \n           \n    }   \n  ": ContactQueryResult;
-    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      title,\n      job_domain -> {\n        _id,\n        title\n      },\n      job_type -> {\n        _id,\n        title\n      },\n      description,\n      qualifications,\n      display\n    }\n  ": JobQueryResult;
-    "\n    *[_type == 'jobDomain'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
-    "\n    *[_type == 'jobType'] {\n      title,\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
-    "\n    *[_type == 'newsCategory'] {  \n      _id,\n      title,\n    }\n  ": NewsCategoriesQueryResult;
+    "\n    *[_type == 'job' && display == true] {\n      _updatedAt,\n      'title': title[$id],\n      job_domain -> {\n        _id,\n        title\n      },\n      job_type -> {\n        _id,\n        title\n      },\n      'description': description[][$id],\n      display\n    }\n  ": JobQueryResult;
+    "\n    *[_type == 'jobDomain'] {\n      'title': title[$id],\n      'title_en': title['en'],\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobDomainsResult;
+    "\n    *[_type == 'jobType'] {\n      'title': title[$id],\n      'title_en': title['en'],\n      _id,\n      _createdAt,\n      _rev,\n      _type,\n      _updatedAt\n    }  \n  ": JobTypesResult;
+    "\n    *[_type == 'newsCategory'] {  \n      _id,\n      'title': title[$id],\n      'title_en': title['en']\n    }\n  ": NewsCategoriesQueryResult;
+    "\n   *[_type == 'news' && display == true && count(category[@->title.en == $category]) > 0] | order(_createdAt {order} ) {\n      _id, \n      _updatedAt,\n      _createdAt,\n      'title': title[$id],\n      'subtitle': subtitle[$id],\n      image {\n        asset -> { url }\n      },\n      slug\n    }\n  ": NewsPageQueryResult;
     "\n    *[_type == 'news' && display == true ] [0..5] {  \n        _id, \n      _updatedAt,\n      _createdAt,\n      title,\n      subtitle,\n      image {\n        asset -> { url }\n      },\n      slug\n    }\n  ": RelatedNewsQueryResult;
-    "\n    *[_type == 'locations'] {\n         landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      },\n\n        'title' : title[$id],\n\n        locations [] -> {\n          _id,\n          'title': title[$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id],\n          details,\n          image {\n            asset -> {url}\n          },\n          'slug': slug[$id],\n          cards [] -> {\n            'title': title[$id],\n            svg_path,\n            'subtitle': subtitle[][$id],\n            'description': description[][$id] ,\n            image {\n              asset -> {url}\n            }\n          }  \n        }\n}\n  ": LocationsQueryResult;
-    "\n    *[_type == 'location' && slug[$id] == $slug] {\n        _id, \n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        details,\n        image {\n          asset -> { url }\n        },\n        'slug': slug[$id],\n        cards [] -> {\n          'title': title[$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id],\n          svg_path,\n          image {\n            asset -> { url }\n          }\n        }\n  }\n  ": LocationQueryResult;
+    "\n    *[_type == 'locations'] {\n         landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      },\n\n        'title' : title[$id],\n\n        locations [] -> {\n          _id,\n          'title': title[$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id],\n          'details': details[$id],\n          image {\n            asset -> {url}\n            },\n            'slug': slug[$id],\n            'slug_en': slug['en'],\n          cards [] -> {\n            'title': title[$id],\n            svg_path,\n            'subtitle': subtitle[][$id],\n            'description': description[][$id] ,\n            image {\n              asset -> {url}\n            }\n          }  \n        }\n}\n  ": LocationsQueryResult;
+    "\n    *[_type == 'location' && slug['en'] == $slug] {\n        _id, \n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        'details': details[$id] -> description,\n        image {\n          asset -> { url }\n        },\n        'slug': slug[$id],\n        cards [] -> {\n          'title': title[$id],\n          'subtitle': subtitle[][$id],\n          'description': description[][$id],\n          svg_path,\n          image {\n            asset -> { url }\n          }\n        }\n  }\n  ": LocationQueryResult;
     "\n    *[_type == 'aiSoftware'] {\n        _id, \n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      }, \n          \n      first_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      first_card [] -> {\n        _id,\n        'title' : title[$id],\n        svg_path,\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n            \n      second_card [] -> {\n        _id,\n        'title' : title[$id],\n        svg_path,\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        'title': title[$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      third_card [] -> {\n        _id,\n        'title' : title[$id],\n        svg_path,\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      faq [] -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },  \n\n  }\n  ": AiSoftwareQueryResult;
     "\n    *[_type == 'aiTarining'] {\n        _id, \n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      }, \n          \n      first_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      first_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n            \n      second_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        'title': title[$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      third_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      fourth_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      fifth_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      faq [] -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },  \n\n  }\n  ": AiTrainingQueryResult;
     "\n    *[_type == 'aiConsulting'] {\n        _id, \n       landing -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id],\n        image {\n          asset -> { url }\n        },\n        'author': author[$id],\n      }, \n          \n      first_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      first_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },  \n\n      second_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n            \n      second_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      card -> {\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id] ,\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      third_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      third_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n      fourth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      fourth_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n       fifth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      fifth_card [] -> {\n        _id,\n        'title' : title[$id],\n        'subtitle' : subtitle[][$id],\n        'description' : description[][$id],\n        svg_path,\n        image {\n          asset -> { url }\n        }\n      },\n\n       sixth_content -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },\n\n      faq [] -> {\n        _id,\n        'title': title[][$id],\n        'subtitle': subtitle[][$id],\n        'description': description[][$id]\n      },  \n\n  }\n  ": AiConsultingQueryResult;

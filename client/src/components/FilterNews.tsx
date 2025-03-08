@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 import { NewsCategoriesQueryResult } from "@/sanity/types";
 
@@ -22,17 +24,18 @@ interface FilterProps {
 }
 
 const FilterNews = ({ categories, date, setLoading }: FilterProps) => {
+  const t = useTranslations("filterNews");
   const router = useRouter();
   const pathname = usePathname(); // Reactively updates on route changes
   const searchParams = useSearchParams(); // Reactively updates on query changes
 
   const categoryParam =
     searchParams.get("category") &&
-    categories.find((item) => item.title === searchParams.get("category"));
+    categories.find((item) => item.title_en === searchParams.get("category"));
 
   const dateParam = searchParams.get("date");
   const [categoryValue, setCategoryValue] = useState(
-    categoryParam ? categoryParam.title : ""
+    categoryParam ? categoryParam.title_en : ""
   );
   const [dateValue, setDateValue] = useState(dateParam ? dateParam : date);
   //   const [keyword, setKeyword] = useState("");
@@ -99,7 +102,7 @@ const FilterNews = ({ categories, date, setLoading }: FilterProps) => {
             }
           }}
         >
-          All
+          {t("reset")}
         </p>
 
         <div className="h-8 border-l-2 border-gray-400"></div>
@@ -112,13 +115,13 @@ const FilterNews = ({ categories, date, setLoading }: FilterProps) => {
           }}
         >
           <SelectTrigger className="max-w-[150px]">
-            <SelectValue placeholder="Select a category" />
+            <SelectValue placeholder={t("category.placeholder")} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectLabel>Category</SelectLabel>
+              <SelectLabel>{t("category.title")}</SelectLabel>
               {categories.map((category) => (
-                <SelectItem value={category?.title!} key={category._id}>
+                <SelectItem value={category?.title_en!} key={category._id}>
                   {category.title}
                 </SelectItem>
               ))}
@@ -136,13 +139,13 @@ const FilterNews = ({ categories, date, setLoading }: FilterProps) => {
           }}
         >
           <SelectTrigger className="max-w-[150px]">
-            <SelectValue placeholder="Order by date" />
+            <SelectValue placeholder={t("date.placeholder")} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectLabel>Sort by date</SelectLabel>
-              <SelectItem value="desc">desc</SelectItem>
-              <SelectItem value="asc">asc</SelectItem>
+              <SelectLabel>{t("date.title")}</SelectLabel>
+              <SelectItem value="desc">{t("date.values.v1")}</SelectItem>
+              <SelectItem value="asc">{t("date.values.v2")}</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>

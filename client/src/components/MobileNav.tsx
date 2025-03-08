@@ -23,7 +23,7 @@ import {
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-import { AlignJustify, XIcon, Globe, ChevronDown, X } from "lucide-react";
+import { AlignJustify, XIcon, Globe, ChevronDown } from "lucide-react";
 
 const MobileNav = () => {
   const t = useTranslations("navItemsMobile");

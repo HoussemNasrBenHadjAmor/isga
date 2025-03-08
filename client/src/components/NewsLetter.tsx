@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { FilterNews, NewLetter } from "@/components";
-import { News, NewsCategoriesQueryResult } from "@/sanity/types";
+import { NewsCategoriesQueryResult, NewsPageQueryResult } from "@/sanity/types";
 
 interface NewsLetterProps {
-  data: any;
+  data: NewsPageQueryResult;
   categories: NewsCategoriesQueryResult;
   date: string;
 }
@@ -33,7 +33,9 @@ const NewsLetter = ({ data, categories, date }: NewsLetterProps) => {
       ) : (
         data && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-10">
-            {data?.map((data: any) => <NewLetter key={data._id} data={data} />)}
+            {data?.map((data) => (
+              <NewLetter key={data._id} data={data} />
+            ))}
           </div>
         )
       )}

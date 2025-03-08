@@ -312,5 +312,48 @@
         "link": "/contact"
       }
     ]
+  },
+
+  "filterJobs": {
+    "category": "Catégorie d'emploi",
+    "type": "Type d'emploi"
+  },
+
+  "jobDialog": {
+    "button": "Postuler",
+    "fullname": "Nom et prénom*",
+    "email": "Adresse email*",
+    "resume": "CV*",
+    "button_submit": "Envoyer",
+    "success": {
+      "title": "Soumission réussie",
+      "message": "Merci d'avoir soumis votre candidature à la Consultation ISGA."
+    },
+    "error": {
+      "title": "Oh oh ! Quelque chose s'est mal passé.",
+      "description": "l y a eu un problème avec votre demande.",
+      "text": "Réessayez plus tard",
+      "action": "Essayer à nouveau"
+    }
+  },
+
+  "filterNews": {
+    "category": {
+      "title": "Catégorie",
+      "placeholder": "Sélectionne une catégorie"
+    },
+    "date": {
+      "title": "Date",
+      "placeholder": "Trier par date",
+      "values": {
+        "v1": "desc",
+        "v2": "asc"
+      }
+    },
+    "reset": "Réinitialiser"
+  },
+
+  "news": {
+    "button": "Télécharger"
   }
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PortableText } from "next-sanity";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   Dialog,
@@ -24,6 +25,7 @@ interface JobDialogProps {
 }
 
 const SuccessComponenet = () => {
+  const t = useTranslations("jobDialog");
   return (
     <motion.div
       variants={transitionVariants}
@@ -33,10 +35,8 @@ const SuccessComponenet = () => {
       className="min-h-[50vh] flex flex-col justify-center items-center gap-4 text-center"
     >
       <CircleCheck className="w-40 h-40 text-green-500" />
-      <h1 className="text-xl sm:text-4xl font-medium">Submission Successful</h1>
-      <p className="text-sm sm:text-base">
-        Thank you for submitting your app to Consultation ISGA.
-      </p>
+      <h1 className="text-xl sm:text-4xl font-medium">{t("success.title")}</h1>
+      <p className="text-sm sm:text-base">{t("success.message")}</p>
     </motion.div>
   );
 };
@@ -48,8 +48,7 @@ const transitionVariants = {
 };
 
 const JobDialog = ({ data }: JobDialogProps) => {
-  console.log("data", data?.description);
-
+  const t = useTranslations("jobDialog");
   const [displayForm, setDisplayForm] = useState(false);
   const [displaySuccess, setDisplaySuccess] = useState(false);
 
@@ -78,7 +77,7 @@ const JobDialog = ({ data }: JobDialogProps) => {
 
         <DialogFooter>
           <Button type="button" onClick={() => setDisplayForm(true)}>
-            Apply Now
+            {t("button")}
           </Button>
         </DialogFooter>
       </motion.div>

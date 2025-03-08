@@ -6,6 +6,7 @@ import { getLocationPage } from "@/sanity/lib/pages";
 import { locationsMetadata } from "@/constants";
 import { LocationLanding, CommunComponent, Card } from "@/components";
 import { myPortableTextComponents } from "@/lib/PortableText";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = locationsMetadata;
 
@@ -17,6 +18,10 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const data = await getLocationPage({ id: language, slug: slug });
   const response = data[0] ?? null;
+
+  // if (!response) {
+  //   return <notFound />;
+  // }
 
   return (
     <div>

@@ -245,7 +245,7 @@ const integrateHomeISGASchemaOne = async () => {
         title: newTitleData,
         description: newDescriptionData,
       }, // Update the title, subtitle and description field with newTitle, newSubtitle and newDescription data
-      unset: ["newTitle", "newDescription"],
+      // unset: ["newTitle", "newDescription"],
     });
   });
 

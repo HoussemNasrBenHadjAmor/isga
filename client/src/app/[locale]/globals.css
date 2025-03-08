@@ -56,11 +56,58 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+@layer components {
+  .loader {
+    @apply w-[15px] aspect-square relative;
+    animation: l9-0 1.5s infinite steps(2);
+  }
+
+  .loader::before,
+  .loader::after {
+    content: "";
+    @apply absolute inset-0 bg-black rounded-full;
+  }
+
+  .loader::before {
+    box-shadow: 26px 0;
+    transform: translateX(-26px);
+    animation: l9-1 0.75s infinite linear alternate;
+  }
+
+  .loader::after {
+    transform: translateX(13px) rotate(0deg) translateX(13px);
+    animation: l9-2 0.75s infinite linear alternate;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+@keyframes l9-0 {
+  0%,
+  49.9% {
+    transform: scale(1);
+  }
+  50%,
+  100% {
+    transform: scale(-1);
+  }
+}
+
+@keyframes l9-1 {
+  100% {
+    box-shadow: 52px 0;
+  }
+}
+
+@keyframes l9-2 {
+  100% {
+    transform: translateX(13px) rotate(-180deg) translateX(13px);
   }
 }

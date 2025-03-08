@@ -8,7 +8,7 @@ import { getTranslations } from "next-intl/server";
 import { urlFor } from "@/sanity/lib/image";
 import { getHomePage } from "@/sanity/lib/pages/index";
 import { homeMetadata } from "@/constants";
-import { Card as CardType, ChooseISGA, HomeQueryResult } from "@/sanity/types";
+import { Card as CardType, HomeQueryResult } from "@/sanity/types";
 import { Button } from "@/components/ui/button";
 import {
   BackgroundImage,

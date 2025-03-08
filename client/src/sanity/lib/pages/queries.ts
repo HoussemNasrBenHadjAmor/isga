@@ -669,20 +669,30 @@ export const contactQuery = defineQuery(
   `
 );
 
-export const jobQuery = defineQuery(
+export const jobsQuery = defineQuery(
   `
-    *[_type == 'job' && display == true] {
+    *[_type == 'job' && display == true 
+      && job_domain->title.en in [$domains] 
+      && job_type->title.en in [$types] 
+      && 
+        title[id] match "*$keyword*" || 
+        description[id]->description match "*$keyword*" || 
+        job_type->title[$id] match "*$keyword*" || 
+        job_domain->title[$id] match "*$keyword*"
+    ] {
       _updatedAt,
-      'title': title[$id],
+      'title': title.$$id,
       job_domain -> {
         _id,
-        title
+        'title': title.$$id,
+        'title_en': title.en
       },
       job_type -> {
         _id,
-        title
+        'title': title.$$id,
+        'title_en': title.en
       },
-      'description': description[][$id],
+      'description': description.$$id -> description,
       display
     }
   `
@@ -691,7 +701,8 @@ export const jobQuery = defineQuery(
 export const jobDomains = defineQuery(
   `
     *[_type == 'jobDomain'] {
-      title,
+      'title': title[$id],
+      'title_en': title['en'],
       _id,
       _createdAt,
       _rev,
@@ -704,7 +715,8 @@ export const jobDomains = defineQuery(
 export const jobTypes = defineQuery(
   `
     *[_type == 'jobType'] {
-      title,
+      'title': title[$id],
+      'title_en': title['en'],
       _id,
       _createdAt,
       _rev,
@@ -718,7 +730,24 @@ export const newsCategoriesQuery = defineQuery(
   `
     *[_type == 'newsCategory'] {  
       _id,
-      title,
+      'title': title[$id],
+      'title_en': title['en']
+    }
+  `
+);
+
+export const newsPageQuery = defineQuery(
+  `
+   *[_type == 'news' && display == true && count(category[@->title.en == $category]) > 0] | order(_createdAt {order} ) {
+      _id, 
+      _updatedAt,
+      _createdAt,
+      'title': title[$id],
+      'subtitle': subtitle[$id],
+      image {
+        asset -> { url }
+      },
+      slug
     }
   `
 );
@@ -760,11 +789,12 @@ export const locationsQuery = defineQuery(
           'title': title[$id],
           'subtitle': subtitle[][$id],
           'description': description[][$id],
-          details,
+          'details': details[$id],
           image {
             asset -> {url}
-          },
-          'slug': slug[$id],
+            },
+            'slug': slug[$id],
+            'slug_en': slug['en'],
           cards [] -> {
             'title': title[$id],
             svg_path,
@@ -781,12 +811,12 @@ export const locationsQuery = defineQuery(
 
 export const locationQuery = defineQuery(
   `
-    *[_type == 'location' && slug[$id] == $slug] {
+    *[_type == 'location' && slug['en'] == $slug] {
         _id, 
         'title': title[][$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id],
-        details,
+        'details': details[$id] -> description,
         image {
           asset -> { url }
         },

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { JobDomainsResult, JobTypesResult } from "@/sanity/types";
@@ -14,6 +16,7 @@ interface FilterProps {
 }
 
 const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
+  const t = useTranslations("filterJobs");
   const router = useRouter();
   const pathname = usePathname(); // Reactively updates on route changes
   const searchParams = useSearchParams(); // Reactively updates on query changes
@@ -27,6 +30,7 @@ const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
     if (domainsValues.length > 0) query.set("domains", domainsValues.join(","));
     if (typesValues.length > 0) query.set("types", typesValues.join(","));
     if (keyword) query.set("keyword", keyword);
+
     return query;
   };
 
@@ -38,7 +42,7 @@ const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
       const query = constructSearchParams();
 
       // Navigate with the query string
-      router.push(`/carrers?${query.toString()}`, { scroll: false });
+      router.push(`/careers?${query.toString()}`, { scroll: false });
     } catch (error) {
       setLoading(false);
     }
@@ -97,26 +101,26 @@ const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
         placeholder="Keyword"
         onChange={(e) => setKeyword(e.target.value)}
       />
-      <p className="font-bold">Job Category</p>
+      <p className="font-bold">{t("category")}</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
         {domains.map((domain) => (
           <SingleCheckBox
             key={domain._id}
             data={domain}
-            onToggle={() => handleDomainToggle(domain?.title!)}
-            isChecked={domainsValues.includes(domain?.title!)}
+            onToggle={() => handleDomainToggle(domain?.title_en!)}
+            isChecked={domainsValues.includes(domain?.title_en!)}
           />
         ))}
       </div>
 
-      <p className="font-bold">Job Type</p>
+      <p className="font-bold">{t("type")}</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
         {types.map((type) => (
           <SingleCheckBox
             key={type._id}
             data={type}
-            onToggle={() => handleTypeToggle(type?.title!)}
-            isChecked={typesValues.includes(type?.title!)}
+            onToggle={() => handleTypeToggle(type?.title_en!)}
+            isChecked={typesValues.includes(type?.title_en!)}
           />
         ))}
       </div>

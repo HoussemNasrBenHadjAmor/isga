@@ -5,11 +5,11 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useTranslations } from "next-intl";
 
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { LoadingButton } from "@/components/ui/loading-button";
 import {
   Form,
@@ -67,6 +67,8 @@ const JobForm = ({
   setDisplaySuccess,
   category_id,
 }: JobFormProps) => {
+  const t = useTranslations("jobDialog");
+  const tl = useTranslations("AiPage");
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const transitionVariants = {
@@ -112,9 +114,13 @@ const JobForm = ({
         className: "z-[999]",
         duration: 1000 * 3,
         variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
-        action: <ToastAction altText="Try again later">Try again</ToastAction>,
+        title: t("error.title"),
+        description: t("error.description"),
+        action: (
+          <ToastAction altText={t("error.text")}>
+            {t("error.action")}
+          </ToastAction>
+        ),
       });
     } finally {
       setLoading(false);
@@ -143,9 +149,12 @@ const JobForm = ({
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name*</FormLabel>
+                <FormLabel>{t("fullname")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your fullname" {...field} />
+                  <Input
+                    placeholder={tl("contact.placeHolder.fullname")}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -156,9 +165,12 @@ const JobForm = ({
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address*</FormLabel>
+                <FormLabel>{t("email")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your address" {...field} />
+                  <Input
+                    placeholder={tl("contact.placeHolder.email")}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -170,7 +182,7 @@ const JobForm = ({
             name="file"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Resume*</FormLabel>
+                <FormLabel>{t("resume")}</FormLabel>
                 <FormControl>
                   <Input
                     type="file"
@@ -188,7 +200,7 @@ const JobForm = ({
             type="submit"
             className="w-full md:w-auto"
           >
-            Submit
+            {t("button_submit")}
           </LoadingButton>
         </form>
       </Form>

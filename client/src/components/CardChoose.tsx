@@ -1,4 +1,4 @@
-import { Card, HomeQueryResult } from "@/sanity/types";
+import { Card } from "@/sanity/types";
 import { SvgFromDataUrl } from "@/components";
 
 interface CardProps {

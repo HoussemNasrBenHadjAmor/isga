@@ -8,7 +8,7 @@ interface CardImageProps {
   className?: string;
 }
 
-const CardImageIndustries = ({ data, className }: CardImageProps) => {
+const CardImageIndustries = ({ data }: CardImageProps) => {
   return (
     <div className="flex flex-col mt-20 gap-3 lg:gap-0 rounded-lg">
       <div className="w-full">
@@ -25,9 +25,10 @@ const CardImageIndustries = ({ data, className }: CardImageProps) => {
 
       <div className="flex flex-col justify-center items-center text-center p-3 lg:px-10 gap-3 w-full">
         {data?.title && <h1 className="font-bold text-xl"> {data.title} </h1>}
-        {data?.subtitle && data?.subtitle?.map((det) => <p>{det}</p>)}
-        {data?.description?.map((des) => (
-          <p className={`${data?.details && "ml-3"}`} key={des}>
+        {data?.subtitle &&
+          data?.subtitle?.map((det, index) => <p key={index + 1}>{det}</p>)}
+        {data?.description?.map((des, index) => (
+          <p className={`${data?.details && "ml-3"}`} key={index + 1}>
             • {des}
           </p>
         ))}

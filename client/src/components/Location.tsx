@@ -10,7 +10,7 @@ interface LocationPropos {
 
 const Location = ({ data }: LocationPropos) => {
   return (
-    <Link href={`/locations/${data?.slug}`} className="relative">
+    <Link href={`/locations/${data?.slug_en}`} className="relative">
       <div className="absolute top-3 left-3 z-30 text-black p-[3px] rounded-sm font-bold text-lg bg-gray-100 shadow-2xl shadow-green-600 bg-opacity-60">
         <p>{data.slug?.toUpperCase()}</p>
       </div>

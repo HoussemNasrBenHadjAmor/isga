@@ -306,5 +306,48 @@
         "link": "/contact"
       }
     ]
+  },
+
+  "filterJobs": {
+    "category": "Job Category",
+    "type": "Job Type"
+  },
+
+  "jobDialog": {
+    "button": "Apply Now",
+    "fullname": "Full Name*",
+    "email": "Email Address*",
+    "resume": "Resume*",
+    "button_submit": "Submit",
+    "success": {
+      "title": "",
+      "message": ""
+    },
+    "error": {
+      "title": "Uh oh! Something went wrong.",
+      "description": "There was a problem with your request.",
+      "text": "Try again later",
+      "action": "Try again"
+    }
+  },
+
+  "filterNews": {
+    "category": {
+      "title": "Category",
+      "placeholder": "Select a category"
+    },
+    "date": {
+      "title": "Date",
+      "placeholder": "Order by date",
+      "values": {
+        "v1": "desc",
+        "v2": "asc"
+      }
+    },
+    "reset": "All"
+  },
+
+  "news": {
+    "button": "Download"
   }
 }
