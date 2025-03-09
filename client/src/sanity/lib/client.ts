@@ -14,9 +14,10 @@ export const client = createClient({
     // enabled: (await draftMode()).isEnabled,
     // enabled: true,
 
-    studioUrl: process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/studio`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/studio`,
+    studioUrl:
+      process.env.VERCEL_URL === "production"
+        ? `https://${process.env.PRODUCTION_URL}/studio`
+        : `${process.env.NEXT_PUBLIC_SANITY_LOCALE_URL}/studio`,
   },
 });
 

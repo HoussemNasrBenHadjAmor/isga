@@ -1,11 +1,15 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const WEB_SITE_URL =
+    process.env.NEXT_PUBLIC_VERCEL_URL === "production"
+      ? process.env.NEXT_PUBLIC_PRODUCTION_URL
+      : process.env.NEXT_PUBLIC_BASE_LOCALE_URL;
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,
+    sitemap: `${WEB_SITE_URL}/sitemap.xml`,
   };
 }

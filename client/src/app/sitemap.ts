@@ -1,52 +1,57 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const WEB_SITE_URL =
+    process.env.NEXT_PUBLIC_VERCEL_URL === "production"
+      ? process.env.NEXT_PUBLIC_PRODUCTION_URL
+      : process.env.NEXT_PUBLIC_BASE_LOCALE_URL;
+
   return [
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+      url: `${WEB_SITE_URL}`,
       priority: 1,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/about`,
+      url: `${WEB_SITE_URL}/en/about`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/carrers`,
+      url: `${WEB_SITE_URL}/en/carrers`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/contact`,
+      url: `${WEB_SITE_URL}/en/contact`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/managed-services`,
+      url: `${WEB_SITE_URL}/en/services/managed-services`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/application-service-and-solutions`,
+      url: `${WEB_SITE_URL}/en/services/application-service-and-solutions`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/artifical-intelligence`,
+      url: `${WEB_SITE_URL}/en/services/artifical-intelligence`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/consulting-service`,
+      url: `${WEB_SITE_URL}/en/services/consulting-service`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/cybersecurity-entreprise-risk`,
+      url: `${WEB_SITE_URL}/en/services/cybersecurity-entreprise-risk`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/project-program-management`,
+      url: `${WEB_SITE_URL}/en/services/project-program-management`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/services/technologies-platforms`,
+      url: `${WEB_SITE_URL}/en/services/technologies-platforms`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/industries/financial-services`,
+      url: `${WEB_SITE_URL}/en/industries/financial-services`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/industries/government-public-sector`,
+      url: `${WEB_SITE_URL}/en/industries/government-public-sector`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/industries/insurance`,
+      url: `${WEB_SITE_URL}/en/industries/insurance`,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/industries/telecommunications`,
+      url: `${WEB_SITE_URL}/en/industries/telecommunications`,
     },
   ];
 }
