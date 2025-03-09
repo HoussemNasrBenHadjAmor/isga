@@ -1,12 +1,12 @@
 import { Simple, HomeQueryResult } from "@/sanity/types";
 
-interface ContectProps {
+interface ContentProps {
   data: HomeQueryResult[number]["content"] | Simple | null;
   noCenter?: boolean;
   withPoint?: boolean;
 }
 
-const Content = ({ data, noCenter, withPoint = true }: ContectProps) => {
+const Content = ({ data, noCenter, withPoint = true }: ContentProps) => {
   return (
     <div className="px-5 w-full mb-20">
       <div

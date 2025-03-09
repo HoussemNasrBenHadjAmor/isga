@@ -19,9 +19,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const data = await getLocationPage({ id: language, slug: slug });
   const response = data[0] ?? null;
 
-  // if (!response) {
-  //   return <notFound />;
-  // }
+  if (response === null) {
+    notFound();
+  }
 
   return (
     <div>
@@ -37,7 +37,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </div>
 
         <div className="gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10">
-          {response?.cards?.map((card: any) => (
+          {response?.cards?.map((card) => (
             <Card key={card._id} data={card} flex />
           ))}
         </div>

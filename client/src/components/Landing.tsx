@@ -69,8 +69,8 @@ function Landing({ data }: Props) {
 
           {data?.author && (
             <p>
-              <span className="font-bold">{data.author.slice(0, 17)}</span>
-              {data.author.slice(17)}
+              <span className="font-bold">{data.author?.slice(0, 17)}</span>
+              {data.author?.slice(17)}
             </p>
           )}
         </div>

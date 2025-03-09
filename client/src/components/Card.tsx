@@ -3,8 +3,13 @@ import { cn } from "@/lib/utils";
 import { Card as CardType } from "@/sanity/types";
 import SvgFromDataUrl from "./SvgFromDataUrl";
 
+interface CardExtend extends Omit<CardType, "subtitle" | "description"> {
+  subtitle?: string[];
+  description?: string[];
+}
+
 interface CardProps {
-  data: CardType;
+  data: CardExtend;
   className?: string;
   flex?: boolean;
 }
@@ -24,7 +29,7 @@ const Card = ({ data, className, flex }: CardProps) => {
       <div className={`${flex && "flex flex-col items-center justify-center"}`}>
         {data?.svg_path && <SvgFromDataUrl dataUrl={data?.svg_path} />}
       </div>
-      <h4 className="font-bold text-lg">{data?.title}</h4>
+      <h4 className="font-bold text-lg">{data?.title as string}</h4>
       <p className="text-xs">{data?.subtitle}</p>
       <p>{data?.description}</p>
     </div>

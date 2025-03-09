@@ -3,8 +3,13 @@ import { Card } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import { cn } from "@/lib/utils";
 
+interface CardExtend extends Omit<Card, "subtitle" | "description"> {
+  subtitle?: string[] | null;
+  description?: string[] | null;
+}
+
 interface CardImageProps {
-  data: Card | null;
+  data: CardExtend;
   className: string;
 }
 
@@ -30,8 +35,15 @@ const CardImage = ({ data, className }: CardImageProps) => {
       </div>
 
       <div className="relative z-50 w-full flex flex-col items-start justify-end text-white mt-auto">
-        <h1 className="font-bold text-xl">{data?.title}</h1>
-        <p>{data?.subtitle}</p>
+        <h1 className="font-bold text-xl">{data?.title as string}</h1>
+        {/* {data?.subtitle?.map(sub,index=>(
+          
+        <p>{sub}</p>
+        ))} */}
+
+        {data?.subtitle?.map((sub, index) => (
+          <p key={index + 1}>{sub}</p>
+        ))}
         {data?.description?.map((sub, index) => (
           <p key={index + 1} className="ml-5">
             • {sub}

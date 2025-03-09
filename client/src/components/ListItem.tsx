@@ -10,7 +10,7 @@ const ListItem = React.forwardRef<
 >(({ className, href, title, children, ...props }, ref) => {
   return (
     <li>
-      <Link href={href} legacyBehavior passHref>
+      <Link href={href as string} legacyBehavior passHref>
         <NavigationMenuLink asChild>
           <a
             ref={ref}
@@ -30,5 +30,7 @@ const ListItem = React.forwardRef<
     </li>
   );
 });
+
+ListItem.displayName = "ListItem";
 
 export default ListItem;

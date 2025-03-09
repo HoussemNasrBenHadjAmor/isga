@@ -45,6 +45,7 @@ const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
       router.push(`/careers?${query.toString()}`, { scroll: false });
     } catch (error) {
       setLoading(false);
+      console.log(error);
     }
   };
 

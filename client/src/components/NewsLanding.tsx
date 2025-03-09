@@ -2,9 +2,10 @@ import Image from "next/image";
 
 import cover from "../../public/newsletter_cover.png";
 import { urlFor } from "@/sanity/lib/image";
+import { HomeQueryResult } from "@/sanity/types";
 
 interface NewsLanidngProps {
-  data?: any;
+  data?: HomeQueryResult[number]["landing"];
   center?: boolean;
 }
 
@@ -32,13 +33,15 @@ const NewsLanding = ({ data, center }: NewsLanidngProps) => {
         <div className="absolute inset-0 bg-black opacity-70 h-full min-h-[550px]" />
       </div>
       <div
-        className={`px-5 flex flex-col items-start justify-center relative ${center && "text-center items-center"} w-full h-full min-h-[550px] max-w-7xl mx-auto`}
+        className={`px-5 flex flex-col items-start justify-center relative ${
+          center && "text-center items-center"
+        } w-full h-full min-h-[550px] max-w-7xl mx-auto`}
       >
         {data ? (
           <div className="max-w-xl flex flex-col gap-4 text-white text-2xl md:text-4xl justify-center">
             <p className="text-xl">{formatDate(data?._createdAt)}</p>
 
-            <h1 className="font-semibold">{data?.title}</h1>
+            <h1 className="font-semibold">{data?.title as string}</h1>
           </div>
         ) : (
           <h1 className="text-white text-5xl">NEWS & INSIGHTS</h1>

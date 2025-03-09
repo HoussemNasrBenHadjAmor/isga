@@ -84,6 +84,7 @@ const ContactForm = () => {
         description:
           "There was a problem with your request. Please try again later!",
       });
+      console.log(error);
     } finally {
       setLoading(false);
     }

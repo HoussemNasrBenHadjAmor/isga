@@ -67,6 +67,7 @@ const FilterNews = ({ categories, date, setLoading }: FilterProps) => {
       router.push(`/newsletter?${query.toString()}`, { scroll: false });
     } catch (error) {
       setLoading(false);
+      console.log(error);
     }
   };
 

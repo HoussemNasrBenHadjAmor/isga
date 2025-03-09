@@ -26,9 +26,7 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
         <Image
           height="1080"
           width="1920"
-          src={
-            data?.image ? urlFor(data?.image as any).url() : default_landing_url
-          }
+          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
           alt="background"
           className={`h-full w-full object-cover max-h-[400px] rounded-tr-lg ${
             isEven &&
@@ -41,7 +39,7 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
         ${!maxWidth && "lg:w-[50%]"}
         `}
       >
-        {data?.title && <p>{data.title}</p>}
+        {data?.title && <p>{data.title as string}</p>}
         {data?.subtitle?.map((des, index) => (
           <p key={index + 1}>{des}</p>
         ))}

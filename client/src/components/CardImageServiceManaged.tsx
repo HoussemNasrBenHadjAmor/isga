@@ -21,21 +21,18 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
         <Image
           height="1080"
           width="1920"
-          src={
-            data?.image ? urlFor(data?.image as any).url() : default_landing_url
-          }
+          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
           alt="background"
           className="object-cover rounded-tr-lg rounded-tl-lg lg:rounded-lg w-full max-h-[400px] h-full"
         />
       </div>
 
       <div className="flex flex-col justify-center items-start p-3 lg:px-10 gap-3 w-full">
-        <h1 className="font-bold text-2xl"> {data?.title} </h1>
-        {data?.subtitle &&
-          data?.subtitle?.map((det: any, index) => (
-            <p key={index + 1}>{det}</p>
-          ))}
-        {data?.description?.map((des: any, index) => (
+        <h1 className="font-bold text-2xl"> {data?.title as string} </h1>
+        {data?.subtitle?.map((det, index) => (
+          <p key={index + 1}>{det}</p>
+        ))}
+        {data?.description?.map((des, index) => (
           <p className="ml-3" key={index + 1}>
             • {des}
           </p>

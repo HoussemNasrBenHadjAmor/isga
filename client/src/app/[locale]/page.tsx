@@ -86,7 +86,7 @@ const AskQuestion = async ({ data }: AskQuestionProps) => {
             <div className="flex flex-col xl:flex-row xl:justify-between items-center gap-5">
               <Link href="/contact" legacyBehavior passHref>
                 <a className="text-white text-xl xl:text-3xl font-extrabold max-w-md cursor-pointer">
-                  {item?.title}
+                  {item?.title as string}
                 </a>
               </Link>
 

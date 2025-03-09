@@ -35,7 +35,7 @@ const page = async () => {
 
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {response?.card?.map((item) => (
-            <CardImageIndustries data={item} />
+            <CardImageIndustries data={item} key={item?._id} />
           ))}
         </div>
       </CommunComponent>

@@ -2,11 +2,7 @@ import { Metadata } from "next";
 import { cookies } from "next/headers";
 import { NewsLanding, CommunComponent, NewsLetter } from "@/components";
 import { newsletterdata } from "@/constants";
-import {
-  getNewsPage,
-  getNewsCategories,
-  getNewsPage_v2,
-} from "@/sanity/lib/pages";
+import { getNewsPage, getNewsCategories } from "@/sanity/lib/pages";
 
 export const metadata: Metadata = newsletterdata;
 
@@ -27,7 +23,7 @@ const page = async ({
 
   const date = (resolvedSearchParams.date as string) || "desc";
 
-  const news_data = await getNewsPage_v2({
+  const news_data = await getNewsPage({
     id: language,
     category,
     order: date,

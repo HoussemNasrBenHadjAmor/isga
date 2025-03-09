@@ -11,7 +11,7 @@ const CardChoose = ({ data }: CardProps) => {
       <div className="bg-[#7455F11A] p-4 rounded-full text-purple-600">
         {data?.svg_path && <SvgFromDataUrl dataUrl={data?.svg_path} />}
       </div>
-      <h4 className="font-bold lg:text-lg">{data?.title}</h4>
+      <h4 className="font-bold lg:text-lg">{data?.title as string}</h4>
     </div>
   );
 };

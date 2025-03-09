@@ -26,7 +26,7 @@ const basisClasses: Record<NbItemOption, string> = {
 };
 
 type Link = {
-  _id: any;
+  _id: string;
   link: string;
   image: string;
   name: string;

@@ -1,9 +1,11 @@
+import React from "react";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import React from "react";
+import { NewsPageQueryResult } from "@/sanity/types";
 
 import { MoveRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const formatDate = (isoString: string) => {
   const date = new Date(isoString);
@@ -13,7 +15,8 @@ const formatDate = (isoString: string) => {
   return `${day} ${month} ${year}`;
 };
 
-const NewLetter = ({ data }: any) => {
+const NewLetter = ({ data }: { data: NewsPageQueryResult[number] }) => {
+  const t = useTranslations("news");
   return (
     <div className="flex flex-col gap-3">
       <Link href={`/newsletter/${data?.slug.current}`}>
@@ -42,7 +45,7 @@ const NewLetter = ({ data }: any) => {
           href={`/newsletter/${data?.slug.current}`}
           className="flex space-x-1 items-center font-bold"
         >
-          <p>Read more</p>
+          <p>{t("button_secondary")}</p>
           <MoveRight />
         </Link>
       </div>

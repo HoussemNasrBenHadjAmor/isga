@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { useTranslations } from "next-intl";
 import { CommunComponent, NewsLanding } from "@/components";
 import { getNewLetterPage } from "@/sanity/lib/pages";
+import { NewsSinglePageQueryResult } from "@/sanity/types";
 import { PortableText } from "next-sanity";
 import { myPortableTextComponents } from "@/lib/PortableText";
 import { Download } from "lucide-react";
@@ -11,7 +12,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const { slug } = await params;
 
-  const data = await getNewLetterPage(slug, language);
+  const data = await getNewLetterPage({ id: language, slug });
   const product = data ? data[0] : [];
 
   return (
@@ -26,7 +27,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
 export default page;
 
-const BlogDetails = ({ data }: any) => {
+const BlogDetails = ({ data }: { data: NewsSinglePageQueryResult[number] }) => {
   const t = useTranslations("news");
 
   return (
@@ -41,9 +42,9 @@ const BlogDetails = ({ data }: any) => {
         </a>
       )}
       <div className="prose max-w-none mt-8">
-        {Array.isArray(data?.details) && (
+        {data?.details && Array.isArray(data?.details) && (
           <PortableText
-            value={data?.details}
+            value={data.details}
             components={myPortableTextComponents}
           />
         )}

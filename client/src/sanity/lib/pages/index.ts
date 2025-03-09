@@ -31,6 +31,7 @@ import {
   locationQuery,
   newsPageQuery,
   jobsQuery,
+  newsSinglePageQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -236,7 +237,7 @@ interface JobFilterParams {
   keyword?: string;
 }
 
-export const getJobs_v2 = async ({
+export const getJobs = async ({
   id,
   domains = [],
   types = [],
@@ -261,7 +262,7 @@ export const getJobs_v2 = async ({
   }
 };
 
-export const getJobs = async ({
+export const getJobs_v2 = async ({
   id,
   domains = [],
   types = [],
@@ -353,7 +354,7 @@ interface NewsFilterParams {
 // TODO
 /// need to fix the loweCase of the category
 
-export const getNewsPage = async ({
+export const getNewsPage_v2 = async ({
   id,
   category = "",
   order = "desc",
@@ -389,6 +390,29 @@ export const getNewsPage = async ({
   }
 };
 
+export const getNewsPage = async ({
+  id,
+  category = "",
+  order = "desc",
+}: NewsFilterParams) => {
+  const query = newsPageQuery;
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        id, // Pass the language ID
+        category, // Pass the category filter
+        order, // Pass the sort order
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
 export const getRelatedNews = async (params: { id: string }) => {
   const query = relatedNewsQuery;
 
@@ -413,52 +437,15 @@ export const getNewsCategories = async (params: { id: string }) => {
   }
 };
 
-export const getNewLetterPage = async (slug: string, id: string) => {
-  const query = defineQuery(`
- *[_type == 'news' && display == true && slug.current == "${slug}"] {
-    _id, 
-    _updatedAt,
-    _createdAt,
-    'title' : title.${id},
-    'subtitle' : subtitle.${id},
-    'details' : details.${id} -> description,
-    image {
-      asset -> { url }
-    },
-    slug,
-    "file" : file.asset->url
-  }
-  `);
-
+export const getNewLetterPage = async (params: {
+  slug: string;
+  id: string;
+}) => {
+  const query = newsSinglePageQuery;
   try {
     const data = await sanityFetch({
       query,
-      params: {
-        slug,
-      },
-    });
-    return data.data || [];
-  } catch (error) {
-    console.error("Error fetching the news", error);
-    return [];
-  }
-};
-
-export const getNewsPage_v2 = async ({
-  id,
-  category = "",
-  order = "desc",
-}: NewsFilterParams) => {
-  const query = newsPageQuery;
-
-  try {
-    const data = await sanityFetch({
-      query,
-      params: {
-        id, // Pass the language ID
-        category, // Pass the category filter
-        order, // Pass the sort order
-      },
+      params,
     });
     return data.data || [];
   } catch (error) {

@@ -348,6 +348,9 @@
   },
 
   "news": {
-    "button": "Download"
+    "button": "Download",
+    "button_secondary": "Read More",
+    "empty_search": "Sorry no news articles founded! 😞",
+    "loading": "One sec please..."
   }
 }

@@ -122,6 +122,7 @@ const JobForm = ({
           </ToastAction>
         ),
       });
+      console.log(error);
     } finally {
       setLoading(false);
     }

@@ -30,6 +30,7 @@ export const homeQuery = defineQuery(
           'title': title[$id],
           'description': description[][$id],
           cards [] -> {
+            _type, _createdAt, _updatedAt, _rev,
             _id,
             'title' : title[$id],
             'subtitle' : subtitle[][$id],
@@ -42,6 +43,7 @@ export const homeQuery = defineQuery(
         },
     
        card_primary [] -> {
+         _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -53,6 +55,7 @@ export const homeQuery = defineQuery(
         },
         
          card_secondary []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -90,6 +93,7 @@ export const aboutQuery = defineQuery(
         },
     
        card_primary [] -> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -101,6 +105,7 @@ export const aboutQuery = defineQuery(
         },
         
          card_secondary []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -119,6 +124,7 @@ export const consultingQuery = defineQuery(
   `
     *[_type == 'consultingServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -158,6 +164,7 @@ export const consultingQuery = defineQuery(
         },
     
        card_primary []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -169,6 +176,7 @@ export const consultingQuery = defineQuery(
         },
         
          card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -187,6 +195,7 @@ export const applicationQuery = defineQuery(
   `
     *[_type == 'applicationServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -212,6 +221,7 @@ export const applicationQuery = defineQuery(
         },       
     
        card_primary []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -223,6 +233,7 @@ export const applicationQuery = defineQuery(
         },    
         
         card_secondary []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -240,6 +251,7 @@ export const technologiesQuery = defineQuery(
   `
     *[_type == 'technologiesServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -265,6 +277,7 @@ export const technologiesQuery = defineQuery(
         },
     
        card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -283,6 +296,7 @@ export const managedQuery = defineQuery(
   `
     *[_type == 'managedServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -308,6 +322,7 @@ export const managedQuery = defineQuery(
         },
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -325,6 +340,7 @@ export const projectQuery = defineQuery(
   `
     *[_type == 'projectServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -350,6 +366,7 @@ export const projectQuery = defineQuery(
         },
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -367,6 +384,7 @@ export const artificialQuery = defineQuery(
   `
     *[_type == 'artificialServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -392,6 +410,7 @@ export const artificialQuery = defineQuery(
         },
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -409,6 +428,7 @@ export const cyberQuery = defineQuery(
   `
     *[_type == 'cyberServices'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -434,6 +454,7 @@ export const cyberQuery = defineQuery(
         },
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -451,6 +472,7 @@ export const governmentQuery = defineQuery(
   `
     *[_type == 'governmentIndustries'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -476,6 +498,7 @@ export const governmentQuery = defineQuery(
         },
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -493,6 +516,7 @@ export const insuranceQuery = defineQuery(
   `
     *[_type == 'insuranceIndustries'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -518,6 +542,7 @@ export const insuranceQuery = defineQuery(
         }, 
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -535,6 +560,7 @@ export const financialQuery = defineQuery(
   `
     *[_type == 'financialIndustries'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -560,6 +586,7 @@ export const financialQuery = defineQuery(
         }, 
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -577,6 +604,7 @@ export const telecommunicationQuery = defineQuery(
   `
     *[_type == 'telecommunicationsIndustries'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -602,6 +630,7 @@ export const telecommunicationQuery = defineQuery(
         }, 
     
         card []-> {
+          _type, _createdAt, _updatedAt, _rev,
           _id,
           'title' : title[$id],
           'subtitle' : subtitle[][$id],
@@ -619,6 +648,7 @@ export const carrersQuery = defineQuery(
   `
     *[_type == 'carrers'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -637,6 +667,7 @@ export const contactQuery = defineQuery(
   `
     *[_type == 'contact'] {
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -655,6 +686,7 @@ export const contactQuery = defineQuery(
       },
 
       card []-> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -672,30 +704,31 @@ export const contactQuery = defineQuery(
 export const jobsQuery = defineQuery(
   `
     *[_type == 'job' && display == true 
-  && job_domain->title.en in $domains 
-  && job_type->title.en in $types 
-  && (
-    title[$id] match "*$keyword*" || 
-    defined(description[$id]->description[][@ match "*$keyword*"]) || 
-    job_type->title[$id] match "*$keyword*" || 
-    job_domain->title[$id] match "*$keyword*"
-  )
-] {
-  _updatedAt,
-  'title': title[$id],
-  job_domain -> {
-    _id,
-    'title': title[$id],
-    'title_en': title.en
-  },
-  job_type -> {
-    _id,
-    'title': title[$id],
-    'title_en': title.en
-  },
-  'description': description[$id] -> description,
-  display
-}
+        && (!defined($domains) || count($domains) == 0 || job_domain->title.en in $domains)
+        && (!defined($types) || count($types) == 0 || job_type->title.en in $types)
+        && (!defined($keyword) || length($keyword) == 0 || (
+            title[$id] match "*$keyword*" || 
+            defined(description[$id]->description[][@ match "*$keyword*"]) || 
+            job_type->title[$id] match "*$keyword*" || 
+            job_domain->title[$id] match "*$keyword*"
+          )
+        )
+      ] {
+        _updatedAt,
+        'title': title[$id],
+        job_domain -> {
+          _id,
+          'title': title[$id],
+          'title_en': title.en
+        },
+        job_type -> {
+          _id,
+          'title': title[$id],
+          'title_en': title.en
+        },
+        'description': description[$id] -> description,
+        display
+    }
   `
 );
 
@@ -739,7 +772,7 @@ export const newsCategoriesQuery = defineQuery(
 
 export const newsPageQuery = defineQuery(
   `
-   *[_type == 'news' && display == true && count(category[@->title.en == $category]) > 0] | order(_createdAt {order} ) {
+   *[_type == 'news' && display == true && (!defined($category) || length($category) == 0 || count(category[@->title.en == $category]) > 0 ) ] | order(_createdAt {order} ) {
       _id, 
       _updatedAt,
       _createdAt,
@@ -753,14 +786,32 @@ export const newsPageQuery = defineQuery(
   `
 );
 
+export const newsSinglePageQuery = defineQuery(
+  `
+    *[_type == 'news' && display == true && slug.current == $slug]{
+      _id, 
+      _updatedAt,
+      _createdAt,
+      'title': title[$id],
+      'subtitle': subtitle[$id],
+      'details': details[$id] -> description,
+      image {
+        asset -> { url }
+      },
+      slug,
+      "file": file.asset -> url
+    }
+  `
+);
+
 export const relatedNewsQuery = defineQuery(
   `
     *[_type == 'news' && display == true ] [0..5] {  
         _id, 
       _updatedAt,
       _createdAt,
-      title,
-      subtitle,
+      'title': title[$id],
+      'subtitle': subtitle[][$id],
       image {
         asset -> { url }
       },
@@ -773,6 +824,7 @@ export const locationsQuery = defineQuery(
   `
     *[_type == 'locations'] {
          landing -> {
+         _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -797,6 +849,8 @@ export const locationsQuery = defineQuery(
             'slug': slug[$id],
             'slug_en': slug['en'],
           cards [] -> {
+            _type, _createdAt, _updatedAt, _rev,
+            _id,
             'title': title[$id],
             svg_path,
             'subtitle': subtitle[][$id],
@@ -823,6 +877,8 @@ export const locationQuery = defineQuery(
         },
         'slug': slug[$id],
         cards [] -> {
+          _type, _createdAt, _updatedAt, _rev,
+          _id,
           'title': title[$id],
           'subtitle': subtitle[][$id],
           'description': description[][$id],
@@ -840,6 +896,7 @@ export const aiSoftwareQuery = defineQuery(
     *[_type == 'aiSoftware'] {
         _id, 
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -858,6 +915,7 @@ export const aiSoftwareQuery = defineQuery(
       },
 
       first_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         svg_path,
@@ -876,6 +934,7 @@ export const aiSoftwareQuery = defineQuery(
       },
             
       second_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         svg_path,
@@ -887,6 +946,8 @@ export const aiSoftwareQuery = defineQuery(
       },
 
       card -> {
+        _type, _createdAt, _updatedAt, _rev,
+        _id,
         'title': title[$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id],
@@ -904,6 +965,7 @@ export const aiSoftwareQuery = defineQuery(
       },
 
       third_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         svg_path,
@@ -937,6 +999,7 @@ export const aiTrainingQuery = defineQuery(
     *[_type == 'aiTarining'] {
         _id, 
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -955,6 +1018,7 @@ export const aiTrainingQuery = defineQuery(
       },
 
       first_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -973,6 +1037,7 @@ export const aiTrainingQuery = defineQuery(
       },
             
       second_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -984,6 +1049,8 @@ export const aiTrainingQuery = defineQuery(
       },
 
       card -> {
+        _type, _createdAt, _updatedAt, _rev,
+        _id,
         'title': title[$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id],
@@ -1019,6 +1086,7 @@ export const aiTrainingQuery = defineQuery(
       },
 
       fourth_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1037,6 +1105,7 @@ export const aiTrainingQuery = defineQuery(
       },
 
       fifth_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1070,6 +1139,7 @@ export const aiConsultingQuery = defineQuery(
     *[_type == 'aiConsulting'] {
         _id, 
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -1088,6 +1158,7 @@ export const aiConsultingQuery = defineQuery(
       },
 
       first_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1106,6 +1177,7 @@ export const aiConsultingQuery = defineQuery(
       },
             
       second_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1117,6 +1189,8 @@ export const aiConsultingQuery = defineQuery(
       },
 
       card -> {
+        _type, _createdAt, _updatedAt, _rev,
+        _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
         'description' : description[][$id] ,
@@ -1134,6 +1208,7 @@ export const aiConsultingQuery = defineQuery(
       },
 
       third_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1152,6 +1227,7 @@ export const aiConsultingQuery = defineQuery(
       },
 
       fourth_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1170,6 +1246,7 @@ export const aiConsultingQuery = defineQuery(
       },
 
       fifth_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],
@@ -1203,6 +1280,7 @@ export const aiRdQuery = defineQuery(
     *[_type == 'aiRd'] {
         _id, 
        landing -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title': title[][$id],
         'subtitle': subtitle[][$id],
@@ -1228,6 +1306,7 @@ export const aiRdQuery = defineQuery(
       },
             
       second_card [] -> {
+        _type, _createdAt, _updatedAt, _rev,
         _id,
         'title' : title[$id],
         'subtitle' : subtitle[][$id],

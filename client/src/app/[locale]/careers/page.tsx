@@ -2,18 +2,9 @@ import { Metadata } from "next";
 import { cookies } from "next/headers";
 
 import { BackgroundImage, CommunComponent, Landing, Jobs } from "@/components";
-import {
-  getCarrersPage,
-  getJobs,
-  getJobsCategories,
-  getJobs_v2,
-} from "@/sanity/lib/pages";
+import { getCarrersPage, getJobs, getJobsCategories } from "@/sanity/lib/pages";
 import { carrersMetadata } from "@/constants";
-import {
-  JobDomainsResult,
-  JobQueryResult,
-  JobTypesResult,
-} from "@/sanity/types";
+import { JobDomainsResult, JobTypesResult } from "@/sanity/types";
 
 export const metadata: Metadata = carrersMetadata;
 
@@ -51,7 +42,7 @@ const page = async ({
     types,
     keyword,
   });
-  const jobs: JobQueryResult = jobs_data ? jobs_data : null;
+  const jobs = jobs_data ? jobs_data : null;
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { VisualEditing } from "next-sanity";
 import { SanityLive } from "@/sanity/lib/live";
 import { LanguageProvider } from "@/context/UseLanguage";
@@ -16,7 +16,7 @@ import {
   DisableDraftMode,
   ScrollTop,
   Navbar,
-  NavbarClient,
+  // NavbarClient,
 } from "@/components";
 
 // import Loading from "@/app/[locale]/loading";
@@ -45,7 +45,9 @@ export default async function RootLayout({
   const { isEnabled } = await draftMode();
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  type Locale = "en" | "fr" | "ar";
+
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 

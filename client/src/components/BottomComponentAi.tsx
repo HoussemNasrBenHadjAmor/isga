@@ -1,4 +1,4 @@
-import { RelatedNewsQueryResult, Simple } from "@/sanity/types";
+import { RelatedNewsQueryResult } from "@/sanity/types";
 import { relatedLinks } from "@/constants";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -6,6 +6,7 @@ import { CarouselAi, ContactForm, Content, Maps } from "@/components";
 import { Button } from "./ui/button";
 
 interface BottomComponentAiPropos {
+  id: string;
   related?: RelatedNewsQueryResult;
   displayRelated?: boolean;
   displayForm?: boolean;
@@ -20,7 +21,7 @@ const BottomComponentAi = ({
 }: BottomComponentAiPropos) => {
   const t = useTranslations("AiPage");
 
-  const blogContent: Simple = {
+  const blogContent = {
     _rev: "",
     _type: "simple",
     _createdAt: "",
@@ -29,7 +30,7 @@ const BottomComponentAi = ({
     title: [t("blogs.title")],
   };
 
-  const relatedContent: Simple = {
+  const relatedContent = {
     _rev: "",
     _type: "simple",
     _createdAt: "",
@@ -38,7 +39,7 @@ const BottomComponentAi = ({
     title: [t("related.title")],
   };
 
-  const contactContent: Simple = {
+  const contactContent = {
     _rev: "",
     _type: "simple",
     _createdAt: "",
@@ -46,6 +47,7 @@ const BottomComponentAi = ({
     _id: "x_c",
     title: [t("contact.title")],
   };
+
   return (
     <div className="flex flex-col gap-3">
       {displayBlogs && (

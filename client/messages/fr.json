@@ -354,6 +354,9 @@
   },
 
   "news": {
-    "button": "Télécharger"
+    "button": "Télécharger",
+    "button_secondary": "Lire la suite",
+    "empty_search": "Désolé, aucun article de presse n'a été trouvé ! 😞",
+    "loading": "Une seconde s'il vous plaît..."
   }
 }

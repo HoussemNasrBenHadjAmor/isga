@@ -35,12 +35,11 @@ const page = async () => {
       </div>
       <CommunComponent>
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {response?.card_primary?.map((item, index) => {
+          {response?.card_primary?.map((item) => {
             return (
               <Card
                 key={item?._id}
                 data={item}
-                index={index + 1}
                 className="first:md:row-span-2 first:lg:row-span-4 last:md:col-span-2"
               />
             );
@@ -67,17 +66,21 @@ const page = async () => {
 
 export default page;
 
+interface CardExtend extends Omit<CardType, "subtitle" | "description"> {
+  subtitle?: string[];
+  description?: string[];
+}
 interface cardProp {
-  data: CardType;
+  data: CardExtend;
   index?: number;
   className?: string;
 }
 
-export const Card = ({ data, className }: cardProp) => {
+const Card = ({ data, className }: cardProp) => {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       {!data?.title && <div className="md:mt-4" />}
-      <h3 className="font-bold text-lg">{data?.title}</h3>
+      <h3 className="font-bold text-lg">{data?.title as string}</h3>
       {data?.subtitle &&
         data?.subtitle.map((sub, index: number) => {
           return (
@@ -91,7 +94,7 @@ export const Card = ({ data, className }: cardProp) => {
 
       {!data?.subtitle?.length &&
         data?.description &&
-        data?.description.map((des: any, index: number) => (
+        data?.description.map((des, index: number) => (
           <p key={index + 1}>{des}</p>
         ))}
     </div>

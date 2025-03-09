@@ -7,7 +7,7 @@ export const config = {
   },
 };
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
     // Parse the incoming form data
     const data = await req.formData();

@@ -15,16 +15,16 @@ const CardImageIndustries = ({ data }: CardImageProps) => {
         <Image
           height="1080"
           width="1920"
-          src={
-            data?.image ? urlFor(data.image as any).url() : default_landing_url
-          }
+          src={data?.image ? urlFor(data.image).url() : default_landing_url}
           alt="background"
           className="object-cover rounded-tr-lg rounded-tl-lg lg:rounded-lg w-full h-full"
         />
       </div>
 
       <div className="flex flex-col justify-center items-center text-center p-3 lg:px-10 gap-3 w-full">
-        {data?.title && <h1 className="font-bold text-xl"> {data.title} </h1>}
+        {data?.title && (
+          <h1 className="font-bold text-xl"> {data.title as string} </h1>
+        )}
         {data?.subtitle &&
           data?.subtitle?.map((det, index) => <p key={index + 1}>{det}</p>)}
         {data?.description?.map((des, index) => (
