@@ -2228,5 +2228,5 @@ export const contactCard = [
   },
 ];
 
-export const default_landing_url =
+export const  default_landing_url =
   "https://isgaconsult.com/wp-content/uploads/2024/02/businessman-big-office-scaled.jpg";
