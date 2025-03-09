@@ -2,12 +2,6 @@ import { createClient } from "next-sanity";
 
 // import { draftMode } from "next/headers";
 
-console.log(
-  process.env.VERCEL_URL === "production"
-    ? `${process.env.SANITY_PRODUCTION_URL}/studio`
-    : `${process.env.SANITY_LOCALE_URL}/studio`
-);
-
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
