@@ -6,6 +6,7 @@ import { NewsSinglePageQueryResult } from "@/sanity/types";
 import { PortableText } from "next-sanity";
 import { myPortableTextComponents } from "@/lib/PortableText";
 import { Download } from "lucide-react";
+import { notFound } from "next/navigation";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const cookieStore = await cookies();
@@ -13,15 +14,22 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
   const data = await getNewLetterPage({ id: language, slug });
-  const product = data ? data[0] : [];
+
+  if (!data || data.length === 0) {
+    notFound();
+  }
+
+  const product = data[0];
 
   return (
-    <div>
-      <NewsLanding data={product} />
-      <CommunComponent>
-        <BlogDetails data={product} />
-      </CommunComponent>
-    </div>
+    product && (
+      <div>
+        <NewsLanding data={product} />
+        <CommunComponent>
+          <BlogDetails data={product} />
+        </CommunComponent>
+      </div>
+    )
   );
 };
 
