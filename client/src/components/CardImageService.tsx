@@ -23,7 +23,17 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
       ${!maxWidth && "lg:w-[50%]"}
       max-h-[400px] w-full`}
       >
-        <Image
+        <img
+          // height="1080"
+          // width="1920"
+          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
+          alt="background"
+          className={`h-full w-full object-cover max-h-[400px] rounded-tr-lg ${
+            isEven &&
+            "rounded-br-lg rounded-bl-lg rounded-tr-none lg:rounded-none lg:rounded-br-lg lg:rounded-tr-lg"
+          } ${!isEven && "lg:rounded-tr-none rounded-tl-lg lg:rounded-bl-lg"}`}
+        />
+        {/* <Image
           height="1080"
           width="1920"
           src={data?.image ? urlFor(data?.image).url() : default_landing_url}
@@ -32,7 +42,7 @@ const CardImageService = ({ data, maxWidth, index }: CardImageProps) => {
             isEven &&
             "rounded-br-lg rounded-bl-lg rounded-tr-none lg:rounded-none lg:rounded-br-lg lg:rounded-tr-lg"
           } ${!isEven && "lg:rounded-tr-none rounded-tl-lg lg:rounded-bl-lg"}`}
-        />
+        /> */}
       </div>
       <div
         className={`flex flex-col justify-center items-start p-3 lg:p-10 gap-2 text-white
