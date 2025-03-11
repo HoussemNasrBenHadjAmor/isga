@@ -24,6 +24,7 @@ const NewLetter = ({ data }: { data: NewsPageQueryResult[number] }) => {
       <Link href={`/newsletter/${data?.slug.current}`}>
         <div className="relative overflow-hidden h-64 w-full rounded-lg">
           <Image
+            unoptimized={true}
             alt="image"
             src={urlFor(data?.image).url()}
             width={1920}
