@@ -19,6 +19,7 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
     >
       <div className="w-full max-h-[400px] h-full">
         <Image
+          unoptimized={true}
           height="1080"
           width="1920"
           src={data?.image ? urlFor(data?.image).url() : default_landing_url}
