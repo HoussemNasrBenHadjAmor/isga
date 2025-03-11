@@ -13,6 +13,7 @@ const CardImageIndustries = ({ data }: CardImageProps) => {
     <div className="flex flex-col mt-20 gap-3 lg:gap-0 rounded-lg">
       <div className="w-full">
         <Image
+          unoptimized={true}
           height="1080"
           width="1920"
           src={data?.image ? urlFor(data.image).url() : default_landing_url}

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { default_landing_url } from "@/constants";
 import { urlFor } from "@/sanity/lib/image";
 import { Card } from "@/sanity/types";
-import cover from "../../public/newsletter_cover.png";
 
 interface CardImageServiceProps {
   data: Card | null;
@@ -20,11 +19,10 @@ const CardImageService = ({ data, index }: CardImageServiceProps) => {
     >
       <div className="w-full max-h-[400px] h-full">
         <Image
-          // unoptimized={true}
+          unoptimized={true}
           height="1080"
           width="1920"
-          // src={data?.image ? urlFor(data?.image).url() : default_landing_url}
-          src={data?.image ? urlFor(data?.image).url() : cover}
+          src={data?.image ? urlFor(data?.image).url() : default_landing_url}
           alt="background"
           className="object-cover rounded-tr-lg rounded-tl-lg lg:rounded-lg w-full max-h-[400px] h-full"
         />

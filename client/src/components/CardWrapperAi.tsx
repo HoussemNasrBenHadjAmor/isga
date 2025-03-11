@@ -12,6 +12,7 @@ const CardWrapperAi = ({ data }: CardWrapperAiProps) => {
     <div className="flex flex-col md:flex-row gap-10 mb-20 md:items-stretch lg:items-center">
       {content?.image && (
         <Image
+          unoptimized={true}
           width={300}
           height={300}
           className="object-cover rounded-md w-auto h-auto max-h-[300px] md:max-h-full"

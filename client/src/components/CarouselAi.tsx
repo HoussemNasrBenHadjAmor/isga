@@ -68,6 +68,7 @@ const CarouselAi = ({
                   <div className="flex items-center gap-5 bg-[#f6f7fa]">
                     <div className="bg-[#cad7f0] p-5 justify-center items-center flex">
                       <Image
+                        unoptimized={true}
                         width={50}
                         height={50}
                         src={(card as Link).image}

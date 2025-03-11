@@ -18,6 +18,7 @@ const LocationLanding = ({ data, center }: LocationsLanidngProps) => {
           // src={data ? data?.url : cover}
           // src={urlFor(data?.image).url() ?? cover}
           src={data?.image ? urlFor(data?.image).url() : cover}
+          unoptimized={true}
           className="w-full h-full md:max-h-[720px] object-cover"
           alt="background"
           height={1080}

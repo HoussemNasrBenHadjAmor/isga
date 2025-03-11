@@ -20,6 +20,7 @@ const CardAi = ({ data, flex, bg = true }: CardAiProps) => {
     >
       {data?.image && (
         <Image
+          unoptimized={true}
           src={urlFor(data?.image).url()}
           className="object-cover"
           alt="background"
