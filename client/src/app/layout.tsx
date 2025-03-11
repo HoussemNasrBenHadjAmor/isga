@@ -6,9 +6,9 @@ import { LanguageProvider } from "@/context/UseLanguage";
 import { draftMode } from "next/headers";
 import { getMessages, getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { routing } from "@/i18n/routing";
+// import { routing } from "@/i18n/routing";
 import { Poppins } from "next/font/google";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "@/components/ui/toaster";
 import {
