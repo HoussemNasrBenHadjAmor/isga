@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import { Link } from "@/i18n/navigation";
-import { useRouter, useSearchParams } from "next/navigation";
-import { getPathname, usePathname } from "@/i18n/navigation";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useLanguage } from "@/context/UseLanguage";
 import { navItemsMobile as navItemsMobileType } from "@/constants";
@@ -29,8 +28,6 @@ const MobileNav = () => {
   const t = useTranslations("navItemsMobile");
   const navItemsMobile: typeof navItemsMobileType = t.raw("items"); // convert the nav items into array
   const router = useRouter();
-  const currentPath = usePathname(); // Get current path without locale
-  const searchParams = useSearchParams(); // Get current query parameters
 
   const [isOpen, setIsOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
@@ -40,21 +37,9 @@ const MobileNav = () => {
     setLanguage(value);
     setIsPopoverOpen(false); // Close the popover after selecting a language
 
-    const params = new URLSearchParams(searchParams); // Convert to URL-friendly format
-
-    // Generate the new path with the selected locale
-    const newPath = getPathname({
-      locale: value,
-      href: { pathname: currentPath },
-    });
-
-    // Append existing query params if any
-    const finalPath = params.toString()
-      ? `${newPath}?${params.toString()}`
-      : newPath;
-
     // Navigate to the updated path
-    router.push(finalPath);
+    router.refresh();
+    setIsOpen(false); // Close the popover after selecting a language
   };
 
   return (

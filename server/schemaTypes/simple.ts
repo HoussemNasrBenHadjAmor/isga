@@ -55,7 +55,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title[0]', // First element of the landing title array
+      title: 'title.en', // First element of the landing title array
     },
     prepare({title}) {
       return {

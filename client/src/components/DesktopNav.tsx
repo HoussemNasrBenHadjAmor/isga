@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "@/i18n/navigation";
-import { useRouter, useSearchParams } from "next/navigation";
-import { getPathname, usePathname } from "@/i18n/navigation";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 import { useLanguage } from "@/context/UseLanguage";
@@ -46,8 +45,6 @@ function DesktopNav() {
   const t = useTranslations("navigationDesktop");
   const navItemsDesktop: typeof navItemsDesktopType = t.raw("items"); // convert the nav items into array
   const router = useRouter();
-  const currentPath = usePathname(); // Get current path without locale
-  const searchParams = useSearchParams(); // Get current query parameters
 
   const { language, setLanguage } = useLanguage();
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control Popover
@@ -56,21 +53,8 @@ function DesktopNav() {
     setLanguage(value);
     setIsPopoverOpen(false); // Close the popover after selecting a language
 
-    const params = new URLSearchParams(searchParams); // Convert to URL-friendly format
-
-    // Generate the new path with the selected locale
-    const newPath = getPathname({
-      locale: value,
-      href: { pathname: currentPath },
-    });
-
-    // Append existing query params if any
-    const finalPath = params.toString()
-      ? `${newPath}?${params.toString()}`
-      : newPath;
-
     // Navigate to the updated path
-    router.push(finalPath);
+    router.refresh();
   };
   return (
     <div className="flex">

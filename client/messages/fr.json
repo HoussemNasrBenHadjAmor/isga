@@ -53,7 +53,7 @@
 
       {
         "id": 4,
-        "name": "Services",
+        "name": "Offres",
         "details": [
           {
             "id": 41,
@@ -200,7 +200,7 @@
 
       {
         "id": 4,
-        "name": "Services",
+        "name": "Offres",
         "sub": [
           {
             "name": "Service de conseil",
@@ -316,7 +316,12 @@
 
   "filterJobs": {
     "category": "Catégorie d'emploi",
-    "type": "Type d'emploi"
+    "type": "Type d'emploi",
+    "jobs": {
+      "button": "Rechercher",
+      "empty_search": "Désolé, aucun emploi trouvé ! 😞",
+      "loading": "Une seconde s'il vous plaît..."
+    }
   },
 
   "jobDialog": {

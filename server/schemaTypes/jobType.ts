@@ -8,13 +8,18 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
       validation: (rule) => rule.required(),
-      type: 'string',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'title.en',
     },
     prepare: ({title}) => ({
       title,

@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "@/i18n/navigation";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Landing as Lan, HomeQueryResult } from "@/sanity/types";

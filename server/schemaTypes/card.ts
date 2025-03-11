@@ -64,8 +64,8 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title', // First element of the landing title array
-      subtitle: 'subtitle[0]', // First element of the landing subtitle array
+      title: 'title.en', // First element of the landing title array
+      subtitle: 'subtitle.en', // First element of the landing subtitle array
       media: 'image', // Landing image for preview
     },
     prepare({title, subtitle, media}) {

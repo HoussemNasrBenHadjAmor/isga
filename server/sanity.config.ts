@@ -19,9 +19,14 @@ export default defineConfig({
     colorInput(),
 
     presentationTool({
-      resolve,
+      // resolve,
       previewUrl: {
-        origin: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
+        origin:
+          process.env.SANITY_STUDIO_IS_PRODUCTION === 'production'
+            ? process.env.SANITY_STUDIO_FRONTEND_BASE_URL_PRODUCTION
+            : process.env.SANITY_STUDIO_FRONTEND_BASE_URL_LOCALE,
+        // origin: 'https://isgaca.vercel.app',
+        // origin: process.env.SANITY_STUDIO_FRONTEND_BASE_URL,
         previewMode: {
           enable: '/api/draft-mode/enable',
           disable: '/api/draft-mode/disable',

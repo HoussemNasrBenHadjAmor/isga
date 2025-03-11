@@ -664,6 +664,14 @@ export const footerItems = [
         name: "Contact",
         link: "/contact",
       },
+      {
+        name: "Newsletter",
+        link: "/newsletter",
+      },
+      {
+        name: "Locations",
+        link: "/locations",
+      },
     ],
   },
   {
@@ -684,12 +692,34 @@ export const footerItems = [
         link: "/services/project-program-management",
       },
       {
-        name: "Artifical Intelligence",
-        link: "/services/artifical-intelligence",
+        name: "Artificial Intelligence",
+        link: "/services/artificial-intelligence",
       },
       {
-        name: "Cybersecurity & Entreprise Risk",
-        link: "/services/cybersecurity-entreprise-risk",
+        name: "Cybersecurity & Enterprise Risk",
+        link: "/services/cybersecurity-enterprise-risk",
+      },
+    ],
+  },
+
+  {
+    title: "AI",
+    sub: [
+      {
+        name: "AI Software Development",
+        link: "/ai/software-development",
+      },
+      {
+        name: "AI Training",
+        link: "/ai/training",
+      },
+      {
+        name: "AI Consulting",
+        link: "/ai/consulting",
+      },
+      {
+        name: "R&D in AI",
+        link: "/ai/rd",
       },
     ],
   },
@@ -702,7 +732,7 @@ export const footerItems = [
       },
       {
         name: "Insurance",
-        link: "/industries/Insurance",
+        link: "/industries/insurance",
       },
       {
         name: "Financial Services",
@@ -2228,5 +2258,5 @@ export const contactCard = [
   },
 ];
 
-export const  default_landing_url =
+export const default_landing_url =
   "https://isgaconsult.com/wp-content/uploads/2024/02/businessman-big-office-scaled.jpg";

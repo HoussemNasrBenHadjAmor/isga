@@ -63,37 +63,16 @@ export default defineType({
 
     defineField({
       name: 'details',
-      title: 'Details',
-      validation: (rule) => rule.required(),
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            annotations: [
-              {name: 'color', title: 'Color', type: 'color'},
-              {
-                name: 'link',
-                type: 'object',
-                title: 'External Link',
-                fields: [
-                  {
-                    name: 'href',
-                    title: 'Link',
-                    type: 'url',
-                    description: 'Please provide a valid url link',
-                  },
-                ],
-              },
-            ],
-          },
-        },
-        {
-          type: 'image',
-        },
+      title: 'Location details',
+      description: 'A description of locations details',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'reference', title: 'English', to: {type: 'jobBlock'}},
+        {name: 'fr', type: 'reference', title: 'French', to: {type: 'jobBlock'}},
+        {name: 'ar', type: 'reference', title: 'Arabic', to: {type: 'jobBlock'}},
       ],
-      description: 'The article details text',
+
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -107,11 +86,13 @@ export default defineType({
       name: 'slug',
       title: 'Location Slug',
       type: 'object',
+      description: 'Need to provide the slug in lowerCase',
       fields: [
         {name: 'en', type: 'string', title: 'English'},
         {name: 'fr', type: 'string', title: 'French'},
         {name: 'ar', type: 'string', title: 'Arabic'},
       ],
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

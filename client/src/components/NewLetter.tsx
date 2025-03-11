@@ -1,7 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+// import { Link } from "@/i18n/navigation";
+
 import { NewsPageQueryResult } from "@/sanity/types";
 
 import { MoveRight } from "lucide-react";

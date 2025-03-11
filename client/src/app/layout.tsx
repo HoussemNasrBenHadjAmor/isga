@@ -4,7 +4,7 @@ import { VisualEditing } from "next-sanity";
 import { SanityLive } from "@/sanity/lib/live";
 import { LanguageProvider } from "@/context/UseLanguage";
 import { draftMode } from "next/headers";
-import { getMessages } from "next-intl/server";
+import { getMessages, getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { Poppins } from "next/font/google";
@@ -42,14 +42,8 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const messages = await getMessages();
+  const locale = await getLocale();
   const { isEnabled } = await draftMode();
-  const { locale } = await params;
-
-  type Locale = "en" | "fr" | "ar";
-
-  if (!routing.locales.includes(locale as Locale)) {
-    notFound();
-  }
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>

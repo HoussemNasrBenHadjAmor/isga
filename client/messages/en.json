@@ -51,7 +51,7 @@
       },
       {
         "id": 4,
-        "name": "Services",
+        "name": "Offers",
         "details": [
           {
             "id": 41,
@@ -194,7 +194,7 @@
 
       {
         "id": 4,
-        "name": "Services",
+        "name": "Offers",
         "sub": [
           {
             "name": "Consulting Service",
@@ -310,7 +310,12 @@
 
   "filterJobs": {
     "category": "Job Category",
-    "type": "Job Type"
+    "type": "Job Type",
+    "jobs": {
+      "button": "Search Jobs",
+      "empty_search": "Sorry no jobs founded! 😞",
+      "loading": "One sec please..."
+    }
   },
 
   "jobDialog": {

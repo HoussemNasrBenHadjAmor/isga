@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { RelatedNewsQueryResult } from "@/sanity/types";
 import { relatedLinks } from "@/constants";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { CarouselAi, ContactForm, Content, Maps } from "@/components";
 import { Button } from "./ui/button";

@@ -6,53 +6,56 @@ export default defineType({
   title: 'News',
   type: 'document',
   fields: [
+    // defineField({
+    //   name: 'title',
+    //   title: 'Title',
+    //   type: 'string',
+    //   validation: (rule) => rule.required(),
+    // }),
+
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
       validation: (rule) => rule.required(),
     }),
 
+    // defineField({
+    //   name: 'subtitle',
+    //   title: 'Subtitle',
+    //   type: 'string',
+    //   validation: (rule) => rule.required(),
+    // }),
+
     defineField({
       name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      title: 'subtitle',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'string', title: 'English'},
+        {name: 'fr', type: 'string', title: 'French'},
+        {name: 'ar', type: 'string', title: 'Arabic'},
+      ],
       validation: (rule) => rule.required(),
     }),
 
     defineField({
       name: 'details',
       title: 'Details',
-      validation: (rule) => rule.required(),
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            annotations: [
-              {name: 'color', title: 'Color', type: 'color'},
-              {
-                name: 'link',
-                type: 'object',
-                title: 'External Link',
-                fields: [
-                  {
-                    name: 'href',
-                    title: 'Link',
-                    type: 'url',
-                    description: 'Please provide a valid url link',
-                  },
-                ],
-              },
-            ],
-          },
-        },
-        {
-          type: 'image',
-        },
+      description: 'A description of the article',
+      type: 'object',
+      fields: [
+        {name: 'en', type: 'reference', title: 'English', to: {type: 'jobBlock'}},
+        {name: 'fr', type: 'reference', title: 'French', to: {type: 'jobBlock'}},
+        {name: 'ar', type: 'reference', title: 'Arabic', to: {type: 'jobBlock'}},
       ],
-      description: 'The article details text',
+
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -68,7 +71,7 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title', // Generate the slug from the 'title' field
+        source: 'title.en', // Generate the slug from the 'title' field
         maxLength: 120, // Optional: Limit the slug length
         slugify: (input) =>
           input
@@ -107,7 +110,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'title.en',
       subtitle: 'category.category',
     },
     prepare: ({title, subtitle}) => ({

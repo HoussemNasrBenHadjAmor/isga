@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+// import { usePathname, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -131,7 +131,7 @@ const FilterJobs = ({ domains, types, setLoading }: FilterProps) => {
         onClick={handleSearch}
         disabled={!isFilterChanged} // Disable button if no filter change
       >
-        Search Jobs
+        {t("jobs.button")}
       </Button>
     </div>
   );

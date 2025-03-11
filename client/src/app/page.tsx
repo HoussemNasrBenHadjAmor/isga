@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import { cookies } from "next/headers";
 import type { Metadata } from "next";
 
