@@ -23,6 +23,15 @@ export default defineType({
       type: 'reference',
       to: {type: 'simple'},
     }),
+    defineField({
+      name: 'metadata',
+      title: 'Page Metadata',
+      type: 'reference',
+      to: {
+        type: 'metadata',
+      },
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {

@@ -38,6 +38,8 @@ import aiConsulting from './aiConsulting'
 import aiRd from './aiRd'
 import jobBlock from './jobBlock'
 import newsBlock from './newsBlock'
+import metadata from './metadata'
+import newsPage from './newsPage'
 import test from './test'
 
 export const schemaTypes = [
@@ -82,4 +84,6 @@ export const schemaTypes = [
   test,
   jobBlock,
   newsBlock,
+  metadata,
+  newsPage,
 ]

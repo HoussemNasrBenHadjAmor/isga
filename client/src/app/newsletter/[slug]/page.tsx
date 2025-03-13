@@ -1,12 +1,28 @@
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
+import { PortableText } from "next-sanity";
 import { useTranslations } from "next-intl";
-import { CommunComponent, NewsLanding } from "@/components";
 import { getNewLetterPage } from "@/sanity/lib/pages";
 import { NewsSinglePageQueryResult } from "@/sanity/types";
-import { PortableText } from "next-sanity";
 import { myPortableTextComponents } from "@/lib/PortableText";
 import { Download } from "lucide-react";
-import { notFound } from "next/navigation";
+import { CommunComponent, NewsLanding } from "@/components";
+import { generateMetadataHelper, newletterImage } from "@/constants";
+
+// metadata fetching
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = await params;
+
+  return generateMetadataHelper({
+    slug,
+    fetchData: getNewLetterPage,
+    locationsMetadata: newletterImage,
+  });
+}
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const cookieStore = await cookies();

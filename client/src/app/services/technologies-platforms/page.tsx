@@ -1,5 +1,5 @@
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
-import { Metadata } from "next";
 import {
   BackgroundImage,
   CardImageService,
@@ -10,15 +10,29 @@ import {
 } from "@/components";
 
 import { getTechnologiesPage } from "@/sanity/lib/pages";
-import { technologiesServiceMetadata } from "@/constants";
+import {
+  generateMetadataHelper,
+  servicesImage,
+  technologiesServiceMetadata,
+} from "@/constants";
 
-export const metadata: Metadata = technologiesServiceMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getTechnologiesPage,
+    locationsMetadata: servicesImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getTechnologiesPage({ id: language });
-  const response = data ? data[0] : null;
+  if (!data || data?.length === 0) {
+    notFound();
+  }
+  const response = data[0];
 
   return (
     <div>

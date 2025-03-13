@@ -29,10 +29,20 @@ export default defineType({
       type: 'array',
       of: [{type: 'reference', to: {type: 'location'}}],
     }),
+
+    defineField({
+      name: 'metadata',
+      title: 'Page Metadata',
+      type: 'reference',
+      to: {
+        type: 'metadata',
+      },
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {
-      title: 'title', // First element of the landing title array
+      title: 'title.en', // First element of the landing title array
 
       media: 'landing.image', // Landing image for preview
     },

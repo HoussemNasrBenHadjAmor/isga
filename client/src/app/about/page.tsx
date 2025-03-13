@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import {
   BackgroundImage,
@@ -13,14 +13,26 @@ import { Card as CardType } from "@/sanity/types";
 
 import { cn } from "@/lib/utils";
 
-import { aboutMetadata } from "@/constants";
+import { generateMetadataHelper, aboutImage } from "@/constants";
 
-export const metadata: Metadata = aboutMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getAboutPage,
+    locationsMetadata: aboutImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getAboutPage({ id: language });
+
+  if (!data || data?.length === 0) {
+    notFound();
+  }
+
   const response = data[0];
   return (
     <>

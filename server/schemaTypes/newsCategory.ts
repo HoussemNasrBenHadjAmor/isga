@@ -17,37 +17,13 @@ export default defineType({
       ],
       validation: (rule) => rule.required(),
     }),
-    // defineField({
-    //   name: 'topic',
-    //   title: 'News Topic',
-    //   type: 'string',
-    //   validation: (Rule) => Rule.required(),
-    //   options: {
-    //     list: [
-    //       {
-    //         title: 'Insights',
-    //         value: 'Insights',
-    //       },
-    //       {
-    //         title: 'News',
-    //         value: 'News',
-    //       },
-    //       {
-    //         title: 'Success Stories',
-    //         value: 'Success Stories',
-    //       },
-    //     ],
-    //   },
-    // }),
   ],
   preview: {
     select: {
       title: 'title.en',
-      // subtitle: 'type',
     },
     prepare: ({title}) => ({
       title,
-      // subtitle,
       media: ProjectsIcon,
     }),
   },

@@ -1,17 +1,29 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 
 import { getLocationsPage } from "@/sanity/lib/pages";
-import { locationsMetadata } from "@/constants";
+import { generateMetadataHelper, locationsImage } from "@/constants";
 import { LocationLanding, CommunComponent, Location } from "@/components";
 
-export const metadata: Metadata = locationsMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getLocationsPage,
+    locationsMetadata: locationsImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getLocationsPage({ id: language });
-  const response = data[0] ?? null;
+
+  if (!data || data?.length === 0) {
+    notFound();
+  }
+
+  const response = data[0];
 
   return (
     <div>

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import { getAiSoftwarePage, getRelatedNews } from "@/sanity/lib/pages";
 import {
@@ -9,6 +10,16 @@ import {
   LocationLanding,
   BottomComponentAi,
 } from "@/components";
+import { aiImage, generateMetadataHelper } from "@/constants";
+
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getAiSoftwarePage,
+    locationsMetadata: aiImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
@@ -17,6 +28,10 @@ const page = async () => {
     getAiSoftwarePage({ id: language }),
     getRelatedNews({ id: language }),
   ]);
+
+  if (!data || data?.length === 0) {
+    notFound();
+  }
   const response = data[0];
 
   return (

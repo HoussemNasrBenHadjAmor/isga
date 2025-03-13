@@ -1,12 +1,19 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 
 import { BackgroundImage, CommunComponent, Landing, Jobs } from "@/components";
 import { getCarrersPage, getJobs, getJobsCategories } from "@/sanity/lib/pages";
-import { carrersMetadata } from "@/constants";
+import { aiImage, generateMetadataHelper } from "@/constants";
 import { JobDomainsResult, JobTypesResult } from "@/sanity/types";
 
-export const metadata: Metadata = carrersMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getCarrersPage,
+    locationsMetadata: aiImage,
+  });
+}
 
 interface Job {
   job_domain: JobDomainsResult;
@@ -22,9 +29,6 @@ const page = async ({
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
 
   const resolvedSearchParams = await searchParams;
-  const data = await getCarrersPage({ id: language });
-  const job_categories = (await getJobsCategories({ id: language })) as Job;
-  const response = data ? data[0] : null;
 
   // Extract and parse search parameters
   const domains = resolvedSearchParams.domains
@@ -36,13 +40,25 @@ const page = async ({
     : [];
   const keyword = (resolvedSearchParams.keyword as string) || "";
 
-  const jobs_data = await getJobs({
-    id: language,
-    domains,
-    types,
-    keyword,
-  });
-  const jobs = jobs_data ? jobs_data : null;
+  let [data, job_categories, jobs_data] = await Promise.all([
+    getCarrersPage({ id: language }),
+    getJobsCategories({ id: language }),
+    getJobs({
+      id: language,
+      domains,
+      types,
+      keyword,
+    }),
+  ]);
+
+  if (!data || data?.length === 0 || !job_categories || !jobs_data) {
+    notFound();
+  }
+
+  job_categories = job_categories as Job;
+
+  const jobs = jobs_data;
+  const response = data[0];
 
   return (
     <div>

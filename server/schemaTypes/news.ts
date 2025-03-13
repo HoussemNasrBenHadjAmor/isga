@@ -6,13 +6,6 @@ export default defineType({
   title: 'News',
   type: 'document',
   fields: [
-    // defineField({
-    //   name: 'title',
-    //   title: 'Title',
-    //   type: 'string',
-    //   validation: (rule) => rule.required(),
-    // }),
-
     defineField({
       name: 'title',
       title: 'Title',
@@ -24,13 +17,6 @@ export default defineType({
       ],
       validation: (rule) => rule.required(),
     }),
-
-    // defineField({
-    //   name: 'subtitle',
-    //   title: 'Subtitle',
-    //   type: 'string',
-    //   validation: (rule) => rule.required(),
-    // }),
 
     defineField({
       name: 'subtitle',
@@ -107,11 +93,20 @@ export default defineType({
       type: 'boolean',
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'metadata',
+      title: 'Page Metadata',
+      type: 'reference',
+      to: {
+        type: 'metadata',
+      },
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {
       title: 'title.en',
-      subtitle: 'category.category',
+      subtitle: 'category.0.title.en',
     },
     prepare: ({title, subtitle}) => ({
       title,

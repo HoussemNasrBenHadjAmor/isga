@@ -23,11 +23,22 @@ export default defineType({
       type: 'reference',
       to: {type: 'simple'},
     }),
+
     defineField({
       name: 'card',
       title: 'Government Industries card',
       type: 'array',
       of: [{type: 'reference', to: {type: 'card'}}],
+    }),
+
+    defineField({
+      name: 'metadata',
+      title: 'Page Metadata',
+      type: 'reference',
+      to: {
+        type: 'metadata',
+      },
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {

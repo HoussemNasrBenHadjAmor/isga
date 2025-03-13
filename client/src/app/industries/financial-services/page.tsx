@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import {
   BackgroundImage,
@@ -9,15 +9,25 @@ import {
 } from "@/components";
 
 import { getFinancialPage } from "@/sanity/lib/pages";
-import { financialIndustriesMetadata } from "@/constants";
+import { industriesImage, generateMetadataHelper } from "@/constants";
 
-export const metadata: Metadata = financialIndustriesMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getFinancialPage,
+    locationsMetadata: industriesImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getFinancialPage({ id: language });
-  const response = data ? data[0] : null;
+  if (!data || data?.length === 0) {
+    notFound();
+  }
+  const response = data[0];
   return (
     <div>
       <div className="relative flex min-h-screen w-full">

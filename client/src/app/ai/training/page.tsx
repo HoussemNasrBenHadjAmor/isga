@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import { getAiTrainingPage } from "@/sanity/lib/pages";
 import {
@@ -11,11 +12,25 @@ import {
   CardWrapperAi,
   NeedsAi,
 } from "@/components";
+import { aiImage, generateMetadataHelper } from "@/constants";
+
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getAiTrainingPage,
+    locationsMetadata: aiImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getAiTrainingPage({ id: language });
+
+  if (!data || data?.length === 0) {
+    notFound();
+  }
   const response = data[0];
 
   return (

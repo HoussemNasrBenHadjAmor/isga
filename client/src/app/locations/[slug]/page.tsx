@@ -1,14 +1,26 @@
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
-import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 
 import { getLocationPage } from "@/sanity/lib/pages";
-import { locationsMetadata } from "@/constants";
 import { LocationLanding, CommunComponent, Card } from "@/components";
+import { generateMetadataHelper, homeImage } from "@/constants/index";
 import { myPortableTextComponents } from "@/lib/PortableText";
-import { notFound } from "next/navigation";
 
-export const metadata: Metadata = locationsMetadata;
+// metadata fetching
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = await params;
+
+  return generateMetadataHelper({
+    slug,
+    fetchData: getLocationPage,
+    locationsMetadata: homeImage,
+  });
+}
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const cookieStore = await cookies();

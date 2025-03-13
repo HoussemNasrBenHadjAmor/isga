@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import {
   BackgroundImage,
@@ -11,15 +11,27 @@ import {
 } from "@/components";
 
 import { getContactPage } from "@/sanity/lib/pages";
-import { contactMetadata } from "@/constants";
+import { contactImage, generateMetadataHelper } from "@/constants";
 
-export const metadata: Metadata = contactMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getContactPage,
+    locationsMetadata: contactImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getContactPage({ id: language });
-  const response = data ? data[0] : null;
+
+  if (!data || data?.length === 0) {
+    notFound();
+  }
+
+  const response = data[0];
 
   return (
     <>

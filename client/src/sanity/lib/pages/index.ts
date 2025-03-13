@@ -32,6 +32,9 @@ import {
   newsPageQuery,
   jobsQuery,
   newsSinglePageQuery,
+  getLocationsSlugsQuery,
+  newsPageMetadataQuery,
+  getNewsSlugsQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -413,6 +416,23 @@ export const getNewsPage = async ({
   }
 };
 
+export const getNewsMetadataPage = async ({ id }: NewsFilterParams) => {
+  const query = newsPageMetadataQuery;
+
+  try {
+    const data = await sanityFetch({
+      query,
+      params: {
+        id,
+      },
+    });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news", error);
+    return [];
+  }
+};
+
 export const getRelatedNews = async (params: { id: string }) => {
   const query = relatedNewsQuery;
 
@@ -451,6 +471,26 @@ export const getNewLetterPage = async (params: {
   } catch (error) {
     console.error("Error fetching the news", error);
     return [];
+  }
+};
+
+export const getNewsSlugsPage = async () => {
+  const query = getNewsSlugsQuery;
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the news slugs", error);
+  }
+};
+
+export const getLocationsSlugsPage = async () => {
+  const query = getLocationsSlugsQuery;
+  try {
+    const data = await sanityFetch({ query });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the locations slugs", error);
   }
 };
 

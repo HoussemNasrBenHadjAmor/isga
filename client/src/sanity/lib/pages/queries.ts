@@ -64,8 +64,15 @@ export const homeQuery = defineQuery(
             asset -> { url },
           },
           svg_path,       
-        }, 
-
+        },
+        
+         metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -114,7 +121,15 @@ export const aboutQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        }, 
+        },
+
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        } 
 
     }   
   `
@@ -185,7 +200,15 @@ export const consultingQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        }, 
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
 
     }   
   `
@@ -243,6 +266,14 @@ export const applicationQuery = defineQuery(
           },
           svg_path,       
         },
+
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -286,7 +317,15 @@ export const technologiesQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },    
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
 
     }   
   `
@@ -331,7 +370,15 @@ export const managedQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -375,7 +422,15 @@ export const projectQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -419,7 +474,15 @@ export const artificialQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -463,7 +526,15 @@ export const cyberQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -507,7 +578,15 @@ export const governmentQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -551,7 +630,15 @@ export const insuranceQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -595,7 +682,15 @@ export const financialQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -639,7 +734,15 @@ export const telecommunicationQuery = defineQuery(
             asset -> { url } 
           },
           svg_path,       
-        },        
+        },
+        
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
     }   
   `
 );
@@ -658,6 +761,14 @@ export const carrersQuery = defineQuery(
         },
         'author': author[$id],
       },
+
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
            
     }   
   `
@@ -695,7 +806,15 @@ export const contactQuery = defineQuery(
           asset -> { url } 
         },
         svg_path,       
-      }, 
+      },
+      
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
            
     }   
   `
@@ -770,6 +889,24 @@ export const newsCategoriesQuery = defineQuery(
   `
 );
 
+export const newsPageMetadataQuery = defineQuery(
+  `
+  *[_type == 'newsPage'] {
+    'title' : title[$id],
+    'subtitle' : subtitle[$id],
+      image {
+        asset -> { url }
+      },
+    metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+    }  
+  }`
+);
+
 export const newsPageQuery = defineQuery(
   `
    *[_type == 'news' && display == true && (!defined($category) || length($category) == 0 || count(category[@->title.en == $category]) > 0 ) ] | order(_createdAt {order} ) {
@@ -781,7 +918,15 @@ export const newsPageQuery = defineQuery(
       image {
         asset -> { url }
       },
-      slug
+      slug,
+
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+      }
     }
   `
 );
@@ -799,7 +944,14 @@ export const newsSinglePageQuery = defineQuery(
         asset -> { url }
       },
       slug,
-      "file": file.asset -> url
+      "file": file.asset -> url,
+      metadata -> {
+        title,
+        description,
+        image {
+          asset -> { url }
+        }
+      },
     }
   `
 );
@@ -817,6 +969,14 @@ export const relatedNewsQuery = defineQuery(
       },
       slug
     }
+  `
+);
+
+export const getNewsSlugsQuery = defineQuery(
+  `
+     *[_type == 'news'] {
+        'slug' : slug.current
+      }
   `
 );
 
@@ -859,8 +1019,26 @@ export const locationsQuery = defineQuery(
               asset -> {url}
             }
           }  
+        },
+
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
         }
 }
+  `
+);
+
+export const getLocationsSlugsQuery = defineQuery(
+  `
+    *[_type == 'locations']{
+      'slugs': locations [] -> {
+        'slug': slug['en']
+      }
+    }
   `
 );
 
@@ -883,6 +1061,13 @@ export const locationQuery = defineQuery(
           'subtitle': subtitle[][$id],
           'description': description[][$id],
           svg_path,
+          image {
+            asset -> { url }
+          }
+        },
+        metadata -> {
+          title,
+          description,
           image {
             asset -> { url }
           }
@@ -988,7 +1173,15 @@ export const aiSoftwareQuery = defineQuery(
         'title': title[][$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id]
-      },  
+      },
+      
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+      },
 
   }
   `
@@ -1128,7 +1321,15 @@ export const aiTrainingQuery = defineQuery(
         'title': title[][$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id]
-      },  
+      },
+      
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+      },
 
   }
   `
@@ -1269,7 +1470,15 @@ export const aiConsultingQuery = defineQuery(
         'title': title[][$id],
         'subtitle': subtitle[][$id],
         'description': description[][$id]
-      },  
+      },
+      
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+      },
 
   }
   `
@@ -1315,6 +1524,14 @@ export const aiRdQuery = defineQuery(
         image {
           asset -> { url }
         }
+      },
+
+      metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
       },
 
   }

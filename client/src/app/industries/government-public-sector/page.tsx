@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import {
   BackgroundImage,
@@ -9,14 +9,24 @@ import {
 } from "@/components";
 
 import { getGovernmentPage } from "@/sanity/lib/pages";
-import { governmentIndustriesMetadata } from "@/constants";
+import { generateMetadataHelper, industriesImage } from "@/constants";
 
-export const metadata: Metadata = governmentIndustriesMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getGovernmentPage,
+    locationsMetadata: industriesImage,
+  });
+}
 
 const page = async () => {
   const cookieStore = await cookies();
   const language = cookieStore.get("NEXT_LOCALE")?.value?.toLowerCase() || "en";
   const data = await getGovernmentPage({ id: language });
+  if (!data || data?.length === 0) {
+    notFound();
+  }
   const response = data ? data[0] : null;
 
   return (

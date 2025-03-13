@@ -1,13 +1,13 @@
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { cookies } from "next/headers";
-import type { Metadata } from "next";
 
 import { getTranslations } from "next-intl/server";
 
 import { urlFor } from "@/sanity/lib/image";
 import { getHomePage } from "@/sanity/lib/pages/index";
-import { homeMetadata } from "@/constants";
+import { homeImage, generateMetadataHelper } from "@/constants";
 import { Card as CardType, HomeQueryResult } from "@/sanity/types";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,14 @@ import {
   Landing,
 } from "@/components";
 
-export const metadata: Metadata = homeMetadata;
+// metadata fetching
+export function generateMetadata() {
+  return generateMetadataHelper({
+    slug: null,
+    fetchData: getHomePage,
+    locationsMetadata: homeImage,
+  });
+}
 
 export default async function Home() {
   const cookieStore = await cookies();
@@ -27,6 +34,9 @@ export default async function Home() {
 
   // Fetch the HomePage data
   const data = await getHomePage({ id: language });
+  if (!data || data?.length === 0) {
+    notFound();
+  }
   const response = data[0];
 
   return (

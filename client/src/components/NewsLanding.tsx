@@ -7,6 +7,7 @@ import { HomeQueryResult } from "@/sanity/types";
 interface NewsLanidngProps {
   data?: HomeQueryResult[number]["landing"];
   center?: boolean;
+  noDate?: boolean;
 }
 
 const formatDate = (isoString: string) => {
@@ -17,7 +18,7 @@ const formatDate = (isoString: string) => {
   return `${day} ${month} ${year}`;
 };
 
-const NewsLanding = ({ data, center }: NewsLanidngProps) => {
+const NewsLanding = ({ data, center, noDate }: NewsLanidngProps) => {
   return (
     <div className="relative flex w-full md:min-h-[550px] h-full">
       {/* Background and Overlay */}
@@ -37,12 +38,14 @@ const NewsLanding = ({ data, center }: NewsLanidngProps) => {
           center && "text-center items-center"
         } w-full h-full min-h-[550px] max-w-7xl mx-auto`}
       >
-        {data ? (
+        {data && !noDate ? (
           <div className="max-w-xl flex flex-col gap-4 text-white text-2xl md:text-4xl justify-center">
             <p className="text-xl">{formatDate(data?._createdAt)}</p>
 
             <h1 className="font-semibold">{data?.title as string}</h1>
           </div>
+        ) : data && noDate ? (
+          <h1 className="text-white text-5xl">{data?.title as string}</h1>
         ) : (
           <h1 className="text-white text-5xl">NEWS & INSIGHTS</h1>
         )}

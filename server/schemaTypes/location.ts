@@ -94,6 +94,16 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required(),
     }),
+
+    defineField({
+      name: 'metadata',
+      title: 'Page Metadata',
+      type: 'reference',
+      to: {
+        type: 'metadata',
+      },
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {
