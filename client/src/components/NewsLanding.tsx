@@ -24,6 +24,7 @@ const NewsLanding = ({ data, center, noDate }: NewsLanidngProps) => {
       {/* Background and Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <Image
+          unoptimized={true}
           // src={data ? data?.url : cover}
           src={data?.image ? urlFor(data?.image).url() : cover}
           className="w-full h-full min-h-[500px] object-cover"
