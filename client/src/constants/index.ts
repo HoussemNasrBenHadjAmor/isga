@@ -31,11 +31,11 @@ export const contactImage = "/contact.jpg";
 export const newletterImage = "/newsletter_cover.png";
 export const locationsImage = "/locations.jpg";
 export const aiImage = "/hero.png";
-
 const sd_img = "/ai-development.png";
 const training = "/ai_education.png";
 const consulting = "/ai_consulting.png";
 const rd = "/ai_rd.png";
+export const linkTalentImage = "/linkTalent.jpg";
 
 interface MetadataParams {
   slug: string;

@@ -17,6 +17,7 @@ import {
   CommunComponent,
   Content,
   Landing,
+  PartnerCards,
 } from "@/components";
 
 // metadata fetching
@@ -62,6 +63,19 @@ export default async function Home() {
       </CommunComponent>
 
       <WhyIsga data={response?.home_isga} />
+
+      <div className="bg-[#F9FAFC] mt-20 py-10">
+        <div className="lg:mx-auto max-w-7xl mx-5 px-5 flex flex-col">
+          <Content data={response?.partnerContent} />
+          {response?.partners?.length && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+              {response?.partners?.map((partner) => (
+                <PartnerCards key={partner._id} data={partner} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
 
       <CommunComponent>
         <AskQuestion data={response?.card_secondary} />

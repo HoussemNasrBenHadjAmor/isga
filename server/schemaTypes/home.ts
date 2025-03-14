@@ -44,6 +44,20 @@ export default defineType({
       },
       validation: (rule) => rule.required(),
     }),
+
+    defineField({
+      name: 'partnerContent',
+      title: 'Home Partner Contents',
+      type: 'reference',
+      to: {type: 'simple'},
+    }),
+
+    defineField({
+      name: 'partners',
+      title: 'Home Partners',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'partner'}}],
+    }),
   ],
   preview: {
     select: {

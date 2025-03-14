@@ -65,6 +65,20 @@ export const homeQuery = defineQuery(
           },
           svg_path,       
         },
+
+         partnerContent -> {
+          _id,
+          'title': title[][$id],
+          'subtitle': subtitle[][$id],
+          'description': description[][$id]
+        },
+
+        partners [] -> {
+          _id,
+          image {
+            asset -> { url },
+          },
+        },
         
          metadata -> {
           title,
@@ -1535,6 +1549,34 @@ export const aiRdQuery = defineQuery(
       },
 
   }
+  `
+);
+
+export const linkTalentQuery = defineQuery(
+  `
+    *[_type == 'linkTalent'] {
+         landing -> {
+         _type, _createdAt, _updatedAt, _rev,
+        _id,
+        'title': title[][$id],
+        'subtitle': subtitle[][$id],
+        'description': description[][$id],
+        image {
+          asset -> { url }
+        },
+        'author': author[$id],
+      },
+
+      'details': details[$id] -> description,
+
+        metadata -> {
+          title,
+          description,
+          image {
+            asset -> { url }
+          }
+        }
+}
   `
 );
 

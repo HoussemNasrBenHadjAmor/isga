@@ -55,11 +55,13 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title.en', // First element of the landing title array
+      title: 'title.0.en',
+      subtitle: 'subtitle.0.en',
     },
-    prepare({title}) {
+    prepare({title, subtitle}) {
       return {
         title: title || 'Details Component',
+        subtitle: subtitle || 'Components Details',
       }
     },
   },

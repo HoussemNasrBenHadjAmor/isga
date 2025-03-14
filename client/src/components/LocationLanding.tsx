@@ -4,12 +4,12 @@ import { urlFor } from "@/sanity/lib/image";
 import { Landing } from "@/sanity/types";
 import cover from "../../public/newsletter_cover.png";
 
-interface LocationsLanidngProps {
+interface LocationsLandingProps {
   data: Landing;
   center?: boolean;
 }
 
-const LocationLanding = ({ data, center }: LocationsLanidngProps) => {
+const LocationLanding = ({ data, center }: LocationsLandingProps) => {
   return (
     <div className="relative flex w-full md:max-h-[720px] h-full">
       {/* Background and Overlay */}

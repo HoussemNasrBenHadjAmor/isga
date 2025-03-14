@@ -8,6 +8,7 @@ import card from './card'
 import homeISGA from './homeISGA'
 import homeAskQuestion from './homeAskQuestion'
 import simple from './simple'
+import partner from './partner'
 import home from './home'
 import about from './about'
 import consultingServices from './consultingServices'
@@ -40,6 +41,7 @@ import jobBlock from './jobBlock'
 import newsBlock from './newsBlock'
 import metadata from './metadata'
 import newsPage from './newsPage'
+import linkTalent from './linkTalent'
 import test from './test'
 
 export const schemaTypes = [
@@ -47,6 +49,7 @@ export const schemaTypes = [
   // author,
   // category,
   // blockContent,
+  partner,
   landingCategory,
   landing,
   card,
@@ -86,4 +89,5 @@ export const schemaTypes = [
   newsBlock,
   metadata,
   newsPage,
+  linkTalent,
 ]

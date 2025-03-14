@@ -38,5 +38,6 @@ export { default as BottomComponentAi } from "@/components/BottomComponentAi";
 export { default as CardWrapperAi } from "@/components/CardWrapperAi";
 export { default as NeedsAi } from "@/components/NeedsAi";
 export { default as NavbarClient } from "@/components/NavbarClient";
+export { default as PartnerCards } from "@/components/PartnerCards";
 
 // export { default as CareersComponent } from "@/components/CareersComponent";

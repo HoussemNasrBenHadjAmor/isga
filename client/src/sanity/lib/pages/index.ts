@@ -35,6 +35,7 @@ import {
   getLocationsSlugsQuery,
   newsPageMetadataQuery,
   getNewsSlugsQuery,
+  linkTalentQuery,
 } from "./queries";
 
 export const getHomePage = async (params: { id: string }) => {
@@ -565,6 +566,18 @@ export const getAiRdPage = async (params: { id: string }) => {
     return data.data || [];
   } catch (error) {
     console.error("Error fetching the ai rd page", error);
+    return [];
+  }
+};
+
+export const getLinkTalentPage = async (params: { id: string }) => {
+  const query = linkTalentQuery;
+
+  try {
+    const data = await sanityFetch({ query, params });
+    return data.data || [];
+  } catch (error) {
+    console.error("Error fetching the linkTalent page", error);
     return [];
   }
 };

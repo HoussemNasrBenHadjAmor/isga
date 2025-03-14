@@ -13,17 +13,6 @@ export default defineType({
     }),
 
     defineField({
-      name: 'title',
-      title: 'Locations Title',
-      type: 'object',
-      fields: [
-        {name: 'en', type: 'string', title: 'English'},
-        {name: 'fr', type: 'string', title: 'French'},
-        {name: 'ar', type: 'string', title: 'Arabic'},
-      ],
-    }),
-
-    defineField({
       name: 'locations',
       title: 'Locations',
       type: 'array',
