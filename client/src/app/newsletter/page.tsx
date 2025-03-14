@@ -48,7 +48,6 @@ const page = async ({
 
   if (
     !news_data ||
-    news_data.length === 0 ||
     !news_metadata_data ||
     news_metadata_data.length === 0 ||
     !news_categories ||
